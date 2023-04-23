@@ -6,11 +6,38 @@
         style="color: #005eff; padding: 1px"
       />
       <font-awesome-icon :icon="['fab', 'instagram']" class="instagram" />
-      <font-awesome-icon :icon="['fab', 'twitter']" style="color: #005eff" />
+      <font-awesome-icon
+        :icon="['fab', 'twitter']"
+        style="color: #005eff; background-color: transparent"
+      />
+    </div>
+    <div class="dropdown">
+      <button
+        type="button"
+        class="btn btn-primary dropdown-toggle"
+        data-toggle="dropdown"
+      >
+        Dropdown button
+      </button>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="#">Link 1</a>
+        <a class="dropdown-item" href="#">Link 2</a>
+        <a class="dropdown-item" href="#">Link 3</a>
+      </div>
+      <b-form-input v-model="search" type="text" debounce="500"></b-form-input>
     </div>
   </footer>
 </template>
-
+<script>
+export default {
+  data() {
+    return {
+      language: localStorage.getItem("language"),
+      search: null,
+    };
+  },
+};
+</script>
 <style>
 .footer {
   position: fixed;
@@ -23,6 +50,10 @@
   justify-content: center;
   background-color: white;
   z-index: 1;
+}
+
+.footer svg {
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.25);
 }
 
 .social-media > svg {

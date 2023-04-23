@@ -1,6 +1,7 @@
 <template>
-  <!-- <h1>{{ $t("homePage") }}</h1> -->
+  <h1>{{ $t("homePage") }}</h1>
   <h1>Ana Sayfa</h1>
+
   <div class="slider-container">
     <div class="slider">
       <img src="https://wallpaperaccess.com/full/12575.jpg" alt="Resim 1" />
@@ -18,45 +19,8 @@
       />
     </div>
   </div>
+  <Carousel />
 
-  <h1>
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam debitis
-    culpa dolorum mollitia repellendus earum quam enim alias aliquid
-    necessitatibus suscipit vel, voluptatibus officia beatae saepe atque quod
-    assumenda dignissimos!
-  </h1>
-
-  <h1>
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam debitis
-    culpa dolorum mollitia repellendus earum quam enim alias aliquid
-    necessitatibus suscipit vel, voluptatibus officia beatae saepe atque quod
-    assumenda dignissimos!
-  </h1>
-
-  <h1>
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam debitis
-    culpa dolorum mollitia repellendus earum quam enim alias aliquid
-    necessitatibus suscipit vel, voluptatibus officia beatae saepe atque quod
-    assumenda dignissimos!
-  </h1>
-  <h1>
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam debitis
-    culpa dolorum mollitia repellendus earum quam enim alias aliquid
-    necessitatibus suscipit vel, voluptatibus officia beatae saepe atque quod
-    assumenda dignissimos!
-  </h1>
-  <h1>
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam debitis
-    culpa dolorum mollitia repellendus earum quam enim alias aliquid
-    necessitatibus suscipit vel, voluptatibus officia beatae saepe atque quod
-    assumenda dignissimos!
-  </h1>
-  <h1>
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam debitis
-    culpa dolorum mollitia repellendus earum quam enim alias aliquid
-    necessitatibus suscipit vel, voluptatibus officia beatae saepe atque quod
-    assumenda dignissimos!
-  </h1>
   <h1>
     Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam debitis
     culpa dolorum mollitia repellendus earum quam enim alias aliquid
@@ -108,8 +72,12 @@
 </template>
 
 <script>
+import Carousel from "../components/Carousel.vue";
 export default {
   mounted() {},
+  components: {
+    Carousel,
+  },
 };
 </script>
 

@@ -11,6 +11,7 @@
       <button class="header__search-button" @click="search">Search</button>
     </div>
     <div class="profilePictureAndProfileName">
+      <LanguageSwitcher />
       <div class="dropdown">
         <img
           class="profilePic"
@@ -31,6 +32,7 @@
 </template>
 
 <script>
+import LanguageSwitcher from "./LanguageSwitcher.vue";
 export default {
   data() {
     return {
@@ -38,7 +40,9 @@ export default {
       UserName: "Admin",
     };
   },
-  components: {},
+  components: {
+    LanguageSwitcher,
+  },
   methods: {
     search() {
       console.log(this.searchQuery);

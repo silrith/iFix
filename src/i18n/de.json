@@ -1,0 +1,10 @@
+{
+  "message": "Hallo !",
+  "homePage": "Startseite",
+  "language": "Sprache",
+  "nav": {
+    "profile": "Profil",
+    "about": "Um",
+    "products": "Produkte"
+  }
+}

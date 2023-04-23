@@ -15,12 +15,19 @@ import Footer from "../src/components/Footer.vue";
 
 export default {
   name: "App",
+  data() {
+    return {
+      language: null,
+    };
+  },
   components: {
     Header,
     Footer,
   },
   methods: {},
-  mounted() {},
+  mounted() {
+    localStorage.setItem("lang", "de");
+  },
 };
 </script>
 
