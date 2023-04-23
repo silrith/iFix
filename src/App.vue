@@ -1,30 +1,68 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
+  <div>
+    <Header />
+    <div class="content">
+      <RouterView />
+    </div>
+    <Footer />
+    <button class="top-button" onclick="window.scrollTo(0, 0)">OK</button>
+  </div>
 </template>
 
+<script>
+import Header from "../src/components/Header.vue";
+import Footer from "../src/components/Footer.vue";
+
+export default {
+  name: "App",
+  components: {
+    Header,
+    Footer,
+  },
+  methods: {},
+  mounted() {},
+};
+</script>
+
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+.top-button {
+  position: fixed;
+  bottom: 85px;
+  right: 5px;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 50%;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
 }
 
-nav {
-  padding: 30px;
+.top-button:hover {
+  background-color: grey;
 }
 
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
+.top-button:active {
+  transform: translateY(1px);
 }
 
-nav a.router-link-exact-active {
-  color: #42b983;
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.content {
+  padding-top: 30px;
+  top: 0;
+  left: 0;
+  z-index: 2;
 }
 </style>

@@ -1,0 +1,1 @@
+HTML içerisinde i18n kullanmak için : {{ $t("homePage") }}
