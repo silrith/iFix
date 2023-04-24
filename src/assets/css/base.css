@@ -1,0 +1,63 @@
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(255, 255, 255) !important;
+  color: black;
+}
+
+/* Temel header Style'larını buraya ekliyorum. */
+header {
+  background-color: rgb(255, 255, 255, 0.5) !important;
+}
+
+header p {
+  color: black;
+}
+
+/* Temel footer Style'larını buraya ekliyorum. */
+footer {
+  background-color: rgb(230, 57, 70, 0.5) !important;
+}
+
+.mainBody {
+  background-color: #ffffff !important;
+}
+/*App Page'de header'dan kaynaklı üst üste binmeyi engellemek için eklendi.*/
+.spaceAround {
+  background-color: #ffffff !important;
+}
+
+.top-button {
+  position: fixed;
+  bottom: 85px;
+  right: 5px;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 50%;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.top-button:hover {
+  background-color: grey;
+}
+
+.top-button:active {
+  transform: translateY(1px);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.content {
+  top: 0;
+  left: 0;
+  z-index: 2;
+}

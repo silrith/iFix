@@ -1,6 +1,7 @@
 <template>
   <div>
     <Header />
+    <div class="spaceAround" style="height: 50px"></div>
     <div class="content">
       <RouterView />
     </div>
@@ -10,8 +11,8 @@
 </template>
 
 <script>
-import Header from "../src/components/Header.vue";
-import Footer from "../src/components/Footer.vue";
+import Header from "../src/components/MainComponents/Header.vue";
+import Footer from "../src/components/MainComponents/Footer.vue";
 
 export default {
   name: "App",
@@ -31,45 +32,4 @@ export default {
 };
 </script>
 
-<style>
-.top-button {
-  position: fixed;
-  bottom: 85px;
-  right: 5px;
-  color: white;
-  padding: 10px 20px;
-  border-radius: 50%;
-  border: none;
-  font-size: 16px;
-  cursor: pointer;
-}
-
-.top-button:hover {
-  background-color: grey;
-}
-
-.top-button:active {
-  transform: translateY(1px);
-}
-
-html,
-body {
-  height: 100%;
-}
-
-body {
-  display: flex;
-  flex-direction: column;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-.content {
-  padding-top: 30px;
-  top: 0;
-  left: 0;
-  z-index: 2;
-}
-</style>
+<style src="@/assets/css/base.css"></style>

@@ -1,51 +1,49 @@
 <template>
   <header class="header">
     <div class="header__logo">
-      <img
-        src="https://cdn-icons-png.flaticon.com/512/7044/7044607.png"
-        alt="Logo"
-      />
+      <img class="iFixLogo" src="../../assets/iFix.At_logo.jpg" alt="Logo" />
     </div>
     <div class="header__search">
       <input type="text" placeholder="Search..." v-model="searchQuery" />
       <button class="header__search-button" @click="search">Search</button>
     </div>
     <div class="profilePictureAndProfileName">
+      <p>{{ this.UserName }}</p>
       <LanguageSwitcher />
-      <div class="dropdown">
-        <img
-          class="profilePic"
-          src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png"
-          alt=""
-        />
-        <div class="dropdown-content">
-          <a href="#">Link 1</a>
-          <a href="#">Link 2</a>
-          <a href="#">Link 3</a>
-        </div>
-      </div>
-      <div style="color: black">
-        <p>{{ this.UserName }}</p>
-      </div>
+      <button class="btn btn-dark" v-if="!isLogged" @click="login">
+        Login
+      </button>
+      <ProfileMenu v-if="isLogged" @isLogged="isUserLoggedOrLogout" />
     </div>
   </header>
 </template>
 
 <script>
-import LanguageSwitcher from "./LanguageSwitcher.vue";
+import LanguageSwitcher from "../SideComponents/LanguageSwitcher.vue";
+import ProfileMenu from "../SideComponents/ProfileMenu.vue";
 export default {
   data() {
     return {
       searchQuery: null,
       UserName: "Admin",
+      isLogged: false,
+      data: {},
     };
   },
   components: {
     LanguageSwitcher,
+    ProfileMenu,
   },
   methods: {
     search() {
       console.log(this.searchQuery);
+    },
+    login() {
+      this.isLogged = true;
+    },
+    isUserLoggedOrLogout($event) {
+      this.data = $event;
+      this.isLogged = this.data.isLogged;
     },
   },
   mounted() {},
@@ -56,8 +54,8 @@ export default {
 .profilePictureAndProfileName {
   display: flex;
   align-items: center;
+  width: 15vh;
   justify-content: space-evenly;
-  width: 100px;
 }
 .profilePic {
   width: 30px;
@@ -131,8 +129,13 @@ export default {
   z-index: 1; /* Header'ın diğer elementlerin önünde olmasını sağlar */
 }
 
+.header__logo {
+  width: 9vh;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.25);
+}
+
 .header__logo img {
-  height: 40px;
+  width: 100%;
 }
 
 .header__search {

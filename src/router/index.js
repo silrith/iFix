@@ -14,6 +14,13 @@ const routes = [
       return import("../pages/WhoAreWe.vue");
     },
   },
+  {
+    path: "/profile",
+    name: "profile",
+    component: function () {
+      return import("../pages/ProfilePage.vue");
+    },
+  },
 ];
 
 const router = createRouter({

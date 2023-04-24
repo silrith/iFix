@@ -9,7 +9,6 @@ import { faTwitter } from "@fortawesome/free-brands-svg-icons";
 import "/node_modules/flag-icons/css/flag-icons.min.css";
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap-vue/dist/bootstrap-vue.css";
-import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap/dist/js/bootstrap.js";
 import i18n from "./i18n";
 library.add(faTwitter, faFacebook, faInstagram);

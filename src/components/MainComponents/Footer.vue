@@ -24,7 +24,6 @@
         <a class="dropdown-item" href="#">Link 2</a>
         <a class="dropdown-item" href="#">Link 3</a>
       </div>
-      <b-form-input v-model="search" type="text" debounce="500"></b-form-input>
     </div>
   </footer>
 </template>
