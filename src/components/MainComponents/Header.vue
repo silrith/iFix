@@ -10,9 +10,14 @@
     <div class="profilePictureAndProfileName">
       <p>{{ this.UserName }}</p>
       <LanguageSwitcher />
-      <button class="btn btn-dark" v-if="!isLogged" @click="login">
+      <RouterLink
+        class="btn btn-dark"
+        to="/login"
+        v-if="!isLogged"
+        @click="login"
+      >
         Login
-      </button>
+      </RouterLink>
       <ProfileMenu v-if="isLogged" @isLogged="isUserLoggedOrLogout" />
     </div>
   </header>

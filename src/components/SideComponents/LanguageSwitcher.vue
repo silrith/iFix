@@ -8,7 +8,12 @@
         data-toggle="dropdown"
         aria-haspopup="true"
         aria-expanded="false"
-        style="margin-right: 5px; width: 5vh; background-color: transparent"
+        style="
+          margin-right: 5px;
+          width: 5vh;
+          background-color: transparent;
+          padding: 3px;
+        "
       ></button>
       <div
         class="dropdown-menu"
@@ -66,12 +71,12 @@ export default {
   width: 3vh;
   height: 3vh;
   padding: 1px 0px 1px 0px;
-  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 5px 10px rgba(255, 255, 255, 0.25);
 }
 #languageImageDiv {
   text-align: -webkit-center;
   --bs-dropdown-min-width: 3vh !important;
-  --bs-dropdown-bg: rgb(255, 255, 255, 0.5) !important;
+  --bs-dropdown-bg: rgba(255, 255, 255, 1) !important;
   left: -8px !important;
   top: 2px !important;
   text-align: center;

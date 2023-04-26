@@ -1,9 +1,9 @@
 <template>
-  <div class="row center">
+  <div class="container center">
     <h1>Who Are We ?</h1>
   </div>
   <div class="col-12 row center">
-    <div class="col-6" id="bolum-1">
+    <div class="col-6" id="leftSide">
       <p>
         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus
         aliquid fugiat totam molestiae ipsa omnis ab eaque modi fuga. Nobis,
@@ -11,15 +11,15 @@
       </p>
     </div>
     <div class="col-6">
-      <div class="row">
-        <div class="col-md-12" id="bolum-2">
+      <div>
+        <div class="col-md-12" id="rightSideTop">
           <p>
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus
             aliquid fugiat totam molestiae ipsa omnis ab eaque modi fuga. Nobis,
             neque. Nemo sit unde tempora et doloremque dolore fugit ducimus!
           </p>
         </div>
-        <div class="col-12" id="bolum-3">
+        <div class="col-12" id="rightSideBottom">
           <p>
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus
             aliquid fugiat totam molestiae ipsa omnis ab eaque modi fuga. Nobis,
@@ -32,21 +32,16 @@
 </template>
 
 <style>
-#bolum-1 {
+#leftSide {
   height: 80vh;
   background-color: aqua;
-  width: 45%;
-  margin-right: 5px;
+  width: 80vh;
 }
 
-#bolum-2,
-#bolum-3 {
+#rightSideTop,
+#rightSideBottom {
   height: 40vh;
   background-color: blueviolet;
-  margin-top: 5px;
-}
-
-.container3 {
   margin-top: 5px;
 }
 </style>

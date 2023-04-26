@@ -21,6 +21,13 @@ const routes = [
       return import("../pages/ProfilePage.vue");
     },
   },
+  {
+    path: "/login",
+    name: "login",
+    component: function () {
+      return import("../pages/LoginPage.vue");
+    },
+  },
 ];
 
 const router = createRouter({
