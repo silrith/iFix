@@ -1,47 +1,45 @@
 <template>
-  <div>
-    <div class="dropdown">
-      <button
-        :class="langClass"
-        type="button"
-        id="dropdownMenuButton"
-        data-toggle="dropdown"
-        aria-haspopup="true"
-        aria-expanded="false"
-        style="
-          margin-right: 5px;
-          width: 5vh;
-          background-color: transparent;
-          padding: 3px;
-        "
-      ></button>
-      <div
-        class="dropdown-menu"
-        id="languageImageDiv"
-        aria-labelledby="dropdownMenuButton"
-      >
-        <div class="languageImageA">
-          <a
-            @click.prevent="
-              changeLanguage('de', 'btn btn-light dropdown fi fi-de')
-            "
-            class="flex items-center px-3 py-3 hover:bg-gray-200"
-            href="#"
-          >
-            <span id="languageImage" class="fi fi-de mb-2" alt=""></span>
-          </a>
-        </div>
-        <div class="languageImageA">
-          <a
-            @click.prevent="
-              changeLanguage('en', 'btn btn-light dropdown fi fi-gb')
-            "
-            class="flex items-center px-3 py-3 hover:bg-gray-200"
-            href="#"
-          >
-            <span id="languageImage" class="fi fi-gb mb-2" alt=""></span>
-          </a>
-        </div>
+  <div class="languageSwitcherdropdown">
+    <button
+      :class="langClass"
+      type="button"
+      id="dropdownMenuButton"
+      data-toggle="dropdown"
+      aria-haspopup="true"
+      aria-expanded="false"
+      style="
+        margin-right: 5px;
+        width: 5vh;
+        background-color: transparent;
+        padding: 3px;
+      "
+    ></button>
+    <div
+      class="dropdown-menu"
+      id="languageImageDiv"
+      aria-labelledby="dropdownMenuButton"
+    >
+      <div class="languageImageA">
+        <a
+          @click.prevent="
+            changeLanguage('de', 'btn btn-light dropdown fi fi-de')
+          "
+          class="flex items-center px-3 py-3 hover:bg-gray-200"
+          href="#"
+        >
+          <span id="languageImage" class="fi fi-de mb-2" alt=""></span>
+        </a>
+      </div>
+      <div class="languageImageA">
+        <a
+          @click.prevent="
+            changeLanguage('en', 'btn btn-light dropdown fi fi-gb')
+          "
+          class="flex items-center px-3 py-3 hover:bg-gray-200"
+          href="#"
+        >
+          <span id="languageImage" class="fi fi-gb mb-2" alt=""></span>
+        </a>
       </div>
     </div>
   </div>
@@ -52,12 +50,11 @@ export default {
   data() {
     return {
       language: null,
-      langClass: "btn btn-light dropdown fi fi-de",
+      langClass: "btn btn-light dropdown fi fi-gb",
     };
   },
   methods: {
     changeLanguage(locale, langClass) {
-      console.log(locale);
       this.$i18n.locale = locale;
       this.langClass = langClass;
     },
@@ -67,6 +64,14 @@ export default {
 </script>
 
 <style>
+.languageSwitcherdropdown {
+  width: 4vh;
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+}
+
 #languageImage {
   width: 3vh;
   height: 3vh;

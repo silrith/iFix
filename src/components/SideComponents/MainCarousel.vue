@@ -18,22 +18,13 @@
         </div>
         <div id="items">
           <div class="item">
-            <img
-              class="imgCarousel"
-              src="https://images.pexels.com/photos/167699/pexels-photo-167699.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-            />
+            <img class="imgCarousel" src="../../assets/photos/computer.jpg" />
           </div>
           <div class="item">
-            <img
-              class="imgCarousel"
-              src="https://images.pexels.com/photos/3244513/pexels-photo-3244513.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-            />
+            <img class="imgCarousel" src="../../assets/photos/computer2.jpg" />
           </div>
           <div class="item">
-            <img
-              class="imgCarousel"
-              src="https://images.pexels.com/photos/235621/pexels-photo-235621.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-            />
+            <img class="imgCarousel" src="../../assets/photos/iphone.jpg" />
           </div>
           <div class="item">
             <img
@@ -61,8 +52,12 @@
 
 <style>
 .bodyCarousel {
-  height: 50vh;
+  height: 80vh;
   overflow-y: hidden;
+}
+
+.centerCarousel {
+  height: fit-content;
 }
 
 .center {

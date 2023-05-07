@@ -15,15 +15,13 @@
         <div class="col-md-12" id="rightSideTop">
           <p>
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus
-            aliquid fugiat totam molestiae ipsa omnis ab eaque modi fuga. Nobis,
-            neque. Nemo sit unde tempora et doloremque dolore fugit ducimus!
+            aliquid fugiat totam molestiae ipsa omnis ab eaque modi fuga.
           </p>
         </div>
         <div class="col-12" id="rightSideBottom">
           <p>
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus
-            aliquid fugiat totam molestiae ipsa omnis ab eaque modi fuga. Nobis,
-            neque. Nemo sit unde tempora et doloremque dolore fugit ducimus!
+            aliquid fugiat totam molestiae ipsa omnis ab eaque modi fuga.
           </p>
         </div>
       </div>

@@ -16,7 +16,7 @@ library.add(faTwitter, faFacebook, faInstagram);
 router.beforeEach((to, from, next) => {
   let language = to.params.lang;
   if (!language) {
-    language = "en";
+    language = "de";
   }
   i18n.locale = language;
   next();

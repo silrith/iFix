@@ -6,5 +6,33 @@
     "profile": "Profile",
     "about": "About",
     "products": "Products"
+  },
+  "header": {
+    "login": "Login",
+    "contactUs": "Contact Us",
+    "bookOnline": "Book Online",
+    "repairServices": "Repair Services",
+    "androidRepair": "Android Repair",
+    "iphoneRepair": "I Phone Repair",
+    "tabletRepair": "Tablet Repair",
+    "computerRepair": "Computer Repair",
+    "wearableRepair": "Wearable Repair"
+  },
+  "userForm": {
+    "firstName": "First Name",
+    "firstNameRequired": "First name is required",
+    "lastName": "Last Name",
+    "lastNameRequired": "Last name is required",
+    "email": "E-mail",
+    "emailRequired": "E-mail is required",
+    "phone": "Phone",
+    "phoneRequired": "Phone number is required",
+    "address": "Address",
+    "city": "City",
+    "state": "State",
+    "zipCode": "Zip Code"
+  },
+  "buttons": {
+    "send": "Send"
   }
 }

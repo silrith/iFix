@@ -6,5 +6,33 @@
     "profile": "Profil",
     "about": "Um",
     "products": "Produkte"
+  },
+  "header": {
+    "login": "Anmeldung",
+    "contactUs": "Kontaktiere uns",
+    "bookOnline": "Buche online",
+    "repairServices": "Reparaturdienste",
+    "androidRepair": "Android-Reparatur",
+    "iphoneRepair": "Iphone-Reparatur",
+    "tabletRepair": "Tablet-Reparatur",
+    "computerRepair": "Computerreparatur",
+    "wearableRepair": "Tragbare Reparatur"
+  },
+  "userForm": {
+    "firstName": "Vorname",
+    "firstNameRequired": "Vorname ist erforderlich",
+    "lastName": "Familienname",
+    "lastNameRequired": "Familienname ist erforderlich",
+    "email": "E-mail",
+    "emailRequired": "E-mail ist erforderlich",
+    "phone": "Telefon",
+    "phoneRequired": "Telefonnummer ist erforderlich",
+    "address": "Adresse",
+    "city": "Stadt",
+    "state": "Zustand",
+    "zipCode": "PLZ"
+  },
+  "buttons": {
+    "send": "Schicken"
   }
 }

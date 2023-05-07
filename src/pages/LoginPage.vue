@@ -83,37 +83,40 @@
   </div>
 </template>
 
+<script>
+let changed = false;
+function changeView() {
+  $("#slider").toggleClass("active");
+  $("#sign-in-button").toggleClass("btn-active");
+  changed
+    ? $("#sign-in-button").html("Sign In")
+    : $("#sign-in-button").html("Login");
+  changed = !changed;
+  console.log("shit");
+}
+</script>
+
 <style>
 .loginPageDiv {
-  height: 85vh;
+  width: 80%;
+  height: 80vh;
   background-image: url(https://images.pexels.com/photos/1181359/pexels-photo-1181359.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
 }
-code {
+
+.loginPage code {
   color: #000000 !important;
 }
 
-*:focus {
+.loginPage *:focus {
   box-shadow: none !important;
   outline: 0 !important;
 }
 
-input {
+.loginPage input {
   border: 2px solid orange !important;
 }
 
-::-webkit-input-placeholder {
-  /* Edge */
-  font-size: 14px !important;
-  color: orange !important;
-}
-
-:-ms-input-placeholder {
-  /* Internet Explorer 10-11 */
-  font-size: 14px !important;
-  color: orange !important;
-}
-
-::placeholder {
+.loginPage input::placeholder {
   font-size: 14px !important;
   color: orange !important;
 }
@@ -143,6 +146,4 @@ input {
   padding: 67px;
   border-left: 10px solid orange;
 }
-
-/*# sourceMappingURL=main.css.map */
 </style>

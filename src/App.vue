@@ -1,12 +1,17 @@
 <template>
   <div>
     <Header />
-    <div class="spaceAround" style="height: 50px"></div>
-    <div class="content">
+    <div class="spaceAround"></div>
+    <body class="content">
       <RouterView />
-    </div>
+    </body>
     <Footer />
-    <button class="top-button" onclick="window.scrollTo(0, 0)">OK</button>
+    <img
+      class="top-button"
+      src="../src/assets/icons/scroll-bar.png"
+      alt=""
+      onclick="window.scrollTo(0, 0)"
+    />
   </div>
 </template>
 
@@ -27,7 +32,7 @@ export default {
   },
   methods: {},
   mounted() {
-    localStorage.setItem("lang", "de");
+    localStorage.setItem("lang", "en");
   },
 };
 </script>

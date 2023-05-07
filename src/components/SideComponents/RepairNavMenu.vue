@@ -1,0 +1,96 @@
+<template>
+  <div>
+    <div class="repairMenudropdown">
+      <button class="repairMenuButton">
+        {{ $t("header.repairServices") }}
+      </button>
+      <div class="repairMenudropdown-content">
+        <router-link to="/androidRepair">
+          {{ $t("header.androidRepair") }}
+        </router-link>
+        <router-link to="/iphoneRepair">
+          I {{ $t("header.iphoneRepair") }}
+        </router-link>
+        <router-link to="/tabletRepair">
+          {{ $t("header.tabletRepair") }}
+        </router-link>
+        <router-link to="/computerRepair">
+          {{ $t("header.computerRepair") }}
+        </router-link>
+        <router-link to="/wearableRepair">
+          {{ $t("header.wearableRepair") }}
+        </router-link>
+      </div>
+    </div>
+  </div>
+</template>
+
+<!-- <script src="../../assets/js/repairdropdown.js"></script> -->
+
+<style>
+.repairMenuButton {
+  color: rgb(0, 0, 0);
+  padding: 16px;
+  font-size: 14px;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+.repairMenudropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.repairMenudropdown-content {
+  display: none;
+  width: max-content;
+  position: absolute;
+  z-index: 1;
+  background-color: white;
+  font-size: 12px;
+}
+
+.repairMenudropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.repairMenudropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+.repairMenudropdown:hover .repairMenudropdown-content {
+  display: block;
+}
+
+.repairMenudropdown .repairMenuButton:focus + .repairMenudropdown-content {
+  display: block;
+}
+
+@media screen and (max-width: 600px) {
+  .repairMenudropdown-content {
+    position: static;
+    display: none;
+    overflow: hidden;
+  }
+
+  .repairMenudropdown-content a {
+    display: none;
+  }
+
+  .repairMenudropdown-content a:first-child {
+    display: block;
+  }
+
+  .repairMenudropdown:focus-within .repairMenuButton {
+    background-color: #3e8e41;
+  }
+
+  .repairMenudropdown:focus-within .repairMenudropdown-content a {
+    display: block;
+  }
+}
+</style>

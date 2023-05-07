@@ -28,6 +28,48 @@ const routes = [
       return import("../pages/LoginPage.vue");
     },
   },
+  {
+    path: "/androidRepair",
+    name: "androidRepair",
+    component: function () {
+      return import("../pages/RepairPages/AndroidRepairPage.vue");
+    },
+  },
+  {
+    path: "/iphoneRepair",
+    name: "iphoneRepair",
+    component: function () {
+      return import("../pages/RepairPages/IPhoneRepairPage.vue");
+    },
+  },
+  {
+    path: "/tabletRepair",
+    name: "tabletRepair",
+    component: function () {
+      return import("../pages/RepairPages/TabletRepairPage.vue");
+    },
+  },
+  {
+    path: "/computerRepair",
+    name: "computerRepair",
+    component: function () {
+      return import("../pages/RepairPages/ComputerRepairPage.vue");
+    },
+  },
+  {
+    path: "/wearableRepair",
+    name: "wearableRepair",
+    component: function () {
+      return import("../pages/RepairPages/WearableRepairPage.vue");
+    },
+  },
+  {
+    path: "/contactUs",
+    name: "contactUs",
+    component: function () {
+      return import("../pages/ContactUsPage.vue");
+    },
+  },
 ];
 
 const router = createRouter({

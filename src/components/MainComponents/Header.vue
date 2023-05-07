@@ -1,36 +1,39 @@
 <template>
   <header class="header">
     <div class="header__logo">
-      <img class="iFixLogo" src="../../assets/iFix.At_logo.jpg" alt="Logo" />
+      <router-link to="/">
+        <img class="iFixLogo" src="../../assets/ifixnobg.png" alt="Logo" />
+      </router-link>
     </div>
-    <div class="header__search">
-      <input type="text" placeholder="Search..." v-model="searchQuery" />
-      <button class="header__search-button" @click="search">Search</button>
-    </div>
-    <div class="profilePictureAndProfileName">
-      <p>{{ this.UserName }}</p>
+    <div class="headerDropdownMenuContainer">
+      <RepairNavMenu />
+      <router-link to="/login">
+        <button class="bookOnlineButton">{{ $t("header.bookOnline") }}</button>
+      </router-link>
+      <router-link to="/contactUs">
+        <button class="contactUsButton">{{ $t("header.contactUs") }}</button>
+      </router-link>
+      <router-link to="/login">
+        <button class="loginButton" to="/login">
+          {{ $t("header.login") }}
+        </button>
+      </router-link>
       <LanguageSwitcher />
-      <RouterLink
-        class="btn btn-dark"
-        to="/login"
-        v-if="!isLogged"
-        @click="login"
-      >
-        Login
-      </RouterLink>
-      <ProfileMenu v-if="isLogged" @isLogged="isUserLoggedOrLogout" />
     </div>
+    <!-- <div class="profilePictureAndProfileName">
+      <ProfileMenu v-if="isLogged" @isLogged="isUserLoggedOrLogout" />
+    </div> -->
   </header>
 </template>
 
 <script>
 import LanguageSwitcher from "../SideComponents/LanguageSwitcher.vue";
 import ProfileMenu from "../SideComponents/ProfileMenu.vue";
+import RepairNavMenu from "../SideComponents/RepairNavMenu.vue";
 export default {
   data() {
     return {
       searchQuery: null,
-      UserName: "Admin",
       isLogged: false,
       data: {},
     };
@@ -38,6 +41,7 @@ export default {
   components: {
     LanguageSwitcher,
     ProfileMenu,
+    RepairNavMenu,
   },
   methods: {
     search() {
@@ -76,12 +80,6 @@ export default {
 }
 
 /* The container <div> - needed to position the dropdown content */
-.dropdown {
-  position: relative;
-  display: inline-block;
-  align-items: center;
-  justify-content: center;
-}
 
 /* Dropdown Content (Hidden by Default) */
 .dropdown-content {
@@ -127,46 +125,50 @@ export default {
   height: 50px;
   padding: 20px;
   color: white;
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 1);
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   transition: backdrop-filter 0.5s;
   width: 100%;
-  z-index: 1; /* Header'ın diğer elementlerin önünde olmasını sağlar */
+  z-index: 99; /* Header'ın diğer elementlerin önünde olmasını sağlar */
 }
 
 .header__logo {
-  width: 9vh;
-  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.25);
+  width: 11vh;
 }
 
 .header__logo img {
   width: 100%;
 }
 
-.header__search {
+.headerDropdownMenuContainer {
   display: flex;
-  align-items: center;
-  margin-left: 20px;
 }
 
-.header__search input[type="text"] {
-  padding: 3px;
-  border: 1px solid black;
-  border-radius: 5px;
-  font-size: 10px;
-  width: 100px;
-  margin-right: 10px;
-  box-shadow: 5px;
-}
-
-.header__search-button {
-  padding: 5px;
+.bookOnlineButton {
+  color: rgb(0, 0, 0);
+  padding: 16px;
+  font-size: 14px;
   border: none;
-  border-radius: 5px;
-  background-color: #333;
-  color: #fff;
-  font-size: 10px;
   cursor: pointer;
+  background-color: transparent;
+}
+
+.contactUsButton {
+  color: rgb(0, 0, 0);
+  padding: 16px;
+  font-size: 14px;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+.loginButton {
+  color: rgb(0, 0, 0);
+  padding: 16px;
+  font-size: 14px;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
 }
 
 @media (max-width: 768px) {
