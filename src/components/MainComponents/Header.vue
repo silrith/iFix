@@ -20,9 +20,6 @@
       </router-link>
       <LanguageSwitcher />
     </div>
-    <!-- <div class="profilePictureAndProfileName">
-      <ProfileMenu v-if="isLogged" @isLogged="isUserLoggedOrLogout" />
-    </div> -->
   </header>
 </template>
 
@@ -60,21 +57,10 @@ export default {
 </script>
 
 <style>
-.profilePictureAndProfileName {
-  display: flex;
-  align-items: center;
-  width: 15vh;
-  justify-content: space-evenly;
-}
-.profilePic {
-  width: 30px;
-  height: 30px;
-}
 /* Dropdown Button */
 .dropbtn {
   background-color: #04aa6d;
   color: white;
-  padding: 16px;
   font-size: 16px;
   border: none;
 }
@@ -122,18 +108,18 @@ export default {
   top: 0;
   left: 0;
   right: 0;
-  height: 50px;
+  height: 10%;
   padding: 20px;
   color: white;
-  background-color: rgba(255, 255, 255, 1);
+  background-color: rgba(219, 219, 219, 0.5);
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   transition: backdrop-filter 0.5s;
   width: 100%;
-  z-index: 99; /* Header'ın diğer elementlerin önünde olmasını sağlar */
+  z-index: 99;
 }
 
 .header__logo {
-  width: 11vh;
+  max-width: 100%;
 }
 
 .header__logo img {

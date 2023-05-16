@@ -1,84 +1,101 @@
 <template>
-  <hr />
-  <footer class="footer mt-3">
-    <div class="footerContext">
-      <div class="footerContainer">
-        <div class="footerContainerLeft col-6">
-          <div class="header__logo">
-            <router-link to="/">
-              <img
-                class="iFixLogo"
-                src="../../assets/ifixnobg.png"
-                alt="Logo"
-              />
-            </router-link>
-          </div>
-          <div class="iFixInformation">
-            <p>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Natus
-              aliquam at a aperiam, reprehenderit consectetur eum consequuntur
-              laborum provident hic doloremque veritatis
-            </p>
-          </div>
+  <footer class="bg-dark text-light text-center text-md-left mt-3">
+    <div class="container">
+      <div class="row pt-4">
+        <div class="col-sm-6 col-md-3 pb-4">
+          <h5 class="mb-4">{{ $t("header.repairServices") }}</h5>
+          <ul class="list-unstyled">
+            <li>
+              <router-link class="text-light" to="/androidRepair">
+                {{ $t("header.androidRepair") }}
+              </router-link>
+            </li>
+            <li>
+              <router-link class="text-light" to="/iphoneRepair">
+                {{ $t("header.iphoneRepair") }}
+              </router-link>
+            </li>
+            <li>
+              <router-link class="text-light" to="/tabletRepair">
+                {{ $t("header.tabletRepair") }}
+              </router-link>
+            </li>
+            <li>
+              <router-link class="text-light" to="/computerRepair">
+                {{ $t("header.computerRepair") }}
+              </router-link>
+            </li>
+            <li>
+              <router-link class="text-light" to="/wearableRepair">
+                {{ $t("header.wearableRepair") }}
+              </router-link>
+            </li>
+          </ul>
         </div>
-        <div class="footerContainerRight col-6">
-          <div class="quickLinks">
-            <div>
-              <p>1. Bölüm</p>
-            </div>
-            <div>
-              <p>1. Bölüm</p>
-            </div>
-            <div>
-              <p>1. Bölüm</p>
-            </div>
-            <div>
-              <p>1. Bölüm</p>
-            </div>
-          </div>
+        <div class="col-sm-6 col-md-3 pb-4">
+          <h4 class="mb-4">About</h4>
+          <ul class="list-unstyled">
+            <li>
+              <a href="#" class="text-light">Company</a>
+            </li>
+            <li>
+              <a href="#" class="text-light">Team</a>
+            </li>
+            <li>
+              <a href="#" class="text-light">Careers</a>
+            </li>
+          </ul>
         </div>
-      </div>
-      <div class="socialMediaIcons">
-        <hr class="col-12" />
-        <div class="footerIconsDiv mb-2">
-          <a href="https://www.facebook.com" target="_blank"
-            ><img
-              src="../../assets/icons/facebook.png"
-              alt=""
-              class="socialIcons"
-          /></a>
-          <a href="https://www.instagram.com" target="_blank"
-            ><img
-              src="../../assets/icons/instagram.png"
-              alt=""
-              class="socialIcons"
-            />
-          </a>
-          <a href="https://www.twitter.com" target="_blank"
-            ><img
-              src="../../assets/icons/twitter.png"
-              alt=""
-              class="socialIcons"
-          /></a>
-          <a href="https://www.linkedin.com" target="_blank"
-            ><img
-              src="../../assets/icons/linkedin.png"
-              alt=""
-              class="socialIcons"
-          /></a>
-          <a href="https://www.youtube.com" target="_blank"
-            ><img
-              src="../../assets/icons/youtube.png"
-              alt=""
-              class="socialIcons"
-          /></a>
-        </div>
-        <div>
-          <p>
-            © {{ new Date().getFullYear() }} | I Fix At - All rights reserved.
-          </p>
+        <div class="col-md-6 pb-4">
+          <h4 class="mb-4">Navigation Info ?</h4>
+          <ul class="list-unstyled">
+            <li>
+              <a href="#" class="text-light"
+                >Lorem ipsum, dolor sit amet consectetur adipisicing elit.</a
+              >
+            </li>
+            <li>
+              <a href="#" class="text-light"
+                >Lorem ipsum, dolor sit amet consectetur adipisicing elit.</a
+              >
+            </li>
+            <li>
+              <a href="#" class="text-light"
+                >Lorem ipsum, dolor sit amet consectetur adipisicing elit.</a
+              >
+            </li>
+          </ul>
         </div>
       </div>
+      <div class="col d-flex justify-content-center mb-4">
+        <a href="#" class="d-block px-3"
+          ><img
+            class="socialIcons"
+            src="../../assets/logos/facebook.png"
+            alt="Facebook"
+        /></a>
+        <a href="#" class="d-block px-3"
+          ><img
+            class="socialIcons"
+            src="../../assets/logos/twitter.png"
+            alt="Facebook"
+        /></a>
+        <a href="#" class="d-block px-3"
+          ><img
+            class="socialIcons"
+            src="../../assets/logos/instagram.png"
+            alt="Facebook"
+        /></a>
+        <a href="#" class="d-block px-3"
+          ><img
+            class="socialIcons"
+            src="../../assets/logos/linkedin.png"
+            alt="Facebook"
+        /></a>
+      </div>
+      <p class="text-center text-secondary border-top border-secondary py-4">
+        I Fix At © {{ new Date().getFullYear() }}
+      </p>
     </div>
   </footer>
 </template>
@@ -88,7 +105,6 @@ export default {
   data() {
     return {
       language: localStorage.getItem("language"),
-      search: null,
     };
   },
 };
@@ -96,7 +112,6 @@ export default {
 
 <style>
 .footerContainer {
-  width: 80%;
   display: flex;
   position: relative;
 }

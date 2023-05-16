@@ -15,6 +15,13 @@ const routes = [
     },
   },
   {
+    path: "/dashboard",
+    name: "dashboard",
+    component: function () {
+      return import("../pages/Dashboard.vue");
+    },
+  },
+  {
     path: "/profile",
     name: "profile",
     component: function () {

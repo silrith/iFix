@@ -2,7 +2,7 @@
   <div>
     <Header />
     <div class="spaceAround"></div>
-    <body class="content">
+    <body class="vueAppBody">
       <RouterView />
     </body>
     <Footer />
