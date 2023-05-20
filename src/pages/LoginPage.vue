@@ -98,9 +98,10 @@ function changeView() {
 
 <style>
 .loginPageDiv {
-  width: 80%;
-  height: 80vh;
+  width: 100%;
+  height: 600px;
   background-image: url(https://images.pexels.com/photos/1181359/pexels-photo-1181359.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+  background-size: cover;
 }
 
 .loginPage code {

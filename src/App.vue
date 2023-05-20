@@ -1,7 +1,6 @@
 <template>
   <div>
     <Header />
-    <div class="spaceAround"></div>
     <body class="vueAppBody">
       <RouterView />
     </body>
@@ -18,7 +17,12 @@
 <script>
 import Header from "../src/components/MainComponents/Header.vue";
 import Footer from "../src/components/MainComponents/Footer.vue";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { fab } from "@fortawesome/free-brands-svg-icons";
+import { fas } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 
+library.add(fab, fas);
 export default {
   name: "App",
   data() {

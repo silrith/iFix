@@ -22,6 +22,13 @@ const routes = [
     },
   },
   {
+    path: "/users",
+    name: "users",
+    component: function () {
+      return import("../pages/Users.vue");
+    },
+  },
+  {
     path: "/profile",
     name: "profile",
     component: function () {

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="animate__animated animate__fadeInRight">
     <div class="repairMenudropdown">
       <button class="repairMenuButton">
         {{ $t("header.repairServices") }}
@@ -9,7 +9,7 @@
           {{ $t("header.androidRepair") }}
         </router-link>
         <router-link to="/iphoneRepair">
-          I {{ $t("header.iphoneRepair") }}
+          {{ $t("header.iphoneRepair") }}
         </router-link>
         <router-link to="/tabletRepair">
           {{ $t("header.tabletRepair") }}
@@ -31,7 +31,9 @@
 .repairMenuButton {
   color: rgb(0, 0, 0);
   padding: 16px;
-  font-size: 14px;
+  font-size: 15px;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
   border: none;
   cursor: pointer;
   background-color: transparent;

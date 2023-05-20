@@ -1,5 +1,5 @@
 <template>
-  <footer class="bg-dark text-light text-center text-md-left mt-3">
+  <footer class="text-light text-center text-md-left">
     <div class="container">
       <div class="row pt-4">
         <div class="col-sm-6 col-md-3 pb-4">
@@ -67,34 +67,36 @@
           </ul>
         </div>
       </div>
-      <div class="col d-flex justify-content-center mb-4">
-        <a href="#" class="d-block px-3"
+      <div
+        class="col d-flex border-top border-secondary justify-content-center mb-4"
+      >
+        <a href="#" class="d-block px-3 mt-3"
           ><img
             class="socialIcons"
             src="../../assets/logos/facebook.png"
             alt="Facebook"
         /></a>
-        <a href="#" class="d-block px-3"
+        <a href="#" class="d-block px-3 mt-3"
           ><img
             class="socialIcons"
             src="../../assets/logos/twitter.png"
             alt="Facebook"
         /></a>
-        <a href="#" class="d-block px-3"
+        <a href="#" class="d-block px-3 mt-3"
           ><img
             class="socialIcons"
             src="../../assets/logos/instagram.png"
             alt="Facebook"
         /></a>
-        <a href="#" class="d-block px-3"
+        <a href="#" class="d-block px-3 mt-3"
           ><img
             class="socialIcons"
             src="../../assets/logos/linkedin.png"
             alt="Facebook"
         /></a>
       </div>
-      <p class="text-center text-secondary border-top border-secondary py-4">
-        I Fix At © {{ new Date().getFullYear() }}
+      <p class="text-center text-light border-top border-secondary py-4">
+        I Fix At © {{ new Date().getFullYear() }} | All rights reserved.
       </p>
     </div>
   </footer>
@@ -111,6 +113,10 @@ export default {
 </script>
 
 <style>
+footer {
+  background: #1f262d;
+}
+
 .footerContainer {
   display: flex;
   position: relative;

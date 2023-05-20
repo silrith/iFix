@@ -12,7 +12,6 @@
         </div>
         <nav class="primary">
           <a href="#" class="menu-item">
-            <span class="iconoir-report-columns"></span>
             <span class="desc">Dashboard</span>
           </a>
           <a href="#" class="menu-item">
@@ -23,6 +22,11 @@
             <span class="iconoir-report-columns"></span>
             <span class="desc">Users</span>
           </a>
+          <router-link to="/users">
+            <button class="">
+              {{ $t("header.bookOnline") }}
+            </button>
+          </router-link>
           <a href="#" class="menu-item">
             <span class="iconoir-report-columns"></span>
             <span class="desc">Products</span>
@@ -54,12 +58,7 @@
         </nav>
         <span class="expander iconoir-arrow-right"></span>
       </div>
-      <div class="topbar">
-        <h1 class="current">Dashboard</h1>
-        <span class="search">
-          <label><span class="iconoir-search"></span></label>
-          <input class="bar" type="text" placeholder="Search..." />
-        </span>
+      <div class="topbar" style="justify-content: space-between">
         <nav>
           <a href="#" class="menu-item">Orders</a>
           <a href="#" class="menu-item">Clients</a>
@@ -68,84 +67,7 @@
         </nav>
       </div>
       <div class="dashboard">
-        <div class="cardcolumn">
-          <div class="card">
-            <header>
-              <a class="title" href="#"></a>
-              <span class="iconoir-more-vert"></span>
-            </header>
-            <div class="content"></div>
-            <div class="meta">
-              <span class="iconoir-pin"></span>
-              <span class="iconoir-eye-off"></span>
-              <span class="iconoir-share-ios"></span>
-            </div>
-          </div>
-          <div class="card">
-            <header>
-              <a class="title" href="#"></a>
-              <span class="iconoir-more-vert"></span>
-            </header>
-            <div class="content"></div>
-            <div class="meta">
-              <span class="iconoir-pin"></span>
-              <span class="iconoir-eye-off"></span>
-              <span class="iconoir-share-ios"></span>
-            </div>
-          </div>
-        </div>
-        <div class="cardcolumn">
-          <div class="card">
-            <header>
-              <a class="title" href="#"></a>
-              <span class="iconoir-more-vert"></span>
-            </header>
-            <div class="content"></div>
-            <div class="meta">
-              <span class="iconoir-pin"></span>
-              <span class="iconoir-eye-off"></span>
-              <span class="iconoir-share-ios"></span>
-            </div>
-          </div>
-          <div class="card">
-            <header>
-              <a class="title" href="#"></a>
-              <span class="iconoir-more-vert"></span>
-            </header>
-            <div class="content"></div>
-            <div class="meta">
-              <span class="iconoir-pin"></span>
-              <span class="iconoir-eye-off"></span>
-              <span class="iconoir-share-ios"></span>
-            </div>
-          </div>
-        </div>
-        <div class="cardcolumn">
-          <div class="card">
-            <header>
-              <a class="title" href="#"></a>
-              <span class="iconoir-more-vert"></span>
-            </header>
-            <div class="content"></div>
-            <div class="meta">
-              <span class="iconoir-pin"></span>
-              <span class="iconoir-eye-off"></span>
-              <span class="iconoir-share-ios"></span>
-            </div>
-          </div>
-          <div class="card">
-            <header>
-              <a class="title" href="#"></a>
-              <span class="iconoir-more-vert"></span>
-            </header>
-            <div class="content"></div>
-            <div class="meta">
-              <span class="iconoir-pin"></span>
-              <span class="iconoir-eye-off"></span>
-              <span class="iconoir-share-ios"></span>
-            </div>
-          </div>
-        </div>
+        <RouterView />
       </div>
       <div class="side">
         <div class="card weather">
@@ -417,10 +339,13 @@
   display: flex;
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
-  justify-content: space-between;
   gap: 10px;
   -webkit-box-align: center;
   -ms-flex-align: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
   align-items: center;
 }
 .dashBoardContainer .topbar .current {
@@ -779,7 +704,7 @@
     padding-left: 74px;
   }
   .dashBoardContainer .menu {
-    width: 74px;
+    width: 200px;
     position: absolute;
     top: unset;
     border-radius: var(--radius) 0 0 var(--radius);

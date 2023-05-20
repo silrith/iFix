@@ -1,6 +1,8 @@
 <template>
   <header class="header">
-    <div class="header__logo">
+    <div
+      class="header__logo animate__animated animate__fadeInLeft animate__slower"
+    >
       <router-link to="/">
         <img class="iFixLogo" src="../../assets/ifixnobg.png" alt="Logo" />
       </router-link>
@@ -8,13 +10,20 @@
     <div class="headerDropdownMenuContainer">
       <RepairNavMenu />
       <router-link to="/login">
-        <button class="bookOnlineButton">{{ $t("header.bookOnline") }}</button>
+        <button class="bookOnlineButton animate__animated animate__fadeInRight">
+          {{ $t("header.bookOnline") }}
+        </button>
       </router-link>
       <router-link to="/contactUs">
-        <button class="contactUsButton">{{ $t("header.contactUs") }}</button>
+        <button class="contactUsButton animate__animated animate__fadeInRight">
+          {{ $t("header.contactUs") }}
+        </button>
       </router-link>
       <router-link to="/login">
-        <button class="loginButton" to="/login">
+        <button
+          class="loginButton animate__animated animate__fadeInRight"
+          to="/login"
+        >
           {{ $t("header.login") }}
         </button>
       </router-link>
@@ -30,6 +39,7 @@ import RepairNavMenu from "../SideComponents/RepairNavMenu.vue";
 export default {
   data() {
     return {
+      reload: false,
       searchQuery: null,
       isLogged: false,
       data: {},
@@ -57,7 +67,6 @@ export default {
 </script>
 
 <style>
-/* Dropdown Button */
 .dropbtn {
   background-color: #04aa6d;
   color: white;
@@ -65,9 +74,6 @@ export default {
   border: none;
 }
 
-/* The container <div> - needed to position the dropdown content */
-
-/* Dropdown Content (Hidden by Default) */
 .dropdown-content {
   display: none;
   position: absolute;
@@ -77,7 +83,6 @@ export default {
   z-index: 1;
 }
 
-/* Links inside the dropdown */
 .dropdown-content a {
   color: black;
   padding: 12px 16px;
@@ -85,17 +90,14 @@ export default {
   display: block;
 }
 
-/* Change color of dropdown links on hover */
 .dropdown-content a:hover {
   background-color: #ddd;
 }
 
-/* Show the dropdown menu on hover */
 .dropdown:hover .dropdown-content {
   display: block;
 }
 
-/* Change the background color of the dropdown button when the dropdown content is shown */
 .dropdown:hover .dropbtn {
   background-color: #3e8e41;
 }
@@ -104,15 +106,18 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: fixed;
+  position: sticky;
   top: 0;
   left: 0;
   right: 0;
-  height: 10%;
+  height: 20%;
   padding: 20px;
-  color: white;
-  background-color: rgba(219, 219, 219, 0.5);
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(to right, #eaece6, #faf02c, #2af0e9, #eaece6);
+  /* box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset,
+    rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset,
+    rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px,
+    rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px,
+    rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px; */
   transition: backdrop-filter 0.5s;
   width: 100%;
   z-index: 99;
@@ -128,6 +133,7 @@ export default {
 
 .headerDropdownMenuContainer {
   display: flex;
+  --animate-duration: 3s;
 }
 
 .bookOnlineButton {
@@ -222,5 +228,9 @@ export default {
       display: block;
     }
   }
+
+  /* @media (max-width: 900px) {
+    //header ayarlamaları yapılacak.
+  } */
 }
 </style>

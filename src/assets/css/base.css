@@ -29,10 +29,6 @@ footer {
 }
 
 /*App Page'de header'dan kaynaklı üst üste binmeyi engellemek için eklendi.*/
-.spaceAround {
-  height: 100px;
-  background-color: #ffffff !important;
-}
 
 .top-button {
   position: fixed;
@@ -53,7 +49,6 @@ footer {
   top: 0;
   display: flex;
   flex-direction: column;
-  align-content: center;
   justify-content: center;
   align-items: center;
   position: relative;
@@ -66,8 +61,6 @@ footer {
   background-color: #fff;
   border-radius: 24px;
   border-style: none;
-  box-shadow: rgba(0, 0, 0, 0.2) 0 3px 5px -1px,
-    rgba(0, 0, 0, 0.14) 0 6px 10px 0, rgba(0, 0, 0, 0.12) 0 1px 18px 0;
   box-sizing: border-box;
   color: #3c4043;
   cursor: pointer;
@@ -94,22 +87,26 @@ footer {
   width: auto;
   will-change: transform, opacity;
   z-index: 0;
+  box-shadow: 1px 1px 5px orange;
 }
 
 .button-17:hover {
   background: #f6f9fe;
-  color: #174ea6;
+  color: #ffd900;
+  text-shadow: 1px 1px 1px rgb(50, 1, 1);
 }
 
 .button-17:active {
   box-shadow: 0 4px 4px 0 rgb(60 64 67 / 30%),
     0 8px 12px 6px rgb(60 64 67 / 15%);
   outline: none;
+  box-shadow: 1px 1px 15px yellow;
 }
 
 .button-17:focus {
   outline: none;
-  border: 2px solid #4285f4;
+  border: 2px solid #000000;
+  box-shadow: 1px 1px 15px yellow;
 }
 
 .button-17:not(:disabled) {
@@ -179,3 +176,9 @@ footer {
     rgba(44, 187, 99, 0.25) 0 16px 32px;
   transform: scale(1.05) rotate(-1deg);
 }
+
+/* .ipadPicture {
+  background-image: url("../assets/photos/ipad.jpg");
+  background-size: cover;
+  background-position: center;
+} */
