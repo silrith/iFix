@@ -54,7 +54,6 @@
         <h2 class="main-heading">
           Let us know which device you need <strong>repaired.</strong>
         </h2>
-        <div class="heading-block bottommargin-sm center"></div>
         <div class="row justify-content-center">
           <div class="col-md-6 col-lg-5 mb-1">
             <a href="#">
@@ -98,6 +97,32 @@
                           width="200"
                           class="img-fluid"
                           src="@/assets/tabletsnobg.png"
+                          alt="Tablet"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-md-6 col-lg-5 mb-1">
+            <a href="https://mastermobile.co.uk/product-category/c-tablet">
+              <div class="card repairCards mt-2">
+                <div class="card-body">
+                  <div class="row align-items-center">
+                    <div class="col-7 col-md-7 mb-1">
+                      <h3>Computer</h3>
+                      <p>
+                        We can repair your broken computer in no time!&nbsp;
+                      </p>
+                    </div>
+                    <div class="col-5 col-md-5">
+                      <div class="device-bg">
+                        <img
+                          width="250"
+                          class="img-fluid"
+                          src="@/assets/photos/computernobg.png"
                           alt="Tablet"
                         />
                       </div>
