@@ -231,7 +231,7 @@
     <section class="faq-section white-bg" id="faq">
       <div class="container">
         <div class="row">
-          <div class="col-md-6 order-2 order-md-1">
+          <div class="col-md-12 order-md-1">
             <div class="accordion" id="faq">
               <h3 class="mb-md-4">
                 <strong>Most people ask us these questions . . .</strong>
@@ -490,18 +490,13 @@
                 </div>
               </div>
             </div>
-            <div class="heading-block nobottomborder center my-2">
-              <a href="https://mastermobile.co.uk/faqs" class="btn btn-primary"
+            <div
+              class="heading-block nobottomborder d-flex justify-content-center center my-2"
+            >
+              <a href="https://mastermobile.co.uk/faqs" class="button-17"
                 >View All Faq(s) <i class="icon-circle-arrow-right"></i
               ></a>
             </div>
-          </div>
-          <div class="col-md-6 order-1 order-md-2">
-            <img
-              class="img-fluid px-4 mb-5 mb-md-0 mt-md-5 pt-md-4"
-              src="@/assets/photos/ipad.jpg"
-              alt="faq"
-            />
           </div>
         </div>
       </div>
@@ -519,11 +514,7 @@ library.add(fas);
 export default {
   name: "Home Page",
   data() {
-    return {
-      color1: "red",
-      color2: "blue",
-      duration: 3000,
-    };
+    return {};
   },
   computed: {},
   mounted() {},
@@ -546,6 +537,7 @@ export default {
   position: relative;
   top: 0;
   z-index: 0;
+  overflow: hidden;
 }
 
 .guaranteeDiv {
@@ -554,6 +546,8 @@ export default {
   background-size: cover;
   background-position: center;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-bottom-left-radius: 25%;
+  border-bottom-right-radius: 25%;
 }
 
 .guaranteeDescription {
@@ -587,6 +581,8 @@ export default {
 #section-about {
   width: 100%;
   background-image: url("@/assets/photos/orangeBackGround.jpg");
+  border-top-left-radius: 25%;
+  border-top-right-radius: 25%;
 }
 
 .chooseOptionCard {
@@ -597,14 +593,46 @@ export default {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
+.faq-section {
+  padding: 60px 0 80px;
+  display: block;
+}
+
 @media (max-width: 767px) {
   .main-heading {
     font-size: 20px;
   }
-}
 
-.faq-section {
-  padding: 60px 0 80px;
-  display: block;
+  .guaranteeDiv {
+    border-bottom-left-radius: 0%;
+    border-bottom-right-radius: 0%;
+  }
+
+  #section-about {
+    border-top-left-radius: 0%;
+    border-top-right-radius: 0%;
+  }
+
+  .faq-section {
+    padding: 60px 0 80px;
+    display: block;
+    width: 100%;
+    height: 570px;
+  }
+
+  .faq-section strong {
+    font-size: large;
+    text-align: start;
+  }
+
+  .faq-section a {
+    font-size: 90%;
+    text-align: start;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  }
+
+  .faq-section span {
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  }
 }
 </style>
