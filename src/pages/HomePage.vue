@@ -1,5 +1,6 @@
 <template>
   <body class="mainBody">
+    <!-- <input id="file" type="file" @input="uploadImage($event)" /> -->
     <div class="row col-12 guaranteeDiv">
       <div
         class="col-sm-3 mt-5 mb-5 animate__animated animate__bounceInDown animate__slow guaranteeDescription"
@@ -18,7 +19,7 @@
         </p>
       </div>
       <div
-        class="col-sm-3 mt-5 mb-5 animate__animated animate__bounceInDown animate__slower guaranteeDescription"
+        class="col-lg-3 col-md-3 col-sm-3 mt-5 mb-5 animate__animated animate__bounceInDown animate__slower guaranteeDescription"
       >
         <h3 class="text-center mb-6 mt-4">
           <span class="inline-block p-4 h-20 w-20">
@@ -50,107 +51,27 @@
       </div>
     </div>
     <section class="serviceSelectDiv mb-2 mt-3">
-      <div class="container">
+      <div class="col-md-10">
         <h2 class="main-heading">
           Let us know which device you need <strong>repaired.</strong>
         </h2>
         <div class="row justify-content-center">
-          <div class="col-md-6 col-lg-5 mb-1">
+          <div v-for="category in categoryList" class="col-md-8 col-lg-6 mb-1">
             <a href="#">
               <div class="card repairCards mt-2">
-                <div class="card-body">
+                <div class="card-body" width="200">
                   <div class="row align-items-center">
                     <div class="col-7 col-md-7">
-                      <h3>Mobile Phone</h3>
-                      <p>We can repair your broken mobile phone in no time!</p>
+                      <h3>{{ category.categoryName }}</h3>
+                      <p>{{ category.categoryDescription }}</p>
                     </div>
                     <div class="col-5 col-md-5">
                       <div class="device-bg">
                         <img
-                          width="164"
+                          width="110"
                           class="img-fluid"
-                          src="@/assets/photos/smartphonesnobg.png"
-                          alt="Mobile Phone"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-          <div class="col-md-6 col-lg-5 mb-1">
-            <a href="https://mastermobile.co.uk/product-category/c-tablet">
-              <div class="card repairCards mt-2">
-                <div class="card-body">
-                  <div class="row align-items-center">
-                    <div class="col-7 col-md-7 mb-1">
-                      <h3>Tablet</h3>
-                      <p>
-                        We can repair your broken Tablet quickly and
-                        easily.&nbsp;
-                      </p>
-                    </div>
-                    <div class="col-5 col-md-5">
-                      <div class="device-bg">
-                        <img
-                          width="200"
-                          class="img-fluid"
-                          src="@/assets/tabletsnobg.png"
-                          alt="Tablet"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-          <div class="col-md-6 col-lg-5 mb-1">
-            <a href="https://mastermobile.co.uk/product-category/c-tablet">
-              <div class="card repairCards mt-2">
-                <div class="card-body">
-                  <div class="row align-items-center">
-                    <div class="col-7 col-md-7 mb-1">
-                      <h3>Computer</h3>
-                      <p>
-                        We can repair your broken computer in no time!&nbsp;
-                      </p>
-                    </div>
-                    <div class="col-5 col-md-5">
-                      <div class="device-bg">
-                        <img
-                          width="250"
-                          class="img-fluid"
-                          src="@/assets/photos/computernobg.png"
-                          alt="Tablet"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-          <div class="col-md-6 col-lg-5">
-            <a href="#">
-              <div class="card repairCards mt-2">
-                <div class="card-body">
-                  <div class="row align-items-center">
-                    <div class="col-7 col-md-7">
-                      <h3>Wearable Stuff</h3>
-                      <p>
-                        We can repair your broken wearable accesories in a short
-                        time.
-                      </p>
-                    </div>
-                    <div class="col-5 col-md-5">
-                      <div class="device-bg">
-                        <img
-                          width="200"
-                          class="img-fluid"
-                          src="@/assets/photos/iwatchnobg.png"
-                          alt="Mobile Phone"
+                          :src="category.categoryPicture"
+                          alt="Repair Service"
                         />
                       </div>
                     </div>
@@ -187,7 +108,7 @@
                         <img
                           class="control mr-4"
                           style="max-width: 90px"
-                          src="@/assets/shop.png"
+                          src="@/assets/icons/shop.png"
                         />
                         <div class="media-body">
                           <h5 class="mt-0">Visit A Store.</h5>
@@ -210,7 +131,7 @@
                         <img
                           class="control mr-4"
                           style="max-width: 90px"
-                          src="@/assets/booking.png"
+                          src="@/assets/icons/booking.png"
                         />
                         <div class="media-body">
                           <h5 class="mt-0">Book A Service Vehicle..</h5>
@@ -243,6 +164,167 @@
                             day as we receive.
                           </p>
                         </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="video-section">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-6 offset-md-6 col-lg-6 offset-lg-6">
+            <h2>
+              <strong
+                >Our on demand call out services mean your phone is repaired at
+                the roadside quickly and easily.
+              </strong>
+            </h2>
+
+            <p>Your service vehicle could arrive in under an hour!</p>
+
+            <a class="btn btn-primary" href="/mobile-phone-repair"
+              >Book A Repair</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="award-section white-bg">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-12">
+            <h3 class="main-heading">
+              Trust Our Award Winning Service And Quality
+            </h3>
+          </div>
+
+          <div class="col-md-12 col-lg-5">
+            <div class="award-bg">
+              <div class="card text-center">
+                <div class="card-body py-3">
+                  <p>We Are Endorsed As A</p>
+
+                  <h6>
+                    <a href="javascript:void(0)" class="text-danger">Which</a>?
+                    Trusted trader
+                  </h6>
+
+                  <a href="javascript:void(0)"
+                    ><img
+                      class="img-fluid certi"
+                      src="assets/images/facebook-review.png"
+                      alt="facebook"
+                  /></a>
+
+                  <a href="javascript:void(0)"
+                    ><img
+                      class="img-fluid certi"
+                      src="assets/images/google.png"
+                      alt="google"
+                  /></a>
+
+                  <a href="javascript:void(0)"
+                    ><img
+                      class="img-fluid certi"
+                      src="assets/images/trustpilot.png"
+                      alt="trustpilot"
+                  /></a>
+
+                  <p class="mt-2">By 100's of 5 Star Reviews</p>
+
+                  <img
+                    class="img-fluid star"
+                    src="assets/images/star.png"
+                    alt="star"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-12 col-lg-7">
+            <div class="row align-items-center">
+              <div class="col-md-1 text-right">
+                <h2><strong>1.</strong></h2>
+              </div>
+
+              <div class="col-md-11">
+                <div class="card">
+                  <div class="card-body">
+                    <div class="media">
+                      <img
+                        class="control"
+                        src="images/section/220220105070156.png"
+                      />
+                      <div class="media-body">
+                        <h5 class="mt-0">Automated Booking</h5>
+
+                        <p>
+                          Booking online is simple, Automated Email &amp; SMS
+                          updates keep you in the loop so you never miss a
+                          trick!
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row align-items-center">
+              <div class="col-md-1 text-right">
+                <h2><strong>2.</strong></h2>
+              </div>
+
+              <div class="col-md-11">
+                <div class="card">
+                  <div class="card-body">
+                    <div class="media">
+                      <img
+                        class="control"
+                        src="images/section/320220105070156.png"
+                      />
+                      <div class="media-body">
+                        <h5 class="mt-0">Trusted Techs &amp; Aftercare</h5>
+
+                        <p>
+                          With 150 years combined experience, your device is
+                          safe with us. DBS &amp; GDPR compliance means your
+                          data is safe too!
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row align-items-center">
+              <div class="col-md-1 text-right">
+                <h2><strong>3.</strong></h2>
+              </div>
+
+              <div class="col-md-11">
+                <div class="card">
+                  <div class="card-body">
+                    <div class="media">
+                      <img
+                        class="control"
+                        src="images/section/120220105070156.png"
+                      />
+                      <div class="media-body">
+                        <h5 class="mt-0">You're In Control</h5>
+
+                        <p>
+                          Our dedicated customer service team, mobile
+                          application and online portal allows you to stay in
+                          control every step of the way.
+                        </p>
                       </div>
                     </div>
                   </div>
@@ -539,13 +621,58 @@ library.add(fas);
 export default {
   name: "Home Page",
   data() {
-    return {};
+    return {
+      categoryList: [],
+    };
+  },
+  methods: {
+    loadData() {
+      this.$ajax
+        .get("category/getallcategories")
+        .then((response) => {
+          if (response.data) {
+            window.asd = response;
+            this.categoryList = response.data;
+          }
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    },
+    imageToString(file) {
+      return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onloadend = () => {
+          const imageDataURL = reader.result;
+          resolve(imageDataURL);
+        };
+        reader.onerror = reject;
+        reader.readAsDataURL(file);
+      });
+    },
+    uploadImage(event) {
+      var reader = new FileReader();
+      reader.readAsDataURL(event.target.files[0]);
+      reader.onloadend = () => {
+        this.$ajax
+          .put("category/uploadimage", {
+            CategoryPicture: reader.result,
+            Id: 5,
+          })
+          .then((snapshot) => {
+            window.qwe = reader.result;
+            this.loadData();
+          })
+          .catch((error) => {});
+      };
+    },
+  },
+  mounted() {
+    this.loadData();
   },
   computed: {},
-  mounted() {},
   components: {},
   created() {},
-  methods: {},
 };
 </script>
 
@@ -567,12 +694,9 @@ export default {
 
 .guaranteeDiv {
   justify-content: space-around;
-  background-image: url(@/assets/photos/orangeBackGround.jpg);
-  background-size: cover;
+  background-color: #ff8c00;
   background-position: center;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  border-bottom-left-radius: 25%;
-  border-bottom-right-radius: 25%;
 }
 
 .guaranteeDescription {
@@ -605,9 +729,6 @@ export default {
 
 #section-about {
   width: 100%;
-  background-image: url("@/assets/photos/orangeBackGround.jpg");
-  border-top-left-radius: 25%;
-  border-top-right-radius: 25%;
 }
 
 .chooseOptionCard {
@@ -626,16 +747,6 @@ export default {
 @media (max-width: 767px) {
   .main-heading {
     font-size: 20px;
-  }
-
-  .guaranteeDiv {
-    border-bottom-left-radius: 0%;
-    border-bottom-right-radius: 0%;
-  }
-
-  #section-about {
-    border-top-left-radius: 0%;
-    border-top-right-radius: 0%;
   }
 
   .faq-section {

@@ -18,7 +18,7 @@
         >
           <img
             class="card-img-top"
-            src="@/assets/photos/computer2.jpg"
+            src="@/assets/photos/orangeBackGround.jpg"
             alt="Card image cap"
           />
           <div class="card-body">
@@ -33,7 +33,7 @@
         >
           <img
             class="card-img-top"
-            src="@/assets/photos/computer2.jpg"
+            src="@/assets/photos/orangeBackGround.jpg"
             alt="Card image cap"
           />
           <div class="card-body">
@@ -48,7 +48,7 @@
         >
           <img
             class="card-img-top"
-            src="@/assets/photos/computer2.jpg"
+            src="@/assets/photos/orangeBackGround.jpg"
             alt="Card image cap"
           />
           <div class="card-body">
@@ -63,7 +63,7 @@
         >
           <img
             class="card-img-top"
-            src="@/assets/photos/computer2.jpg"
+            src="@/assets/photos/orangeBackGround.jpg"
             alt="Card image cap"
           />
           <div class="card-body">
@@ -78,7 +78,7 @@
         >
           <img
             class="card-img-top"
-            src="@/assets/photos/computer2.jpg"
+            src="@/assets/photos/orangeBackGround.jpg"
             alt="Card image cap"
           />
           <div class="card-body">

@@ -1,4 +1,5 @@
 import { createApp } from "vue/dist/vue.esm-bundler";
+import ajax from "@/axios";
 import App from "./App.vue";
 import router from "./router";
 import store from "./store";
@@ -25,6 +26,7 @@ router.beforeEach((to, from, next) => {
 createApp(App)
   .use(i18n)
   .use(store)
+  .use(ajax)
   .use(router)
   .component("font-awesome-icon", FontAwesomeIcon)
   .mount("#app");

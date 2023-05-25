@@ -21,7 +21,10 @@
             <img class="imgCarousel" src="../../assets/photos/computer.jpg" />
           </div>
           <div class="item">
-            <img class="imgCarousel" src="../../assets/photos/computer2.jpg" />
+            <img
+              class="imgCarousel"
+              src="../../assets/photos/orangeBackGround.jpg"
+            />
           </div>
           <div class="item">
             <img class="imgCarousel" src="../../assets/photos/iphone.jpg" />

@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "build": "vue-cli-service build",
-    "dev": "vue-cli-service serve",
+    "dev": "vue-cli-service serve --open --port 3000",
     "i18n:report": "vue-cli-service i18n:report --src \"./src/**/*.?(js|vue)\" --locales \"./src/i18n/**/*.json\""
   },
   "dependencies": {
@@ -15,6 +15,7 @@
     "@popperjs/core": "^2.11.7",
     "@vue/compat": "^3.2.47",
     "animate.css": "^4.1.1",
+    "axios": "^1.4.0",
     "bootstrap": "^5.3.0-alpha3",
     "bootstrap-vue": "^2.23.1",
     "flag-icons": "^6.6.6",
