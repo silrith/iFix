@@ -6,27 +6,27 @@
           <h5 class="mb-4">{{ $t("header.repairServices") }}</h5>
           <ul class="list-unstyled">
             <li>
-              <router-link class="text-light" to="/androidRepair">
+              <router-link class="text-light" to="/">
                 {{ $t("header.androidRepair") }}
               </router-link>
             </li>
             <li>
-              <router-link class="text-light" to="/iphoneRepair">
+              <router-link class="text-light" to="/">
                 {{ $t("header.iphoneRepair") }}
               </router-link>
             </li>
             <li>
-              <router-link class="text-light" to="/tabletRepair">
+              <router-link class="text-light" to="/">
                 {{ $t("header.tabletRepair") }}
               </router-link>
             </li>
             <li>
-              <router-link class="text-light" to="/computerRepair">
+              <router-link class="text-light" to="/">
                 {{ $t("header.computerRepair") }}
               </router-link>
             </li>
             <li>
-              <router-link class="text-light" to="/wearableRepair">
+              <router-link class="text-light" to="/">
                 {{ $t("header.wearableRepair") }}
               </router-link>
             </li>

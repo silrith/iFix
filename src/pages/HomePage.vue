@@ -9,7 +9,12 @@
         </h2>
         <div class="row justify-content-center">
           <div v-for="category in categoryList" class="col-md-8 col-lg-6 mb-1">
-            <a href="#">
+            <router-link
+              :to="{
+                path: '/repairServices',
+                query: { filter: category.categoryName },
+              }"
+            >
               <div class="card repairCards mt-2">
                 <div class="card-body" width="200">
                   <div class="row align-items-center">
@@ -30,11 +35,12 @@
                   </div>
                 </div>
               </div>
-            </a>
+            </router-link>
           </div>
         </div>
       </div>
     </section>
+    <a href="https://www.youtube.com" target="_blank">YouTube'a git</a>
     <section class="white-bg pb-md-0 pt-2" id="section-about">
       <div class="container">
         <div class="row d-flex align-items-center justify-content-center">
@@ -579,7 +585,6 @@ export default {
         .get("category/getallcategories")
         .then((response) => {
           if (response.data) {
-            window.asd = response;
             this.categoryList = response.data;
           }
         })

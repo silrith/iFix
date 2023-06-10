@@ -30,9 +30,23 @@ const routes = [
   },
   {
     path: "/contactUs",
-    name: "contactUs",
+    name: "ContactUs",
     component: function () {
       return import("../pages/ContactUsPage.vue");
+    },
+  },
+  {
+    path: "/repairservices",
+    name: "Repair Services",
+    component: function () {
+      return import("../pages/RepairServices.vue");
+    },
+  },
+  {
+    path: "/booking",
+    name: "Booking",
+    component: function () {
+      return import("../pages/BookingPage.vue");
     },
   },
 ];

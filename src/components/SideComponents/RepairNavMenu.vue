@@ -2,23 +2,23 @@
   <div class="animate__animated animate__fadeInRight">
     <div class="repairMenudropdown">
       <button class="repairMenuButton">
-        {{ $t("header.repairServices") }}
+        {{ this.$t("header.repairServices") }}
       </button>
       <div class="repairMenudropdown-content">
         <router-link to="/androidRepair">
-          {{ $t("header.androidRepair") }}
+          {{ this.$t("header.androidRepair") }}
         </router-link>
         <router-link to="/iphoneRepair">
-          {{ $t("header.iphoneRepair") }}
+          {{ this.$t("header.iphoneRepair") }}
         </router-link>
         <router-link to="/tabletRepair">
-          {{ $t("header.tabletRepair") }}
+          {{ this.$t("header.tabletRepair") }}
         </router-link>
         <router-link to="/computerRepair">
-          {{ $t("header.computerRepair") }}
+          {{ this.$t("header.computerRepair") }}
         </router-link>
         <router-link to="/wearableRepair">
-          {{ $t("header.wearableRepair") }}
+          {{ this.$t("header.wearableRepair") }}
         </router-link>
       </div>
     </div>

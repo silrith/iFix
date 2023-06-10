@@ -34,5 +34,16 @@
   },
   "buttons": {
     "send": "Schicken"
+  },
+  "calendar": {
+    "daysOfWeek": {
+      "monday": "Montag",
+      "tuesday": "Dienstag",
+      "wednesday": "Mittwoch",
+      "thursday": "Donnerstag",
+      "friday": "Freitag",
+      "saturday": "Samstag",
+      "sunday": "Sonntag"
+    }
   }
 }

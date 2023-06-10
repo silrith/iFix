@@ -23,21 +23,21 @@
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
+          <li class="nav-item active hoverEffect">
             <a class="nav-link" href="/androidRepair"
               >Home <span class="sr-only">(current)</span></a
             >
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/repairServices">Repair Services</a>
+          <li class="nav-item active hoverEffect">
+            <a class="nav-link" href="/repairServices">Repairs</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item active hoverEffect">
             <a class="nav-link" href="/pricing">Pricing</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="booking">Make an Appointment</a>
+          <li class="nav-item active hoverEffect">
+            <a class="nav-link" href="booking">Booking</a>
           </li>
-          <li class="nav-item dropdown">
+          <li class="nav-item active dropdown hoverEffect">
             <a
               class="nav-link dropdown-toggle"
               href="#"
