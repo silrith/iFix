@@ -118,8 +118,6 @@ footer {
 }
 
 .footerContainer {
-  display: flex;
-  position: relative;
 }
 
 .footerContext {

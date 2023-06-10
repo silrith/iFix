@@ -1,17 +1,13 @@
 <template>
-  <div>
-    <Header />
-    <body class="vueAppBody">
-      <RouterView />
-    </body>
-    <Footer />
-    <img
-      class="top-button"
-      src="../src/assets/icons/scroll-bar.png"
-      alt=""
-      onclick="window.scrollTo(0, 0)"
-    />
-  </div>
+  <Header />
+  <RouterView />
+  <Footer />
+  <img
+    class="top-button"
+    src="../src/assets/icons/scroll-bar.png"
+    alt=""
+    onclick="window.scrollTo(0, 0)"
+  />
 </template>
 
 <script>

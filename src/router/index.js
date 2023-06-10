@@ -8,24 +8,10 @@ const routes = [
     component: HomePage,
   },
   {
-    path: "/about",
+    path: "/aboutus",
     name: "about",
     component: function () {
-      return import("../pages/WhoAreWe.vue");
-    },
-  },
-  {
-    path: "/dashboard",
-    name: "dashboard",
-    component: function () {
-      return import("../pages/Dashboard.vue");
-    },
-  },
-  {
-    path: "/users",
-    name: "users",
-    component: function () {
-      return import("../pages/Users.vue");
+      return import("../pages/AboutUs.vue");
     },
   },
   {
@@ -40,41 +26,6 @@ const routes = [
     name: "login",
     component: function () {
       return import("../pages/LoginPage.vue");
-    },
-  },
-  {
-    path: "/androidRepair",
-    name: "androidRepair",
-    component: function () {
-      return import("../pages/RepairPages/AndroidRepairPage.vue");
-    },
-  },
-  {
-    path: "/iphoneRepair",
-    name: "iphoneRepair",
-    component: function () {
-      return import("../pages/RepairPages/IPhoneRepairPage.vue");
-    },
-  },
-  {
-    path: "/tabletRepair",
-    name: "tabletRepair",
-    component: function () {
-      return import("../pages/RepairPages/TabletRepairPage.vue");
-    },
-  },
-  {
-    path: "/computerRepair",
-    name: "computerRepair",
-    component: function () {
-      return import("../pages/RepairPages/ComputerRepairPage.vue");
-    },
-  },
-  {
-    path: "/wearableRepair",
-    name: "wearableRepair",
-    component: function () {
-      return import("../pages/RepairPages/WearableRepairPage.vue");
     },
   },
   {

@@ -7,12 +7,7 @@
       data-toggle="dropdown"
       aria-haspopup="true"
       aria-expanded="false"
-      style="
-        margin-right: 5px;
-        width: 5vh;
-        background-color: transparent;
-        padding: 3px;
-      "
+      style="width: 5vh; background-color: transparent; padding: 3px"
     ></button>
     <div
       class="dropdown-menu"

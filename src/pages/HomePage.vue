@@ -1,56 +1,8 @@
 <template>
-  <body class="mainBody">
+  <div class="mainBody">
     <!-- <input id="file" type="file" @input="uploadImage($event)" /> -->
-    <div class="row col-12 guaranteeDiv">
-      <div
-        class="col-sm-3 mt-5 mb-5 animate__animated animate__bounceInDown animate__slow guaranteeDescription"
-      >
-        <h3 class="text-center mb-6 mt-4">
-          <span class="inline-block p-4 h-20 w-20">
-            <font-awesome-icon :icon="['fass', 'hand-holding-dollar']"
-          /></span>
-        </h3>
-        <h5 class="text-center font-semibold mb-3 mt-5">
-          Lowest Price Guarantee
-        </h5>
-        <p class="text-center text-sm">
-          We're so confident that we'll meet your requirements at the lowest
-          price possible without compromising the quality of work.
-        </p>
-      </div>
-      <div
-        class="col-lg-3 col-md-3 col-sm-3 mt-5 mb-5 animate__animated animate__bounceInDown animate__slower guaranteeDescription"
-      >
-        <h3 class="text-center mb-6 mt-4">
-          <span class="inline-block p-4 h-20 w-20">
-            <font-awesome-icon :icon="['fas', 'users-gear']"
-          /></span>
-        </h3>
-        <h3 class="text-center font-semibold mb-3 mt-5">
-          Free &amp; fast Diagnosis
-        </h3>
-        <p class="text-center">
-          Our technicians are fully skilled and professional in handling complex
-          errors. However, if we fail to repair your device, we don’t charge you
-          anything.
-        </p>
-      </div>
-      <div
-        class="col-sm-3 mt-5 mb-5 animate__animated animate__bounceInDown animate__slow guaranteeDescription"
-      >
-        <h2 class="text-center mb-6 mt-4">
-          <span class="inline-block p-4 h-20 w-20">
-            <font-awesome-icon :icon="['fas', 'shield-halved']"
-          /></span>
-        </h2>
-        <h5 class="text-center font-semibold mb-3 mt-5">Full Coverage</h5>
-        <p class="text-center text-sm">
-          We're so confident that we'll meet your requirements at the lowest
-          price possible without compromising the quality of work.
-        </p>
-      </div>
-    </div>
-    <section class="serviceSelectDiv mb-2 mt-3">
+    <Carousel />
+    <section class="serviceSelectDiv">
       <div class="col-md-10">
         <h2 class="main-heading">
           Let us know which device you need <strong>repaired.</strong>
@@ -83,7 +35,7 @@
         </div>
       </div>
     </section>
-    <section class="white-bg pb-md-0 pt-2 mt-1" id="section-about">
+    <section class="white-bg pb-md-0 pt-2" id="section-about">
       <div class="container">
         <div class="row d-flex align-items-center justify-content-center">
           <div class="row align-items-end">
@@ -94,7 +46,7 @@
             <div class="col-md-12 col-lg-5">
               <img
                 class="img-fluid d-lg-block"
-                src="@/assets/photos/manShowsRight2.png"
+                src="@/assets/photos/manShowsRight2.webp"
                 alt="repair"
               />
             </div>
@@ -608,15 +560,11 @@
         </div>
       </div>
     </section>
-  </body>
+  </div>
 </template>
 
 <script>
-import { library } from "@fortawesome/fontawesome-svg-core";
-import { fas } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
-
-library.add(fas);
+import Carousel from "@/components/MainComponents/Carousel.vue";
 
 export default {
   name: "Home Page",
@@ -671,7 +619,9 @@ export default {
     this.loadData();
   },
   computed: {},
-  components: {},
+  components: {
+    Carousel,
+  },
   created() {},
 };
 </script>
@@ -681,27 +631,13 @@ export default {
   display: flex;
   width: 100%;
   height: 50%;
-  position: inherit;
   flex-direction: column;
   align-content: center;
   justify-content: center;
   align-items: center;
-  position: relative;
   top: 0;
   z-index: 0;
   overflow: hidden;
-}
-
-.guaranteeDiv {
-  justify-content: space-around;
-  background-color: #ff8c00;
-  background-position: center;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-}
-
-.guaranteeDescription {
-  background-color: rgb(255, 255, 250, 0.3);
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 .serviceSelectDiv {
