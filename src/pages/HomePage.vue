@@ -40,7 +40,7 @@
         </div>
       </div>
     </section>
-    <a href="https://www.youtube.com" target="_blank">YouTube'a git</a>
+    <a class="btn btn-secondary" href="https://www.youtube.com" target="_blank">YouTube'a git</a>
     <section class="white-bg pb-md-0 pt-2" id="section-about">
       <div class="container">
         <div class="row d-flex align-items-center justify-content-center">

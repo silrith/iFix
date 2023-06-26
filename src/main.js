@@ -10,6 +10,8 @@ import { faTwitter } from "@fortawesome/free-brands-svg-icons";
 import "/node_modules/flag-icons/css/flag-icons.min.css";
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap/dist/js/bootstrap.js";
+import VueDatePicker from '@vuepic/vue-datepicker';
+import '@vuepic/vue-datepicker/dist/main.css'
 import i18n from "./i18n";
 
 library.add(faTwitter, faFacebook, faInstagram);
@@ -29,4 +31,5 @@ createApp(App)
   .use(ajax)
   .use(router)
   .component("font-awesome-icon", FontAwesomeIcon)
+  .component('VueDatePicker', VueDatePicker)
   .mount("#app");
