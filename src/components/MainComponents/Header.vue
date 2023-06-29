@@ -29,7 +29,10 @@
             >
           </li>
           <li class="nav-item active hoverEffect">
-            <a class="nav-link" href="/repairServices">Repairs</a>
+            <router-link :to="{
+            path: '/repairServices',
+            query: { filter: 'brands' },
+          }" class="nav-link" href="/repairServices">Repairs</router-link>
           </li>
           <li class="nav-item active hoverEffect">
             <a class="nav-link" href="/pricing">Pricing</a>
@@ -64,6 +67,7 @@
             aria-label="Search"
           />
         </form>
+
         <LanguageSwitcher />
       </div>
     </nav>

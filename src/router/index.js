@@ -43,6 +43,20 @@ const routes = [
     },
   },
   {
+    path: "/repairTypes",
+    name: "Repair Types",
+    component: function () {
+      return import("../pages/RepairTypesPage.vue");
+    },
+  },
+  {
+    path: "/models",
+    name: "Models",
+    component: function () {
+      return import("../pages/ModelsPage.vue");
+    },
+  },
+  {
     path: "/booking",
     name: "Booking",
     component: function () {

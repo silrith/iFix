@@ -1,19 +1,50 @@
 <template>
-  <p>RepairServices</p>
+  <div class="col-lg-12 mainBody">
+    <div class="col-lg-12 mb-2" style="width: 100%">
+      <img
+        style="width: 100%; height: 32vh"
+        src="@/assets/photos/geo-pad-110-tablet-banner.jpg"
+        alt=""
+      />
+    </div>
+    <div class="col-lg-12 rangeDiv">
+      <CustomRange />
+    </div>
+    <ProductCard
+      ref="childComponent"
+      :brandList="brandList"
+      :isBrand="isBrand"
+      :isModel="isModel"
+    />
+  </div>
 </template>
 
 <script>
+import CustomRange from "@/components/MainComponents/CustomRange";
+import ProductCard from "@/components/MainComponents/ProductCard";
+
 export default {
   data() {
-    return {};
+    return {
+      isBrand: false,
+      isModel: false,
+      isRepair: false,
+      modelList: [],
+      brandList: [],
+    };
+  },
+  components: {
+    CustomRange,
+    ProductCard
   },
   methods: {
-    loadData() {
+    getBrandDatas() {
       this.$ajax
-        .get("user/getallusers")
+        .get("brand/GetAllBrands")
         .then((response) => {
           if (response.data) {
-            this.categoryList = response.data;
+            this.brandList = response.data;
+            this.isBrand = true;
           }
         })
         .catch((error) => {
@@ -22,8 +53,11 @@ export default {
     },
   },
   mounted() {
-    // alert(this.$route.query.filter);
-    this.loadData();
-  },
+    if (this.$route.query.filter == "brands"){
+      this.getBrandDatas();}
+      localStorage.removeItem('reloaded');
+    }
 };
 </script>
+
+<style></style>

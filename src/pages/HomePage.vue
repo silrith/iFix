@@ -1,7 +1,7 @@
 <template>
   <div class="mainBody">
-    <!-- <input id="file" type="file" @input="uploadImage($event)" /> -->
     <Carousel />
+    <input id="file" type="file" @input="uploadImage($event)" />
     <section class="serviceSelectDiv">
       <div class="col-md-10">
         <h2 class="main-heading">
@@ -12,7 +12,7 @@
             <router-link
               :to="{
                 path: '/repairServices',
-                query: { filter: category.categoryName },
+                query: { filter: 'brands' },
               }"
             >
               <div class="card repairCards mt-2">
@@ -40,7 +40,6 @@
         </div>
       </div>
     </section>
-    <a class="btn btn-secondary" href="https://www.youtube.com" target="_blank">YouTube'a git</a>
     <section class="white-bg pb-md-0 pt-2" id="section-about">
       <div class="container">
         <div class="row d-flex align-items-center justify-content-center">
@@ -145,9 +144,7 @@
 
             <p>Your service vehicle could arrive in under an hour!</p>
 
-            <a class="btn btn-primary" href="/mobile-phone-repair"
-              >Book A Repair</a
-            >
+            <a class="btn btn-primary" href="/booking">Book A Repair</a>
           </div>
         </div>
       </div>
@@ -608,9 +605,9 @@ export default {
       reader.readAsDataURL(event.target.files[0]);
       reader.onloadend = () => {
         this.$ajax
-          .put("category/uploadimage", {
-            CategoryPicture: reader.result,
-            Id: 5,
+          .put("Brand/UploadBrandImage", {
+            BrandPicture: reader.result,
+            Id: 1,
           })
           .then((snapshot) => {
             window.qwe = reader.result;
