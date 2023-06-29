@@ -1,7 +1,7 @@
 <template>
   <div
     id="carouselExampleFade"
-    class="carousel slide carousel-fade w-100 bg-black"
+    class="carousel slide carousel-fade w-100 bg-white"
     data-bs-ride="carousel"
   >
     <div
@@ -36,7 +36,7 @@
         <div class="carousel-item active">
           <img
             src="@/assets/photos/phone2.webp"
-            class="d-block w-100"
+            class="d-block w-100 carouselImg"
             alt="Lowest Price Guarantee"
             style="height: 100vh"
           />
@@ -67,7 +67,7 @@
         <div class="carousel-item">
           <img
             src="@/assets/photos/tablet2.webp"
-            class="d-block w-100"
+            class="d-block w-100 carouselImg"
             alt="..."
             style="height: 100vh"
           />
@@ -98,7 +98,7 @@
         <div class="carousel-item">
           <img
             src="@/assets/photos/headphone3.webp"
-            class="d-block w-100"
+            class="d-block w-100 carouselImg"
             alt="..."
             style="height: 100vh"
           />
@@ -157,5 +157,9 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.carouselImg{
+  /* clip-path: polygon(5% 100%, 100% 0, 100% 100%); */
 }
 </style>

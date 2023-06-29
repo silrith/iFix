@@ -1,7 +1,7 @@
 <template>
   <div class="mainBody">
     <Carousel />
-    <input id="file" type="file" @input="uploadImage($event)" />
+    <!-- <input id="file" type="file" @input="uploadImage($event)" /> -->
     <section class="serviceSelectDiv">
       <div class="col-md-10">
         <h2 class="main-heading">
@@ -668,6 +668,7 @@ export default {
 #section-about {
   width: 100%;
 }
+
 
 .chooseOptionCard {
   background-color: rgb(255, 255, 250, 0.3) !important;

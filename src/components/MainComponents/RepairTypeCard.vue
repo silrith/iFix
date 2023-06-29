@@ -1,26 +1,33 @@
 <template>
   <div
     class="col-lg-12 mb-2 d-flex flex-row justify-content-center"
-    style="width: 75%"
+    
   >
-  <div class="row text-center justify-content-center">
-  <div v-for="repairType in repairTypeList" :key="repairType.id" class="item-container text-center">
+    <div class="row text-center justify-content-center">
+      <div
+        v-for="repairType in repairTypeList"
+        :key="repairType.id"
+        class="item-container text-center"
+      >
         <div class="main-item">
-            <img class="main-item" :src="repairType.repairTypePicture" alt="">
+          <img class="main-item" :src="repairType.repairTypePicture" alt="" />
         </div>
         <h2 class="item-heading">
-            {{repairType.repairTypeCategory}}
+          {{ repairType.repairTypeCategory }}
         </h2>
         <p class="item-description">
-            {{repairType.warrantyPeriod}}
+          {{ repairType.warrantyPeriod }}
         </p>
-        <p class="item-description">
-          Delivery in  {{ repairType.deadLine }}
+        <p class="item-description">Delivery in {{ repairType.deadLine }}</p>
+        <p class="item-price">
+          {{ repairType.repairTypePrice }} <span>£</span>
         </p>
-        <p class="item-price">{{ repairType.repairTypePrice }} <span>£</span></p>
-        <button class="item-cart-btn">Add To Cart</button>
+        <button class="item-cart-btn" @click="addToShoppingCart(repairType)">
+          Add To Cart
+        </button>
+      </div>
     </div>
-  </div></div>
+  </div>
 </template>
 
 <script>
@@ -28,19 +35,23 @@ import CustomRange from "@/components/MainComponents/CustomRange";
 
 export default {
   data() {
-    return {
-    };
+    return {};
   },
-  props:{
+  props: {
     repairTypeList: Array,
+    customMethod: Function,
   },
   components: {
     CustomRange,
   },
   methods: {
+    addToShoppingCart(item) {
+      window.a = item;
+      this.$parent.shoppingCart.push(item);
+      console.table(this.$parent.shoppingCart);
+    },
   },
-  mounted() {
-  },
+  mounted() {},
 };
 </script>
 
