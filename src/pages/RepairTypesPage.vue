@@ -3,7 +3,7 @@
     <div class="col-lg-12 mb-2" style="width: 100%">
       <img
         style="width: 100%; height: 32vh"
-        src="@/assets/photos/geo-pad-110-tablet-banner.jpg"
+        src="@/assets/banners/tabletBanner.jpg"
         alt=""
       />
     </div>
@@ -14,37 +14,9 @@
       <div class="col-lg-8">
         <RepairTypeCard class="col" :repairTypeList="repairTypeList" />
       </div>
-      <div class="col-lg-4 col-sm-12">
-        <ShoppingCart :shoppingCartList="shoppingCart"/>
+      <div class="col-lg-4 justify-content-between">
+          <ShoppingCart :shoppingCartList="shoppingCart"/>
       </div>
-      <!-- <div v-if="shoppingCart.length > 0" class="col d-flex flex-column justify-content-start">
-        <table class="table">
-          <thead>
-            <tr>
-              <th scope="col">#</th>
-              <th scope="col">Model</th>
-              <th scope="col">Brand</th>
-              <th scope="col">Repair Category</th>
-              <th scope="col">Price</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr v-for="item in shoppingCart" :key="item.id">
-              <th scope="row">{{ item.id }}</th>
-              <td>{{ item.model.modelName }}</td>
-              <td>{{ item.model.brand.brandName }}</td>
-              <td>{{ item.repairTypeCategory }}</td>
-              <td>{{ item.repairTypePrice }}</td>
-            </tr>
-          </tbody>
-          <tfoot>
-            <tr>{{ this.repairTypeList.reduce(function(sum, item) {
-            return sum + item.price;
-          }, 0) }}</tr>
-          </tfoot>
-        </table>
-        <button class="btn btn-primary">Payment</button>
-      </div> -->
     </div>
   </div>
 </template>
@@ -59,6 +31,7 @@ export default {
     return {
       shoppingCart: [],
       repairTypeList: [],
+      showList: false,
       filterModel: [
         { key: "modelId", value: 0, type: "int" },
         // { key: "categoryDescription", value: "sm", type: "string" },
@@ -72,7 +45,7 @@ export default {
   components: {
     CustomRange,
     RepairTypeCard,
-    ShoppingCart
+    ShoppingCart,
   },
   methods: {
     getFilteredRepairTypeDatas(id) {
@@ -88,6 +61,9 @@ export default {
           console.log(error);
         });
     },
+    toggleList(show) {
+      this.showList = show;
+    },
   },
   mounted() {
     this.getFilteredRepairTypeDatas(this.$route.query.modelFilter);
@@ -95,4 +71,5 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+</style>

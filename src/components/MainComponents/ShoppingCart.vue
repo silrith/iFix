@@ -1,60 +1,161 @@
 <template>
-  <div class="flex-column justify-content-center text-center">
-    <div class="mb-4 mt-2">
-      <h2>
-        <b><u>Shopping Cart List</u></b>
-      </h2>
-    </div>
-    <div
-      v-for="(cart, index) in shoppingCartList"
-      :key="index"
-      class="col-lg-12 col-md-12 col-sm-12 m-2 d-flex shoppingCartDiv"
-    >
-      <img width="30" :src="cart.repairTypePicture" alt="" />
-      <div
-        class="col-lg-12 col-md-12 col-sm-12"
-        style="
-          display: flex;
-          flex-direction: row;
-          justify-content: space-around;
-          align-items: center;
-          border-radius: 20px;
-        "
-      >
-        <div class="col-md-2 col-sm-2">
-          <span>{{ cart.repairTypePrice }} £</span>
+  <div class="row justify-content-center mt-2 mb-2 shoppingCartTopDiv">
+    <div class="col-md-12">
+      <div id="accordion">
+        <div
+          class="card mt-2 mb-2"
+          style="background-color: white; font-size: 15px box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;"
+        >
+          <div
+            class="card-header d-flex justify-content-between bg-white border-3"
+            id="headingOne"
+          >
+            <button
+              class="btn btn-link"
+              data-toggle="collapse"
+              data-target="#collapseOne"
+              aria-expanded="true"
+              aria-controls="collapseOne"
+              style="color: transparent; padding-top: 5px"
+            >
+              <h5
+                class="mt-2 font-weight-bold"
+                style="font-size: 18px; color: black"
+              >
+                Shopping Cart List
+              </h5>
+            </button>
+            <font-awesome-icon
+              class="asdcontainer"
+              :icon="['fas', 'cart-shopping']"
+              size="2xl"
+              style="
+                color: black;
+                background-color: transparent;
+                padding-top: 10px;
+              "
+            />
+            <span>{{ shoppingCartList.length }}</span>
+          </div>
         </div>
-        <div class="col-md-2 col-sm-2">
-          <span>{{ cart.repairTypeCategory }}</span>
-        </div>
-        <div class="button-81 col-lg-3 col-md-1 col-sm-1" @click="removeItemFromCart(index)">
-          <font-awesome-icon
-            class="bg-transparent"
-            :icon="['fas', 'trash-can']"
-            size="xl"
-            style="color: #ff0000"
-          />
+        <div
+          v-if="shoppingCartList.length > 0"
+          id="collapseOne"
+          class="collapse show"
+          aria-labelledby="headingOne"
+          data-parent="#accordion"
+        >
+          <table class="col-lg-12 mt-2">
+            <thead style="padding: 0.75rem">
+              <tr class="table">
+                <th
+                  class="text-center"
+                  scope="col"
+                  width="10%"
+                  style="font-size: 12px"
+                >
+                  #
+                </th>
+                <th
+                  class="text-start"
+                  scope="col"
+                  colspan="1"
+                  style="font-size: 12px"
+                >
+                  Repair Category
+                </th>
+                <th class="text-center" scope="col" style="font-size: 12px">
+                  Time
+                </th>
+                <th class="text-end" scope="col" style="font-size: 12px">
+                  Price
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr
+                class="table"
+                v-for="(cart, index) in shoppingCartList"
+                :key="index"
+              >
+                <th scope="row" class="text-center align-middle">
+                  <a
+                    href=""
+                    class="bg-transparent"
+                    data-toggle="modal"
+                    data-title="White beach dress"
+                    data-backdrop="static"
+                    data-target="#removeModal"
+                  >
+                    <font-awesome-icon
+                      :icon="['fas', 'trash-can']"
+                      style="color: crimson; padding-top: 5px"
+                      @click="removeItemFromCart(index)"
+                    />
+                  </a>
+                </th>
+                <td
+                  class="align-middle text-start"
+                  scope="row"
+                  colspan="1"
+                  style="font-size: 10px"
+                >
+                  <img
+                    class="img-fluid mr-1 bg-cover"
+                    :src="cart.repairTypePicture"
+                    alt=""
+                    width="20"
+                  />
+                  <b>{{ cart.repairTypeCategory }}</b>
+                </td>
+                <td class="align-middle text-center" style="font-size: 10px">
+                  <b>{{ cart.deadLine }}</b>
+                </td>
+                <td class="align-middle text-end" style="font-size: 15px">
+                  <u
+                    ><b>{{ cart.repairTypePrice }}</b></u
+                  >
+                  <b>£</b>
+                </td>
+              </tr>
+            </tbody>
+            <tfoot class="table" style="font-size: 15px">
+              <tr class="">
+                <th class="text-start" scope="row" colspan="2">
+                  <u class="text-dark p-1">Total Price:</u>
+                </th>
+                <th
+                  class="text-black text-end"
+                  scope="row"
+                  colspan="2"
+                  style="text-align: end; font-size: 15px"
+                >
+                  {{
+                    shoppingCartList
+                      .reduce((acc, item) => acc + item.repairTypePrice, 0)
+                      .toLocaleString()
+                  }}
+                  £
+                </th>
+              </tr>
+            </tfoot>
+          </table>
+          <div class="d-flex justify-content-end mb-2 mt-4">
+            <router-link
+            to="/payments"
+              class="item-cart-btn nav-link col-lg-3 text-center"
+              style="
+                border: 1px solid white;
+                border-radius: 30px;
+                background-color: rgb(255, 103, 0);
+                font-size: 15px;
+              "
+            >
+              Payment
+            </router-link>
+          </div>
         </div>
       </div>
-    </div>
-    <div
-      v-if="shoppingCartList.length > 0"
-      class="d-flex justify-content-center"
-    >
-      <button class="button-17 mt-3">Payment</button>
-    </div>
-    <div class="shoppingInformationDiv" v-if="shoppingCartList.length == 0">
-      <h1>
-        Please select the <span class="underlined underline-clip">repair</span
-        ><br />
-        <span class="underlined underline-clip2">categories</span><br />
-        <span>before</span><br />
-        proceeding<br />with <br />
-        <span class="underlined underline-mask">the payment</span><br /><span
-          class="underlined underline-overflow"
-          >process.</span
-        >
-      </h1>
     </div>
   </div>
 </template>
@@ -77,84 +178,29 @@ export default {
 </script>
 
 <style>
-.shoppingCartDiv {
-  box-shadow: rgba(0, 0, 0, 0.3) 0px 9px 8px, rgba(0, 0, 0, 0.22) 0px 5px 12px;
-  border-radius: 20px;
-  font-size: 10px;
+.item-cart-btn:hover {
+  color: #fff;
+  background-color: rgb(255, 0, 0) !important;
 }
 
-.shoppingInformationDiv h1 {
-  font-size: clamp(2rem, 15vmin, 5rem);
-  font-family: sans-serif;
-  color: rgb(0, 0, 0, 0.1);
-}
-
-.underlined {
-  position: relative;
-}
-
-.underline-mask:after {
-  content: "";
+#headingOne span {
   position: absolute;
-  top: 95%;
-  width: 150%;
-  aspect-ratio: 3 / 1;
-  left: 50%;
-  transform: translate(-50%, 0);
-  border-radius: 50%;
-  border: 6px solid hsl(280 80% 50%);
-  /* Use a conic gradient mask to hide and show the bits you want */
-  --spread: 140deg;
-  --start: 290deg;
-  mask: conic-gradient(
-    from var(--start),
-    white 0 var(--spread),
-    transparent var(--spread)
-  );
+  top: 3px;
+  right: 3px;
+  background-color: red;
+  color: white;
+  padding: 2px 10px;
+  border-radius: 60%;
 }
 
-.underline-overflow {
-  display: inline-block;
-  overflow: hidden;
-  padding-bottom: clamp(1rem, 2vmin, 2rem);
-}
-.underline-overflow:after {
-  content: "";
-  position: absolute;
-  top: 100%;
-  height: 150%;
-  aspect-ratio: 2.5 / 1;
-  left: 50%;
-  transform: translate(-50%, -10%);
-  border-radius: 50%;
-  border: 6px solid hsl(10 80% 50%);
+.customTable {
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
+    rgba(0, 0, 0, 0.22) 0px 10px 10px;
 }
 
-.underline-clip:after {
-  content: "";
-  position: absolute;
-  top: 95%;
-  width: 150%;
-  aspect-ratio: 3 / 1;
-  left: 50%;
-  transform: translate(-50%, 0);
-  border-radius: 50%;
-  border: 6px solid hsl(130 80% 50%);
-  /* Use a clip-path to hide and show the bits you want */
-  clip-path: polygon(0 0, 50% 50%, 100% 0);
-}
-
-.underline-clip2:after {
-  content: "";
-  position: absolute;
-  top: 95%;
-  width: 150%;
-  aspect-ratio: 3 / 1;
-  left: 50%;
-  transform: translate(-50%, 0);
-  border-radius: 50%;
-  border: 6px solid hsl(205, 93%, 50%);
-  /* Use a clip-path to hide and show the bits you want */
-  clip-path: polygon(0 0, 50% 50%, 100% 0);
+@media screen {
 }
 </style>
+
+
+Widget HaleninFormu extends 

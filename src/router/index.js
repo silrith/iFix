@@ -50,6 +50,13 @@ const routes = [
     },
   },
   {
+    path: "/payments",
+    name: "Payment",
+    component: function () {
+      return import("../pages/PaymentPage.vue");
+    },
+  },
+  {
     path: "/models",
     name: "Models",
     component: function () {

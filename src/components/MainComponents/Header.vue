@@ -10,7 +10,7 @@
         />
       </a>
       <button
-        class="navbar-toggler"
+        class="navbar-toggler mr-3"
         type="button"
         data-toggle="collapse"
         data-target="#navbarSupportedContent"
@@ -29,10 +29,15 @@
             >
           </li>
           <li class="nav-item active hoverEffect">
-            <router-link :to="{
-            path: '/repairServices',
-            query: { filter: 'brands' },
-          }" class="nav-link" href="/repairServices">Repairs</router-link>
+            <router-link
+              :to="{
+                path: '/repairServices',
+                query: { filter: 'brands' },
+              }"
+              class="nav-link"
+              href="/repairServices"
+              >Repairs</router-link
+            >
           </li>
           <li class="nav-item active hoverEffect">
             <a class="nav-link" href="/pricing">Pricing</a>
@@ -59,7 +64,8 @@
             </div>
           </li>
         </ul>
-        <form class="form-inline my-2 my-lg-0">
+
+        <form class="form-inline my-2 my-lg-0 p-1">
           <input
             class="form-control mr-sm-2"
             type="search"
@@ -101,6 +107,12 @@
     font-size: 17px;
   }
 }
+
+@media (max-width: 950px) {
+  .headerDiv {
+    background-color: white;
+  }
+}
 </style>
 
 <script>
@@ -120,6 +132,9 @@ export default {
     LanguageSwitcher,
     ProfileMenu,
     RepairNavMenu,
+  },
+  props: {
+    shoppingCartList: Array,
   },
   methods: {
     search() {

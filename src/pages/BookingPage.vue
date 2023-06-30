@@ -2,7 +2,7 @@
   <div style="width: 100%">
     <img
       style="width: 100%; height: 42vh"
-      src="@/assets/photos/calendar.webp"
+      src="@/assets/banners/calendar.webp"
       alt=""
     />
   </div>
