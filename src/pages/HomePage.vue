@@ -3,7 +3,7 @@
     <Carousel />
     <!-- <input id="file" type="file" @input="uploadImage($event)" /> -->
     <section class="serviceSelectDiv">
-      <div class="col-md-10">
+      <div class="col-md-6">
         <h2 class="main-heading">
           Let us know which device you need <strong>repaired.</strong>
         </h2>
@@ -40,7 +40,93 @@
         </div>
       </div>
     </section>
-    <section class="white-bg pb-md-0 pt-2" id="section-about">
+    <section
+      class="col-lg-12 row text-center d-flex justify-content-center align-items-center stepsDiv"
+    >
+    <div class="mt-3">
+      <h2>In nur vier Schritten zur Reparatur</h2>
+    </div>
+      <div class="col-lg-9 mb-3 d-flex justify-content-center align-items-center">
+        <div
+          class="col-lg-12 m-5 row d-flex justify-content-center align-items-center"
+        >
+          <div class="col-lg-4 col-md-6 col-sm-6 m-1 justify-content-center align-items-center">
+            <div class="justify-content-center align-items-center">
+              <img
+                class=""
+                width="100"
+                src="@/assets/icons/step-one.webp"
+                alt="Card image cap"
+              />
+              <h4>Reparatur-Formular ausfüllen</h4>
+              <div class="card-body">
+                <p class="card-text">
+                  Geben Sie in unserem Reparatur-Formular an, um welches Modell
+                  und um welchen Fehler es sich bei Ihrem Gerät handelt. Neben
+                  Smartphones nehmen wir gerne auch Audio/Video & TV- Geräte,
+                  Kaffee- oder Küchenmaschinen entgegen.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-4 m-1 justify-content-center align-items-center">
+            <div class="justify-content-center align-items-center">
+              <img
+                class=""
+                width="100"
+                src="@/assets/icons/step-two.webp"
+                alt="Card image cap"
+              />
+              <h4>Gerät einpacken und versenden</h4>
+              <div class="card-body">
+                <p class="card-text">
+                  Nachdem das Formular abgeschickt wurde, erhalten Sie eine
+                  Bestätigungs-Mail zu Ihrem Auftrag. Drucken Sie diese aus und
+                  legen es zusammen mit Ihrem Gerät in ein gut gepolstertes
+                  Paket und schicken es in unser Repair Center.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-4 m-1 justify-content-center align-items-center">
+            <div class="justify-content-center align-items-center">
+              <img
+                class=""
+                width="100"
+                src="@/assets/icons/step-three.webp"
+                alt="Card image cap"
+              />
+              <h4>Mobiletouch serviciert und repariert</h4>
+              <div class="card-body">
+                <p class="card-text">
+                  Some quick example text to build on the card title and make up
+                  the bulk of the card's content.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-4 m-1 justify-content-center align-items-center">
+            <div class="justify-content-center align-items-center">
+              <img
+                class=""
+                width="100"
+                src="@/assets/icons/step-four.webp"
+                alt="Card image cap"
+              />
+              <h4>Gerät erhalten</h4>
+              <div class="card-body">
+                <p class="card-text">
+                  Nach der erfolgreichen Reparatur senden wir das Gerät
+                  versichert an Sie zurück. Innerhalb 24 Stunden erfolgt der
+                  Versand zu Ihnen nach Hause.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="bg-light pb-md-0 pt-2" id="section-about">
       <div class="container">
         <div class="row d-flex align-items-center justify-content-center">
           <div class="row align-items-end">
@@ -131,25 +217,7 @@
         </div>
       </div>
     </section>
-    <section class="video-section">
-      <div class="container">
-        <div class="row align-items-center">
-          <div class="col-md-6 offset-md-6 col-lg-6 offset-lg-6">
-            <h2>
-              <strong
-                >Our on demand call out services mean your phone is repaired at
-                the roadside quickly and easily.
-              </strong>
-            </h2>
-
-            <p>Your service vehicle could arrive in under an hour!</p>
-
-            <a class="btn btn-primary" href="/booking">Book A Repair</a>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="award-section white-bg">
+    <!-- <section class="award-section white-bg">
       <div class="container">
         <div class="row align-items-center">
           <div class="col-md-12">
@@ -289,8 +357,8 @@
           </div>
         </div>
       </div>
-    </section>
-    <section class="faq-section white-bg" id="faq">
+    </section> -->
+    <!-- <section class="faq-section white-bg" id="faq">
       <div class="container">
         <div class="row">
           <div class="col-md-12 order-md-1">
@@ -562,7 +630,7 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
   </div>
 </template>
 
@@ -669,7 +737,6 @@ export default {
   width: 100%;
 }
 
-
 .chooseOptionCard {
   background-color: rgb(255, 255, 250, 0.3) !important;
 }
@@ -709,5 +776,9 @@ export default {
   .faq-section span {
     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   }
+}
+
+.stepsDiv {
+  background-color: rgb(220, 226, 232, 0.4);
 }
 </style>

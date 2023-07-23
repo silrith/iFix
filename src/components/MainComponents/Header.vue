@@ -4,7 +4,7 @@
       <a href="/">
         <img
           to="/"
-          src="@/assets/photos/zyro-image2.webp"
+          src="@/assets/photos/ifixnobg.webp"
           alt=""
           style="max-height: 8vh"
         />
@@ -24,7 +24,7 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active hoverEffect">
-            <a class="nav-link" href="/androidRepair"
+            <a class="nav-link" href="/"
               >Home <span class="sr-only">(current)</span></a
             >
           </li>

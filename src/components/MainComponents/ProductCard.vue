@@ -8,7 +8,7 @@
         v-if="isBrand"
         v-for="brand in brandList"
         :key="brand.id"
-        class="col-md-6 col-lg-4 col-sm-12 mb-1"
+        class="col-md-6 col-lg-3 col-sm-12 mb-1"
       >
         <router-link
           :to="{
@@ -43,7 +43,7 @@
         v-if="isModel"
         v-for="model in modelList"
         :key="model.id"
-        class="col-md-6 col-lg-4 col-sm-12 mb-1"
+        class="col-md-6 col-lg-3 col-sm-12 mb-1"
       >
         <router-link
           :to="{

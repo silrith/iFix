@@ -57,6 +57,13 @@ const routes = [
     },
   },
   {
+    path: "/paymentResult",
+    name: "Payment Result",
+    component: function () {
+      return import("../pages/PaymentResultPage.vue");
+    },
+  },
+  {
     path: "/models",
     name: "Models",
     component: function () {

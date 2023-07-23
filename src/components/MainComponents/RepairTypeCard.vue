@@ -46,9 +46,10 @@ export default {
   },
   methods: {
     addToShoppingCart(item) {
-      window.a = item;
-      this.$parent.shoppingCart.push(item);
-      console.table(this.$parent.shoppingCart);
+      if(!this.$parent.shoppingCart.includes(item))
+        this.$parent.shoppingCart.push(item);
+      else
+        alert("Mevcut bileşen");
     },
   },
   mounted() {},

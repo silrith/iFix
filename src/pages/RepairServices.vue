@@ -3,7 +3,7 @@
     <div class="col-lg-12 mb-2" style="width: 100%">
       <img
         style="width: 100%; height: 32vh"
-        src="@/assets/banners/tabletBanner.jpg"
+        src="@/assets/banners/tabletBanner.webp"
         alt=""
       />
     </div>
@@ -35,7 +35,7 @@ export default {
   },
   components: {
     CustomRange,
-    ProductCard
+    ProductCard,
   },
   methods: {
     getBrandDatas() {
@@ -53,10 +53,11 @@ export default {
     },
   },
   mounted() {
-    if (this.$route.query.filter == "brands"){
-      this.getBrandDatas();}
-      localStorage.removeItem('reloaded');
+    if (this.$route.query.filter == "brands") {
+      this.getBrandDatas();
     }
+    localStorage.removeItem("reloaded");
+  },
 };
 </script>
 

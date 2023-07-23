@@ -13,4 +13,15 @@ module.exports = defineConfig({
     },
   },
   publicPath: process.env.NODE_ENV === "production" ? "./" : "/",
+  devServer: {
+    proxy: {
+      '/api': {
+        target: 'http://localhost:3000', // Sunucu adresinizi buraya yazın
+        changeOrigin: true,
+        pathRewrite: {
+          '^/api': ''
+        }
+      }
+    }
+  }
 });

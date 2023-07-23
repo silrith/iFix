@@ -34,3 +34,5 @@ export default {
     app.config.globalProperties.$ajax = ajax;
   },
 };
+
+axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*';

@@ -4,10 +4,16 @@
       <div id="accordion">
         <div
           class="card mt-2 mb-2"
-          style="background-color: white; font-size: 15px box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;"
+          style="
+            background-color: white;
+            font-size: 15px;
+            background-color: rgb(255, 103, 0);
+            box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
+              rgba(0, 0, 0, 0.22) 0px 10px 10px;
+          "
         >
           <div
-            class="card-header d-flex justify-content-between bg-white border-3"
+            class="card-header d-flex justify-content-between border-3"
             id="headingOne"
           >
             <button
@@ -20,7 +26,7 @@
             >
               <h5
                 class="mt-2 font-weight-bold"
-                style="font-size: 18px; color: black"
+                style="font-size: 18px; color: rgba(255, 255, 255, 0.8)"
               >
                 Shopping Cart List
               </h5>
@@ -30,7 +36,7 @@
               :icon="['fas', 'cart-shopping']"
               size="2xl"
               style="
-                color: black;
+                color: rgba(255, 255, 255, 0.8);
                 background-color: transparent;
                 padding-top: 10px;
               "
@@ -45,8 +51,8 @@
           aria-labelledby="headingOne"
           data-parent="#accordion"
         >
-          <table class="col-lg-12 mt-2">
-            <thead style="padding: 0.75rem">
+          <table class="col-lg-12">
+            <thead class="table table-bordered" style="padding: 0.75rem">
               <tr class="table">
                 <th
                   class="text-center"
@@ -57,7 +63,7 @@
                   #
                 </th>
                 <th
-                  class="text-start"
+                  class="text-center"
                   scope="col"
                   colspan="1"
                   style="font-size: 12px"
@@ -67,12 +73,12 @@
                 <th class="text-center" scope="col" style="font-size: 12px">
                   Time
                 </th>
-                <th class="text-end" scope="col" style="font-size: 12px">
+                <th class="text-center" scope="col" style="font-size: 12px">
                   Price
                 </th>
               </tr>
             </thead>
-            <tbody>
+            <tbody class="table table-bordered">
               <tr
                 class="table"
                 v-for="(cart, index) in shoppingCartList"
@@ -95,40 +101,40 @@
                   </a>
                 </th>
                 <td
-                  class="align-middle text-start"
+                  class="align-middle text-center font-weight-bold"
                   scope="row"
                   colspan="1"
                   style="font-size: 10px"
                 >
-                  <img
-                    class="img-fluid mr-1 bg-cover"
-                    :src="cart.repairTypePicture"
-                    alt=""
-                    width="20"
-                  />
-                  <b>{{ cart.repairTypeCategory }}</b>
+                  {{ cart.repairTypeCategory }}
                 </td>
-                <td class="align-middle text-center" style="font-size: 10px">
-                  <b>{{ cart.deadLine }}</b>
+                <td
+                  class="align-middle text-center font-weight-bold"
+                  style="font-size: 10px"
+                >
+                  {{ cart.deadLine }}
                 </td>
-                <td class="align-middle text-end" style="font-size: 15px">
-                  <u
-                    ><b>{{ cart.repairTypePrice }}</b></u
-                  >
-                  <b>£</b>
+                <td
+                  class="align-middle text-center font-weight-bold"
+                  style="font-size: 15px"
+                >
+                  {{ cart.repairTypePrice }} £
                 </td>
               </tr>
             </tbody>
-            <tfoot class="table" style="font-size: 15px">
+            <tfoot
+              class="table table-bordered"
+              style="font-size: 15px background-color: rgba(255, 255, 255, 0.8)"
+            >
               <tr class="">
-                <th class="text-start" scope="row" colspan="2">
+                <th class="text-start" scope="row" colspan="3">
                   <u class="text-dark p-1">Total Price:</u>
                 </th>
                 <th
-                  class="text-black text-end"
+                  class="text-black text-center"
                   scope="row"
-                  colspan="2"
-                  style="text-align: end; font-size: 15px"
+                  colspan="1"
+                  style="font-size: 15px"
                 >
                   {{
                     shoppingCartList
@@ -141,9 +147,9 @@
             </tfoot>
           </table>
           <div class="d-flex justify-content-end mb-2 mt-4">
-            <router-link
-            to="/payments"
+            <button
               class="item-cart-btn nav-link col-lg-3 text-center"
+              @click="createPayment"
               style="
                 border: 1px solid white;
                 border-radius: 30px;
@@ -152,7 +158,7 @@
               "
             >
               Payment
-            </router-link>
+          </button>
           </div>
         </div>
       </div>
@@ -172,6 +178,17 @@ export default {
     removeItemFromCart(index) {
       this.$props.shoppingCartList.splice(index, 1);
     },
+    createPayment(){
+      var payAmount = this.shoppingCartList.reduce((acc, item) => acc + item.repairTypePrice, 0)
+      this.$ajax.post("Payment/CreatePayment", {
+                  amount : payAmount
+                }).then((snapshot) => {
+                  console.log(snapshot);
+                  window.open(snapshot.data);
+                }).catch((error) => {
+                  console.log(error);
+                });
+    }
   },
   mounted() {},
 };
@@ -202,5 +219,4 @@ export default {
 }
 </style>
 
-
-Widget HaleninFormu extends 
+Widget HaleninFormu extends
