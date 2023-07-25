@@ -34,7 +34,6 @@ export default {
   },
   methods: {},
   mounted() {
-    localStorage.setItem("lang", "en");
   },
 };
 </script>

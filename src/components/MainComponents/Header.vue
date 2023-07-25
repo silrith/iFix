@@ -25,7 +25,7 @@
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active hoverEffect">
             <a class="nav-link" href="/"
-              >Home <span class="sr-only">(current)</span></a
+              >{{ $t("header.home") }}<span class="sr-only">(current)</span></a
             >
           </li>
           <li class="nav-item active hoverEffect">
@@ -36,14 +36,14 @@
               }"
               class="nav-link"
               href="/repairServices"
-              >Repairs</router-link
+              >{{ $t("header.repairs") }}</router-link
             >
           </li>
           <li class="nav-item active hoverEffect">
-            <a class="nav-link" href="/pricing">Pricing</a>
+            <a class="nav-link" href="/pricing">{{ $t("header.pricing") }}</a>
           </li>
           <li class="nav-item active hoverEffect">
-            <a class="nav-link" href="booking">Booking</a>
+            <a class="nav-link" href="/booking">{{ $t("header.booking") }}</a>
           </li>
           <li class="nav-item active dropdown hoverEffect">
             <a
@@ -55,12 +55,12 @@
               aria-haspopup="true"
               aria-expanded="false"
             >
-              Next Steps
+              {{ $t("header.nextSteps") }}
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="/aboutus">About</a>
-              <a class="dropdown-item" href="/contactus">Contact us</a>
-              <a class="dropdown-item" href="/login">Login</a>
+              <a class="dropdown-item" href="/aboutus">{{ $t("header.about") }}</a>
+              <a class="dropdown-item" href="/contactus">{{ $t("header.contactUs") }}</a>
+              <a class="dropdown-item" href="/login">{{ $t("header.login") }}</a>
             </div>
           </li>
         </ul>
@@ -69,7 +69,7 @@
           <input
             class="form-control mr-sm-2"
             type="search"
-            placeholder="Search"
+            :placeholder='$t("header.searchBox")'
             aria-label="Search"
           />
         </form>

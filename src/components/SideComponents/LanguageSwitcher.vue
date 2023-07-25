@@ -45,16 +45,21 @@ export default {
   data() {
     return {
       language: null,
-      langClass: "btn btn-light dropdown fi fi-gb",
+      langClass: null,
     };
   },
   methods: {
     changeLanguage(locale, langClass) {
       this.$i18n.locale = locale;
       this.langClass = langClass;
+      localStorage.setItem("lang", locale);
     },
   },
-  mounted() {},
+  mounted() {
+    this.$i18n.locale = localStorage.getItem('lang');
+    console.log(this.$i18n.locale);
+    this.langClass = this.$i18n.locale == 'en' ? 'btn btn-light dropdown fi fi-gb' : 'btn btn-light dropdown fi fi-de'; 
+  },
 };
 </script>
 

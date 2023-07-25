@@ -1,20 +1,17 @@
-import { createI18n } from "vue-i18n";
+import { createI18n } from 'vue-i18n';
+import en from "@/i18n/en.json";
+import de from "@/i18n/de.json";
 
-function loadLocaleMessages() {
-  const locales = require.context("./i18n", true, /[A-Za-z0-9-_,\s]+\.json$/i);
-  const messages = {};
-  locales.keys().forEach((key) => {
-    const matched = key.match(/([A-Za-z0-9-_]+)\./i);
-    if (matched && matched.length > 1) {
-      const locale = matched[1];
-      messages[locale] = locales(key).default;
-    }
-  });
-  return messages;
-}
+const messages = {
+  en: en,
+  de: de,
+};
 
-export default createI18n({
-  locale: localStorage.getItem("lang"),
-  fallbackLocale: process.env.VUE_APP_I18N_FALLBACK_LOCALE || "de",
-  messages: loadLocaleMessages(),
+const i18n = createI18n({
+  locale: localStorage.getItem('lang'),
+  fallbackLocale: localStorage.getItem('lang') || 'de',
+  legacy: false,
+  messages,
 });
+
+export default i18n;

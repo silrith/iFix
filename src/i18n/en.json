@@ -1,22 +1,77 @@
 {
-  "message": "Hello !",
-  "homePage": "Home Page",
-  "language": "Language",
-  "nav": {
-    "profile": "Profile",
-    "about": "About",
-    "products": "Products"
-  },
   "header": {
-    "login": "Login",
-    "contactUs": "Contact Us",
     "bookOnline": "Book Online",
     "repairServices": "Repair Services",
     "androidRepair": "Android Repair",
     "iphoneRepair": "I Phone Repair",
     "tabletRepair": "Tablet Repair",
     "computerRepair": "Computer Repair",
-    "wearableRepair": "Wearable Repair"
+    "wearableRepair": "Wearable Repair",
+    
+    "home" : "Home",
+    "repairs" : "Repairs",
+    "pricing" : "Pricing", 
+    "booking" : "Booking",
+    "nextSteps" : "Next Steps",
+    "about" : "About",
+    "login": "Login",
+    "contactUs": "Contact Us",
+    "searchBox" : "Search"
+  },
+  "footer": {
+    "doYouWannaContactWithUs" : "Do you want to get in contact with us ?",
+    "contactUsWithPhoneOrMail" : "Contact us by phone or email. We will take care of your request !",
+    "information" : "Information",
+    "mon-fri" : "Mon-Fri",
+    "sat-sun" : "Sat-Sun",
+    "menu" : "Menu",
+    "services" : "Services",
+    "cargoTracking" : "Cargo Tracking",
+    "smartPhone" : "Smart Phone",
+    "tablet" : "Tablet",
+    "computer" : "Computer",
+    "wearableAccessories" : "Wearable Accessories",
+    "allRightsReserved" : "All Rights Reserved"
+  },
+  "homePage" : {
+    "letUsKnow" : "Let us know which device you need",
+    "repaired" : "repaired.",
+    "fullCoverage" : "Full Coverage",
+    "fullCoverageDescription" : "Wide range to fully meet the expectations of every customer. Offers a range of services. We do our job with passion and we constantly strive to prove our quality we are developing. When you choose us, the best all-round. You can rest assured that you will receive services.",
+    "free&FastDiagnosis" : "Free & Fast Diagnosis",
+    "free&FastDiagnosisDescription" : "Our company, which offers free and fast diagnosis, repairs your devices as soon as possible. Our experienced technicians solve problems accurately and quickly. Diagnoses and offers effective solutions. Customer satisfaction our company, which prioritizes transparent communication and stands out with its affordable price policy. best quality for you. We are ready to provide the service, contact us immediately and electronically. Let us repair your devices hassle-free and return them to you.",
+    "lowestPriceGuarantee" : "Lowest Price Guarantee",
+    "lowestPriceGuaranteeDescription" : "Expert for malfunctions in your electronic devices. Our company, which offers solutions, repairs the highest quality standards. Provides service. Our experienced and trained technicians quickly and effectively solve the problems of devices of different brands and models. Way it solves. In the industry of device repair. Our company, which is a pioneer, offers our customers a low budget guarantee. Professional and economical electronic device repair.",
+    "repair4steps" : "Repair in just four steps",
+    "1" : "Fill out the repair form",
+    "1desc" : "In our repair form, please indicate which model and which error is involved with your device. In addition to smartphones, we are also happy to accept audio/video & TV devices, coffee or kitchen machines.",
+    "2" : "Pack and ship the device",
+    "2desc" : "After the form has been submitted, you will receive an email confirming your order. Print this out and place it with your device in a well-padded package and send it to our repair center.",
+    "3" : "I Fix serviced and repaired",
+    "3desc" : "Now we check the order and the device: If it is a warranty case, we will repair it for you. Otherwise we will email you a quote and you will let us know if we can carry out the repair.",
+    "4" : "Device received",
+    "4desc" : "After the successful repair, we will send the device back to you insured. It will be shipped to your home within 24 hours.",
+    "chooseRepairOption" : "Choose a Repair Option",
+    "visitStore" : "Visit a Store",
+    "visitStoreDesc" : "Book your broken device into one of our stores or approved partners. Most repairs are completed in under 30 minutes.",
+    "bookServiceVehicle" : "Book a Service Vehicle :",
+    "bookServiceVehicleDesc" : "Book a mobile workshop to your home or workplace, carry on with your day whilst your repair is completed at the roadside.",
+    "postYourDevice" : "Post Your Device :",
+    "postYourDeviceDesc" : "For simplicity, post your device to our repair HQ. Most devices are repaired and dispatched on the same day as we receive."
+  },
+  "customRange" :{
+    "selectBrand" : "Select Brand",
+    "selectModel" : "Select Model",
+    "repairTypes" : "Repair Types",
+    "payment" : "Payment",
+    "finish" : "Finish"
+  },
+  "shoppingCart" :{
+    "shoppingCartList" : "Shopping Cart List",
+    "repairCategory" : "Repair Category",
+    "time" : "Time",
+    "price" : "Price",
+    "totalPrice" : "Total Price"
   },
   "userForm": {
     "firstName": "First Name",

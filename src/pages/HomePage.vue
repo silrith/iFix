@@ -5,7 +5,8 @@
     <section class="serviceSelectDiv">
       <div class="col-md-6">
         <h2 class="main-heading">
-          Let us know which device you need <strong>repaired.</strong>
+          {{ $t("homePage.letUsKnow") }}
+          <strong>{{ $t("homePage.repaired") }}</strong>
         </h2>
         <div class="row justify-content-center">
           <div v-for="category in categoryList" class="col-md-8 col-lg-6 mb-1">
@@ -43,14 +44,18 @@
     <section
       class="col-lg-12 row text-center d-flex justify-content-center align-items-center stepsDiv"
     >
-    <div class="mt-3">
-      <h2>In nur vier Schritten zur Reparatur</h2>
-    </div>
-      <div class="col-lg-9 mb-3 d-flex justify-content-center align-items-center">
+      <div class="mt-3">
+        <h2>{{ $t("homePage.repair4steps") }}</h2>
+      </div>
+      <div
+        class="col-lg-9 mb-3 d-flex justify-content-center align-items-center"
+      >
         <div
           class="col-lg-12 m-5 row d-flex justify-content-center align-items-center"
         >
-          <div class="col-lg-4 col-md-6 col-sm-6 m-1 justify-content-center align-items-center">
+          <div
+            class="col-lg-4 col-md-6 col-sm-6 m-1 justify-content-center align-items-center"
+          >
             <div class="justify-content-center align-items-center">
               <img
                 class=""
@@ -58,18 +63,17 @@
                 src="@/assets/icons/step-one.webp"
                 alt="Card image cap"
               />
-              <h4>Reparatur-Formular ausfüllen</h4>
+              <h4>{{ $t("homePage.1") }}</h4>
               <div class="card-body">
                 <p class="card-text">
-                  Geben Sie in unserem Reparatur-Formular an, um welches Modell
-                  und um welchen Fehler es sich bei Ihrem Gerät handelt. Neben
-                  Smartphones nehmen wir gerne auch Audio/Video & TV- Geräte,
-                  Kaffee- oder Küchenmaschinen entgegen.
+                  {{ $t("homePage.1desc") }}
                 </p>
               </div>
             </div>
           </div>
-          <div class="col-lg-4 col-md-6 col-sm-4 m-1 justify-content-center align-items-center">
+          <div
+            class="col-lg-4 col-md-6 col-sm-4 m-1 justify-content-center align-items-center"
+          >
             <div class="justify-content-center align-items-center">
               <img
                 class=""
@@ -77,18 +81,17 @@
                 src="@/assets/icons/step-two.webp"
                 alt="Card image cap"
               />
-              <h4>Gerät einpacken und versenden</h4>
+              <h4>{{ $t("homePage.2") }}</h4>
               <div class="card-body">
                 <p class="card-text">
-                  Nachdem das Formular abgeschickt wurde, erhalten Sie eine
-                  Bestätigungs-Mail zu Ihrem Auftrag. Drucken Sie diese aus und
-                  legen es zusammen mit Ihrem Gerät in ein gut gepolstertes
-                  Paket und schicken es in unser Repair Center.
+                  {{ $t("homePage.2desc") }}
                 </p>
               </div>
             </div>
           </div>
-          <div class="col-lg-4 col-md-6 col-sm-4 m-1 justify-content-center align-items-center">
+          <div
+            class="col-lg-4 col-md-6 col-sm-4 m-1 justify-content-center align-items-center"
+          >
             <div class="justify-content-center align-items-center">
               <img
                 class=""
@@ -96,16 +99,17 @@
                 src="@/assets/icons/step-three.webp"
                 alt="Card image cap"
               />
-              <h4>Mobiletouch serviciert und repariert</h4>
+              <h4>{{ $t("homePage.3") }}</h4>
               <div class="card-body">
                 <p class="card-text">
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
+                  {{ $t("homePage.3desc") }}
                 </p>
               </div>
             </div>
           </div>
-          <div class="col-lg-4 col-md-6 col-sm-4 m-1 justify-content-center align-items-center">
+          <div
+            class="col-lg-4 col-md-6 col-sm-4 m-1 justify-content-center align-items-center"
+          >
             <div class="justify-content-center align-items-center">
               <img
                 class=""
@@ -113,12 +117,10 @@
                 src="@/assets/icons/step-four.webp"
                 alt="Card image cap"
               />
-              <h4>Gerät erhalten</h4>
+              <h4>{{ $t("homePage.4") }}</h4>
               <div class="card-body">
                 <p class="card-text">
-                  Nach der erfolgreichen Reparatur senden wir das Gerät
-                  versichert an Sie zurück. Innerhalb 24 Stunden erfolgt der
-                  Versand zu Ihnen nach Hause.
+                  {{ $t("homePage.4desc") }}
                 </p>
               </div>
             </div>
@@ -131,7 +133,9 @@
         <div class="row d-flex align-items-center justify-content-center">
           <div class="row align-items-end">
             <div class="col-md-12 mt-4">
-              <h2 class="main-heading">Choose A Repair Option.</h2>
+              <h2 class="main-heading">
+                {{ $t("homePage.chooseRepairOption") }}
+              </h2>
             </div>
 
             <div class="col-md-12 col-lg-5">
@@ -154,11 +158,9 @@
                           src="@/assets/icons/shop.png"
                         />
                         <div class="media-body">
-                          <h5 class="mt-0">Visit A Store.</h5>
+                          <h5 class="mt-0">{{ $t("homePage.visitStore") }}</h5>
                           <p>
-                            Book your broken device into one of our stores or
-                            approved partners. Most repairs are completed in
-                            under 30 minutes.
+                            {{ $t("homePage.visitStoreDesc") }}
                           </p>
                         </div>
                       </div>
@@ -177,11 +179,9 @@
                           src="@/assets/icons/booking.png"
                         />
                         <div class="media-body">
-                          <h5 class="mt-0">Book A Service Vehicle..</h5>
+                          <h5 class="mt-0">{{ $t("homePage.bookServiceVehicle") }}</h5>
                           <p>
-                            Book a mobile workshop to your home or workplace,
-                            carry on with your day whilst your repair is
-                            completed at the roadside.
+                            {{ $t("homePage.bookServiceVehicleDesc") }}
                           </p>
                         </div>
                       </div>
@@ -200,11 +200,9 @@
                           src="@/assets/icons/smartPhoneNoBg.png"
                         />
                         <div class="media-body">
-                          <h5 class="mt-0">Post Your Device.</h5>
+                          <h5 class="mt-0">{{ $t("homePage.postYourDevice") }}</h5>
                           <p>
-                            For simplicity, post your device to our repair HQ.
-                            Most devices are repaired and dispatched on the same
-                            day as we receive.
+                            {{ $t("homePage.postYourDeviceDesc") }}
                           </p>
                         </div>
                       </div>

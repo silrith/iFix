@@ -2,19 +2,19 @@
     <div class="flex-parent mb-3 mt-3">
     	<div class="input-flex-container">
     		<div class="input">
-    			<span class="mb-1" data-year="0" data-info="Select brand"></span>
+    			<span class="mb-1" data-year="0" :data-info='$t("customRange.selectBrand")'></span>
     		</div>
     		<div class="input">
-    			<span data-year="25" data-info="Select model"></span>
+    			<span data-year="25" :data-info='$t("customRange.selectModel")'></span>
     		</div>
     		<div class="input">
-    			<span class="" data-year="50" data-info="Repair types"></span>
+    			<span class="" data-year="50" :data-info='$t("customRange.repairTypes")'></span>
     		</div>
     		<div class="input">
-    			<span data-year="75" data-info="Payment"></span>
+    			<span data-year="75" :data-info='$t("customRange.payment")'></span>
     		</div>
     		<div class="input">
-    			<span data-year="100" data-info="Finish"></span>
+    			<span data-year="100" :data-info='$t("customRange.finish")'></span>
     		</div>
     	</div>
     </div>

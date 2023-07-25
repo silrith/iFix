@@ -1,22 +1,77 @@
 {
-  "message": "Hallo !",
-  "homePage": "Startseite",
-  "language": "Sprache",
-  "nav": {
-    "profile": "Profil",
-    "about": "Um",
-    "products": "Produkte"
-  },
   "header": {
-    "login": "Anmeldung",
-    "contactUs": "Kontaktiere uns",
     "bookOnline": "Buche online",
     "repairServices": "Reparaturdienste",
     "androidRepair": "Android-Reparatur",
     "iphoneRepair": "Iphone-Reparatur",
     "tabletRepair": "Tablet-Reparatur",
     "computerRepair": "Computerreparatur",
-    "wearableRepair": "Tragbare Reparatur"
+    "wearableRepair": "Tragbare Reparatur",
+
+    "home" : "Heim",
+    "repairs" : "Instandsetzung",
+    "pricing" : "Preisgestaltung", 
+    "booking" : "Buchung",
+    "nextSteps" : "Nächste Schritte",
+    "about" : "Über Uns",
+    "login": "Anmeldung",
+    "contactUs": "Kontaktiere uns",
+    "searchBox" : "Suchen"
+  },
+  "footer" :{
+    "doYouWannaContactWithUs" : "Möchten Sie mit uns Kontakt aufnehmen ?",
+    "contactUsWithPhoneOrMail" : "Kontaktieren Sie uns telefonisch oder per E-Mail. Wir kümmern uns um Ihr Anliegen !",
+    "information" : "Information",
+    "mon-fri" : "Mon-Fre",
+    "sat-sun" : "Sam-Sonn",
+    "menu" : "Speisekarte",
+    "services" : "Unsere Dienstleistungen",
+    "cargoTracking" : "Sendungsverfolgung",
+    "smartPhone" : "Smartphone",
+    "tablet" : "Tablette",
+    "computer" : "Computer",
+    "wearableAccessories" : "Tragbares Accessoire",
+    "allRightsReserved" : "Alle Rechte Vorbehalten"
+  },
+  "homePage" : {
+    "letUsKnow" : "Teilen Sie uns mit, welches Gerät Sie benötigen",
+    "repaired" : "repariert.",
+    "fullCoverage" : "Vollständige Abdeckung",
+    "fullCoverageDescription" : "Breites Sortiment, um die Erwartungen jedes Kunden vollständig zu erfüllen. bietet eine Reihe von Dienstleistungen an. Wir machen unsere Arbeit mit Leidenschaft und sind ständig bestrebt, die Qualität, die wir entwickeln, unter Beweis zu stellen. Wenn Sie sich für uns entscheiden, rundum das Beste. Sie können sicher sein, dass Sie Leistungen erhalten.",
+    "free&FastDiagnosis" : "Kostenlose und schnelle Diagnose",
+    "free&FastDiagnosisDescription" : "Unser Unternehmen, das kostenlose und schnelle Diagnose anbietet, repariert Ihre Geräte so schnell wie möglich. Unsere erfahrenen Techniker lösen Probleme präzise und schnell. Diagnostiziert und bietet wirksame Lösungen. Kundenzufriedenheit unser Unternehmen legt Wert auf transparente Kommunikation und zeichnet sich durch seine erschwingliche Preispolitik aus. Beste Qualität für Sie Wir sind bereit, die Dienstleistung zu erbringen, kontaktieren Sie uns umgehend und elektronisch Lassen Sie Ihre Geräte von uns problemlos reparieren und an Sie zurücksenden.",
+    "lowestPriceGuarantee" : "Tiefstpreisgarantie",
+    "lowestPriceGuaranteeDescription" : "Experte für Störungen Ihrer elektronischen Geräte. Unser Unternehmen, das Lösungen anbietet, repariert höchste Qualitätsstandards. Bietet Service. Unsere erfahrenen und geschulten Techniker lösen schnell und effektiv die Probleme von Geräten unterschiedlicher Marken und Modelle. So löst es sich. In der Branche der Gerätereparatur. Unser Pionierunternehmen bietet unseren Kunden eine Low-Budget-Garantie. Professionelle und kostengünstige Reparatur elektronischer Geräte.",
+    "repair4steps" : "In nur vier Schritten zur Reparatur",
+    "1" : "Reparatur-Formular ausfüllen",
+    "1desc" : "Geben Sie in unserem Reparatur-Formular an, um welches Modell und um welchen Fehler es sich bei Ihrem Gerät handelt. Neben Smartphones nehmen wir gerne auch Audio/Video & TV- Geräte, Kaffee- oder Küchenmaschinen entgegen.",
+    "2" : "Gerät einpacken und versenden",
+    "2desc" : "Nachdem das Formular abgeschickt wurde, erhalten Sie eine Bestätigungs-Mail zu Ihrem Auftrag. Drucken Sie diese aus und legen es zusammen mit Ihrem Gerät in ein gut gepolstertes Paket und schicken es in unser Repair Center.",
+    "3" : "I Fix serviciert und repariert",
+    "3desc" : "Nun überprüfen wir den Auftrag und das Gerät: Handelt es sich um ein Garantiefall, reparieren wir es für Sie. Andernfalls senden wir Ihnen per E-Mail einen Kostenvoranschlag und Sie teilen uns mit, ob wir die Reparatur durchführen dürfen.",
+    "4" : "Gerät erhalten",
+    "4desc" : "Nach der erfolgreichen Reparatur senden wir das Gerät versichert an Sie zurück. Innerhalb 24 Stunden erfolgt der Versand zu Ihnen nach Hause.",
+    "chooseRepairOption" : "Wählen Sie eine Reparaturoption",
+    "visitStore" : "Besuchen Sie ein Geschäft :",
+    "visitStoreDesc" : "Reservieren Sie Ihr defektes Gerät in einer unserer Filialen oder bei einem autorisierten Partner. Die meisten Reparaturen sind in weniger als 30 Minuten erledigt.",
+    "bookServiceVehicle" : "Buchen Sie ein Servicefahrzeug:",
+    "bookServiceVehicleDesc" : "Buchen Sie eine mobile Werkstatt zu Ihnen nach Hause oder an Ihren Arbeitsplatz und setzen Sie Ihren Tag fort, während Ihre Reparatur am Straßenrand abgeschlossen wird.",
+    "postYourDevice" : "Veröffentlichen Sie Ihr Gerät:",
+    "postYourDeviceDesc" : "Der Einfachheit halber schicken Sie Ihr Gerät einfach an unsere Reparaturzentrale. Die meisten Geräte werden noch am selben Tag repariert und versendet, an dem wir sie erhalten."
+  },
+  "customRange" :{
+    "selectBrand" : "Wählen Sie Marke aus",
+    "selectModel" : "Wählen Sie Modell aus",
+    "repairTypes" : "Reparaturarten",
+    "payment" : "Zahlung",
+    "finish" : "Beenden"
+  },
+  "shoppingCart" :{
+    "shoppingCartList" : "Warenkorbliste",
+    "repairCategory" : "Reparaturkategorie",
+    "time" : "Zeit",
+    "price" : "Preis",
+    "totalPrice" : "Gesamtpreis"
   },
   "userForm": {
     "firstName": "Vorname",

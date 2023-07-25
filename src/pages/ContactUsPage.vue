@@ -1,4 +1,21 @@
 <template>
+  <div style="width: 100%">
+    <img
+      style="width: 100%; height: 34vh"
+      src="@/assets/banners/contactus-1.webp"
+      alt=""
+    />
+  </div>
+  <div class="col-12 d-flex justify-content-center p-lg-5 p-md-5 p-sm-5">
+    <div class="col-8">
+      <div class="col-6">
+        <h2>Kontaktieren Sie uns !</h2>
+        <p>If you have any questions, we are happy to be there for you by phone or e-mail.</p>
+        <p>If your device needs a repair, you can bring it in person or mail it as appropriate. To make the process even easier for you, simply fill out our repair form!</p>
+      </div>
+      <div class="col-6"></div>
+    </div>
+  </div>
   <div class="contactUsContainer mt-2 col-10">
     <form class="col-12" action=" " id="contact_form">
       <div class="contactUsForm row">

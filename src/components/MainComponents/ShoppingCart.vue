@@ -28,7 +28,7 @@
                 class="mt-2 font-weight-bold"
                 style="font-size: 18px; color: rgba(255, 255, 255, 0.8)"
               >
-                Shopping Cart List
+                {{ $t("shoppingCart.shoppingCartList") }}
               </h5>
             </button>
             <font-awesome-icon
@@ -68,13 +68,13 @@
                   colspan="1"
                   style="font-size: 12px"
                 >
-                  Repair Category
+                  {{ $t("shoppingCart.repairCategory") }}
                 </th>
                 <th class="text-center" scope="col" style="font-size: 12px">
-                  Time
+                  {{ $t("shoppingCart.time") }}
                 </th>
                 <th class="text-center" scope="col" style="font-size: 12px">
-                  Price
+                  {{ $t("shoppingCart.price") }}
                 </th>
               </tr>
             </thead>
@@ -128,7 +128,7 @@
             >
               <tr class="">
                 <th class="text-start" scope="row" colspan="3">
-                  <u class="text-dark p-1">Total Price:</u>
+                  <u class="text-dark p-1">{{ $t("shoppingCart.totalPrice") }}:</u>
                 </th>
                 <th
                   class="text-black text-center"
