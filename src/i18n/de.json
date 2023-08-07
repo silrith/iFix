@@ -16,7 +16,11 @@
     "about" : "Über Uns",
     "login": "Anmeldung",
     "contactUs": "Kontaktiere uns",
-    "searchBox" : "Suchen"
+    "searchBox" : "Suchen",
+    "service" : "Service",
+    "shop" : "Geschäft",
+    "contact" : "Kontakt",
+    "sign" : "Anmelden"
   },
   "footer" :{
     "doYouWannaContactWithUs" : "Möchten Sie mit uns Kontakt aufnehmen ?",
@@ -100,5 +104,12 @@
       "saturday": "Samstag",
       "sunday": "Sonntag"
     }
+  },
+  "cookieSetting" : {
+    "cookieButton" : "Akzeptieren und schließen",
+    "cookiePolicy" : "Cookie-Richtlinie",
+    "privacy" : "Ihre Privatsphäre",
+    "description1" : "Um Ihnen das beste Surferlebnis zu bieten, verwendet diese Website Cookies.",
+    "description2" : "Wenn Sie akzeptieren, können Sie Ihre Erfahrung fortsetzen."
   }
 }

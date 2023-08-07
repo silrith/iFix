@@ -1,6 +1,7 @@
 <template>
-  <Header :shoppingCartList="shoppingCartList"/>
+  <Header/>
   <RouterView />
+  <PopUp />
   <Footer />
   <img
     class="top-button"
@@ -13,6 +14,7 @@
 <script>
 import Header from "../src/components/MainComponents/Header.vue";
 import Footer from "../src/components/MainComponents/Footer.vue";
+import PopUp from "../src/components/MainComponents/PopUp.vue";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fab } from "@fortawesome/free-brands-svg-icons";
 import { fas } from "@fortawesome/free-solid-svg-icons";
@@ -30,10 +32,14 @@ export default {
   components: {
     Header,
     Footer,
+    PopUp,
     FontAwesomeIcon
   },
   methods: {},
   mounted() {
+    localStorage.setItem('cursorPointer', "home");
+    var cookie = localStorage.getItem('cookieSettings');
+    if(cookie == null || cookie == undefined) localStorage.setItem('cookieSettings', false);
   },
 };
 </script>

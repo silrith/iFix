@@ -1,11 +1,4 @@
 <template>
-  <div style="width: 100%">
-    <img
-      style="width: 100%; height: 34vh"
-      src="@/assets/banners/contactus-1.webp"
-      alt=""
-    />
-  </div>
   <div class="col-12 d-flex justify-content-center p-lg-5 p-md-5 p-sm-5">
     <div class="col-8">
       <div class="col-6">

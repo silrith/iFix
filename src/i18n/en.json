@@ -16,7 +16,11 @@
     "about" : "About",
     "login": "Login",
     "contactUs": "Contact Us",
-    "searchBox" : "Search"
+    "searchBox" : "Search",
+    "service" : "Service",
+    "shop" : "Shop",
+    "contact" : "Contact",
+    "sign" : "Sign in"
   },
   "footer": {
     "doYouWannaContactWithUs" : "Do you want to get in contact with us ?",
@@ -100,5 +104,12 @@
       "saturday": "Saturday",
       "sunday": "Sunday"
     }
+  },
+  "cookieSetting" : {
+    "cookieButton" : "Accept & Close",
+    "cookiePolicy" : "Cookie Policy",
+    "privacy" : "Your Privacy",
+    "description1" : "In order to give you the best browsing experience this website uses cookies.",
+    "description2" : "By accepting, you can continue your experience."
   }
 }

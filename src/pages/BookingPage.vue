@@ -1,11 +1,4 @@
 <template>
-  <div style="width: 100%">
-    <img
-      style="width: 100%; height: 42vh"
-      src="@/assets/banners/calendar.webp"
-      alt=""
-    />
-  </div>
   <div>
     <div class="col-md-10 m-2">
       <div class="row">

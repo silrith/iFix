@@ -1,6 +1,6 @@
 <template>
   <div class="mainBody">
-    <Carousel />
+    <!-- <Carousel /> -->
     <!-- <input id="file" type="file" @input="uploadImage($event)" /> -->
     <section class="serviceSelectDiv">
       <div class="col-md-6">

@@ -1,12 +1,5 @@
 <template>
   <div class="col-lg-12 mainBody">
-    <div class="col-lg-12 mb-2" style="width: 100%">
-      <img
-        style="width: 100%; height: 32vh"
-        src="@/assets/banners/tabletBanner.webp"
-        alt=""
-      />
-    </div>
     <div class="col-lg-12 rangeDiv">
       <CustomRange />
     </div>

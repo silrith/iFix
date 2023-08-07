@@ -57,7 +57,6 @@ export default {
   },
   mounted() {
     this.$i18n.locale = localStorage.getItem('lang');
-    console.log(this.$i18n.locale);
     this.langClass = this.$i18n.locale == 'en' ? 'btn btn-light dropdown fi fi-gb' : 'btn btn-light dropdown fi fi-de'; 
   },
 };
@@ -76,7 +75,6 @@ export default {
   width: 3vh;
   height: 3vh;
   padding: 1px 0px 1px 0px;
-  box-shadow: 0px 5px 10px rgba(255, 255, 255, 0.25);
 }
 #languageImageDiv {
   text-align: -webkit-center;
