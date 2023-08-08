@@ -1,32 +1,30 @@
 <template>
   <div class="limiter">
-    <div class="container-login100">
-      <div class="wrap-login100">
-        <div class="signup100">
+    <div class="container-login101">
+      <div class="wrap-login101">
+        <div class="signup101">
           <div>
             <h1 style="line-height: 60px">
-              Sign In to <br />
-              Recharge Direct
+              Take advantage <br />
+              as a member
             </h1>
           </div>
           <div style="margin-top: 30px; line-height: 25px">
             <p>
-              <b>If you don't have an account</b> <br />
-              <b>you can </b>
+              <b>Have an account? </b> <br />
+              <b>For the </b>
               <b style="color: #f26d25"
                 ><router-link
-                  to="/signup"
+                  to="/login"
                   style="font-style: normal; color: #f26d25"
-                  >Register here!</router-link
+                  >Login Page!</router-link
                 ></b
               >
             </p>
           </div>
         </div>
-        <div class="login100-pic js-tilt" data-tilt>
-          <img src="@/assets/header/login.png" alt="Login Picture" />
-        </div>
-        <form class="login100-form validate-form">
+        <div class="login101-pic js-tilt" data-tilt></div>
+        <form class="login101-form validate-form">
           <div
             style="
               width: 100%;
@@ -39,34 +37,64 @@
               <hr class="txt3" />
             </div>
             <div>
-              <p class="txt1" style="padding-top: 15px">Login!</p>
+              <p class="txt1" style="padding-top: 10px">Sign up!</p>
             </div>
             <div style="width: 30%">
               <hr class="txt3" />
             </div>
           </div>
           <div
-            class="wrap-input100 validate-input"
+            class="wrap-input101 validate-input"
+            data-validate="Valid full name is required: Michael Jordan"
+          >
+            <input
+              class="input101"
+              type="text"
+              name="email"
+              placeholder="Full Name"
+            />
+            <span class="focus-input101"></span>
+            <span class="symbol-input101">
+              <i class="fa fa-cog fa-spin" aria-hidden="true"></i>
+            </span>
+          </div>
+          <div
+            class="wrap-input101 validate-input"
             data-validate="Valid email is required: ex@abc.xyz"
           >
             <input
-              class="input100"
+              class="input101"
               type="text"
               name="email"
               placeholder="Email"
             />
-            <span class="focus-input100"></span>
-            <span class="symbol-input100">
+            <span class="focus-input101"></span>
+            <span class="symbol-input101">
               <i class="fa fa-envelope" aria-hidden="true"></i>
             </span>
           </div>
           <div
-            class="wrap-input100 validate-input"
+            class="wrap-input101 validate-input"
+            data-validate="Valid email is required: ex@abc.xyz"
+          >
+            <input
+              class="input101"
+              type="text"
+              name="username"
+              placeholder="Username"
+            />
+            <span class="focus-input101"></span>
+            <span class="symbol-input101">
+              <i class="fa fa-user" aria-hidden="true"></i>
+            </span>
+          </div>
+          <div
+            class="wrap-input101 validate-input"
             data-validate="Password is required"
           >
             <input
               id="#password-input"
-              class="input100"
+              class="input101"
               :type="showPassword ? 'text' : 'password'"
               name="pass"
               placeholder="Password"
@@ -80,44 +108,39 @@
                   !showPassword,
               }"
             ></span>
-            <span class="focus-input100"></span>
-            <span class="symbol-input100">
+            <span class="focus-input101"></span>
+            <span class="symbol-input101">
               <i class="fa fa-lock" aria-hidden="true"></i>
             </span>
           </div>
-          <div class="container-login100-form-btn">
-            <button class="btn btn-block py-2 btn-login">Login</button>
-          </div>
           <div
-            style="
-              width: 100%;
-              display: flex;
-              flex-direction: column;
-              align-items: center;
-            "
+            class="wrap-input101 validate-input"
+            data-validate="Password is required"
           >
-            <small class="txt1 mt-2">Or login with social media</small>
-            <div style="width: 60%">
-              <hr class="txt1" />
-            </div>
+            <input
+              id="#password-input"
+              class="input101"
+              :type="showRepeatPassword ? 'text' : 'password'"
+              name="pass"
+              placeholder="Repeat Password"
+            />
+            <span
+              @click="toggleRepeatPasswordField"
+              toggle="#password-field"
+              :class="{
+                'fa fa-fw fa-eye field-icon toggle-password':
+                  showRepeatPassword,
+                'fa fa-fw fa-eye-slash field-icon toggle-password':
+                  !showRepeatPassword,
+              }"
+            ></span>
+            <span class="focus-input101"></span>
+            <span class="symbol-input101">
+              <i class="fa fa-lock" aria-hidden="true"></i>
+            </span>
           </div>
-          <div class="">
-            <a href="#" class="btn btn-block py-2 btn-facebook">
-              <span class="icon-facebook mr-3"
-                ><font-awesome-icon
-                  :icon="['fab', 'facebook-f']"
-                  style="color: #ffffff"
-              /></span>
-              Login with Facebook
-            </a>
-            <a href="#" class="btn btn-block py-2 btn-google"
-              ><span class="icon-google mr-3"
-                ><font-awesome-icon
-                  :icon="['fab', 'google']"
-                  style="color: #ffffff"
-              /></span>
-              Login with Google</a
-            >
+          <div class="container-login101-form-btn">
+            <button class="btn btn-block py-2 btn-login">Sign Up !</button>
           </div>
           <div
             style="
@@ -126,20 +149,10 @@
               justify-content: center;
               align-items: center;
             "
-          >
-            <div style="width: 60%">
-              <hr class="txt1" />
-            </div>
-          </div>
+          ></div>
           <div class="text-center p-t-12">
             <span class="txt1"> Forgot </span>
-            <a class="txt2" href="#"> Username / Password? </a>
-          </div>
-          <div class="text-center p-t-136">
-            <a class="txt2" href="#">
-              Create your Account
-              <i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
-            </a>
+            <router-link class="txt2" to="#"> Username / Password?</router-link>
           </div>
         </form>
       </div>
@@ -153,12 +166,16 @@ export default {
     return {
       selectedTab: null,
       showPassword: false,
+      showRepeatPassword: false,
     };
   },
   components: {},
   methods: {
     togglePasswordField() {
       this.showPassword = !this.showPassword;
+    },
+    toggleRepeatPasswordField() {
+      this.showRepeatPassword = !this.showRepeatPassword;
     },
     // search() {
     //   console.log(this.searchQuery);
@@ -187,7 +204,7 @@ export default {
   margin: 0 auto;
 }
 
-.container-login100 {
+.container-login101 {
   width: 100%;
   min-height: 86vh;
   display: -webkit-box;
@@ -201,7 +218,7 @@ export default {
   background-color: white;
 }
 
-.container-login100-form-btn {
+.container-login101-form-btn {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
@@ -210,7 +227,7 @@ export default {
   border: none;
 }
 
-.wrap-login100 {
+.wrap-login101 {
   width: 80%;
   background: #fff;
   border-radius: 10px;
@@ -218,22 +235,27 @@ export default {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  padding: 57px 100px 13px 105px;
+  padding: 7px 100px 13px 105px;
 }
 
-.login100-pic {
+.login101-pic {
   width: 316px;
+  background-image: url(@/assets/header/signuppic.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-.login100-pic img {
+.login101-pic img {
   max-width: 100%;
+  max-height: 100%;
 }
 
-.login100-form {
+.login101-form {
   width: 290px;
 }
 
-.login100-form-title {
+.login101-form-title {
   font-family: Poppins-Bold;
   font-size: 24px;
   color: #333333;
@@ -243,14 +265,14 @@ export default {
   display: block;
 }
 
-.wrap-input100 {
+.wrap-input101 {
   position: relative;
   width: 100%;
   z-index: 1;
   margin-bottom: 10px;
 }
 
-.input100 {
+.input101 {
   font-family: Poppins-Regular;
   font-size: 13px;
   line-height: 1;
@@ -262,7 +284,7 @@ export default {
   padding: 0 0 0 68px;
 }
 
-.focus-input100 {
+.focus-input101 {
   display: block;
   position: absolute;
   border-radius: 25px;
@@ -275,12 +297,7 @@ export default {
   color: #f26d25;
 }
 
-.input100:focus + .focus-input100 {
-  -webkit-animation: anim-shadow 1s ease-in-out forwards;
-  animation: anim-shadow 1s ease-in-out forwards;
-}
-
-.symbol-input100 {
+.symbol-input101 {
   font-size: 15px;
   display: -webkit-box;
   display: -webkit-flex;
@@ -294,7 +311,7 @@ export default {
   left: 0;
   width: 100%;
   height: 100%;
-  padding-left: 35px;
+  padding-left: 20px;
   pointer-events: none;
   color: #f26d25;
   -webkit-transition: all 0.4s;
@@ -303,7 +320,7 @@ export default {
   transition: all 0.4s;
 }
 
-.input100:focus + .focus-input100 + .symbol-input100 {
+.input101:focus + .focus-input101 + .symbol-input101 {
   color: #f26d25;
   padding-left: 15px;
 }
@@ -351,7 +368,12 @@ export default {
   color: #fff;
 }
 
-.login100-form-btn {
+.btn-login:hover {
+  background-color: #333333;
+  color: #fff;
+}
+
+.login101-form-btn {
   font-family: Montserrat-Bold;
   font-size: 15px;
   line-height: 1.5;
@@ -376,7 +398,7 @@ export default {
   border: none;
 }
 
-.login100-form-btn:hover {
+.login101-form-btn:hover {
   background: #333333;
   cursor: pointer;
 }
@@ -401,16 +423,13 @@ export default {
   transform: translateY(-50%);
   right: 8px;
   pointer-events: none;
-
   font-family: Poppins-Medium;
   color: #c80000;
   font-size: 13px;
   line-height: 1.4;
   text-align: left;
-
   visibility: hidden;
   opacity: 0;
-
   -webkit-transition: opacity 0.4s;
   -o-transition: opacity 0.4s;
   -moz-transition: opacity 0.4s;
@@ -545,7 +564,7 @@ textarea:-ms-input-placeholder {
 }
 
 @media (max-width: 992px) {
-  .wrap-login100 {
+  .wrap-login101 {
     padding: 0 90px 33px 85px;
   }
 
@@ -554,41 +573,41 @@ textarea:-ms-input-placeholder {
     opacity: 1;
   }
 
-  .login100-form {
+  .login101-form {
     width: 100%;
   }
 
-  .signup100 {
+  .signup101 {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
   }
 
-  .signup100 p,
+  .signup101 p,
   h1 {
     text-align: center;
   }
 }
 
 @media (max-width: 768px) {
-  .wrap-login100 {
+  .wrap-login101 {
     padding: 0 80px 33px 80px;
   }
 
-  .login100-form {
+  .login101-form {
     width: 100%;
   }
 }
 
 @media (max-width: 576px) {
-  .wrap-login100 {
+  .wrap-login101 {
     padding: 0 15px 33px 15px;
   }
 }
 
 @media (max-width: 1372px) {
-  .login100-pic {
+  .login101-pic {
     display: none;
   }
 }

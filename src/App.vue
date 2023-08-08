@@ -6,7 +6,7 @@
   <img
     class="top-button"
     src="../src/assets/icons/scroll-bar.png"
-    alt=""
+    alt="to the top"
     onclick="window.scrollTo(0, 0)"
   />
 </template>

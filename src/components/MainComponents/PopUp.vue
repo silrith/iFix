@@ -57,11 +57,11 @@ export default {
 };
 </script>
 
-<style>
+<style lang="css">
 .cookieDiv {
   display: flex;
   justify-content: center;
-  align-items: end;
+  align-items: flex-end;
   position: fixed;
   top: 0;
   left: 0;

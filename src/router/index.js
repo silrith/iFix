@@ -29,6 +29,13 @@ const routes = [
     },
   },
   {
+    path: "/signup",
+    name: "Sign Up",
+    component: function () {
+      return import("../pages/SignupPage.vue");
+    },
+  },
+  {
     path: "/contactUs",
     name: "ContactUs",
     component: function () {

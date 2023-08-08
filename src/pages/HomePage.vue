@@ -1,5 +1,6 @@
 <template>
   <div class="mainBody">
+    <HeaderBanner/>
     <!-- <Carousel /> -->
     <!-- <input id="file" type="file" @input="uploadImage($event)" /> -->
     <section class="serviceSelectDiv">
@@ -634,6 +635,7 @@
 
 <script>
 import Carousel from "@/components/MainComponents/Carousel.vue";
+import HeaderBanner from "@/components/MainComponents/HeaderBanner.vue";
 
 export default {
   name: "Home Page",
@@ -685,10 +687,13 @@ export default {
   },
   mounted() {
     this.loadData();
+    localStorage.setItem('cursorPointer', "home");
+    this.selectedTab = localStorage.getItem('cursorPointer');
   },
   computed: {},
   components: {
     Carousel,
+    HeaderBanner
   },
   created() {},
 };
