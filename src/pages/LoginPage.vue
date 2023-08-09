@@ -218,7 +218,7 @@ export default {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  padding: 57px 100px 13px 105px;
+  padding: 7px 100px 13px 105px;
 }
 
 .login100-pic {
@@ -276,8 +276,8 @@ export default {
 }
 
 .input100:focus + .focus-input100 {
-  -webkit-animation: anim-shadow 1s ease-in-out forwards;
-  animation: anim-shadow 1s ease-in-out forwards;
+  color: #f26d25;
+  padding-left: 15px;
 }
 
 .symbol-input100 {
@@ -294,7 +294,7 @@ export default {
   left: 0;
   width: 100%;
   height: 100%;
-  padding-left: 35px;
+  padding-left: 20px;
   pointer-events: none;
   color: #f26d25;
   -webkit-transition: all 0.4s;

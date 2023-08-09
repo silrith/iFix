@@ -150,10 +150,6 @@
               align-items: center;
             "
           ></div>
-          <div class="text-center p-t-12">
-            <span class="txt1"> Forgot </span>
-            <router-link class="txt2" to="#"> Username / Password?</router-link>
-          </div>
         </form>
       </div>
     </div>
@@ -334,20 +330,6 @@ export default {
   transform: translateY(-50%);
   color: #f26d25;
   box-shadow: #333333;
-}
-
-@-webkit-keyframes anim-shadow {
-  to {
-    box-shadow: 0px 0px 70px 25px;
-    opacity: 0;
-  }
-}
-
-@keyframes anim-shadow {
-  to {
-    box-shadow: 0px 0px 70px 25px;
-    opacity: 0;
-  }
 }
 
 .btn {
