@@ -27,7 +27,7 @@
           >
             <input
               class="inputBanner103"
-              type="text"
+              type="search"
               name="search"
               placeholder="Search"
             />
@@ -349,7 +349,12 @@
 .inputBanner103:focus + .focus-input103 + .symbol-input103 {
   color: white;
   padding-left: 15px;
-  border: none;
+  border: none !important;
+  outline: none !important;
+}
+
+.wrap-input103 input[type=search]{
+  outline: none;
 }
 
 @media (max-width: 1200px) {
