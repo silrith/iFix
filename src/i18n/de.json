@@ -31,10 +31,10 @@
     "menu" : "Speisekarte",
     "services" : "Unsere Dienstleistungen",
     "cargoTracking" : "Sendungsverfolgung",
-    "smartPhone" : "Smartphone",
+    "smartPhone" : "Phone",
     "tablet" : "Tablette",
     "computer" : "Computer",
-    "wearableAccessories" : "Tragbares Accessoire",
+    "wearableAccessories" : "Tragbar",
     "allRightsReserved" : "Alle Rechte Vorbehalten"
   },
   "homePage" : {
@@ -78,14 +78,17 @@
     "totalPrice" : "Gesamtpreis"
   },
   "userForm": {
+    "name" : "Name",
     "firstName": "Vorname",
     "firstNameRequired": "Vorname ist erforderlich",
     "lastName": "Familienname",
     "lastNameRequired": "Familienname ist erforderlich",
-    "email": "E-mail",
+    "email": "Email",
     "emailRequired": "E-mail ist erforderlich",
     "phone": "Telefon",
     "phoneRequired": "Telefonnummer ist erforderlich",
+    "password" : "Passwort",
+    "repeatPassword" : "Passwort Wiederholen",
     "address": "Adresse",
     "city": "Stadt",
     "state": "Zustand",
@@ -111,5 +114,43 @@
     "privacy" : "Ihre Privatsphäre",
     "description1" : "Um Ihnen das beste Surferlebnis zu bieten, verwendet diese Website Cookies.",
     "description2" : "Wenn Sie akzeptieren, können Sie Ihre Erfahrung fortsetzen."
+  },
+  "signin" : {
+    "header1" : "Melden Sie sich an, um teilzunehmen",
+    "header2" : "vorteil als Mitglied",
+    "subtitle1" : "Wenn Sie kein Konto haben",
+    "subtitle2" : "du kannst ",
+    "subtitle3" : "Hier registrieren!",
+    "loginSocial" : "Oder loggen Sie sich über soziale Medien ein",
+    "loginFacebook" : "Mit Facebook einloggen",
+    "loginGoogle" : "Melden Sie sich mit Google an",
+    "forgot" : "Vergessen ",
+    "userName" : "Nutzername",
+    "createAccount" : "Erstelle deinen Account"
+  },
+  "signup" : {
+    "header1" : "Ausnutzen",
+    "header2" : "als ein MItglied",
+    "subtitle1" : "Ein Konto haben?",
+    "subtitle2" : "Für die ",
+    "subtitle3" : "Loginseite!",
+    "signup" : "Registrieren"
+  },
+  "contact" : {
+    "header1" : "Kontaktieren Sie uns",
+    "header2" : "Irgendwelche Fragen oder Anmerkungen?",
+    "header3" : "Schreiben Sie uns einfach eine Nachricht!",
+    "or" : "Oder",
+    "select" : "Bitte wählen Sie Ihren Reparaturtyp",
+    "textarea" : "Teilen Sie Ihre Meinung",
+    "footer" : "Schauen Sie sich das Terminsystem an"
+  },
+  "about" : {
+    "header1" : "Über unsere Firma",
+    "header2" : "I Fix ist eine klassische Reparaturwerkstatt mit modernster Technik und neuestem Wissen. Seit 2004 ist das Unternehmen erfolgreich in Wien tätig",
+    "header3" : "und entwickelt sich ständig entsprechend den Bedürfnissen des Marktes weiter, der immer stärker wird als je zuvor.",
+    "information1" : "Wir vereinen sämtliche Reparaturmethoden der aktuellen Stunde, kombinieren sie mit erstklassigen Originalersatzteilen und verbauen diese mit Hilfe umfangreicher Erfahrung in ihr Smartphone und Tablet. Unsere hochqualifizierten Techniker verfügen über mehr als 15 Jahre Erfahrung und machen auch heute nicht halt, ihr Wissen in speziellen Communityforen, Blogs, Trainingsvideos und Supportchannels auf dem neuesten Stand zu halten. Durch das stets ausgebaute Wissensnetzwerk mit anderen Servicepartnern und Spezialisten, ist es uns auch möglich, spezifische Arbeiten wie Mainboard-Reparaturen durchzuführen. Unabhängig der Reparatur von gebrochenen Displays oder Gehäuse, bieten wir auch beste Erfahrung und Unterstützung bei Softwareproblemen, Zubehör und vielen anderen Bereichen rund um ihre Elektronik.",
+    "information2" : "Die Kundenzufriedenheit liegt vielen Unternehmen am Herzen, aber wir haben auch erkannt, dass der finanzielle Aufwand für die Kunden ein wichtiges Kriterium für Zufriedenheit ist. Daher haben wir uns zum Ziel gesetzt, SIE und / oder einen Freund  / Bekannten / Familienmitglied eines Tages wieder zu sehen und halten deswegen die Gewinnspanne außergewöhnlich gering. Denn Vertrauen aufzubauen ist ein schwieriges Unterfangen, einmal zerstörtes Vertrauen ist kaum wiederherzustellen. Daher ist unser eindeutiges Ziel IHRE Zufriedenheit",
+    "information3" : "Der BESTE PREIS, mit dem BESTEN SERVICE und der BESTEN QUALITÄT. Nicht mehr und keinesfalls weniger!"
   }
 }

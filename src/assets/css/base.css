@@ -4,6 +4,27 @@ body {
   background-color: transparent;
 }
 
+.txt1 {
+  font-family: Poppins-Regular;
+  font-size: 13px;
+  line-height: 1.5;
+  color: #999999;
+}
+
+.txt2 {
+  font-family: Poppins-Regular;
+  font-size: 13px;
+  line-height: 1.5;
+  color: #666666;
+}
+
+.txt3 {
+  font-family: Poppins-bold;
+  font-size: 15px;
+  line-height: 1.5;
+  color: #f26d25;
+}
+
 @font-face {
   font-family: Poppins-Regular;
   src: url('@/assets/fonts/poppins/Poppins-Regular.ttf'); 

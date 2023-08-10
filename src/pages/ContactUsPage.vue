@@ -5,15 +5,15 @@
         <div class="informationCard">
           <div class="contactUsHeader">
             <div style="margin-top: 30px; line-height: 25px;">
-              <h1 class="txtDark2" style="line-height: 70px"><b>Contact Us</b><br /></h1>
+              <h1 class="txtDark2" style="line-height: 70px"><b>{{ $t("contact.header1") }}</b><br /></h1>
               <p class="txtDark2">
-                <b>Any question or remarks?</b> <br />
-                <b style="color: #f26d25">Just write us a message!</b>
+                <b>{{ $t("contact.header2") }}</b> <br />
+                <b style="color: #f26d25">{{ $t("contact.header3") }}</b>
               </p>
             </div>
           </div>
           <div class="txtDark2" style="text-align: start; padding: 0 30px 0 0;">
-            <p style="line-height: 60px"><b><u>Or</u></b><br /></p>
+            <p style="line-height: 60px"><b><u>{{ $t("contact.or") }}</u></b><br /></p>
           </div>
           <div
           class="txtDark2"
@@ -34,7 +34,7 @@
                   margin-right: 15px;
                 "
               />
-              <p>+43 1 9909777</p>
+              <p class="txt2">+43 1 9909777</p>
             </div>
             <div style="display: flex; text-align: start">
               <font-awesome-icon
@@ -45,7 +45,7 @@
                   margin-right: 15px;
                 "
               />
-              <p>info@ifix.at</p>
+              <p class="txt2">info@ifix.at</p>
             </div>
             <div style="display: flex; text-align: start">
               <font-awesome-icon
@@ -56,7 +56,7 @@
                   margin-right: 15px;
                 "
               />
-              <p>
+              <p class="txt2">
                 Wien 1010 Standort, Rabensteig 1, <br />
                 1010 Wien, Austria
               </p>
@@ -90,7 +90,7 @@
               class="select102"
               type="text"
               name="name"
-              placeholder="Name"
+              :placeholder='$t("userForm.name")'
             />
           </div>
           <div class="contactUsCustomInput">
@@ -102,7 +102,7 @@
                 class="select102"
                 type="text"
                 name="email"
-                placeholder="Email"
+                :placeholder='$t("userForm.email")'
                 required
               />
             </div>
@@ -114,17 +114,17 @@
                 class="select102"
                 type="text"
                 name="telephone"
-                placeholder="Telephone"
+                :placeholder='$t("userForm.phone")'
               />
             </div>
           </div>
           <div class="wrap-input102 validate-input">
             <select class="select102">
-              <option disabled selected>Please choose your repair type</option>
-              <option value="19">Phone</option>
-              <option value="20">Tablet</option>
-              <option value="21">Computer</option>
-              <option value="22">Wearable</option>
+              <option disabled selected>{{ $t("contact.select")}}</option>
+              <option value="19">{{ $t("userForm.phone")}}</option>
+              <option value="20">{{ $t("footer.tablet")}}</option>
+              <option value="21">{{ $t("footer.computer")}}</option>
+              <option value="22">{{ $t("footer.wearableAccessories") }}</option>
             </select>
           </div>
           <div
@@ -137,11 +137,11 @@
               id="customerOpinion"
               rows="10"
               type="text"
-              placeholder="Share your opinion"
+              :placeholder='$t("contact.textarea")'
             ></textarea>
           </div>
           <div class="container-login102-form-btn">
-            <button class="btn btn-block py-2 btn-login">Send</button>
+            <button class="btn btn-block py-2 btn-login">{{ $t("buttons.send") }}</button>
           </div>
           <div
             style="
@@ -152,12 +152,12 @@
             "
           >
             <small class="txt1 mt-2"
-              >Or
+              >{{ $t("contact.or") }}
               <router-link
                 to="/booking"
                 style="font-style: normal; color: #f26d25"
                 ><b class="txt2">
-                  check out the appointment system
+                  {{ $t("contact.footer") }}
                   <font-awesome-icon
                     :icon="['fas', 'share']"
                     class="txt2" /></b></router-link
@@ -266,7 +266,7 @@ export default {
 .login102-form {
   padding: 30px 50px 40px 50px;
   width: 50%;
-  background-color: #f8f9fa;
+  background-color: #dee2e6;
 }
 
 .login102-form-title {
@@ -464,7 +464,7 @@ export default {
   line-height: 1;
   display: block;
   width: 100%;
-  background: #e6e6e6;
+  background: white;
   border-radius: 10px;
   resize: none;
   text-align: center !important;
@@ -475,7 +475,7 @@ export default {
 }
 
 .textarea102:focus{
-  color: #f26d25;
+  color: #666666;
   text-align: start;
 }
 
@@ -485,7 +485,7 @@ export default {
   line-height: 1;
   display: block;
   width: 100%;
-  background: #e6e6e6;
+  background: white;
   border-radius: 10px;
   resize: none;
   text-align: start !important;
@@ -503,16 +503,22 @@ export default {
 
 .select102 option:hover {
   background-color: #f26d25;
+  background: blue;
 }
 
 .select102:focus {
-  color: #f26d25;
+  color: #666666;
   padding-left: 15px;
   border: none;
+  outline: none;
 }
 
 .select102::placeholder{
   text-align: start;
+}
+
+.textarea102:focus{
+  border:none;
 }
 
 input {
@@ -633,6 +639,10 @@ textarea:-ms-input-placeholder {
     width: 100%;
     margin-right: 0px;
     padding: 0 50px 30px 50px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
   }
 
   .wrap-login102{

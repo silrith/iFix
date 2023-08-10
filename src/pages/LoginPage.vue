@@ -5,19 +5,19 @@
         <div class="signup100">
           <div>
             <h1 style="line-height: 60px">
-              Sign In to <br />
-              Recharge Direct
+              {{ $t("signin.header1") }}<br />
+              {{ $t("signin.header2") }}
             </h1>
           </div>
           <div style="margin-top: 30px; line-height: 25px">
             <p>
-              <b>If you don't have an account</b> <br />
-              <b>you can </b>
+              <b>{{ $t("signin.subtitle1") }}</b> <br />
+              <b>{{ $t("signin.subtitle2") }}</b>
               <b style="color: #f26d25"
                 ><router-link
                   to="/signup"
                   style="font-style: normal; color: #f26d25"
-                  >Register here!</router-link
+                  > {{ $t("signin.subtitle3") }}</router-link
                 ></b
               >
             </p>
@@ -39,7 +39,7 @@
               <hr class="txt3" />
             </div>
             <div>
-              <p class="txt1" style="padding-top: 15px">Login!</p>
+              <p class="txt1" style="padding-top: 15px">{{ $t("header.login") }}!</p>
             </div>
             <div style="width: 30%">
               <hr class="txt3" />
@@ -53,7 +53,7 @@
               class="input100"
               type="text"
               name="email"
-              placeholder="Email"
+              :placeholder='$t("userForm.email")'
             />
             <span class="focus-input100"></span>
             <span class="symbol-input100">
@@ -69,7 +69,7 @@
               class="input100"
               :type="showPassword ? 'text' : 'password'"
               name="pass"
-              placeholder="Password"
+              :placeholder='$t("userForm.password")'
             />
             <span
               @click="togglePasswordField"
@@ -86,7 +86,7 @@
             </span>
           </div>
           <div class="container-login100-form-btn">
-            <button class="btn btn-block py-2 btn-login">Login</button>
+            <button class="btn btn-block py-2 btn-login">{{ $t("header.login") }}</button>
           </div>
           <div
             style="
@@ -96,7 +96,7 @@
               align-items: center;
             "
           >
-            <small class="txt1 mt-2">Or login with social media</small>
+            <small class="txt1 mt-2">{{ $t("signin.loginSocial") }}</small>
             <div style="width: 60%">
               <hr class="txt1" />
             </div>
@@ -108,7 +108,7 @@
                   :icon="['fab', 'facebook-f']"
                   style="color: #ffffff"
               /></span>
-              Login with Facebook
+              {{ $t('signin.loginFacebook') }}
             </a>
             <a href="#" class="btn btn-block py-2 btn-google"
               ><span class="icon-google mr-3"
@@ -116,7 +116,7 @@
                   :icon="['fab', 'google']"
                   style="color: #ffffff"
               /></span>
-              Login with Google</a
+              {{ $t('signin.loginGoogle') }}</a
             >
           </div>
           <div
@@ -132,12 +132,12 @@
             </div>
           </div>
           <div class="text-center p-t-12">
-            <span class="txt1"> Forgot </span>
-            <a class="txt2" href="#"> Username / Password? </a>
+            <span class="txt1"> {{ $t('signin.forgot') }} </span>
+            <a class="txt2" href="#">{{ $t('signin.userName') }} / {{ $t('userForm.password') }}? </a>
           </div>
           <div class="text-center p-t-136">
             <a class="txt2" href="#">
-              Create your Account
+              {{ $t('signin.createAccount') }}
               <i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
             </a>
           </div>
@@ -436,27 +436,6 @@ export default {
 .alert-validate:hover:before {
   visibility: visible;
   opacity: 1;
-}
-
-.txt1 {
-  font-family: Poppins-Regular;
-  font-size: 13px;
-  line-height: 1.5;
-  color: #999999;
-}
-
-.txt2 {
-  font-family: Poppins-Regular;
-  font-size: 13px;
-  line-height: 1.5;
-  color: #666666;
-}
-
-.txt3 {
-  font-family: Poppins-bold;
-  font-size: 15px;
-  line-height: 1.5;
-  color: #f26d25;
 }
 
 .other-login-methods-label {

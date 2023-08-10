@@ -5,19 +5,19 @@
         <div class="signup101">
           <div>
             <h1 style="line-height: 60px">
-              Take advantage <br />
-              as a member
+              {{ $t('signup.header1') }}<br />
+              {{ $t('signup.header2') }} 
             </h1>
           </div>
           <div style="margin-top: 30px; line-height: 25px">
             <p>
-              <b>Have an account? </b> <br />
-              <b>For the </b>
+              <b>{{ $t('signup.subtitle1') }}</b> <br />
+              <b>{{ $t('signup.subtitle2') }}</b>
               <b style="color: #f26d25"
                 ><router-link
                   to="/login"
                   style="font-style: normal; color: #f26d25"
-                  >Login Page!</router-link
+                  >{{ $t('signup.subtitle3') }}</router-link
                 ></b
               >
             </p>
@@ -37,7 +37,7 @@
               <hr class="txt3" />
             </div>
             <div>
-              <p class="txt1" style="padding-top: 10px">Sign up!</p>
+              <p class="txt1" style="padding-top: 10px">{{ $t('signup.signup') }}!</p>
             </div>
             <div style="width: 30%">
               <hr class="txt3" />
@@ -50,8 +50,8 @@
             <input
               class="input101"
               type="text"
-              name="email"
-              placeholder="Full Name"
+              name="name"
+              :placeholder='$t("userForm.name")'
             />
             <span class="focus-input101"></span>
             <span class="symbol-input101">
@@ -66,7 +66,7 @@
               class="input101"
               type="text"
               name="email"
-              placeholder="Email"
+              :placeholder='$t("userForm.email")'
             />
             <span class="focus-input101"></span>
             <span class="symbol-input101">
@@ -81,7 +81,7 @@
               class="input101"
               type="text"
               name="username"
-              placeholder="Username"
+              :placeholder='$t("signin.userName")'
             />
             <span class="focus-input101"></span>
             <span class="symbol-input101">
@@ -97,7 +97,7 @@
               class="input101"
               :type="showPassword ? 'text' : 'password'"
               name="pass"
-              placeholder="Password"
+              :placeholder='$t("userForm.password")'
             />
             <span
               @click="togglePasswordField"
@@ -122,7 +122,7 @@
               class="input101"
               :type="showRepeatPassword ? 'text' : 'password'"
               name="pass"
-              placeholder="Repeat Password"
+              :placeholder='$t("userForm.repeatPassword")'
             />
             <span
               @click="toggleRepeatPasswordField"
@@ -140,7 +140,7 @@
             </span>
           </div>
           <div class="container-login101-form-btn">
-            <button class="btn btn-block py-2 btn-login">Sign Up !</button>
+            <button class="btn btn-block py-2 btn-login">{{ $t("signup.signup") }}</button>
           </div>
           <div
             style="
@@ -437,27 +437,6 @@ export default {
 .alert-validate:hover:before {
   visibility: visible;
   opacity: 1;
-}
-
-.txt1 {
-  font-family: Poppins-Regular;
-  font-size: 13px;
-  line-height: 1.5;
-  color: #999999;
-}
-
-.txt2 {
-  font-family: Poppins-Regular;
-  font-size: 13px;
-  line-height: 1.5;
-  color: #666666;
-}
-
-.txt3 {
-  font-family: Poppins-bold;
-  font-size: 15px;
-  line-height: 1.5;
-  color: #f26d25;
 }
 
 .other-login-methods-label {

@@ -1,5 +1,5 @@
 {
-  "header": {
+  "header" : {
     "bookOnline": "Book Online",
     "repairServices": "Repair Services",
     "androidRepair": "Android Repair",
@@ -22,7 +22,7 @@
     "contact" : "Contact",
     "sign" : "Sign in"
   },
-  "footer": {
+  "footer" : {
     "doYouWannaContactWithUs" : "Do you want to get in contact with us ?",
     "contactUsWithPhoneOrMail" : "Contact us by phone or email. We will take care of your request !",
     "information" : "Information",
@@ -31,10 +31,10 @@
     "menu" : "Menu",
     "services" : "Services",
     "cargoTracking" : "Cargo Tracking",
-    "smartPhone" : "Smart Phone",
+    "smartPhone" : "Phone",
     "tablet" : "Tablet",
     "computer" : "Computer",
-    "wearableAccessories" : "Wearable Accessories",
+    "wearableAccessories" : "Wearable",
     "allRightsReserved" : "All Rights Reserved"
   },
   "homePage" : {
@@ -63,14 +63,14 @@
     "postYourDevice" : "Post Your Device :",
     "postYourDeviceDesc" : "For simplicity, post your device to our repair HQ. Most devices are repaired and dispatched on the same day as we receive."
   },
-  "customRange" :{
+  "customRange" : {
     "selectBrand" : "Select Brand",
     "selectModel" : "Select Model",
     "repairTypes" : "Repair Types",
     "payment" : "Payment",
     "finish" : "Finish"
   },
-  "shoppingCart" :{
+  "shoppingCart" : {
     "shoppingCartList" : "Shopping Cart List",
     "repairCategory" : "Repair Category",
     "time" : "Time",
@@ -78,31 +78,34 @@
     "totalPrice" : "Total Price"
   },
   "userForm": {
+    "name" : "Name",
     "firstName": "First Name",
     "firstNameRequired": "First name is required",
     "lastName": "Last Name",
     "lastNameRequired": "Last name is required",
-    "email": "E-mail",
+    "email": "Email",
     "emailRequired": "E-mail is required",
     "phone": "Phone",
     "phoneRequired": "Phone number is required",
+    "password" : "Password",
+    "repeatPassword" : "Repeat Password",
     "address": "Address",
     "city": "City",
     "state": "State",
     "zipCode": "Zip Code"
   },
-  "buttons": {
-    "send": "Send"
+  "buttons" : {
+    "send" : "Send"
   },
-  "calendar": {
+  "calendar" : {
     "daysOfWeek": {
-      "monday": "Monday",
-      "tuesday": "Tuesday",
-      "wednesday": "Wednesday",
-      "thursday": "Thursday",
-      "friday": "Friday",
-      "saturday": "Saturday",
-      "sunday": "Sunday"
+      "monday" : "Monday",
+      "tuesday" : "Tuesday",
+      "wednesday" : "Wednesday",
+      "thursday" : "Thursday",
+      "friday" : "Friday",
+      "saturday" : "Saturday",
+      "sunday" : "Sunday"
     }
   },
   "cookieSetting" : {
@@ -111,5 +114,43 @@
     "privacy" : "Your Privacy",
     "description1" : "In order to give you the best browsing experience this website uses cookies.",
     "description2" : "By accepting, you can continue your experience."
+  },
+  "signin" : {
+    "header1" : "Sign In to take",
+    "header2" : "advantage as a member",
+    "subtitle1" : "If you don't have an account",
+    "subtitle2" : "you can ",
+    "subtitle3" : "Register here!",
+    "loginSocial" : "Or login with social media",
+    "loginFacebook" : "Login with Facebook",
+    "loginGoogle" : "Login with Google",
+    "forgot" : "Forgot ",
+    "userName" : "Username",
+    "createAccount" : "Create your Account"
+  },
+  "signup" : {
+    "header1" : "Take advantage",
+    "header2" : "as a member",
+    "subtitle1" : "Have an account?",
+    "subtitle2" : "For the ",
+    "subtitle3" : "LoginPage!",
+    "signup" : "Sign up"
+  },
+  "contact" : {
+    "header1" : "Contact Us",
+    "header2" : "Any question or remarks?",
+    "header3" : "Just write us a message!",
+    "or" : "Or",
+    "select" : "Please choose your repair type",
+    "textarea" : "Share your opinion",
+    "footer" : "Check out the appointment system"
+  },
+  "about" : {
+    "header1" : "About our company",
+    "header2" : "iFix is ​​a classic repair shop with the latest technology and the latest knowledge. The company has been operating successfully in Vienna since 2004",
+    "header3" : "and is constantly evolving according to the needs of the market, which is growing stronger and stronger than ever before.",
+    "information1" : "We combine all of the repair methods of the current hour, combine them with first-class original spare parts and, with the help of our extensive experience, install them in your smartphone and tablet. Our highly qualified technicians have more than 15 years of experience and continue to update their knowledge in dedicated community forums, blogs, training videos and support channels. Due to the constantly expanding knowledge network with other service partners and specialists, it is also possible for us to carry out specific work such as mainboard repairs. Regardless of the repair of broken displays or cases, we also offer the best experience and support for software problems, accessories and many other areas related to your electronics.",
+    "information2" : "Customer satisfaction is important to many companies, but we also recognize that the financial cost to customers is an important criterion for satisfaction. Therefore, we have set ourselves the goal of seeing YOU and/or a friend/acquaintance/family member again one day and therefore keep the profit margin exceptionally low. Because building trust is a difficult undertaking, once trust has been destroyed it can hardly be restored. Therefore, our goal is YOUR satisfaction",
+    "information3" : "The BEST PRICE, with the BEST SERVICE and the BEST QUALITY. No more and no less!"
   }
 }
