@@ -12,7 +12,7 @@
               </p>
             </div>
           </div>
-          <div class="txtDark2" style="text-align: start; padding: 0 30px 0 0;">
+          <div class="txtDark2" style="text-align: flex-start; padding: 0 30px 0 0;">
             <p style="line-height: 60px"><b><u>{{ $t("contact.or") }}</u></b><br /></p>
           </div>
           <div
@@ -25,7 +25,7 @@
               padding: 0 30px 0 0;
             "
           >
-            <div style="display: flex; text-align: start">
+            <div style="display: flex; text-align: flex-start">
               <font-awesome-icon
                 :icon="['fas', 'phone-volume']"
                 style="
@@ -36,7 +36,7 @@
               />
               <p class="txt2">+43 1 9909777</p>
             </div>
-            <div style="display: flex; text-align: start">
+            <div style="display: flex; text-align: flex-start">
               <font-awesome-icon
                 :icon="['fas', 'envelope']"
                 style="
@@ -47,7 +47,7 @@
               />
               <p class="txt2">info@ifix.at</p>
             </div>
-            <div style="display: flex; text-align: start">
+            <div style="display: flex; text-align: flex-start">
               <font-awesome-icon
                 :icon="['fas', 'map']"
                 style="
@@ -208,9 +208,9 @@ export default {
 .contactUsHeader {
   display: flex;
   flex-direction: column;
-  justify-content: start;
-  align-items: start;
-  text-align: start;
+  justify-content: flex-start;
+  align-items: flex-start;
+  text-align: flex-start;
 }
 
 .container-login102 {
@@ -476,7 +476,7 @@ export default {
 
 .textarea102:focus{
   color: #666666;
-  text-align: start;
+  text-align: flex-start;
 }
 
 .select102 {
@@ -488,10 +488,10 @@ export default {
   background: white;
   border-radius: 10px;
   resize: none;
-  text-align: start !important;
+  text-align: flex-start !important;
   justify-content: center;
   align-items: center;
-  text-align-last: start;
+  text-align-last: flex-start;
   padding: 10px;
   color: #999999;
   border: none;
@@ -514,7 +514,7 @@ export default {
 }
 
 .select102::placeholder{
-  text-align: start;
+  text-align: flex-start;
 }
 
 .textarea102:focus{
