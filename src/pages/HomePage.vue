@@ -1,8 +1,6 @@
 <template>
   <div class="mainBody">
-    <HeaderBanner/>
-    <!-- <Carousel /> -->
-    <!-- <input id="file" type="file" @input="uploadImage($event)" /> -->
+    <HomeBanner/>
     <section class="serviceSelectDiv">
       <div class="col-md-6">
         <h2 class="main-heading">
@@ -635,7 +633,7 @@
 
 <script>
 import Carousel from "@/components/MainComponents/Carousel.vue";
-import HeaderBanner from "@/components/MainComponents/HeaderBanner.vue";
+import HomeBanner from "@/components/MainComponents/HomeBanner.vue";
 
 export default {
   name: "Home Page",
@@ -693,7 +691,7 @@ export default {
   computed: {},
   components: {
     Carousel,
-    HeaderBanner
+    HomeBanner
   },
   created() {},
 };

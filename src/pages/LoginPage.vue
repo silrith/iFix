@@ -351,6 +351,11 @@ export default {
   color: #fff;
 }
 
+.btn-login:hover {
+  background-color: #333333;
+  color: #fff;
+}
+
 .login100-form-btn {
   font-family: Montserrat-Bold;
   font-size: 15px;
