@@ -43,7 +43,7 @@
   flex-direction: column;
   min-height: 86vh;
   font-family: Poppins-Regular;
-  padding: 50px 0 0 0;
+  padding: 50px 0 40px 0;
   align-items: center;
 }
 

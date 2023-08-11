@@ -85,17 +85,29 @@
       </div>
       <div class="socialMedia">
         <img
+          class="bannerSocialMediaLogo"
           src="@/assets/header/facebook.png"
           alt="Login Picture"
           width="45"
         />
-        <img src="@/assets/header/twitter.png" alt="Login Picture" width="45" />
         <img
+          class="bannerSocialMediaLogo"
+          src="@/assets/header/twitter.png"
+          alt="Login Picture"
+          width="45"
+        />
+        <img
+          class="bannerSocialMediaLogo"
           src="@/assets/header/instagram.png"
           alt="Login Picture"
           width="45"
         />
-        <img src="@/assets/header/youtube.png" alt="Login Picture" width="45" />
+        <img
+          class="bannerSocialMediaLogo"
+          src="@/assets/header/youtube.png"
+          alt="Login Picture"
+          width="45"
+        />
       </div>
     </div>
   </div>
@@ -179,6 +191,10 @@
   flex-direction: row;
   justify-content: space-evenly;
   padding: 40px 0 0 0;
+}
+
+.bannerSocialMediaLogo{
+  margin: 5px;
 }
 
 .banner100-pic {
@@ -353,7 +369,7 @@
   outline: none !important;
 }
 
-.wrap-input103 input[type=search]{
+.wrap-input103 input[type="search"] {
   outline: none;
 }
 
