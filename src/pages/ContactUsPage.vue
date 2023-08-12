@@ -178,21 +178,9 @@ export default {
     };
   },
   methods: {
-    loadData() {
-      this.$ajax
-        .get("category/getallcategories")
-        .then((response) => {
-          if (response.data) {
-            this.categoryList = response.data;
-          }
-        })
-        .catch((error) => {
-          console.log(error);
-        });
-    },
+    
   },
   mounted() {
-    this.loadData();
   },
 };
 </script>

@@ -46,13 +46,18 @@ export default {
   components: {},
   methods: {
     closePopUp() {
-      localStorage.setItem("cookieSettings", true);
+      localStorage.setItem("cookieSettings", "true");
       this.showCookiePopup = true;
     },
   },
   mounted() {
-    this.showCookiePopup = localStorage.getItem('cookieSettings');
-    console.log(this.showCookiePopup);
+    const cookieSettings = localStorage.getItem('cookieSettings');
+
+  if (cookieSettings === 'false') {
+    this.showCookiePopup = false;
+  } else {
+    this.showCookiePopup = true;
+  }
   },
 };
 </script>

@@ -14,12 +14,17 @@
         <RouterLink
           class="flex items-center px-3 py-3 hover:bg-gray-200"
           to="/profile"
-          >Profile Settings</RouterLink
+          >My Account</RouterLink
         >
         <RouterLink
           class="flex items-center px-3 py-3 hover:bg-gray-200"
           to="/about"
-          >Who Are We !?</RouterLink
+          >Orders</RouterLink
+        >
+        <RouterLink
+          class="flex items-center px-3 py-3 hover:bg-gray-200"
+          to="/about"
+          >Settings</RouterLink
         >
         <RouterLink
           class="flex items-center px-3 py-3 hover:bg-gray-200"

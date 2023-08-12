@@ -71,7 +71,7 @@
               class="mb-3"
               src="@/assets/header/1.png"
               alt=""
-              style="width: fit-content; max-width: 100%; padding: 30px"
+              style="width: fit-content; max-width: 100%;"
             />
           </div>
           <div class="">
@@ -116,10 +116,9 @@
 <style>
 .homeBanner {
   width: 100%;
-  height: 90%;
   display: flex;
   flex-wrap: wrap;
-  padding: 55px 0px 45px 0px;
+  padding: 55px 30px 45px 30px;
   align-items: center;
   justify-content: center;
   /* background-image: url(@/assets/header/backgroundhome.png);

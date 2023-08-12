@@ -13,7 +13,7 @@
 
 <script>
 import Header from "../src/components/MainComponents/Header.vue";
-import Footer from "../src/components/MainComponents/Footer.vue";
+import Footer from "@/components/MainComponents/Footer.vue";
 import PopUp from "../src/components/MainComponents/PopUp.vue";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fab } from "@fortawesome/free-brands-svg-icons";
@@ -39,7 +39,7 @@ export default {
   mounted() {
     localStorage.setItem('cursorPointer', "home");
     var cookie = localStorage.getItem('cookieSettings');
-    if(cookie == null || cookie == undefined) localStorage.setItem('cookieSettings', false);
+    if(cookie == null || cookie == undefined) localStorage.setItem('cookieSettings', "false");
   },
 };
 </script>

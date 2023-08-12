@@ -23,8 +23,8 @@
 
 <script>
 import CustomRange from "@/components/MainComponents/CustomRange";
-import RepairTypeCard from "@/components/MainComponents/RepairTypeCard";
-import ShoppingCart from "@/components/MainComponents/ShoppingCart";
+import RepairTypeCard from "@/components/IgnoredComponents/RepairTypeCard";
+import ShoppingCart from "@/components/IgnoredComponents/ShoppingCart";
 
 export default {
   data() {

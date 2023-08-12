@@ -2,13 +2,13 @@
   <footer>
     <div class="footerDiv">
       <div class="footerImgDiv">
-        <a href="/">
+        <router-link to="/">
           <img
             src="@/assets/photos/ifixnobg.webp"
             alt="I Fix Main Logo"
             style="height: 50px"
           />
-        </a>
+        </router-link>
       </div>
       <div class="footerContent">
         <div class="customContentFirst">

@@ -11,14 +11,13 @@
         <div
           class="col-lg-2 col-md-12 col-sm-12 d-flex justify-content-lg-start justify-content-md-center justify-content-center justify-content-sm-center headerPic"
         >
-          <a href="/">
+          <router-link to="/">
             <img
-              to="/"
               src="@/assets/photos/ifixnobg.webp"
               alt="I Fix Main Logo"
               style="height: 50px"
             />
-          </a>
+          </router-link>
         </div>
         <div
           class="navbar col-lg-7 col-md-12 col-sm-12 d-flex justify-content-evenly mt-3"
@@ -35,7 +34,7 @@
             >
           </p>
           <p :class="{ active: this.selectedTab === 'service' }">
-            <router-link to="/" style="color: black; text-decoration: none"
+            <router-link to="/services" style="color: black; text-decoration: none"
               >{{ $t("header.service") }}</router-link
             >
           </p>

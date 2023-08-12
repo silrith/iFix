@@ -1,5 +1,5 @@
 <template>
-    <div class="flex-parent mb-3 mt-3">
+    <div class="flex-parent mb-3 mt-3" style="padding: 30px 15px 20px 15px;">
     	<div class="input-flex-container">
     		<div class="input">
     			<span class="mb-1" data-year="0" :data-info='$t("customRange.selectBrand")'></span>
@@ -173,7 +173,6 @@ h1
 		justify-content: center
 		width: 100%
 		height: auto
-		margin-top: 15vh
 	.input
 		width: 60px
 		height: 60px

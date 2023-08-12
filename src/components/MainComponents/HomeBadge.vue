@@ -1,0 +1,152 @@
+<template>
+  <div class="badgeMainDiv">
+    <div class="d-flex text-align-center" style="padding: 50px 0;">
+      <p class="txt5" style="text-align: center; padding: 0 30px">
+        <span style="color: #ff6700;">Unsere Zahlen</span>
+        sprechen für sich!
+      </p>
+    </div>
+    <div class="badgeContentDiv">
+      <div
+        class="col"
+        style="
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
+        "
+      >
+        <div class="badgeContentTextDiv">
+          <p class="txtBadge">15+</p>
+          <p class="txtBadge2">Jahre Erfahrung</p>
+        </div>
+        <div class="badgeContentTextDiv">
+          <p class="txtBadge">10.000+</p>
+          <p class="txtBadge2">Gerate repaiert</p>
+        </div>
+      </div>
+      <div
+        class="col"
+        style="
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
+        "
+      >
+        <div class="badgeContentTextDiv">
+          <p class="txtBadge">100%</p>
+          <p class="txtBadge2">Zufriedene Kunden</p>
+        </div>
+        <div class="badgeContentTextDiv">
+          <p class="txtBadge">100%</p>
+          <p class="txtBadge2">Fachexperten</p>
+        </div>
+      </div>
+    </div>
+    <div class="badgeFooterDiv">
+      <div>
+        <p class="txt4">Überzeuge dich</p>
+        <p class="txt4">
+          selbst!
+          <img
+            class="arrowRight"
+            src="@/assets/header/Arrow.png"
+            alt="Arrow right"
+          />
+        </p>
+      </div>
+      <img
+        class="trustedShopLogo"
+        src="@/assets/header/trustedshops.png"
+        alt="Trusted Shop Image"
+      />
+    </div>
+  </div>
+</template>
+
+<style>
+.badgeMainDiv {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 55px 30px 45px 30px;
+  /* animation: gradient 15s ease infinite;
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%; */
+}
+
+/* @keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+} */
+
+.badgeContentDiv {
+  width: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  background: rgb(242, 109, 37, 0.5);
+  padding: 50px 30px 50px 30px;
+  border-radius: 25px;
+}
+
+.badgeContentTextDiv {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  padding: 0px 31px;
+}
+
+.txtBadge {
+  font-family: Poppins-bold;
+  font-size: 30px;
+  line-height: 1.5;
+  color: white;
+}
+
+.txtBadge2 {
+  font-family: Poppins-bold;
+  font-size: 15px;
+  line-height: 1.5;
+  color: #5236ff;
+}
+
+.badgeFooterDiv {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 50px;
+}
+
+.arrowRight {
+  width: 50%;
+}
+
+.trustedShopLogo {
+  width: 40%;
+}
+
+@media (max-width: 680px) {
+  .badgeFooterDiv {
+    text-align: center;
+  }
+
+  .trustedShopLogo {
+    width: 275px;
+  }
+}
+</style>

@@ -1,6 +1,7 @@
 <template>
   <div class="mainBody">
     <HomeBanner/>
+    <HomeBadge />
     <section class="serviceSelectDiv">
       <div class="col-md-6">
         <h2 class="main-heading">
@@ -632,8 +633,9 @@
 </template>
 
 <script>
-import Carousel from "@/components/MainComponents/Carousel.vue";
+import Carousel from "@/components/IgnoredComponents/Carousel.vue";
 import HomeBanner from "@/components/MainComponents/HomeBanner.vue";
+import HomeBadge from "@/components/MainComponents/HomeBadge.vue";
 
 export default {
   name: "Home Page",
@@ -641,6 +643,11 @@ export default {
     return {
       categoryList: [],
     };
+  },
+  components: {
+    Carousel,
+    HomeBanner,
+    HomeBadge
   },
   methods: {
     loadData() {
@@ -689,10 +696,6 @@ export default {
     this.selectedTab = localStorage.getItem('cursorPointer');
   },
   computed: {},
-  components: {
-    Carousel,
-    HomeBanner
-  },
   created() {},
 };
 </script>

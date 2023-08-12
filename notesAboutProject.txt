@@ -2,3 +2,36 @@ HTML içerisinde i18n kullanmak için : {{ $t("homePage") }}
 
 Stripe hesabı oluşturduktan sonra payment methods'dan istenilenler ayarlanır.
 npm
+
+export default{
+    data(){
+        return{};
+    },
+    props:{},
+    components:{},
+    methods:{},
+    mounted(){},
+}
+
+getBrandDatas() {
+  this.$ajax
+    .get("brand/GetAllBrands")
+    .then((response) => {
+      if (response.data) {
+        this.brandList = response.data;
+        this.isBrand = true;
+      }
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+},
+
+filterModel: [
+    { key: "brandId", value: 0, type: "int" },
+    { key: "categoryDescription", value: "sm", type: "string" },
+    { key: "id", value: 1, type: "int" },
+    { key: "isActive", value: true, type: "bool" },
+    { key: "startDate", value: "20.01.2020", type: "datetime" },
+    { key: "endDate", value: "29.05.2023", type: "datetime" },
+],
