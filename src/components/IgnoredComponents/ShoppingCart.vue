@@ -1,4 +1,6 @@
-<template>
+<template>asd</template>
+
+<!-- <template>
   <div class="row justify-content-center mt-2 mb-2 shoppingCartTopDiv">
     <div class="col-md-12">
       <div id="accordion">
@@ -219,4 +221,4 @@ export default {
 }
 </style>
 
-Widget HaleninFormu extends
+Widget HaleninFormu extends -->

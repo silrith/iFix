@@ -122,7 +122,7 @@
 
 @media (max-width: 1840px) {
   .information1 {
-    text-align: start;
+    text-align: flex-start;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -132,7 +132,7 @@
   .aboutPicDiv {
     justify-content: center;
     align-items: center;
-    text-align: start !important;
+    text-align: flex-start !important;
   }
 
   .aboutPicDiv2 {

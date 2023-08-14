@@ -4,10 +4,10 @@
       <div class="wrap-login101">
         <div class="signup101">
           <div>
-            <h1 style="line-height: 60px">
+            <p style="font-size: 36px; font-weight: 600;">
               {{ $t('signup.header1') }}<br />
               {{ $t('signup.header2') }} 
-            </h1>
+            </p>
           </div>
           <div style="margin-top: 30px; line-height: 25px">
             <p>
@@ -221,6 +221,11 @@ export default {
   justify-content: center;
   padding: 20px 0 10px 0;
   border: none;
+}
+
+.signup101 {
+  text-align: start !important;
+  padding: 25px 0;
 }
 
 .wrap-login101 {

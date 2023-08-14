@@ -3,25 +3,19 @@
     <div class="container-login100">
       <div class="wrap-login100">
         <div class="signup100">
-          <div>
-            <h1 style="line-height: 60px">
-              {{ $t("signin.header1") }}<br />
-              {{ $t("signin.header2") }}
-            </h1>
-          </div>
-          <div style="margin-top: 30px; line-height: 25px">
-            <p>
-              <b>{{ $t("signin.subtitle1") }}</b> <br />
-              <b>{{ $t("signin.subtitle2") }}</b>
-              <b style="color: #f26d25"
-                ><router-link
-                  to="/signup"
-                  style="font-style: normal; color: #f26d25"
-                  > {{ $t("signin.subtitle3") }}</router-link
-                ></b
-              >
-            </p>
-          </div>
+          <p style="font-size: 36px; font-weight: 600;">
+            {{ $t("signin.header1") }}<br />
+            {{ $t("signin.header2") }}
+          </p>
+          <p>
+            <b>{{ $t("signin.subtitle1") }}</b> <br />
+            <b>{{ $t("signin.subtitle2") }}</b>
+            <b style="color: #f26d25"
+              ><router-link to="/signup" style="color: #f26d25">
+                {{ $t("signin.subtitle3") }}</router-link
+              ></b
+            >
+          </p>
         </div>
         <div class="login100-pic js-tilt" data-tilt>
           <img src="@/assets/header/login.png" alt="Login Picture" />
@@ -39,21 +33,23 @@
               <hr class="txt3" />
             </div>
             <div>
-              <p class="txt1" style="padding-top: 15px">{{ $t("header.login") }}!</p>
+              <p class="txt1" style="padding-top: 15px">
+                {{ $t("header.login") }}!
+              </p>
             </div>
             <div style="width: 30%">
               <hr class="txt3" />
             </div>
           </div>
           <div
-            class="wrap-input100 validate-input"
+            class="wrap-input100"
             data-validate="Valid email is required: ex@abc.xyz"
           >
             <input
               class="input100"
               type="text"
               name="email"
-              :placeholder='$t("userForm.email")'
+              :placeholder="$t('userForm.email')"
             />
             <span class="focus-input100"></span>
             <span class="symbol-input100">
@@ -69,7 +65,7 @@
               class="input100"
               :type="showPassword ? 'text' : 'password'"
               name="pass"
-              :placeholder='$t("userForm.password")'
+              :placeholder="$t('userForm.password')"
             />
             <span
               @click="togglePasswordField"
@@ -86,7 +82,9 @@
             </span>
           </div>
           <div class="container-login100-form-btn">
-            <button class="btn btn-block py-2 btn-login">{{ $t("header.login") }}</button>
+            <button class="btn btn-block py-2 btn-login">
+              {{ $t("header.login") }}
+            </button>
           </div>
           <div
             style="
@@ -108,7 +106,7 @@
                   :icon="['fab', 'facebook-f']"
                   style="color: #ffffff"
               /></span>
-              {{ $t('signin.loginFacebook') }}
+              {{ $t("signin.loginFacebook") }}
             </a>
             <a href="#" class="btn btn-block py-2 btn-google"
               ><span class="icon-google mr-3"
@@ -116,7 +114,7 @@
                   :icon="['fab', 'google']"
                   style="color: #ffffff"
               /></span>
-              {{ $t('signin.loginGoogle') }}</a
+              {{ $t("signin.loginGoogle") }}</a
             >
           </div>
           <div
@@ -132,12 +130,14 @@
             </div>
           </div>
           <div class="text-center p-t-12">
-            <span class="txt1"> {{ $t('signin.forgot') }} </span>
-            <a class="txt2" href="#">{{ $t('signin.userName') }} / {{ $t('userForm.password') }}? </a>
+            <span class="txt1"> {{ $t("signin.forgot") }} </span>
+            <a class="txt2" href="#"
+              >{{ $t("signin.userName") }} / {{ $t("userForm.password") }}?
+            </a>
           </div>
           <div class="text-center p-t-136">
             <a class="txt2" href="#">
-              {{ $t('signin.createAccount') }}
+              {{ $t("signin.createAccount") }}
               <i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
             </a>
           </div>
@@ -208,6 +208,11 @@ export default {
   justify-content: center;
   padding: 20px 0 10px 0;
   border: none;
+}
+
+.signup100 {
+  text-align: start !important;
+  padding: 25px 0;
 }
 
 .wrap-login100 {
@@ -384,63 +389,6 @@ export default {
 .login100-form-btn:hover {
   background: #333333;
   cursor: pointer;
-}
-
-.validate-input {
-  position: relative;
-}
-
-.alert-validate::before {
-  content: attr(data-validate);
-  position: absolute;
-  max-width: 70%;
-  background-color: white;
-  border: 1px solid #c80000;
-  border-radius: 13px;
-  padding: 4px 25px 4px 10px;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  -moz-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  -o-transform: translateY(-50%);
-  transform: translateY(-50%);
-  right: 8px;
-  pointer-events: none;
-
-  font-family: Poppins-Medium;
-  color: #c80000;
-  font-size: 13px;
-  line-height: 1.4;
-  text-align: left;
-
-  visibility: hidden;
-  opacity: 0;
-
-  -webkit-transition: opacity 0.4s;
-  -o-transition: opacity 0.4s;
-  -moz-transition: opacity 0.4s;
-  transition: opacity 0.4s;
-}
-
-.alert-validate::after {
-  content: "\f06a";
-  font-family: FontAwesome;
-  display: block;
-  position: absolute;
-  color: #c80000;
-  font-size: 15px;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  -moz-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  -o-transform: translateY(-50%);
-  transform: translateY(-50%);
-  right: 13px;
-}
-
-.alert-validate:hover:before {
-  visibility: visible;
-  opacity: 1;
 }
 
 .other-login-methods-label {

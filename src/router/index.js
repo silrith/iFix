@@ -50,6 +50,13 @@ const routes = [
     },
   },
   {
+    path: "/shop",
+    name: "Shop",
+    component: function () {
+      return import("../pages/ShopPage.vue");
+    },
+  },
+  {
     path: "/repairTypes",
     name: "Repair Types",
     component: function () {

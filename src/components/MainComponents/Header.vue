@@ -39,7 +39,7 @@
             >
           </p>
           <p :class="{ active: this.selectedTab === 'shop' }">
-            <router-link to="/" style="color: black; text-decoration: none"
+            <router-link to="/shop" style="color: black; text-decoration: none"
               >{{ $t("header.shop") }}</router-link
             >
           </p>

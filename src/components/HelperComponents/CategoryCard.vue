@@ -1,6 +1,6 @@
 <template>
-  <router-link to="/models">
-    <div class="cardDiv">
+  <router-link to="/models" style="text-decoration: none;">
+    <div class="categoryCardDiv">
       <div>
         <img :src="cardElement.categoryPicture" alt="Category Picture" />
       </div>
@@ -23,7 +23,7 @@ export default {
 </script>
 
 <style>
-.cardDiv {
+.categoryCardDiv {
   display: flex;
   flex-direction: column;
   width: 150px;
@@ -31,18 +31,16 @@ export default {
   background-color: whitesmoke;
   border-radius: 25px;
   border: 1px;
-  text-align: center;
   padding: 20px;
   justify-content: space-evenly;
   align-items: center;
   margin: 15px;
-
   --borderWidth: 3px;
   position: relative;
   border-radius: var(--borderWidth);
 }
 
-.cardDiv:after {
+.categoryCardDiv:after {
   content: "";
   position: absolute;
   top: calc(-1 * var(--borderWidth));
@@ -79,7 +77,7 @@ export default {
   }
 }
 
-.cardDiv img {
+.categoryCardDiv img {
   width: 100%;
   margin-top: 10px;
 }
@@ -91,11 +89,10 @@ export default {
   line-height: 1.5;
   color: #ef4e7b;
   margin-top: 20px;
-  text-align: end;
 }
 
-@media (max-width: 419px) {
-  .cardDiv {
+@media (max-width: 779px) {
+  .categoryCardDiv {
     width: 100px;
     height: 100px;
   }

@@ -12,7 +12,7 @@
           <div v-for="category in categoryList" class="col-md-8 col-lg-6 mb-1">
             <router-link
               :to="{
-                path: '/repairServices',
+                path: '/services',
                 query: { filter: 'brands' },
               }"
             >
@@ -768,7 +768,7 @@ export default {
 
   .faq-section strong {
     font-size: large;
-    text-align: start;
+    text-align: flex-start;
   }
 
   .faq-section a {

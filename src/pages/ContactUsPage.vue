@@ -1,18 +1,18 @@
 <template>
-  <div class="limiter">
+  <div class="contactUsLimiter">
     <div class="container-login102">
       <div class="wrap-login102">
         <div class="informationCard">
           <div class="contactUsHeader">
             <div style="margin-top: 30px; line-height: 25px;">
-              <h1 class="txtDark2" style="line-height: 70px"><b>{{ $t("contact.header1") }}</b><br /></h1>
+              <p class="txtDark2" style="line-height: 70px"><b>{{ $t("contact.header1") }}</b><br /></p>
               <p class="txtDark2">
                 <b>{{ $t("contact.header2") }}</b> <br />
                 <b style="color: #f26d25">{{ $t("contact.header3") }}</b>
               </p>
             </div>
           </div>
-          <div class="txtDark2" style="text-align: flex-start; padding: 0 30px 0 0;">
+          <div class="txtDark2" style="text-align: flex-start; padding: 0 30px 0 30px;">
             <p style="line-height: 60px"><b><u>{{ $t("contact.or") }}</u></b><br /></p>
           </div>
           <div
@@ -186,7 +186,7 @@ export default {
 </script>
 
 <style>
-.limiter {
+.contactUsLimiter {
   width: 100%;
   margin: 0 auto;
   display: flex;

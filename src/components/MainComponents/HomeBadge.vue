@@ -1,6 +1,6 @@
 <template>
   <div class="badgeMainDiv">
-    <div class="d-flex text-align-center" style="padding: 50px 0;">
+    <div class="badgeHeader" style="padding: 50px 0;">
       <p class="txt5" style="text-align: center; padding: 0 30px">
         <span style="color: #ff6700;">Unsere Zahlen</span>
         sprechen für sich!
@@ -88,6 +88,11 @@
 		background-position: 0% 50%;
 	}
 } */
+
+.badgeHeader{
+  display: flex;
+  text-align: center;
+}
 
 .badgeContentDiv {
   width: 80%;

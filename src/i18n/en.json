@@ -152,5 +152,10 @@
     "information1" : "We combine all of the repair methods of the current hour, combine them with first-class original spare parts and, with the help of our extensive experience, install them in your smartphone and tablet. Our highly qualified technicians have more than 15 years of experience and continue to update their knowledge in dedicated community forums, blogs, training videos and support channels. Due to the constantly expanding knowledge network with other service partners and specialists, it is also possible for us to carry out specific work such as mainboard repairs. Regardless of the repair of broken displays or cases, we also offer the best experience and support for software problems, accessories and many other areas related to your electronics.",
     "information2" : "Customer satisfaction is important to many companies, but we also recognize that the financial cost to customers is an important criterion for satisfaction. Therefore, we have set ourselves the goal of seeing YOU and/or a friend/acquaintance/family member again one day and therefore keep the profit margin exceptionally low. Because building trust is a difficult undertaking, once trust has been destroyed it can hardly be restored. Therefore, our goal is YOUR satisfaction",
     "information3" : "The BEST PRICE, with the BEST SERVICE and the BEST QUALITY. No more and no less!"
+  },
+  "services" : {
+    "our" : "Our",
+    "subtitle1" : "Search your model via the search bar",
+    "subtitle2" : "use the selector"
   }
 }

@@ -171,7 +171,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<!-- <style scoped>
 .calendar-header {
   display: flex;
   align-items: center;
@@ -202,4 +202,4 @@ export default {
 .selected {
   background-color: #ddd;
 }
-</style>
+</style> -->

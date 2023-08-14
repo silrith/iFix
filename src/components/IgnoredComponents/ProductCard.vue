@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
   <div
     class="col-lg-12 mb-2 d-flex flex-row justify-content-center"
     style="width: 80%"
@@ -100,4 +100,7 @@ export default {
   methods: {
   },
 };
-</script>
+</script> -->
+<template>
+  asd
+</template>
