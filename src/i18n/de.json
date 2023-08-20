@@ -63,6 +63,11 @@
     "postYourDevice" : "Veröffentlichen Sie Ihr Gerät:",
     "postYourDeviceDesc" : "Der Einfachheit halber schicken Sie Ihr Gerät einfach an unsere Reparaturzentrale. Die meisten Geräte werden noch am selben Tag repariert und versendet, an dem wir sie erhalten."
   },
+  "homeBanner" : {
+    "repairShop" : "DEINE REPARATURWERKSTATT",
+    "header1" : "Express Reparatur in Wien - vor",
+    "header2" : "Ort oder per post!"
+  },
   "customRange" :{
     "selectBrand" : "Wählen Sie Marke aus",
     "selectModel" : "Wählen Sie Modell aus",
@@ -157,5 +162,10 @@
     "our" : "Unsere",
     "subtitle1" : "Suche dein Modell über die Suchbar",
     "subtitle2" : "verwende die Auswahlfhilfe"
+  },
+  "shopFilter" : {
+    "brand" : "Marke",
+    "category" : "Kategorie",
+    "model" : "Modell"
   }
 }

@@ -142,8 +142,9 @@
 .headerDiv {
   color: black;
   font-family: Poppins-Bold;
-  padding-bottom: 30px;
+  padding-bottom: 20px;
   box-shadow: rgb(38, 57, 77) 0px 10px 10px -10px;
+  z-index: 9998;
 }
 
 .headerContent {

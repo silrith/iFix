@@ -93,7 +93,7 @@
             data-validate="Password is required"
           >
             <input
-              id="#password-input"
+              id="#password-input1"
               class="input101"
               :type="showPassword ? 'text' : 'password'"
               name="pass"
@@ -118,7 +118,7 @@
             data-validate="Password is required"
           >
             <input
-              id="#password-input"
+              id="#password-input2"
               class="input101"
               :type="showRepeatPassword ? 'text' : 'password'"
               name="pass"

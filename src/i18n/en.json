@@ -63,6 +63,11 @@
     "postYourDevice" : "Post Your Device :",
     "postYourDeviceDesc" : "For simplicity, post your device to our repair HQ. Most devices are repaired and dispatched on the same day as we receive."
   },
+  "homeBanner" : {
+    "repairShop" : "YOUR REPAIR SHOP",
+    "header1" : "Express repair in Vienna - before",
+    "header2" : "place or by post!"
+  },
   "customRange" : {
     "selectBrand" : "Select Brand",
     "selectModel" : "Select Model",
@@ -157,5 +162,10 @@
     "our" : "Our",
     "subtitle1" : "Search your model via the search bar",
     "subtitle2" : "use the selector"
+  },
+  "shopFilter" : {
+    "brand" : "Brand",
+    "category" : "Category",
+    "model" : "Model"
   }
 }

@@ -174,7 +174,7 @@ export default {
     return {};
   },
   props: {
-    shoppingCartList: Array,
+    shoppingCartList: [],
   },
   methods: {
     removeItemFromCart(index) {
@@ -219,6 +219,4 @@ export default {
 
 @media screen {
 }
-</style>
-
-Widget HaleninFormu extends -->
+</style> -->

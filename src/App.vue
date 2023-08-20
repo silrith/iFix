@@ -1,6 +1,7 @@
 <template>
-  <Header/>
+  <Header />
   <RouterView />
+  <PreLoader/>
   <PopUp />
   <Footer />
   <img
@@ -18,8 +19,11 @@ import PopUp from "../src/components/MainComponents/PopUp.vue";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fab } from "@fortawesome/free-brands-svg-icons";
 import { fas } from "@fortawesome/free-solid-svg-icons";
-import { faCartArrowDown } from '@fortawesome/free-solid-svg-icons';
+import { faCartArrowDown } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
+import PreLoader from "@/components/HelperComponents/LoadingScreen.vue";
+
+import { toast } from "vue3-toastify";
 
 library.add(fab, fas, faCartArrowDown);
 export default {
@@ -31,15 +35,22 @@ export default {
   },
   components: {
     Header,
+    PreLoader,
     Footer,
     PopUp,
-    FontAwesomeIcon
+    FontAwesomeIcon,
   },
   methods: {},
   mounted() {
-    localStorage.setItem('cursorPointer', "home");
-    var cookie = localStorage.getItem('cookieSettings');
-    if(cookie == null || cookie == undefined) localStorage.setItem('cookieSettings', "false");
+    localStorage.setItem("cursorPointer", "home");
+    var cookie = localStorage.getItem("cookieSettings");
+    if (cookie == null || cookie == undefined)
+      localStorage.setItem("cookieSettings", "false");
+  },
+  computed: {
+    isLoading() {
+      return this.$store.state.isLoading;
+    },
   },
 };
 </script>

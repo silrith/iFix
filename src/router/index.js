@@ -1,10 +1,10 @@
 import { createRouter, createWebHistory } from "vue-router";
 import HomePage from "../pages/HomePage.vue";
-
+var loader = document.getElementsByClassName("loadingScreen")
 const routes = [
   {
     path: "/",
-    name: "home",
+    name: "Home",
     component: HomePage,
   },
   {
@@ -99,6 +99,20 @@ const router = createRouter({
   scrollBehavior (to, from, savedPosition) {
     return { top: 0 }
   },
+});
+
+router.beforeEach((to, from, next) => {
+  document.title = to.name ?? 'Default Title'
+  
+  if(to.path != "/")
+    loader[0].style.display = "flex";
+  next();
+});
+
+router.afterEach(() => {
+  setTimeout(() => {
+    loader[0].style.display = "none";
+  }, 1000);
 });
 
 export default router;

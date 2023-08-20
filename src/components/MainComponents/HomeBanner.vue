@@ -3,12 +3,12 @@
     <div class="homeBannerLeftDiv">
       <div class="homeBannerLeftText">
         <div class="txt3">
-          <p><b>IFIX. DEINE REPARATURWERKSTATT</b></p>
+          <p><b>IFIX. {{ this.$t('homeBanner.repairShop') }}</b></p>
         </div>
         <div class="txt4" style="height: max-content">
           <p>
-            <b>Express Reparatur in Wien - vor Ort oder</b><br /><b
-              >per Post!</b
+            <b>{{ this.$t('homeBanner.header1') }}</b><br /><b
+              >{{ this.$t('homeBanner.header2') }}</b
             >
           </p>
         </div>
@@ -37,7 +37,7 @@
             </span>
           </div>
           <div class="container-banner103-form-btn">
-            <button class="btn-Banner">Go Shop</button>
+            <router-link to="/shop"><button class="btn-Banner">Go Shop</button></router-link>
           </div>
         </div>
         <div class="bannerLeftFooterText">

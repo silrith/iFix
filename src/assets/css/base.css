@@ -114,3 +114,31 @@ footer {
 input[type="checkbox"] {
   accent-color: orange;
 }
+
+::-webkit-scrollbar {
+  width: 15px;
+  height: 90%;
+  margin: 40px;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-track {
+  background: #999; 
+  border: 5px solid white;
+  border-radius: 9999px;
+  margin: 10px;
+}
+ 
+::-webkit-scrollbar-thumb {
+  border: 4px solid rgba(0, 0, 0, 0);
+  background-clip: padding-box;
+  border-radius: 9999px;
+  background-color: #f26d25;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  border: 2px solid rgba(0, 0, 0, 0);
+  background-clip: padding-box;
+  border-radius: 9999px;
+  background-color: #555;
+}

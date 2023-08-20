@@ -706,7 +706,6 @@ export default {
   width: 100%;
   height: 50%;
   flex-direction: column;
-  align-content: center;
   justify-content: center;
   align-items: center;
   top: 0;
