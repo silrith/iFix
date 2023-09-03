@@ -9,8 +9,134 @@
           <p class="serviceFilterText2">Things happen-we've seen it all.</p>
         </div>
         <div class="serviceFilterGradients">
-            <div class="repairTypesDiv">asd</div>
-            <div class="repairTypesDiv2">asd</div>
+          <div class="textAreaWithRepirTypes">
+            <div class="repairTypesDiv">
+              <Card
+                v-for="repairType in this.repairTypeList"
+                :cardElement="repairType"
+              />
+              <PreLoader v-if="!this.isLoaded" />
+            </div>
+            <div class="serviceFilterTextArea">
+              <input
+                type="textarea"
+                placeholder="Anything else we should know? (Optional)"
+              />
+            </div>
+          </div>
+          <div class="cartAndButtonDiv">
+            <div class="repairTypesDiv2">
+              <div
+                style="
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  padding: 15px 0 0 0;
+                "
+              >
+                <p class="txt4" style="color: #666 !important">Summary</p>
+              </div>
+              <div class="txt3" style="width: 90%">
+                <hr />
+              </div>
+              <div class="selectedRepairTypeList">
+                <span
+                  v-if="this.selectedRepairTypes.length == 0"
+                  class="txt2"
+                  style="font-weight: 600"
+                  >There is no selected repair type.</span
+                >
+                <div v-for="repairType in this.selectedRepairTypes" style="display: flex; justify-content: space-between;">
+                  <span
+                    class="txt2"
+                    style="font-weight: 600"
+                    ><font-awesome-icon
+                      :icon="['fas', 'ban']"
+                      style="color: #ff0000"
+                      @click="removeFromList(repairType)"
+                    />
+                    {{ repairType.repairTypeCategory }}
+                  </span>
+                  <span class="txt2" style="font-weight: 600">
+                    {{ repairType.repairTypePrice }} <span style="color: #f26d25;">€</span>
+                  </span>
+                </div>
+              </div>
+              <div class="txt3" style="width: 90%">
+                <hr />
+              </div>
+              <div class="selectedTotalPrice">
+                <p class="txt2" style="font-weight: 600">Pricing details</p>
+                <p class="txt2" style="font-weight: 600">total price</p>
+              </div>
+              <div class="txt3" style="width: 90%">
+                <hr />
+              </div>
+              <div class="repairInformation">
+                <p class="txt2" style="font-weight: 600">
+                  <u>About our repairs</u>
+                </p>
+                <div
+                  style="
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                  "
+                >
+                  <div style="text-align: start; width: 50%">
+                    <p class="txt2" style="font-weight: 600">
+                      <font-awesome-icon
+                        :icon="['fas', 'circle-check']"
+                        style="color: #ff9500"
+                      />
+                      6 month
+                    </p>
+                  </div>
+                  <div style="text-align: start; width: 50%">
+                    <p class="txt2" style="font-weight: 600">
+                      <font-awesome-icon
+                        :icon="['fas', 'circle-check']"
+                        style="color: #ff9500"
+                      />
+                      fast turn around
+                    </p>
+                  </div>
+                </div>
+                <div
+                  style="
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                  "
+                >
+                  <div style="text-align: start; width: 50%">
+                    <p class="txt2" style="font-weight: 600">
+                      <font-awesome-icon
+                        :icon="['fas', 'circle-check']"
+                        style="color: #ff9500"
+                      />
+                      Quality
+                    </p>
+                  </div>
+                  <div style="text-align: start; width: 50%">
+                    <p class="txt2" style="font-weight: 600">
+                      <font-awesome-icon
+                        :icon="['fas', 'circle-check']"
+                        style="color: #ff9500"
+                      />
+                      Memnuniyet
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button
+              class="btn btn-block py-2 btn-loginServiceResult"
+              @click="goModelRepairTypes()"
+            >
+              {{ $t("serviceFilter.continue") }}
+            </button>
+          </div>
         </div>
       </div>
     </div>
@@ -18,12 +144,48 @@
 </template>
 
 <script>
+import Card from "@/components/HelperComponents/SpairPartCard.vue";
+import PreLoader from "@/components/HelperComponents/LoadingScreen2.vue";
 export default {
   data() {
-    return {};
+    return {
+      isLoaded: false,
+      repairTypeList: [],
+      selectedRepairTypes: [],
+      filterModel: [{ key: "modelId", value: 0, type: "int" }],
+    };
   },
-  methods: {},
-  mounted() {},
+  components: {
+    Card,
+    PreLoader,
+  },
+  methods: {
+    getRepairTypesForModel(id) {
+      this.filterModel[0].value = parseInt(id);
+      this.$ajax
+        .post("repairType/SearchRepairTypes", this.filterModel)
+        .then((response) => {
+          if (response.data) {
+            this.repairTypeList = response.data;
+            this.isLoaded = true;
+          }
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    },
+    removeFromList(object) {
+      this.selectedRepairTypes = this.selectedRepairTypes.filter(
+        (x) => x !== object
+      );
+    },
+  },
+  mounted() {
+    this.getRepairTypesForModel(this.$route.query.modelId);
+    // setTimeout(function() {
+
+    // }, 1000);
+  },
 };
 </script>
 
@@ -33,11 +195,11 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 60px 0;
+  padding: 50px 0;
 }
 
 .serviceResultPageContent {
-  width: 80%;
+  width: 90%;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
@@ -69,7 +231,7 @@ export default {
   font-size: 50px;
   line-height: 1;
   text-align: start !important;
-  padding: 0 0 0 13px;
+  padding: 0 0 0 18px;
 }
 
 .serviceFilterText2 {
@@ -78,111 +240,177 @@ export default {
   font-weight: 600;
   text-align: start !important;
   color: #666666;
-  padding: 0 0 0 13px;
+  padding: 0 0 0 18px;
 }
 
 .serviceResultDiv {
   width: 100%;
+  padding: 16px 5px;
 }
 
 .repairTypesDiv {
   display: flex;
-  flex-direction: column;
-  width: 75%;
-  width: 75%;
-  height: 500px;
-  background-color: white;
-  border-radius: 25px;
-  border: 1px;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 400px;
+  border-radius: 10px;
+  border: 2px solid #666;
   justify-content: space-evenly;
   align-items: center;
   margin: 15px;
-  --borderWidth: 3px;
   position: relative;
-  border-radius: var(--borderWidth);
-}
-
-.repairTypesDiv:after {
-  content: "";
-  position: absolute;
-  top: calc(-1 * var(--borderWidth));
-  left: calc(-1 * var(--borderWidth));
-  height: calc(100% + var(--borderWidth) * 2);
-  width: calc(100% + var(--borderWidth) * 2);
-  background: linear-gradient(
-    60deg,
-    #ff4800,
-    #ff5400,
-    #ff6000,
-    #ff6d00,
-    #ff7900,
-    #ff8500,
-    #ff9100,
-    #ff9e00,
-    #ffb600
-  );
-  border-radius: calc(2 * var(--borderWidth));
-  z-index: -1;
-  animation: animatedgradient 3s ease alternate infinite;
-  background-size: 300% 300%;
+  overflow-y: auto;
+  padding: 25px;
+  gap: 2rem;
 }
 
 .repairTypesDiv2 {
   display: flex;
   flex-direction: column;
-  width: 20%;
-  height: 500px;
-  background-color: white;
-  border-radius: 25px;
-  border: 1px;
+  width: 100%;
+  height: 400px;
+  border-radius: 10px;
+  border: 2px solid #666;
   justify-content: space-evenly;
   align-items: center;
-  margin: 15px;
-  --borderWidth: 3px;
   position: relative;
-  border-radius: var(--borderWidth);
+  overflow-y: auto;
 }
 
-.repairTypesDiv2:after {
-  content: "";
-  position: absolute;
-  top: calc(-1 * var(--borderWidth));
-  left: calc(-1 * var(--borderWidth));
-  height: calc(100% + var(--borderWidth) * 2);
-  width: calc(100% + var(--borderWidth) * 2);
-  background: linear-gradient(
-    60deg,
-    #ff4800,
-    #ff5400,
-    #ff6000,
-    #ff6d00,
-    #ff7900,
-    #ff8500,
-    #ff9100,
-    #ff9e00,
-    #ffb600
-  );
-  border-radius: calc(2 * var(--borderWidth));
-  z-index: -1;
-  animation: animatedgradient 3s ease alternate infinite;
-  background-size: 300% 300%;
+.serviceFilterGradients {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
-@keyframes animatedgradient {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+.textAreaWithRepirTypes {
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
 }
 
-.serviceFilterGradients{
+.cartAndButtonDiv {
+  width: 25%;
+  height: 515px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 0 0 0;
+}
+
+.serviceFilterTextArea {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.serviceFilterTextArea input {
+  width: 100%;
+  padding: 29px;
+  border: 2px solid #ff4800;
+  border-radius: 10px;
+  font-family: Poppins-Regular;
+  color: #666;
+  caret-color: #f26d25;
+  caret-shape: underscore;
+}
+
+.serviceFilterTextArea input:focus {
+  outline: none;
+  border: 2px solid #ff4800;
+}
+
+.serviceFilterTextArea input::after {
+  border: none;
+  outline: none;
+}
+
+.serviceFilterTextArea input::placeholder {
+  text-align: center;
+  font-size: 14px;
+  font-family: Poppins-Regular;
+  color: #999999;
+  font-weight: 500;
+}
+
+.serviceResultContainer-btn {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  border: none;
+}
+
+.btn-loginServiceResult {
+  background-color: #f26d25;
+  color: #fff;
+}
+
+.btn-loginServiceResult:hover {
+  background-color: #333333;
+  color: #fff;
+}
+
+.btn-loginServiceResult:focus {
+  background-color: #333333;
+}
+
+.selectedRepairTypeList {
+  width: 90%;
+  height: 200px;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+}
+
+.selectedTotalPrice {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  height: 100px;
+  text-align: start;
+}
+
+.repairInformation {
+  width: 90%;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  text-align: start;
+}
+@media (max-width: 1360px) {
+  .serviceFilterGradients {
     width: 100%;
     display: flex;
+    flex-direction: column;
     flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .textAreaWithRepirTypes {
+    width: 100%;
+    gap: 1rem;
+  }
+
+  .cartAndButtonDiv {
+    width: 50%;
+  }
+}
+
+@media (max-width: 992px) {
+  .cartAndButtonDiv {
+    width: 95%;
+    padding: 10px;
+  }
 }
 </style>

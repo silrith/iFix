@@ -1,21 +1,41 @@
 <template>
     <div class="spairPartCardDiv">
       <div class="spairPartPicDiv">
-        <img src="@/assets/header/about2.png" alt="Category Picture" />
+        <img :src='cardElement.repairTypePicture' alt="Category Picture" />
       </div>
       <div class="spairPartDetailDiv">
-        <p class="txt3">Header</p>
-        <p class="txt2">Lorem Ipsum Lorem</p>
+        <p class="txt2"><b>{{ cardElement.repairTypeCategory }}</b></p>
+        <p class="txt2"><b>{{ cardElement.repairTypePrice }}</b> <span style="color: #f26d25; font-weight: 600;">€</span></p>
+        <p class="txt2"><b>{{ cardElement.deadLine }}</b></p>
         <div class="spairCardFooterDiv">
-            <p class="txt2">105 Euro</p>
             <div class="addRemovePart">
-                <font-awesome-icon :icon="['fas', 'circle-minus']" style="color: #f26d25;" />
-                <font-awesome-icon :icon="['fas', 'circle-plus']" style="color: #f26d25;" />
+                <font-awesome-icon :icon="['fas', 'circle-minus']" style="color: #f26d25;" @click="removeFromList(cardElement)"/>
+                <font-awesome-icon :icon="['fas', 'circle-plus']" style="color: #f26d25;" @click="addToList(cardElement)"/>
             </div>
         </div>
       </div>
     </div>
 </template>
+
+<script>
+export default {
+  data() {
+    return {};
+  },
+  props: {
+    cardElement: Object,
+  },
+  methods:{
+    addToList(object){
+        this.$parent.selectedRepairTypes.push(object);
+        console.log(this.$parent)
+    },
+    removeFromList(object){
+        this.$parent.selectedRepairTypes = this.$parent.selectedRepairTypes.filter(x=> x !== object);
+    }
+  }
+};
+</script>
 
 <style>
 .spairPartCardDiv{
@@ -27,7 +47,7 @@
     width: 250px;
     height: 160px;
     border-radius: 20px;
-    border: 1px solid #f26d25;
+    border: 2px solid #666;
     padding: 8px;
 }
 
@@ -36,14 +56,14 @@
 }
 
 .spairPartCardDiv img{
-    width: 110px;
+    width: 85px;
 }
 
 .spairPartDetailDiv{
     width: 50%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     text-align: center;
 }
