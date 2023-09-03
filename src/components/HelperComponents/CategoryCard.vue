@@ -1,5 +1,8 @@
 <template>
-  <router-link to="/models" style="text-decoration: none;">
+  <router-link :to="{
+                path: '/servicefilter',
+                query: { filter: cardElement.id },
+              }" style="text-decoration: none;">
     <div class="categoryCardDiv">
       <div>
         <img :src="cardElement.categoryPicture" alt="Category Picture" />
@@ -28,7 +31,7 @@ export default {
   flex-direction: column;
   width: 150px;
   height: 150px;
-  background-color: whitesmoke;
+  background-color: white;
   border-radius: 25px;
   border: 1px;
   padding: 20px;

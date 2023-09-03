@@ -20,7 +20,7 @@ createApp(App)
   .use(i18n)
   .use(toast,
     {
-      autoClose: 2000,
+      autoClose: 3000,
       style:{
       }
     })

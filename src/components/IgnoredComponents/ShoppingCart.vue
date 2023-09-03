@@ -1,19 +1,8 @@
-<template>asd</template>
-
-<!-- <template>
-  <div class="row justify-content-center mt-2 mb-2 shoppingCartTopDiv">
+<template>
+  <div class="row justify-content-center mt-2 mb-2 spairPartCartDiv">
     <div class="col-md-12">
       <div id="accordion">
-        <div
-          class="card mt-2 mb-2"
-          style="
-            background-color: white;
-            font-size: 15px;
-            background-color: rgb(255, 103, 0);
-            box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
-              rgba(0, 0, 0, 0.22) 0px 10px 10px;
-          "
-        >
+        <div class="card">
           <div
             class="card-header d-flex justify-content-between border-3"
             id="headingOne"
@@ -26,21 +15,17 @@
               aria-controls="collapseOne"
               style="color: transparent; padding-top: 5px"
             >
-              <h5
-                class="mt-2 font-weight-bold"
-                style="font-size: 18px; color: rgba(255, 255, 255, 0.8)"
-              >
+              <p class="txt3">
                 {{ $t("shoppingCart.shoppingCartList") }}
-              </h5>
+              </p>
             </button>
             <font-awesome-icon
-              class="asdcontainer"
               :icon="['fas', 'cart-shopping']"
               size="2xl"
               style="
-                color: rgba(255, 255, 255, 0.8);
                 background-color: transparent;
                 padding-top: 10px;
+                color: #666;
               "
             />
             <span>{{ shoppingCartList.length }}</span>
@@ -49,13 +34,19 @@
         <div
           v-if="shoppingCartList.length > 0"
           id="collapseOne"
-          class="collapse show"
+          class="collapse show shoppingCartTopDiv"
           aria-labelledby="headingOne"
           data-parent="#accordion"
         >
-          <table class="col-lg-12">
+          <table
+            class="col-lg-12"
+            style="background-color: rgba(33, 37, 41, 0.03)"
+          >
             <thead class="table table-bordered" style="padding: 0.75rem">
-              <tr class="table">
+              <tr
+                class="table"
+                style="background-color: rgba(33, 37, 41, 0.03)"
+              >
                 <th
                   class="text-center"
                   scope="col"
@@ -80,8 +71,9 @@
                 </th>
               </tr>
             </thead>
-            <tbody class="table table-bordered">
+            <tbody class="table table-bordered shoppingCartTopDiv">
               <tr
+                style="background-color: rgba(33, 37, 41, 0.03)"
                 class="table"
                 v-for="(cart, index) in shoppingCartList"
                 :key="index"
@@ -97,7 +89,11 @@
                   >
                     <font-awesome-icon
                       :icon="['fas', 'trash-can']"
-                      style="color: crimson; padding-top: 5px"
+                      style="
+                        color: crimson;
+                        padding-top: 5px;
+                        background-color: transparent;
+                      "
                       @click="removeItemFromCart(index)"
                     />
                   </a>
@@ -124,47 +120,25 @@
                 </td>
               </tr>
             </tbody>
-            <tfoot
-              class="table table-bordered"
-              style="font-size: 15px background-color: rgba(255, 255, 255, 0.8)"
-            >
-              <tr class="">
-                <th class="text-start" scope="row" colspan="3">
-                  <u class="text-dark p-1">{{ $t("shoppingCart.totalPrice") }}:</u>
-                </th>
-                <th
-                  class="text-black text-center"
-                  scope="row"
-                  colspan="1"
-                  style="font-size: 15px"
-                >
-                  {{
-                    shoppingCartList
-                      .reduce((acc, item) => acc + item.repairTypePrice, 0)
-                      .toLocaleString()
-                  }}
-                  £
-                </th>
-              </tr>
-            </tfoot>
           </table>
-          <div class="d-flex justify-content-end mb-2 mt-4">
-            <button
-              class="item-cart-btn nav-link col-lg-3 text-center"
-              @click="createPayment"
-              style="
-                border: 1px solid white;
-                border-radius: 30px;
-                background-color: rgb(255, 103, 0);
-                font-size: 15px;
-              "
-            >
-              Payment
-          </button>
-          </div>
         </div>
       </div>
     </div>
+  </div>
+  <div class="totalPrice">
+    <p class="txt3">{{ $t("shoppingCart.totalPrice") }}:</p>
+    <p class="txt2">
+      <b
+        ><u>{{
+          shoppingCartList
+            .reduce((acc, item) => acc + item.repairTypePrice, 0)
+            .toLocaleString()
+        }}</u> €</b
+      >
+    </p>
+  </div>
+  <div class="container-login102-form-btn">
+    <button class="btn btn-block py-2 btn-login">Go To Payment</button>
   </div>
 </template>
 
@@ -180,26 +154,35 @@ export default {
     removeItemFromCart(index) {
       this.$props.shoppingCartList.splice(index, 1);
     },
-    createPayment(){
-      var payAmount = this.shoppingCartList.reduce((acc, item) => acc + item.repairTypePrice, 0)
-      this.$ajax.post("Payment/CreatePayment", {
-                  amount : payAmount
-                }).then((snapshot) => {
-                  console.log(snapshot);
-                  window.open(snapshot.data);
-                }).catch((error) => {
-                  console.log(error);
-                });
-    }
+    createPayment() {
+      var payAmount = this.shoppingCartList.reduce(
+        (acc, item) => acc + item.repairTypePrice,
+        0
+      );
+      this.$ajax
+        .post("Payment/CreatePayment", {
+          amount: payAmount,
+        })
+        .then((snapshot) => {
+          window.open(snapshot.data);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    },
   },
   mounted() {},
 };
 </script>
 
 <style>
-.item-cart-btn:hover {
-  color: #fff;
-  background-color: rgb(255, 0, 0) !important;
+.spairPartCartDiv {
+  padding: 34px 0px 0px 0px;
+}
+
+.shoppingCartTopDiv {
+  max-height: 519px;
+  overflow-y: auto;
 }
 
 #headingOne span {
@@ -212,11 +195,31 @@ export default {
   border-radius: 60%;
 }
 
-.customTable {
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
-    rgba(0, 0, 0, 0.22) 0px 10px 10px;
+.container-login102-form-btn {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  border: none;
 }
 
-@media screen {
+.btn-login {
+  background-color: #f26d25;
+  color: #fff;
 }
-</style> -->
+
+.btn-login:hover {
+  background-color: #333333;
+  color: #fff;
+}
+
+.totalPrice {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 0px 10px 0px 0px;
+}
+</style>

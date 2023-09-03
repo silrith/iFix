@@ -167,5 +167,10 @@
     "brand" : "Marke",
     "category" : "Kategorie",
     "model" : "Modell"
+  },
+  "serviceFilter": {
+    "noModel" : "Modell für ausgewählte Marke noch nicht verfügbar.",
+    "continue" : "Weitermachen",
+    "chooseModel" : "Bitte wählen Sie ein Modell aus, um fortzufahren."
   }
 }

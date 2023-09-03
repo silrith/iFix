@@ -13,13 +13,14 @@
         <button class="testCardButton" type="button">
           <font-awesome-icon
             :icon="['fas', 'circle-minus']"
-            style="color: #f25d26; font-size: 12px;"
+            style="color: #f25d26; font-size: 17px"
           />
         </button>
         <button class="testCardButton" type="button">
           <font-awesome-icon
             :icon="['fas', 'circle-plus']"
-            style="color: #f25d26; font-size: 12px;"
+            style="color: #f25d26; font-size: 17px"
+            @click="addToShoppingCart(this.spairPart)"
           />
         </button>
       </div>
@@ -28,6 +29,8 @@
 </template>
 
 <script>
+import { toast } from "vue3-toastify";
+
 export default {
   data() {
     return {};
@@ -35,19 +38,33 @@ export default {
   props: {
     spairPart: Object,
   },
+  methods: {
+    addToShoppingCart(item) {
+      if (!this.$parent.$parent.shoppingCart.includes(item))
+        this.$parent.$parent.shoppingCart.push(item);
+      else
+        toast.error("Custom Style Notification with css class!", {
+          position: toast.POSITION.BOTTOM_RIGHT,
+          className: "foo-bar",
+          toastStyle: {
+            fontSize: "12px",
+          },
+        });
+    },
+  },
 };
 </script>
 
 <style>
 .wrapperTest {
   height: 120px;
-  width: 300px;
+  width: 250px;
   margin: 15px 0 15px 10px;
-  -webkit-box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
-  -moz-box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
-  box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
+  box-shadow: rgba(0, 0, 0, 0.4) 1px 2px 2px 2px, rgba(0, 0, 0, 0.23) 2px 2px 2px 2px;
   display: flex;
   justify-content: space-around;
+  /* border: 1px solid #f25d26; */
+  border-radius: 5px;
 }
 
 .product-img {
@@ -62,13 +79,16 @@ export default {
 }
 
 .product-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
   float: right;
-  height: 120px;
+  height: 110px;
   width: 195px;
   border-radius: 0 7px 10px 7px;
   background-color: #ffffff;
   padding: 15px 0 5px 0;
-  font-size: 13px;
+  font-size: 11px;
 }
 
 .product-text {
@@ -81,7 +101,7 @@ export default {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
-  align-items: center;
+  align-items: flex-end;
 }
 
 .testCardButton {

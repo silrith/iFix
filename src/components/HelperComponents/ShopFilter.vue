@@ -1,48 +1,20 @@
 <template>
   <div class="spairParts">
-    <div class="brandFilter">
-      <label class="" style="color: #f25d26; font-size: 13px">
-        <input type="checkbox" name="checkbox" />
-        <b>{{ $t('shopFilter.brand') }}</b>
-      </label>
-      <hr style="width: 100%" />
-      <ul>
-        <li v-for="brand in brandList" :key="brand.id">
-          <label class="">
-            <input type="checkbox" name="checkbox" />
-            {{ brand.brandName }}
-          </label>
-          <hr style="width: 100%" />
-        </li>
-      </ul>
-    </div>
     <div class="modelFilter">
       <label class="" style="color: #f25d26; font-size: 13px">
-        <input type="checkbox" name="checkbox" />
-        <b>{{ $t('shopFilter.model') }}</b>
+        <b>{{ $t("shopFilter.model") }}</b>
       </label>
       <hr style="width: 100%" />
       <ul>
         <li v-for="model in modelList" :key="model.id">
           <label class="">
-            <input type="checkbox" name="checkbox" />
+            <input
+              type="checkbox"
+              name="checkbox"
+              v-model="this.isCheckedModel[model.modelName]"
+              @change="getFilteredSpairPartsByModel(model.modelName)"
+            />
             {{ model.modelName }}
-          </label>
-          <hr style="width: 100%" />
-        </li>
-      </ul>
-    </div>
-    <div class="categoryFilter">
-      <label class="" style="color: #f25d26; font-size: 13px">
-        <input type="checkbox" name="checkbox" />
-        <b>{{ $t('shopFilter.category') }}</b>
-    </label>
-      <hr style="width: 100%" />
-      <ul>
-        <li v-for="category in categoryList" :key="category.id">
-          <label>
-            <input type="checkbox" name="checkbox" />
-            {{ category.categoryName }}
           </label>
           <hr style="width: 100%" />
         </li>
@@ -54,14 +26,45 @@
 <script>
 export default {
   data() {
-    return {};
+    return {
+      brandFilter: null,
+      isCheckedBrand: {},
+      isCheckedCategory: {},
+      isCheckedModel: {},
+      filteredSpairPartList: [],
+      originalSpairPartList: [],
+      finalSpairPartList: [],
+    };
   },
   props: {
     categoryList: Array,
     brandList: Array,
     modelList: Array,
   },
-  methods: {},
+  methods: {
+    getFilteredSpairPartsByModel(model) {
+      if (this.isCheckedModel[model]) {
+        if (this.originalSpairPartList.length == 0)
+          this.originalSpairPartList = this.$parent.spairPartList;
+        this.filteredSpairPartList = this.originalSpairPartList.filter(
+          (x) => x.model.modelName === model
+        );
+        this.filteredSpairPartList.forEach((element) => {
+          if (!this.finalSpairPartList.includes(element)) {
+            this.finalSpairPartList.push(element);
+          }
+        });
+        this.$parent.spairPartList = this.finalSpairPartList;
+      } else {
+        this.finalSpairPartList = this.finalSpairPartList.filter(
+          (x) => x.model.modelName !== model
+        );
+        if (this.finalSpairPartList.length == 0) {
+          this.$parent.spairPartList = this.originalSpairPartList;
+        } else this.$parent.spairPartList = this.finalSpairPartList;
+      }
+    },
+  },
 };
 </script>
 

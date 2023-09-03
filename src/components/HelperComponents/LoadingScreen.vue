@@ -1,19 +1,19 @@
 <template>
-    <figure class="loadingScreen">
+    <!-- <figure class="loadingScreen">
     <div class="dot white"></div>
     <div class="dot"></div>
     <div class="dot"></div>
     <div class="dot"></div>
     <div class="dot"></div>
-</figure>
-    <!-- <div class="loadingScreenDiv">
+</figure> -->
+    <div class="loadingScreenDiv">
         <div class="loadingScreen">
             <div class="cube"></div>
             <div class="cube"></div>
             <div class="cube"></div>
             <div class="cube"></div>
         </div>
-    </div> -->
+    </div>
 </template>
 
 <script>
@@ -27,7 +27,7 @@ export default {
 };
 </script>
 
-<style>
+<!-- <style>
 figure { 
     display: none;
   justify-content: center;
@@ -81,9 +81,9 @@ figure {
   66%{ opacity: 0; }
 }
 
-</style>
+</style> -->
 
-<!-- <style lang="scss" scoped>
+<style lang="scss" scoped>
 $colors: #8cc271, #69beeb, #f5aa39, #e9643b;
 
 .loadingScreenDiv{
@@ -99,15 +99,16 @@ $colors: #8cc271, #69beeb, #f5aa39, #e9643b;
   position: fixed;
   top: 0;
   left: 0;
-  width: 50%;
-  height: 50%;
+  width: 100%;
+  height: 100%;
   z-index: 9999;
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.98);
 }
 
 .cube {
   width: 40px;
   height: 40px;
+  border-radius: 50%;
   margin-right: 10px;
   @for $i from 1 through length($colors) {
     &:nth-child(#{$i}) {
@@ -141,4 +142,4 @@ $colors: #8cc271, #69beeb, #f5aa39, #e9643b;
     transform: translateX(0);
   }
 }
-</style> -->
+</style>

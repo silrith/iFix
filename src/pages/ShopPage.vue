@@ -7,12 +7,13 @@
         :modelList="modelList"
       />
     </div>
-    <div class="col-lg-7 middleDiv"><SpairParts :spairPartList="spairPartList"/></div>
-    <div class="col-lg-3 rightDiv"><ShopFilter
-        :categoryList="categoryList"
-        :brandList="brandList"
-        :modelList="modelList"
-      /></div>
+    <div class="col-lg-7 middleDiv">
+      <p class="txt2">Spair Parts</p>
+      <hr class="txt2">
+      <SpairParts :spairPartList="spairPartList"/></div>
+    <div class="col-lg-3 rightDiv">
+      <ShoppingCart :shoppingCartList="shoppingCart"/>
+    </div>
   </div>
 </template>
 
@@ -22,6 +23,7 @@ import SpairPartCard from "@/components/HelperComponents/SpairPartCard";
 import testCard from "@/components/HelperComponents/testCard";
 import ShopFilter from "@/components/HelperComponents/ShopFilter";
 import SpairParts from "@/components/HelperComponents/SpairParts";
+import ShoppingCart from "@/components/IgnoredComponents/ShoppingCart";
 
 export default {
   data() {
@@ -30,17 +32,19 @@ export default {
       brandList: [],
       modelList: [],
       spairPartList: [],
+      shoppingCart: [],
     };
   },
   components: {
     SpairPartCard,
     testCard,
     ShopFilter,
-    SpairParts
+    SpairParts,
+    ShoppingCart
   },
   methods: {
     showToast() {
-      toast.warning("Berk");
+      toast("Berk");
     },
 
     getAllCategories() {
@@ -123,7 +127,7 @@ export default {
 .rightDiv {
   flex-basis: 50%;
   flex: 1;
-  padding: 10px;
+  padding: 2px 10px;
 }
 
 .shopContentDiv {

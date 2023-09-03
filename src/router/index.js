@@ -78,10 +78,17 @@ const routes = [
     },
   },
   {
-    path: "/models",
-    name: "Models",
+    path: "/serviceResult",
+    name: "Service Result",
     component: function () {
-      return import("../pages/ModelsPage.vue");
+      return import("../pages/ServiceResultPage.vue");
+    },
+  },
+  {
+    path: "/servicefilter",
+    name: "Service Filter",
+    component: function () {
+      return import("../pages/ServiceFilterPage.vue");
     },
   },
   {
@@ -104,7 +111,7 @@ const router = createRouter({
 router.beforeEach((to, from, next) => {
   document.title = to.name ?? 'Default Title'
   
-  if(to.path != "/")
+  if(to.path == "/shop")
     loader[0].style.display = "flex";
   next();
 });

@@ -34,7 +34,6 @@ export default {
     
   },
   mounted() {
-	console.log(this.$route);
 	if(this.$route.query.filter == "brands"){
 		$(".input:eq(0)").addClass("active");
 	}else if(parseInt(this.$route.query.brandFilter) > 0 ){
@@ -47,7 +46,6 @@ export default {
 		$(".input:eq(2)").removeClass("active");
 		$(".input:eq(3)").addClass("active");
 	}
-
   },
 };
 </script>

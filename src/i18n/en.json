@@ -167,5 +167,10 @@
     "brand" : "Brand",
     "category" : "Category",
     "model" : "Model"
+  },
+  "serviceFilter": {
+    "noModel" : "Model not yet available for selected brand.",
+    "continue" : "Continue",
+    "chooseModel" : "Please select a model to continue."
   }
 }

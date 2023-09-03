@@ -24,16 +24,16 @@ export default {
 
 <style>
 .spairPartList{
+    box-shadow: rgb(204, 219, 232) 5px 5px 5px 0px inset, rgba(255, 255, 255, 0.5) -13px -13px 16px 11px inset;
     display: flex;
     flex-wrap: wrap;
     width: 100%;
-    padding: 30px;
-    border: 1px solid #666;
-    border-radius: 10px;
+    padding: 5px;
     overflow-y: auto;
-    height: 715px;
-    background-color: white;
+    height: 661px;
+    background-color: transparent;
     justify-content: space-around;
     align-items: center;
+    border: 1px solid rgb(204, 219, 232);
 }
 </style>
