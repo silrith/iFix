@@ -46,10 +46,11 @@
                   style="font-weight: 600"
                   >There is no selected repair type.</span
                 >
-                <div v-for="repairType in this.selectedRepairTypes" style="display: flex; justify-content: space-between;">
-                  <span
-                    class="txt2"
-                    style="font-weight: 600"
+                <div
+                  v-for="repairType in this.selectedRepairTypes"
+                  style="display: flex; justify-content: space-between"
+                >
+                  <span class="txt2" style="font-weight: 600"
                     ><font-awesome-icon
                       :icon="['fas', 'ban']"
                       style="color: #ff0000"
@@ -58,7 +59,8 @@
                     {{ repairType.repairTypeCategory }}
                   </span>
                   <span class="txt2" style="font-weight: 600">
-                    {{ repairType.repairTypePrice }} <span style="color: #f26d25;">€</span>
+                    {{ repairType.repairTypePrice }}
+                    <span style="color: #f26d25">€</span>
                   </span>
                 </div>
               </div>
@@ -67,7 +69,15 @@
               </div>
               <div class="selectedTotalPrice">
                 <p class="txt2" style="font-weight: 600">Pricing details</p>
-                <p class="txt2" style="font-weight: 600">total price</p>
+                <p class="txt2" style="font-weight: 600">
+                  {{
+                    this.selectedRepairTypes.reduce(
+                      (total, item) => total + item.repairTypePrice,
+                      0
+                    )
+                  }}
+                  <span style="color: #f26d25"><b>€</b></span>
+                </p>
               </div>
               <div class="txt3" style="width: 90%">
                 <hr />
@@ -132,7 +142,7 @@
             </div>
             <button
               class="btn btn-block py-2 btn-loginServiceResult"
-              @click="goModelRepairTypes()"
+              @click="goCheckOutPage()"
             >
               {{ $t("serviceFilter.continue") }}
             </button>
@@ -178,6 +188,16 @@ export default {
       this.selectedRepairTypes = this.selectedRepairTypes.filter(
         (x) => x !== object
       );
+    },
+    goCheckOutPage() {
+      localStorage.setItem(
+        "selectedRepairTypes",
+        JSON.stringify(this.selectedRepairTypes)
+      );
+      console.log(JSON.parse(localStorage.getItem("selectedRepairTypes")));
+      this.$router.push({
+        path: "/checkOut",
+      });
     },
   },
   mounted() {
@@ -327,7 +347,7 @@ export default {
 }
 
 .serviceFilterTextArea input::after {
-  border: none;
+  border: 2px solid #ff4800;
   outline: none;
 }
 

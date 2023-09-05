@@ -35,3 +35,6 @@ filterModel: [
     { key: "startDate", value: "20.01.2020", type: "datetime" },
     { key: "endDate", value: "29.05.2023", type: "datetime" },
 ],
+
+localStorage.setItem("selectedRepairTypes" , JSON.stringify(this.selectedRepairTypes));
+JSON.parse(localStorage.getItem("selectedRepairTypes"))

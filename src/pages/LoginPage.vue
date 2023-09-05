@@ -201,6 +201,15 @@ export default {
   background-color: white;
 }
 
+.container-login100 input{
+  border: 1px solid #f26d25;
+}
+
+.container-login100 input:focus{
+  border: 1px solid #f26d25;
+  outline: none;
+}
+
 .container-login100-form-btn {
   width: 100%;
   display: flex;
@@ -407,73 +416,6 @@ export default {
   border-radius: 50%;
   margin: 0 15px 0 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
-}
-
-input {
-  outline: none;
-  border: none;
-}
-
-textarea {
-  outline: none;
-  border: none;
-}
-
-textarea:focus,
-input:focus {
-  border-color: transparent !important;
-}
-
-input:focus::-webkit-input-placeholder {
-  color: transparent;
-}
-input:focus:-moz-placeholder {
-  color: transparent;
-}
-input:focus::-moz-placeholder {
-  color: transparent;
-}
-input:focus:-ms-input-placeholder {
-  color: transparent;
-}
-
-textarea:focus::-webkit-input-placeholder {
-  color: transparent;
-}
-textarea:focus:-moz-placeholder {
-  color: transparent;
-}
-textarea:focus::-moz-placeholder {
-  color: transparent;
-}
-textarea:focus:-ms-input-placeholder {
-  color: transparent;
-}
-
-input::-webkit-input-placeholder {
-  color: #999999;
-}
-input:-moz-placeholder {
-  color: #999999;
-}
-input::-moz-placeholder {
-  color: #999999;
-}
-input:-ms-input-placeholder {
-  color: #999999;
-}
-
-textarea::-webkit-input-placeholder {
-  color: #999999;
-}
-textarea:-moz-placeholder {
-  color: #999999;
-}
-textarea::-moz-placeholder {
-  color: #999999;
-}
-textarea:-ms-input-placeholder {
-  color: #999999;
 }
 
 @media (max-width: 992px) {

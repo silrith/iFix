@@ -92,6 +92,34 @@ const routes = [
     },
   },
   {
+    path: "/checkOut",
+    name: "Check Out",
+    component: function () {
+      return import("../pages/CheckOutPages/CheckOutPage.vue");
+    },
+  },
+  {
+    path: "/inStore",
+    name: "Check Out In Store",
+    component: function () {
+      return import("../pages/CheckOutPages/CheckOut-InStorePage.vue");
+    },
+  },
+  {
+    path: "/mailIn",
+    name: "Check Out Mail In",
+    component: function () {
+      return import("../pages/CheckOutPages/CheckOut-MailInPage.vue");
+    },
+  },
+  {
+    path: "/mail-in-time-to-ship",
+    name: "All Set - Time To Ship",
+    component: function () {
+      return import("../pages/CheckOutPages/CheckOut-TimeToShipPage.vue");
+    },
+  },
+  {
     path: "/booking",
     name: "Booking",
     component: function () {

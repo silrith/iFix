@@ -128,16 +128,6 @@ export default {
 </script>
 
 <style>
-.parallelogram {
-	width: 50%;
-	height: 86vh;
-	transform: skew(20deg);
-	background: #f3efed;
-  position: absolute;
-  top: 130px;
-  z-index: -2;
-}
-
 .serviceFilterPageDiv {
   width: 100%;
   height: 86vh;
@@ -150,9 +140,6 @@ export default {
 
 .serviceSelectDiv {
   width: 30%;
-}
-
-.serviceSelectDiv {
   text-align: start !important;
 }
 
@@ -251,18 +238,6 @@ export default {
 
   .serviceFilterPageDiv {
     max-height: 78vh;
-  }
-
-  .parallelogram{
-    top: 180px;
-    width: 70%;
-  }
-}
-
-@media (max-width: 395px) {
-  .parallelogram{
-    top: 210px;
-    width: 70%;
   }
 }
 </style>

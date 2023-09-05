@@ -142,3 +142,35 @@ input[type="checkbox"] {
   border-radius: 9999px;
   background-color: #555;
 }
+
+.parallelogram {
+	width: 50%;
+	height: 100%;
+	transform: skew(-20deg);
+	background: #f3efed;
+  position: absolute;
+  top: 130px;
+  z-index: -2;
+}
+
+@media(max-width: 992px){
+  .parallelogram{
+    top: 180px;
+    width: 70%;
+    height: 100%;
+    transform: skew(-7deg);
+  }
+}
+
+@media(max-width: 400px){
+  .parallelogram{
+    top: 210px;
+    width: 70%;
+  }
+}
+
+@media(max-width: 349px){
+  .parallelogram{
+    display: none;
+  }
+}
