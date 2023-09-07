@@ -1,0 +1,164 @@
+<template>
+  <div class="customerInformationForm">
+    <div class="checkOutHeaderDiv">
+      <p class="checkOutHeader">
+        <span style="color: #f26d25">Last Step</span> - enter
+      </p>
+      <p class="checkOutHeader">
+        your contact
+        <span style="color: #f26d25"> info</span>
+      </p>
+      <p class="txt2" style="font-size: 15px; color: black; font-weight: 600">
+        This will speed up check-in when you get here.
+      </p>
+    </div>
+    <div class="mailInFormDiv">
+      <div class="mailInFormDoubleDiv">
+        <input
+          class="mailInFormInput"
+          type="text"
+          placeholder="First Name"
+          v-model="this.firstName"
+        />
+        <input
+          class="mailInFormInput"
+          type="text"
+          placeholder="Last Name"
+          v-model="this.lastName"
+        />
+      </div>
+
+      <input
+        class="mailInFormInput"
+        type="text"
+        placeholder="Email Address"
+        v-model="this.email"
+      />
+      <input
+        class="mailInFormInput"
+        type="text"
+        placeholder="Phone Number"
+        v-model="this.phone"
+      />
+    </div>
+    <div class="checkOutHeaderDiv">
+      <p class="txt2" style="font-size: 15px; color: black; font-weight: 600">
+        By continuing, you agree our Terms of Service and Privacy Policy
+      </p>
+    </div>
+    <div class="mailSelectDiv">
+      <div class="container-login102-form-btn">
+        <button class="btn btn-block py-2 btn-login" @click="this.method">
+          {{ this.buttonTitle }}
+        </button>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      firstName: null,
+      lastName: null,
+      email: null,
+      phone: null,
+    };
+  },
+  props: {
+    buttonTitle: String,
+    method: Function
+  },
+  methods: {},
+};
+</script>
+
+<style>
+.customerInformationForm{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.checkOutHeaderDiv {
+  padding: 50px 0;
+}
+
+.checkOutHeader {
+  width: 100%;
+  font-family: Poppins-bold;
+  font-size: 50px;
+  line-height: 1;
+}
+
+.mailInFormDiv {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.mailInFormDoubleDiv {
+  display: flex;
+  width: 100%;
+  gap: 1rem;
+}
+
+.mailInFormInput {
+  width: 100%;
+  padding: 15px;
+  border: 2px solid #f26d25;
+  border-radius: 10px;
+  font-family: Poppins-Regular;
+  color: #666;
+  caret-color: #f26d25;
+  caret-shape: underscore;
+  height: 50px;
+  padding: 15px;
+}
+
+.mailInFormInput::placeholder {
+  text-align: center;
+  font-size: 14px;
+  font-family: Poppins-Regular;
+  color: #999999;
+  font-weight: 500;
+}
+
+.mailInFormInput:focus {
+  outline: none;
+  border: 2px solid #f26d29;
+  background-color: aliceblue;
+}
+
+.mailSelectDiv {
+  width: 30%;
+  text-align: start !important;
+  padding: 0 0 30px 0;
+}
+
+.container-login102-form-btn {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 20px 0 10px 0;
+  border: none;
+}
+
+.btn-login {
+  background-color: #f26d25;
+  color: #fff;
+}
+
+.btn-login:hover {
+  background-color: #333333;
+  color: #fff;
+}
+</style>

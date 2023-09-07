@@ -161,7 +161,9 @@
   "services" : {
     "our" : "Our",
     "subtitle1" : "Search your model via the search bar",
-    "subtitle2" : "use the selector"
+    "subtitle2" : "use the selector",
+    "bookNow" : "Book Now",
+    "getShippingLabel" : "Get shipping label"
   },
   "shopFilter" : {
     "brand" : "Brand",

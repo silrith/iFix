@@ -97,11 +97,11 @@
   width: 50%;
   height: 550px;
   overflow-y: scroll;
-  background-image: url("@/assets/photos/deliveryTruck.png");
+  background-image: url("@/assets/photos/cargo.png");
   background-position: center;
   background-repeat: no-repeat;
   background-color: transparent;
-  background-size: 50%;
+  background-size: 25%;
 }
 
 .orderedListDiv {

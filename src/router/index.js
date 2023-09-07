@@ -106,6 +106,13 @@ const routes = [
     },
   },
   {
+    path: "/in-store-all-set",
+    name: "You're All Set!",
+    component: function () {
+      return import("../pages/CheckOutPages/CheckOut-InStoreAllSetPage.vue");
+    },
+  },
+  {
     path: "/mailIn",
     name: "Check Out Mail In",
     component: function () {

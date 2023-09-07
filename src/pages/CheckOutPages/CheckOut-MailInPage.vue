@@ -20,72 +20,24 @@
         ><font-awesome-icon :icon="['fas', 'xmark']"
       /></span>
     </div>
-    <div class="checkOutHeaderDiv">
-      <p class="checkOutHeader">
-        <span style="color: #f26d25">Last Step</span> - enter
-      </p>
-      <p class="checkOutHeader">
-        your contact
-        <span style="color: #f26d25"> info</span>
-      </p>
-      <p class="txt2" style="font-size: 15px; color: black; font-weight: 600">
-        This will speed up check-in when you get here.
-      </p>
-    </div>
-    <div class="mailInFormDiv">
-      <div class="mailInFormDoubleDiv">
-        <input
-          class="mailInFormInput"
-          type="text"
-          placeholder="First Name"
-          v-model="address"
-        />
-        <input
-          class="mailInFormInput"
-          type="text"
-          placeholder="Last Name"
-          v-model="address"
-        />
-      </div>
-
-      <input
-        class="mailInFormInput"
-        type="text"
-        placeholder="Email Address"
-        v-model="address"
-      />
-      <input
-        class="mailInFormInput"
-        type="text"
-        placeholder="Phone Number"
-        v-model="address"
-      />
-    </div>
-    <div class="checkOutHeaderDiv">
-      <p class="txt2" style="font-size: 15px; color: black; font-weight: 600">
-        By continuing, you agree our Terms of Service and Privacy Policy
-      </p>
-    </div>
-    <div class="mailSelectDiv">
-      <div class="container-login102-form-btn">
-        <button
-          class="btn btn-block py-2 btn-login"
-          @click="timeToShip()"
-        >
-          {{ $t("serviceFilter.continue") }}
-        </button>
-      </div>
-    </div>
+    <CustomerInformationForm :buttonTitle="buttonTitle" :method="this.method"/>
     <div class="parallelogram2"></div>
   </div>
 </template>
 
 <script>
+import CustomerInformationForm from '@/components/HelperComponents/CustomerInformationForm.vue'
+
 export default {
   data() {
     return {
       address: null,
+      buttonTitle: this.$t("services.getShippingLabel"),
+      method: this.timeToShip,
     };
+  },
+  components:{
+    CustomerInformationForm
   },
   methods: {
     clearAddress() {
@@ -170,47 +122,6 @@ export default {
   font-size: 20px;
   display: flex;
   color: white;
-}
-
-.mailInFormDiv {
-  width: 50%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
-}
-
-.mailInFormDoubleDiv {
-  display: flex;
-  width: 100%;
-  gap: 1rem;
-}
-
-.mailInFormInput {
-  width: 100%;
-  padding: 15px;
-  border: 1px solid #f26d25;
-  border-radius: 10px;
-  font-family: Poppins-Regular;
-  color: #666;
-  caret-color: #f26d25;
-  caret-shape: underscore;
-  height: 50px;
-  padding: 15px;
-}
-
-.mailInFormInput::placeholder {
-  text-align: center;
-  font-size: 14px;
-  font-family: Poppins-Regular;
-  color: #999999;
-  font-weight: 500;
-}
-
-.mailInFormInput:focus {
-  outline: none;
-  border: 2px solid #f26d29;
 }
 
 .container-login102-form-btn {
@@ -309,14 +220,7 @@ export default {
 
 @media (max-width: 400px) {
   .parallelogram2 {
-    top: 210px;
-    width: 70%;
-  }
-}
-
-@media (max-width: 349px) {
-  .parallelogram2 {
-    display: none;
+   display: none;
   }
 }
 </style>

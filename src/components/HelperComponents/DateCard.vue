@@ -136,6 +136,7 @@ export default {
   padding: 15px 10px 10px 10px;
   font-family: Poppins-Regular;
   font-weight: 600;
+  background-color: white;
 }
 
 .dateCardMain:hover {

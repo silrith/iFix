@@ -161,7 +161,9 @@
   "services" : {
     "our" : "Unsere",
     "subtitle1" : "Suche dein Modell über die Suchbar",
-    "subtitle2" : "verwende die Auswahlfhilfe"
+    "subtitle2" : "verwende die Auswahlfhilfe",
+    "bookNow" : "Buchen Sie Jetzt",
+    "getShippingLabel" : "Holen sie sich ein versandetikett"
   },
   "shopFilter" : {
     "brand" : "Marke",
