@@ -83,7 +83,7 @@
 }
 
 .checkOutHeaderDiv {
-  padding: 50px 0;
+  padding: 53px 0 0 0;
 }
 
 .checkOutHeader {
