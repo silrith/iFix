@@ -74,7 +74,7 @@
             data-toggle="dropdown"
             aria-haspopup="true"
             aria-expanded="false"
-            style="margin-bottom: 20px"
+            style="display: flex; justify-content: center; align-items: center; padding-bottom: 20px;"
           >
             <img
               class="profile-picture"
@@ -144,9 +144,9 @@ export default {
 .headerDiv {
   color: black;
   font-family: Poppins-Bold;
-  padding-bottom: 20px;
+  padding-bottom: 15px;
   box-shadow: rgb(38, 57, 77) 0px 10px 10px -10px;
-  z-index: 9998;
+  z-index: 9999;
 }
 
 .headerContent {

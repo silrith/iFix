@@ -36,8 +36,8 @@
               <router-link
                 v-for="model in filteredModels"
                 :to="{
-                  path: '/models',
-                  query: { filter: model.category.id },
+                  path: '/serviceResult',
+                  query: { modelId: model.id },
                 }"
                 style="text-decoration: none"
                 ><li class="txt2" @click="selectModel(model)">

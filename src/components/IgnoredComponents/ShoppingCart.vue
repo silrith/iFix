@@ -138,7 +138,7 @@
     </p>
   </div>
   <div class="container-login102-form-btn">
-    <button class="btn btn-block py-2 btn-login">Go To Payment</button>
+    <button class="btn btn-block py-2 btn-login" @click="createPayment">Go To Payment</button>
   </div>
 </template>
 
@@ -162,6 +162,7 @@ export default {
       this.$ajax
         .post("Payment/CreatePayment", {
           amount: payAmount,
+          repairTypeProducts: this.shoppingCartList
         })
         .then((snapshot) => {
           window.open(snapshot.data);

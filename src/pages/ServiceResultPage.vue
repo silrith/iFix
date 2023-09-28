@@ -154,6 +154,7 @@
 </template>
 
 <script>
+import { mapActions, mapGetters } from 'vuex';
 import Card from "@/components/HelperComponents/SpairPartCard.vue";
 import PreLoader from "@/components/HelperComponents/LoadingScreen2.vue";
 export default {
@@ -202,9 +203,9 @@ export default {
   },
   mounted() {
     this.getRepairTypesForModel(this.$route.query.modelId);
-    // setTimeout(function() {
-
-    // }, 1000);
+  },
+  computed: {
+    ...mapGetters(['shoppingList']),
   },
 };
 </script>

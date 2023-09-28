@@ -70,7 +70,25 @@ export default {
     buttonTitle: String,
     method: Function
   },
-  methods: {},
+  methods: {
+    createPayment() {
+      var payAmount = this.shoppingCartList.reduce(
+        (acc, item) => acc + item.repairTypePrice,
+        0
+      );
+      this.$ajax
+        .post("Payment/CreatePayment", {
+          amount: payAmount,
+          repairTypeProducts: this.shoppingCartList
+        })
+        .then((snapshot) => {
+          window.open(snapshot.data);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    },
+  },
 };
 </script>
 

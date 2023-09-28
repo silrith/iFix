@@ -183,6 +183,7 @@ export default {
         if (this.user.email_verified == true)
           localStorage.setItem("isLogged", true);
         this.toggleIsLogged();
+        this.$router.push("/");
       },
     };
   },

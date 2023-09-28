@@ -20,34 +20,78 @@
         ><font-awesome-icon :icon="['fas', 'xmark']"
       /></span>
     </div>
-    <CustomerInformationForm :buttonTitle="buttonTitle" :method="this.method"/>
+    <CustomerInformationForm :buttonTitle="buttonTitle" :method="this.method" />
     <div class="parallelogram2"></div>
   </div>
 </template>
 
 <script>
-import CustomerInformationForm from '@/components/HelperComponents/CustomerInformationForm.vue'
-
+import CustomerInformationForm from "@/components/HelperComponents/CustomerInformationForm.vue";
+import { toast } from "vue3-toastify";
 export default {
   data() {
     return {
       address: null,
       buttonTitle: this.$t("services.getShippingLabel"),
       method: this.timeToShip,
+      cargoResult: false,
     };
   },
-  components:{
-    CustomerInformationForm
+  components: {
+    CustomerInformationForm,
   },
   methods: {
     clearAddress() {
       this.address = "";
     },
-    timeToShip(){
-        this.$router.push({ 
-          path: '/mail-in-time-to-ship'
+    timeToShip() {
+      this.$router.push({
+        path: "/mail-in-time-to-ship",
+      });
+    },
+    createPayment() {
+      var payAmount = this.shoppingCartList.reduce(
+        (acc, item) => acc + item.repairTypePrice,
+        0
+      );
+      // this.$ajax.post("Cargo/CreateCargoForCustomer", JSON.parse(localStorage.getItem("address")))
+      if (this.cargoResult == true) {
+        this.$ajax
+        .post("Payment/CreatePayment", {
+          amount: payAmount,
+          repairTypeProducts: this.shoppingCartList,
+        })
+        .then((snapshot) => {
+          window.open(snapshot.data);
+        })
+        .catch((error) => {
+          console.log(error);
         });
-    }
+      } else {
+        toast.error(
+          "Kargo Talebiniz Oluşturulamadı, Lütfen Firmamız İle Görüşünüz",
+          {
+            position: toast.POSITION.BOTTOM_RIGHT,
+            className: "foo-bar",
+            toastStyle: {
+              fontSize: "12px",
+            },
+          }
+        );
+      }
+    },
+  },
+  mounted() {
+    // toast.error(
+    //   "Kargo Talebiniz Oluşturulamadı, Lütfen Firmamız İle Görüşünüz",
+    //   {
+    //     position: toast.POSITION.BOTTOM_RIGHT,
+    //     className: "foo-bar",
+    //     toastStyle: {
+    //       fontSize: "12px",
+    //     },
+    //   }
+    // );
   },
 };
 </script>
@@ -154,7 +198,7 @@ export default {
   height: 150%;
   background: #f3efed;
   position: fixed;
-  top: 130px;
+  top: 135px !important;
   z-index: -9999;
 }
 
@@ -220,7 +264,7 @@ export default {
 
 @media (max-width: 400px) {
   .parallelogram2 {
-   display: none;
+    display: none;
   }
 }
 </style>

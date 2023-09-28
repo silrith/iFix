@@ -40,8 +40,10 @@ export default {
   },
   methods: {
     addToShoppingCart(item) {
-      if (!this.$parent.$parent.shoppingCart.includes(item))
+      if (!this.$parent.$parent.shoppingCart.includes(item)){
         this.$parent.$parent.shoppingCart.push(item);
+        this.$store.commit('addItem', item);
+      }
       else
         toast.error("Custom Style Notification with css class!", {
           position: toast.POSITION.BOTTOM_RIGHT,

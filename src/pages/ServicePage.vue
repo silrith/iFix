@@ -24,8 +24,8 @@
             <router-link
               v-for="model in filteredModels"
               :to="{
-                path: '/models',
-                query: { filter: model.category.id },
+                path: '/serviceResult',
+                query: { modelId: model.id },
               }"
               style="text-decoration: none"
               ><li class="txt2" @click="selectModel(model)">
@@ -255,6 +255,43 @@ export default {
 
 .searchSub2{
   padding: 30px 0 0 0;
+}
+
+#models {
+  position: absolute;
+  top: 100%;
+  width: 90%;
+  background-color: white;
+  list-style: none;
+  margin: 3px;
+  padding: 0;
+  border-top: none;
+  border-radius: 0 0 5px 5px;
+  z-index: 1;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
+  font-family: Poppins-Regular;
+  font-size: 12px;
+  max-height: 280px;
+  overflow-y: auto;
+  border-radius: 5px;
+}
+
+#models li {
+  padding: 10px;
+  color: black;
+}
+
+#models li:hover {
+  background-color: #f26d25;
+  color: white;
+  cursor: pointer;
+}
+
+.inputBanner103:focus + .focus-input103 + .symbol-input103 {
+  color: white;
+  padding-left: 15px;
+  border: none !important;
+  outline: none !important;
 }
 
 @media(max-width: 779px){

@@ -28,7 +28,6 @@ export default {
   methods:{
     addToList(object){
         this.$parent.selectedRepairTypes.push(object);
-        console.log(this.$parent)
     },
     removeFromList(object){
         this.$parent.selectedRepairTypes = this.$parent.selectedRepairTypes.filter(x=> x !== object);
