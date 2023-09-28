@@ -215,420 +215,6 @@
         </div>
       </div>
     </section>
-    <!-- <section class="award-section white-bg">
-      <div class="container">
-        <div class="row align-items-center">
-          <div class="col-md-12">
-            <h3 class="main-heading">
-              Trust Our Award Winning Service And Quality
-            </h3>
-          </div>
-
-          <div class="col-md-12 col-lg-5">
-            <div class="award-bg">
-              <div class="card text-center">
-                <div class="card-body py-3">
-                  <p>We Are Endorsed As A</p>
-
-                  <h6>
-                    <a href="javascript:void(0)" class="text-danger">Which</a>?
-                    Trusted trader
-                  </h6>
-
-                  <a href="javascript:void(0)"
-                    ><img
-                      class="img-fluid certi"
-                      src="assets/images/facebook-review.png"
-                      alt="facebook"
-                  /></a>
-
-                  <a href="javascript:void(0)"
-                    ><img
-                      class="img-fluid certi"
-                      src="assets/images/google.png"
-                      alt="google"
-                  /></a>
-
-                  <a href="javascript:void(0)"
-                    ><img
-                      class="img-fluid certi"
-                      src="assets/images/trustpilot.png"
-                      alt="trustpilot"
-                  /></a>
-
-                  <p class="mt-2">By 100's of 5 Star Reviews</p>
-
-                  <img
-                    class="img-fluid star"
-                    src="assets/images/star.png"
-                    alt="star"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-12 col-lg-7">
-            <div class="row align-items-center">
-              <div class="col-md-1 text-right">
-                <h2><strong>1.</strong></h2>
-              </div>
-
-              <div class="col-md-11">
-                <div class="card">
-                  <div class="card-body">
-                    <div class="media">
-                      <img
-                        class="control"
-                        src="images/section/220220105070156.png"
-                      />
-                      <div class="media-body">
-                        <h5 class="mt-0">Automated Booking</h5>
-
-                        <p>
-                          Booking online is simple, Automated Email &amp; SMS
-                          updates keep you in the loop so you never miss a
-                          trick!
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="row align-items-center">
-              <div class="col-md-1 text-right">
-                <h2><strong>2.</strong></h2>
-              </div>
-
-              <div class="col-md-11">
-                <div class="card">
-                  <div class="card-body">
-                    <div class="media">
-                      <img
-                        class="control"
-                        src="images/section/320220105070156.png"
-                      />
-                      <div class="media-body">
-                        <h5 class="mt-0">Trusted Techs &amp; Aftercare</h5>
-
-                        <p>
-                          With 150 years combined experience, your device is
-                          safe with us. DBS &amp; GDPR compliance means your
-                          data is safe too!
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="row align-items-center">
-              <div class="col-md-1 text-right">
-                <h2><strong>3.</strong></h2>
-              </div>
-
-              <div class="col-md-11">
-                <div class="card">
-                  <div class="card-body">
-                    <div class="media">
-                      <img
-                        class="control"
-                        src="images/section/120220105070156.png"
-                      />
-                      <div class="media-body">
-                        <h5 class="mt-0">You're In Control</h5>
-
-                        <p>
-                          Our dedicated customer service team, mobile
-                          application and online portal allows you to stay in
-                          control every step of the way.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section> -->
-    <!-- <section class="faq-section white-bg" id="faq">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12 order-md-1">
-            <div class="accordion" id="faq">
-              <h3 class="mb-md-4">
-                <strong>Most people ask us these questions . . .</strong>
-              </h3>
-
-              <div class="card">
-                <div class="card-header" id="faqhead8">
-                  <a
-                    href="#"
-                    class="btn btn-header-link collapsed"
-                    data-toggle="collapse"
-                    data-target="#faq8"
-                    aria-expanded="false"
-                    aria-controls="faq8"
-                    >How long will i be without my device?</a
-                  >
-                </div>
-
-                <div
-                  id="faq8"
-                  class="collapse"
-                  aria-labelledby="faqhead8"
-                  data-parent="#faq"
-                  style=""
-                >
-                  <div class="card-body">
-                    <p></p>
-                    <p class="MsoNormal">
-                      <span style="font-size: 10pt; line-height: 107%"
-                        >With an in-store appointment or roadside repair
-                        service, we always aim to repair your device within 30
-                        minutes whilst you wait. For mail order we always aim to
-                        receive, repair and dispatch your device back to you on
-                        the same day as we receive.&nbsp;<o:p></o:p
-                      ></span>
-                    </p>
-                    <p></p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="card">
-                <div class="card-header" id="faqhead9">
-                  <a
-                    href="#"
-                    class="btn btn-header-link collapsed"
-                    data-toggle="collapse"
-                    data-target="#faq9"
-                    aria-expanded="false"
-                    aria-controls="faq9"
-                    >Will I be updated throughout the repair process?</a
-                  >
-                </div>
-
-                <div
-                  id="faq9"
-                  class="collapse"
-                  aria-labelledby="faqhead9"
-                  data-parent="#faq"
-                  style=""
-                >
-                  <div class="card-body">
-                    <p></p>
-                    <p class="MsoNormal">
-                      <span style="font-size: 10pt; line-height: 107%"
-                        >Our bespoke booking system sends automated SMS and
-                        email notifications at every step of the repair process,
-                        you’ll always be kept up to date and informed. If at
-                        anytime you would like to know anything else we are
-                        always on hand to help via any form of social media
-                        platform, email, and telephone.&nbsp;<o:p></o:p
-                      ></span>
-                    </p>
-                    <p></p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="card">
-                <div class="card-header" id="faqhead11">
-                  <a
-                    href="#"
-                    class="btn btn-header-link collapsed"
-                    data-toggle="collapse"
-                    data-target="#faq11"
-                    aria-expanded="false"
-                    aria-controls="faq11"
-                    >I have a busy schedule, can you accommodate?</a
-                  >
-                </div>
-
-                <div
-                  id="faq11"
-                  class="collapse"
-                  aria-labelledby="faqhead11"
-                  data-parent="#faq"
-                  style=""
-                >
-                  <div class="card-body">
-                    <p></p>
-                    <p class="MsoNormal">
-                      <span style="font-size: 10pt; line-height: 107%"
-                        >We operate from 6AM – Midnight 7 days a week, this is
-                        for both pre booked appointments and roadside repairs
-                        via our mobile service vehicles. Our customer care lines
-                        are always available during these hours too.
-                        <b>&nbsp;</b><o:p></o:p
-                      ></span>
-                    </p>
-                    <p></p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="card">
-                <div class="card-header" id="faqhead12">
-                  <a
-                    href="#"
-                    class="btn btn-header-link collapsed"
-                    data-toggle="collapse"
-                    data-target="#faq12"
-                    aria-expanded="false"
-                    aria-controls="faq12"
-                    >Is Your Repair Work Guaranteed?</a
-                  >
-                </div>
-
-                <div
-                  id="faq12"
-                  class="collapse"
-                  aria-labelledby="faqhead12"
-                  data-parent="#faq"
-                  style=""
-                >
-                  <div class="card-body">
-                    <p></p>
-                    <p class="MsoNormal">
-                      <span style="font-size: 10pt; line-height: 107%"
-                        >Each repair comes with a full 90-day warranty as
-                        standard. Liquid Damage repairs are exempt from our
-                        normal warranty offerings. Please see more information
-                        in our Terms and Conditions.&nbsp;<o:p></o:p
-                      ></span>
-                    </p>
-                    <p></p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="card">
-                <div class="card-header" id="faqhead13">
-                  <a
-                    href="#"
-                    class="btn btn-header-link collapsed"
-                    data-toggle="collapse"
-                    data-target="#faq13"
-                    aria-expanded="false"
-                    aria-controls="faq13"
-                    >Can I only book online?</a
-                  >
-                </div>
-
-                <div
-                  id="faq13"
-                  class="collapse"
-                  aria-labelledby="faqhead13"
-                  data-parent="#faq"
-                  style=""
-                >
-                  <div class="card-body">
-                    <p></p>
-                    <p class="MsoNormal">
-                      <span style="font-size: 10pt; line-height: 107%"
-                        >Whilst our website is probably the quickest and most
-                        informative way of booking, we also have a mobile
-                        application to book and manage your repair services, If
-                        you would prefer a more personal service you can call
-                        our dedicated customer care team ready to assist you
-                        anytime between 6AM – Midnight 7 Days A Week.&nbsp;<o:p
-                        ></o:p
-                      ></span>
-                    </p>
-                    <p></p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="card">
-                <div class="card-header" id="faqhead14">
-                  <a
-                    href="#"
-                    class="btn btn-header-link collapsed"
-                    data-toggle="collapse"
-                    data-target="#faq14"
-                    aria-expanded="false"
-                    aria-controls="faq14"
-                    >Will You Wipe My Device?</a
-                  >
-                </div>
-
-                <div
-                  id="faq14"
-                  class="collapse"
-                  aria-labelledby="faqhead14"
-                  data-parent="#faq"
-                  style=""
-                >
-                  <div class="card-body">
-                    <p></p>
-                    <p>
-                      We always recommend that you back up and erase your
-                      personal data before shipping the device to us. However
-                      this is not always possible, maybe you do not want the
-                      extra hassle of completing this task and that's perfectly
-                      understandable.&nbsp;
-                    </p>
-                    <p>
-                      We will leave the device data exactly how we find it and
-                      none of this will be erased or changed in any way. Should
-                      we need to complete a software flash we will only go ahead
-                      and do this once we have contacted you and obtained your
-                      full permission to do so.
-                    </p>
-                    <p></p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="card">
-                <div class="card-header" id="faqhead21">
-                  <a
-                    href="#"
-                    class="btn btn-header-link collapsed"
-                    data-toggle="collapse"
-                    data-target="#faq21"
-                    aria-expanded="false"
-                    aria-controls="faq21"
-                    >Is my data safe?</a
-                  >
-                </div>
-
-                <div
-                  id="faq21"
-                  class="collapse"
-                  aria-labelledby="faqhead21"
-                  data-parent="#faq"
-                  style=""
-                >
-                  <div class="card-body">
-                    <p>
-                      DBS Checks and GDPR Compliance Training is mandatory
-                      during our employee on boarding process. Meaning we only
-                      employ the most honest and reliable people.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              class="heading-block nobottomborder d-flex justify-content-center center my-2"
-            >
-              <a href="https://mastermobile.co.uk/faqs" class="button-17"
-                >View All Faq(s) <i class="icon-circle-arrow-right"></i
-              ></a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section> -->
   </div>
 </template>
 
@@ -641,7 +227,10 @@ export default {
   name: "Home Page",
   data() {
     return {
+      searchText:"",
       categoryList: [],
+      modelList: [],
+      selectedModel: null
     };
   },
   components: {
@@ -661,6 +250,29 @@ export default {
         .catch((error) => {
           console.log(error);
         });
+    },
+    loadModels() {
+      this.$ajax
+        .get("model/getallmodels")
+        .then((response) => {
+          if (response.data) {
+            this.modelList = response.data;
+          }
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    },
+    filterOptions() {
+      this.showDropdown = true;
+      if (this.searchText.length < 3) {
+        this.showDropdown = false;
+      }
+    },
+    selectModel(model) {
+      this.selectedModel = model;
+      this.searchText = model.modelName;
+      this.showDropdown = false;
     },
     imageToString(file) {
       return new Promise((resolve, reject) => {

@@ -3,7 +3,7 @@
     <div class="container-login100">
       <div class="wrap-login100">
         <div class="signup100">
-          <p style="font-size: 36px; font-weight: 600;">
+          <p style="font-size: 36px; font-weight: 600">
             {{ $t("signin.header1") }}<br />
             {{ $t("signin.header2") }}
           </p>
@@ -20,7 +20,7 @@
         <div class="login100-pic js-tilt" data-tilt>
           <img src="@/assets/header/login.png" alt="Login Picture" />
         </div>
-        <form class="login100-form validate-form">
+        <div class="login100-form validate-form">
           <div
             style="
               width: 100%;
@@ -100,22 +100,36 @@
             </div>
           </div>
           <div class="">
-            <a href="#" class="btn btn-block py-2 btn-facebook">
-              <span class="icon-facebook mr-3"
-                ><font-awesome-icon
-                  :icon="['fab', 'facebook-f']"
-                  style="color: #ffffff"
-              /></span>
-              {{ $t("signin.loginFacebook") }}
-            </a>
-            <a href="#" class="btn btn-block py-2 btn-google"
-              ><span class="icon-google mr-3"
-                ><font-awesome-icon
-                  :icon="['fab', 'google']"
-                  style="color: #ffffff"
-              /></span>
-              {{ $t("signin.loginGoogle") }}</a
+            <div
+              style="
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 20px 0 0 0;
+              "
             >
+              <button
+                @click="loginWithFacebook"
+                class="btn btn-block py-2 btn-facebook"
+              >
+                <span class="icon-facebook mr-3"
+                  ><font-awesome-icon
+                    :icon="['fab', 'facebook-f']"
+                    style="color: #ffffff"
+                /></span>
+                {{ $t("signin.loginFacebook") }}
+              </button>
+            </div>
+            <div
+              style="
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 20px 0 0 0;
+              "
+            >
+              <GoogleLogin :callback="callback" />
+            </div>
           </div>
           <div
             style="
@@ -141,35 +155,60 @@
               <i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
             </a>
           </div>
-        </form>
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import { mapActions } from 'vuex';
+import { decodeCredential } from "vue3-google-login";
 export default {
   data() {
     return {
       selectedTab: null,
       showPassword: false,
+      user: null,
+      callback: (response) => {
+        localStorage.setItem(
+          "Berk",
+          JSON.stringify(decodeCredential(response.credential))
+        );
+        console.log(decodeCredential(response.credential));
+        this.user = decodeCredential(response.credential);
+        localStorage.setItem("profilePictureGoogle", this.user.picture);
+        localStorage.setItem("googleToken", this.user.exp);
+        localStorage.setItem("userName", this.user.given_name);
+        if (this.user.email_verified == true)
+          localStorage.setItem("isLogged", true);
+        this.toggleIsLogged();
+      },
     };
   },
   components: {},
   methods: {
+    ...mapActions(['login', 'logout']),
     togglePasswordField() {
       this.showPassword = !this.showPassword;
     },
-    // search() {
-    //   console.log(this.searchQuery);
-    // },
-    // login() {
-    //   this.isLogged = true;
-    // },
-    // isUserLoggedOrLogout($event) {
-    //   this.data = $event;
-    //   this.isLogged = this.data.isLogged;
-    // },
+    toggleIsLogged() {
+      this.login();
+    },
+    loginWithFacebook() {
+      FB.login(
+        function (response) {
+          if (response.authResponse) {
+            console.log("Facebook ile oturum açıldı:", response);
+          } else {
+            console.log(
+              "Facebook ile oturum açma iptal edildi veya hata oluştu."
+            );
+          }
+        },
+        { scope: "email" }
+      );
+    },
   },
   mounted() {
     this.selectedTab = localStorage.getItem("cursorPointer");
@@ -201,11 +240,11 @@ export default {
   background-color: white;
 }
 
-.container-login100 input{
+.container-login100 input {
   border: 1px solid #f26d25;
 }
 
-.container-login100 input:focus{
+.container-login100 input:focus {
   border: 1px solid #f26d25;
   outline: none;
 }
@@ -354,6 +393,8 @@ export default {
   display: block;
   background: #3b5998;
   color: #fff;
+  max-width: 225px;
+  min-width: 200px;
 }
 .btn.btn-google {
   background: #ea4335;

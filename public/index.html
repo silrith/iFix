@@ -30,6 +30,27 @@
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <script>
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId      : '1066745231172120', // Facebook Developer Portal'dan alınan uygulama kimliği
+          cookie     : true,  // Çerez kullanımını etkinleştirin (isteğe bağlı)
+          xfbml      : true,  // XFBML kullanımını etkinleştirin (isteğe bağlı)
+          version    : 'v11.0' // Facebook API sürümü
+        });
+    
+        // İhtiyaca göre ek işlemleri yapabilirsiniz
+      };
+    
+      // Facebook SDK'yı asenkron olarak yükleyin
+      (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "https://connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+    </script>
     <title>I Fix At</title>
   </head>
   <body>

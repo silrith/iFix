@@ -157,36 +157,6 @@ export default {
   align-items: center;
 }
 
-#models {
-  position: absolute;
-  top: 100%;
-  width: 85%;
-  background-color: white;
-  list-style: none;
-  margin: 3px;
-  padding: 0;
-  border-top: none;
-  border-radius: 0 0 5px 5px;
-  z-index: 1;
-  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
-  font-family: Poppins-Regular;
-  font-size: 12px;
-  max-height: 280px;
-  overflow-y: auto;
-  border-radius: 5px;
-}
-
-#models li {
-  padding: 10px;
-  color: black;
-}
-
-#models li:hover {
-  background-color: #f26d25;
-  color: white;
-  cursor: pointer;
-}
-
 .serviceCategoryDiv {
   display: flex;
   flex-direction: row;

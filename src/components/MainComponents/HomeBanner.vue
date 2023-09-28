@@ -3,13 +3,14 @@
     <div class="homeBannerLeftDiv">
       <div class="homeBannerLeftText">
         <div class="txt3">
-          <p><b>IFIX. {{ this.$t('homeBanner.repairShop') }}</b></p>
+          <p>
+            <b>IFIX. {{ this.$t("homeBanner.repairShop") }}</b>
+          </p>
         </div>
         <div class="txt4" style="height: max-content">
           <p>
-            <b>{{ this.$t('homeBanner.header1') }}</b><br /><b
-              >{{ this.$t('homeBanner.header2') }}</b
-            >
+            <b>{{ this.$t("homeBanner.header1") }}</b
+            ><br /><b>{{ this.$t("homeBanner.header2") }}</b>
           </p>
         </div>
         <div class="">
@@ -21,23 +22,38 @@
           </p>
         </div>
         <div class="homeBannerSearchDiv">
-          <div
-            class="wrap-input103 validate-input"
-            data-validate="Valid full name is required: Michael Jordan"
-          >
+          <div class="wrap-input103 validate-input">
             <input
+              list="models"
               class="inputBanner103"
               type="search"
               name="search"
-              placeholder="Search"
+              :placeholder="$t('header.searchBox')"
+              v-model="searchText"
+              @input="filterOptions"
             />
+            <ul id="models2" class="dropdown" v-show="showDropdown">
+              <router-link
+                v-for="model in filteredModels"
+                :to="{
+                  path: '/models',
+                  query: { filter: model.category.id },
+                }"
+                style="text-decoration: none"
+                ><li class="txt2" @click="selectModel(model)">
+                  {{ model.modelName }}
+                </li></router-link
+              >
+            </ul>
             <span class="focus-input103"></span>
             <span class="symbol-input103">
               <i class="fa fa-search" aria-hidden="true"></i>
             </span>
           </div>
           <div class="container-banner103-form-btn">
-            <router-link to="/shop"><button class="btn-Banner">Go Shop</button></router-link>
+            <router-link to="/shop"
+              ><button class="btn-Banner">Go Shop</button></router-link
+            >
           </div>
         </div>
         <div class="bannerLeftFooterText">
@@ -71,7 +87,7 @@
               class="mb-3"
               src="@/assets/header/1.png"
               alt=""
-              style="width: fit-content; max-width: 100%;"
+              style="width: fit-content; max-width: 100%"
             />
           </div>
           <div class="">
@@ -112,6 +128,69 @@
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      searchText: "",
+      showDropdown: false,
+      categoryList: [],
+      modelList: [],
+      selectedModel: null,
+    };
+  },
+  methods:{
+    loadModels() {
+      this.$ajax
+        .get("model/getallmodels")
+        .then((response) => {
+          if (response.data) {
+            this.modelList = response.data;
+          }
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    },
+    filterOptions() {
+      this.showDropdown = true;
+      if (this.searchText.length < 3) {
+        this.showDropdown = false;
+      }
+    },
+    selectModel(model) {
+      this.selectedModel = model;
+      this.searchText = model.modelName;
+      this.showDropdown = false;
+    },
+    filterOptions() {
+      this.showDropdown = true;
+      if (this.searchText.length < 3) {
+        this.showDropdown = false;
+      }
+    },
+  },
+  mounted() {
+    this.loadModels();
+    // if (this.$route.query.filter == "brands") {
+    //   this.getBrandDatas();
+    // }
+    // localStorage.removeItem("reloaded");
+  },
+  computed: {
+    filteredModels() {
+      if (this.searchText.length >= 3) {
+        return this.modelList.filter((model) =>
+          model.modelName.toLowerCase().includes(this.searchText.toLowerCase())
+        );
+      } else {
+        return [];
+      }
+    },
+  },
+};
+</script>
 
 <style>
 .homeBanner {
@@ -192,7 +271,7 @@
   padding: 40px 0 0 0;
 }
 
-.bannerSocialMediaLogo{
+.bannerSocialMediaLogo {
   margin: 5px;
 }
 
@@ -359,6 +438,37 @@
   -o-transition: all 0.4s;
   -moz-transition: all 0.4s;
   transition: all 0.4s;
+}
+
+#models2 {
+  position: absolute;
+  top: 100%;
+  width: 95%;
+  background-color: white;
+  list-style: none;
+  margin: 3px;
+  margin-left: 8px;
+  padding: 0;
+  border-top: none;
+  border-radius: 0 0 5px 5px;
+  z-index: 1;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
+  font-family: Poppins-Regular;
+  font-size: 12px;
+  max-height: 280px;
+  overflow-y: auto;
+  border-radius: 5px;
+}
+
+#models2 li {
+  padding: 10px;
+  color: black;
+}
+
+#models2 li:hover {
+  background-color: #f26d25;
+  color: white;
+  cursor: pointer;
 }
 
 .inputBanner103:focus + .focus-input103 + .symbol-input103 {

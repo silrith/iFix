@@ -1,7 +1,7 @@
 <template>
   <Header />
   <RouterView />
-  <PreLoader/>
+  <PreLoader />
   <PopUp />
   <Footer />
   <img
@@ -31,6 +31,8 @@ export default {
   data() {
     return {
       language: null,
+      expirationTime: null,
+      currentTimestamp: null
     };
   },
   components: {
@@ -40,17 +42,32 @@ export default {
     PopUp,
     FontAwesomeIcon,
   },
-  methods: {},
+  methods: {
+    checkTokenExpiration() {
+      if (this.currentTimestamp >= this.expirationTime) {
+        alert("token doldu");
+      } else {
+
+      }
+    },
+  },
   mounted() {
     localStorage.setItem("cursorPointer", "home");
+    if(localStorage.getItem("googleToken") != null ||localStorage.getItem("googleToken") != undefined){
+      this.currentTimestamp = Math.floor(Date.now() / 1000);
+      this.expirationTime = localStorage.getItem(localStorage.getItem("googleToken"));
+      if(this.currentTimestamp >= this.expirationTime){
+        
+      }
+    }
+    setInterval(this.checkTokenExpiration, 300000);
+  },
+  beforeMount(){
     var cookie = localStorage.getItem("cookieSettings");
     if (cookie == null || cookie == undefined)
       localStorage.setItem("cookieSettings", "false");
   },
   computed: {
-    isLoading() {
-      return this.$store.state.isLoading;
-    },
   },
 };
 </script>

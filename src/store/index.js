@@ -2,13 +2,23 @@ import { createStore } from 'vuex'
 
 export default createStore({
   state: {
-  },
-  getters: {
+    isLogged: localStorage.getItem('isLogged') === 'true' || false,
   },
   mutations: {
+    setLogged(state, status) {
+      state.isLogged = status;
+      localStorage.setItem('isLogged', status);
+    },
   },
   actions: {
+    login({ commit }) {
+      commit('setLogged', true);
+    },
+    logout({ commit }) {
+      commit('setLogged', false);
+    },
   },
-  modules: {
-  }
+  getters: {
+    isLogged: (state) => state.isLogged,
+  },
 })

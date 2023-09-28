@@ -22,7 +22,7 @@
           class="flex items-center px-3 py-3 hover:bg-gray-200"
           href="#"
         >
-          <span id="languageImage" class="fi fi-de mb-2" alt=""></span>
+          <span id="languageImage" class="fi fi-de mb-2" alt="German Language"></span>
         </a>
       </div>
       <div class="languageImageA">
@@ -33,7 +33,7 @@
           class="flex items-center px-3 py-3 hover:bg-gray-200"
           href="#"
         >
-          <span id="languageImage" class="fi fi-gb mb-2" alt=""></span>
+          <span id="languageImage" class="fi fi-gb mb-2" alt="English Language"></span>
         </a>
       </div>
     </div>
@@ -69,11 +69,12 @@ export default {
   position: relative;
   align-items: center;
   justify-content: center;
+  padding-bottom: 5px;
 }
 
 #languageImage {
-  width: 3vh;
-  height: 3vh;
+  width: 5vh;
+  height: 5vh;
   padding: 1px 0px 1px 0px;
 }
 #languageImageDiv {
