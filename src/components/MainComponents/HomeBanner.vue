@@ -102,25 +102,25 @@
       <div class="socialMedia">
         <img
           class="bannerSocialMediaLogo"
-          src="@/assets/header/facebook.png"
+          src="@/assets/footer/facebook.webp"
           alt="Login Picture"
           width="45"
         />
         <img
           class="bannerSocialMediaLogo"
-          src="@/assets/header/twitter.png"
+          src="@/assets/footer/twitter.webp"
           alt="Login Picture"
           width="45"
         />
         <img
           class="bannerSocialMediaLogo"
-          src="@/assets/header/instagram.png"
+          src="@/assets/footer/instagram.webp"
           alt="Login Picture"
           width="45"
         />
         <img
           class="bannerSocialMediaLogo"
-          src="@/assets/header/youtube.png"
+          src="@/assets/footer/youtube.webp"
           alt="Login Picture"
           width="45"
         />
@@ -173,10 +173,6 @@ export default {
   },
   mounted() {
     this.loadModels();
-    // if (this.$route.query.filter == "brands") {
-    //   this.getBrandDatas();
-    // }
-    // localStorage.removeItem("reloaded");
   },
   computed: {
     filteredModels() {
@@ -197,12 +193,9 @@ export default {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
-  padding: 55px 30px 45px 30px;
+  padding: 100px 30px 50px 30px;
   align-items: center;
   justify-content: center;
-  /* background-image: url(@/assets/header/backgroundhome.png);
-  background-size: contain;
-  background-repeat: no-repeat; */
 }
 
 .homeBannerLeftDiv {

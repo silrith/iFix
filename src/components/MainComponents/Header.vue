@@ -85,7 +85,9 @@
               <router-link to="/profile" class="dropdown-item"
                 >Profile</router-link
               >
-
+              <router-link to="/profile" class="dropdown-item"
+                >My Orders</router-link
+              >
               <router-link to="/" @click="toggleLogout" class="dropdown-item"
                 >Log Out</router-link
               >

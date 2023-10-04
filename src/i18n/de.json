@@ -35,7 +35,14 @@
     "tablet" : "Tablette",
     "computer" : "Computer",
     "wearableAccessories" : "Tragbar",
-    "allRightsReserved" : "Alle Rechte Vorbehalten"
+    "copyRight" : "Urheberrechte ©",
+    "allRightsReserved" : "Alle Rechte Vorbehalten",
+    "leftSubtitle1" : "Einfach schnell und unkompliziert!",
+    "leftSubtitle2" : "Qualitat zu fairem Preis!",
+    "leftSubtitle3" : "Deine Handywerkstatt!",
+    "rightSubtitle1" : "Folge uns auf den sozialen",
+    "rightSubtitle2" : "Netzwerken und bleibe auf",
+    "rightSubtitle3" : "dem neuesten Stand!"
   },
   "homePage" : {
     "letUsKnow" : "Teilen Sie uns mit, welches Gerät Sie benötigen",

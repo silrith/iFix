@@ -12,21 +12,22 @@
       </div>
       <div class="footerContent">
         <div class="customContentFirst">
-          <p class="txt2">Einfach schnell und unkompliziert!</p>
-          <p class="txt2">Qualitat zu fairem Preis!</p>
-          <p class="txt2">Deine Handywerkstatt!</p>
+          <p class="txt2">{{ $t("footer.leftSubtitle1") }}</p>
+          <p class="txt2">{{ $t("footer.leftSubtitle2") }}</p>
+          <p class="txt2">{{ $t("footer.leftSubtitle3") }}</p>
           <div>
             <p class="txt2">
               <b
-                >Copyright IFix © {{ new Date().getFullYear() }} |
+                >{{ $t("footer.copyRight") }} IFix ©
+                {{ new Date().getFullYear() }} |
                 {{ $t("footer.allRightsReserved") }}</b
               >
             </p>
           </div>
         </div>
         <div class="customContent">
-          <p class="txt3">Kontakt</p>
-          <div style="display: flex; text-align: flex-start">
+          <p class="txt3">{{ $t("header.contact") }}</p>
+          <div class="footerInformationDiv">
             <font-awesome-icon
               :icon="['fas', 'map']"
               style="
@@ -36,8 +37,7 @@
               "
             />
             <p class="txt2">
-              Wien 1010 Standort, Rabensteig 1, <br />
-              1010 Wien, Austria
+              Wien 1010 Standort, Rabensteig 1, 1010 Wien, Austria
             </p>
           </div>
           <div style="display: flex; text-align: flex-start">
@@ -66,34 +66,38 @@
         <div class="customContent">
           <div class="socialMediaFooter">
             <img
-              src="@/assets/header/facebook.png"
+              src="@/assets/footer/facebook.webp"
               alt="Login Picture"
               width="45"
+              style="padding: 1px"
             />
             <img
-              src="@/assets/header/twitter.png"
+              src="@/assets/footer/twitter.webp"
               alt="Login Picture"
               width="45"
+              style="padding: 1px"
             />
             <img
-              src="@/assets/header/instagram.png"
+              src="@/assets/footer/instagram.webp"
               alt="Login Picture"
               width="45"
+              style="padding: 1px"
             />
             <img
-              src="@/assets/header/youtube.png"
+              src="@/assets/footer/youtube.webp"
               alt="Login Picture"
               width="45"
+              style="padding: 1px"
             />
           </div>
-          <p class="txt2">
-            Folge uns auf den sozialen <br />
-            Netzwerken und bleibe auf <br />
-            dem neuesten Stand!
-          </p>
+          <p class="txt2"><b>
+            {{ $t("footer.rightSubtitle1") }} <br />
+            {{ $t("footer.rightSubtitle2") }} <br />
+            {{ $t("footer.rightSubtitle3") }}
+          </b></p>
         </div>
         <div class="customContent">
-          <div>
+          <div style="padding: 6px">
             <img
               src="@/assets/header/stripe.png"
               alt="I Fix Main Logo"
@@ -103,56 +107,9 @@
           <div class="customContent">
             <div style="display: flex">
               <img
-                src="@/assets/header/mastercard.png"
+                src="@/assets/footer/stripePayments.webp"
                 alt="I Fix Main Logo"
-                style="height: 40px"
-              />
-              <img
-                src="@/assets/header/cartesBancaries.png"
-                alt="I Fix Main Logo"
-                style="height: 40px"
-              />
-              <img
-                src="@/assets/header/apple-pay.png"
-                alt="I Fix Main Logo"
-                style="height: 40px"
-              />
-              <img
-                src="@/assets/header/ideal.png"
-                alt="I Fix Main Logo"
-                style="height: 40px"
-              />
-              <img
-                src="@/assets/header/sepa.png"
-                alt="I Fix Main Logo"
-                style="height: 40px"
-              />
-            </div>
-            <div style="display: flex">
-              <img
-                src="@/assets/header/visa.png"
-                alt="I Fix Main Logo"
-                style="height: 40px"
-              />
-              <img
-                src="@/assets/header/paypal.png"
-                alt="I Fix Main Logo"
-                style="height: 40px"
-              />
-              <img
-                src="@/assets/header/american-express.png"
-                alt="I Fix Main Logo"
-                style="height: 40px"
-              />
-              <img
-                src="@/assets/header/klarna.png"
-                alt="I Fix Main Logo"
-                style="height: 40px"
-              />
-              <img
-                src="@/assets/header/bancontact.png"
-                alt="I Fix Main Logo"
-                style="height: 40px"
+                style="height: 80px"
               />
             </div>
           </div>
@@ -194,6 +151,11 @@ export default {
   padding: 30px 50px 30px 50px;
 }
 
+.footerInformationDiv{
+  width: 100%;
+  display: flex;
+}
+
 .customContentFirst {
   display: flex;
   flex-direction: column;
@@ -210,9 +172,37 @@ export default {
 }
 
 .socialMediaFooter {
-  width: 45%;
+  width: 60%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+}
+
+@media (max-width: 1688px){
+  .footerContent{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .socialMediaFooter{
+    width: 40%;
+  }
+}
+
+@media (max-width: 1308px) {
+  .footerContent {
+    width: 100%;
+    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .customContent {
+    width: 50%;
+  }
+
+  .footerContent{
+    padding: 30px 0px 0px 50px;
+  }
 }
 </style>

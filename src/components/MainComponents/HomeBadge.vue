@@ -7,40 +7,39 @@
       </p>
     </div>
     <div class="badgeContentDiv">
-      <div
-        class="col"
-        style="
+        <div class="badgeContentTextDiv" style="
           display: flex;
-          justify-content: space-around;
+          justify-content: space-between;
           align-items: center;
-        "
-      >
-        <div class="badgeContentTextDiv">
+        ">
           <p class="txtBadge">15+</p>
           <p class="txtBadge2">Jahre Erfahrung</p>
         </div>
-        <div class="badgeContentTextDiv">
-          <p class="txtBadge">10.000+</p>
-          <p class="txtBadge2">Gerate repaiert</p>
-        </div>
-      </div>
-      <div
-        class="col"
-        style="
+        <div class="badgeContentTextDiv" style="
           display: flex;
           justify-content: space-around;
           align-items: center;
-        "
-      >
-        <div class="badgeContentTextDiv">
+        ">
+          <p class="txtBadge">10.000+</p>
+          <p class="txtBadge2">Gerate repaiert</p>
+        </div>
+    
+        <div class="badgeContentTextDiv" style="
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
+        ">
           <p class="txtBadge">100%</p>
           <p class="txtBadge2">Zufriedene Kunden</p>
         </div>
-        <div class="badgeContentTextDiv">
+        <div class="badgeContentTextDiv" style="
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
+        ">
           <p class="txtBadge">100%</p>
           <p class="txtBadge2">Fachexperten</p>
         </div>
-      </div>
     </div>
     <div class="badgeFooterDiv">
       <div>
@@ -71,7 +70,7 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  padding: 55px 0px 45px 0px;
+  padding: 45px 0px 45px 0px;
 }
 
 .badgeHeader{
@@ -86,12 +85,12 @@
   justify-content: space-around;
   align-items: center;
   background: rgb(242, 109, 37, 0.5);
+  background-color: rgb(242, 93, 38, 0.5);
   padding: 50px 30px 50px 30px;
   border-radius: 25px;
 }
 
 .badgeContentTextDiv {
-  width: 50%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -137,6 +136,26 @@
 
   .trustedShopLogo {
     width: 275px;
+  }
+
+  .badgeMainDiv{
+    width: 100%;
+  }
+
+  .txtBadge2{
+    font-size: 12px;
+  }
+
+  .badgeContentTextDiv{
+    width: 50%;
+    justify-content: space-between;
+  }
+}
+
+@media ( max-width: 524px){
+  .badgeContentTextDiv{
+    width: 100%;
+    justify-content: space-between;
   }
 }
 </style>

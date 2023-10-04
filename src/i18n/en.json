@@ -35,7 +35,14 @@
     "tablet" : "Tablet",
     "computer" : "Computer",
     "wearableAccessories" : "Wearable",
-    "allRightsReserved" : "All Rights Reserved"
+    "copyRight": "Copyright ©",
+    "allRightsReserved" : "All Rights Reserved",
+    "leftSubtitle1" : "Simply quick and uncomplicated!",
+    "leftSubtitle2" : "Quality at a fair price!",
+    "leftSubtitle3" : "Your cell phone repair shop!",
+    "rightSubtitle1" : "Follow us on social",
+    "rightSubtitle2" : "Network and stay up",
+    "rightSubtitle3" : "up to date!"
   },
   "homePage" : {
     "letUsKnow" : "Let us know which device you need",

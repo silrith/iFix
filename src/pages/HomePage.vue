@@ -2,7 +2,7 @@
   <div class="mainBody">
     <HomeBanner/>
     <HomeBadge />
-    <section class="serviceSelectDiv">
+    <!-- <section class="serviceSelectDiv">
       <div class="col-md-6">
         <h2 class="main-heading">
           {{ $t("homePage.letUsKnow") }}
@@ -214,7 +214,7 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
   </div>
 </template>
 

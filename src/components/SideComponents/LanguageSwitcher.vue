@@ -73,8 +73,8 @@ export default {
 }
 
 #languageImage {
-  width: 5vh;
-  height: 5vh;
+  width: 3vh;
+  height: 3vh;
   padding: 1px 0px 1px 0px;
 }
 #languageImageDiv {
