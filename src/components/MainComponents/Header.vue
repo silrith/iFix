@@ -6,7 +6,7 @@
     >
       <div
         class="headerContent col-lg-11"
-        style="display: flex; justify-content: space-between; margin-top: 30px"
+        style="display: flex; justify-content: space-between; margin: 30px 0 20px 0"
       >
         <div
           class="col-lg-2 col-md-12 col-sm-12 d-flex justify-content-lg-start justify-content-md-center justify-content-center justify-content-sm-center headerPic"
@@ -23,26 +23,26 @@
           class="navbar col-lg-7 col-md-12 col-sm-12 d-flex justify-content-evenly mt-3"
           style="display: flex"
         >
-          <p :class="{ active: this.selectedTab === 'home' }">
+          <p>
             <router-link to="/" style="color: black; text-decoration: none">{{
               $t("header.home")
             }}</router-link>
           </p>
-          <p :class="{ active: this.selectedTab === 'about' }">
+          <p>
             <router-link
               to="/aboutus"
               style="color: black; text-decoration: none"
               >{{ $t("header.about") }}</router-link
             >
           </p>
-          <p :class="{ active: this.selectedTab === 'service' }">
+          <p>
             <router-link
               to="/services"
               style="color: black; text-decoration: none"
               >{{ $t("header.service") }}</router-link
             >
           </p>
-          <p :class="{ active: this.selectedTab === 'shop' }">
+          <p>
             <router-link
               to="/shop"
               style="color: black; text-decoration: none"
@@ -58,7 +58,6 @@
           </p>
           <p
             v-show="!isLogged"
-            :class="{ active: this.selectedTab === 'sign in' }"
           >
             <router-link
               to="/login"
@@ -93,7 +92,7 @@
               >
             </div>
           </div>
-          <LanguageSwitcher style="margin-bottom: 15px" />
+          <LanguageSwitcher style="margin-bottom: 12px" />
         </div>
       </div>
     </div>

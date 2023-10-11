@@ -73,7 +73,26 @@
   "homeBanner" : {
     "repairShop" : "YOUR REPAIR SHOP",
     "header1" : "Express repair in Vienna - before",
-    "header2" : "place or by post!"
+    "header2" : "place or by post!",
+    "subtitle1" : "We are business consultant is company with a wide array of",
+    "subtitle2" : "skills who assists business owners with their endeavors.",
+    "subtitle3" : "Consultants are knowledgeable because of their education and previous experience.",
+    "button" : "Go Shop",
+    "title1" : "Months",
+    "title2" : "Guarantee",
+    "title3" : "fair",
+    "title4" : "Prices",
+    "title5" : "Transparent & fix"
+  },
+  "homebadge" : {
+    "header1" : "Our numbers",
+    "header2" : "speak for themselves!",
+    "subtitle1" : "Years of experience",
+    "subtitle2" : "Devices repaired",
+    "subtitle3" : "Satisfied costumers",
+    "subtitle4" : "Subject matter experts",
+    "title1" : "Convince yourself",
+    "title2" : "himself!"
   },
   "customRange" : {
     "selectBrand" : "Select Brand",

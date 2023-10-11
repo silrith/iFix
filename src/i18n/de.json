@@ -73,7 +73,26 @@
   "homeBanner" : {
     "repairShop" : "DEINE REPARATURWERKSTATT",
     "header1" : "Express Reparatur in Wien - vor",
-    "header2" : "Ort oder per post!"
+    "header2" : "Ort oder per post!",
+    "subtitle1" : "Wir sind ein Unternehmensberater, ein Unternehmen mit einem breiten Spektrum an",
+    "subtitle2" : "Fähigkeiten, die Unternehmer bei ihren Vorhaben unterstützen.",
+    "subtitle3" : "Berater sind aufgrund ihrer Ausbildung und Vorerfahrung sachkundig.",
+    "button" : "Einkaufen gehen",
+    "title1" : "Monate",
+    "title2" : "Garantie",
+    "title3" : "faire",
+    "title4" : "Preise",
+    "title5" : "Transparent und fix"
+  },
+  "homebadge" : {
+    "header1" : "Unsere Zahlen",
+    "header2" : "sprechen für sich!",
+    "subtitle1" : "Jahre Erfahrung",
+    "subtitle2" : "Gerate repaiert",
+    "subtitle3" : "Zufriedene Kunden",
+    "subtitle4" : "Fachexperten",
+    "title1" : "Überzeuge dich",
+    "title2" : "selbst!"
   },
   "customRange" :{
     "selectBrand" : "Wählen Sie Marke aus",

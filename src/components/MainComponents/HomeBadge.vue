@@ -2,8 +2,8 @@
   <div class="badgeMainDiv">
     <div class="badgeHeader" style="padding: 50px 0;">
       <p class="txt5" style="text-align: center; padding: 0 30px">
-        <span style="color: #ff6700;">Unsere Zahlen</span>
-        sprechen für sich!
+        <span style="color: #ff6700;">{{ this.$t("homebadge.header1") }}</span>
+        {{ this.$t("homebadge.header2") }}
       </p>
     </div>
     <div class="badgeContentDiv">
@@ -13,7 +13,7 @@
           align-items: center;
         ">
           <p class="txtBadge">15+</p>
-          <p class="txtBadge2">Jahre Erfahrung</p>
+          <p class="txtBadge2">{{ this.$t("homebadge.subtitle1") }}</p>
         </div>
         <div class="badgeContentTextDiv" style="
           display: flex;
@@ -21,16 +21,7 @@
           align-items: center;
         ">
           <p class="txtBadge">10.000+</p>
-          <p class="txtBadge2">Gerate repaiert</p>
-        </div>
-    
-        <div class="badgeContentTextDiv" style="
-          display: flex;
-          justify-content: space-around;
-          align-items: center;
-        ">
-          <p class="txtBadge">100%</p>
-          <p class="txtBadge2">Zufriedene Kunden</p>
+          <p class="txtBadge2">{{ this.$t("homebadge.subtitle2") }}</p>
         </div>
         <div class="badgeContentTextDiv" style="
           display: flex;
@@ -38,24 +29,32 @@
           align-items: center;
         ">
           <p class="txtBadge">100%</p>
-          <p class="txtBadge2">Fachexperten</p>
+          <p class="txtBadge2">{{ this.$t("homebadge.subtitle3") }}</p>
+        </div>
+        <div class="badgeContentTextDiv" style="
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
+        ">
+          <p class="txtBadge">100%</p>
+          <p class="txtBadge2">{{ this.$t("homebadge.subtitle4") }}</p>
         </div>
     </div>
     <div class="badgeFooterDiv">
       <div>
-        <p class="txt4">Überzeuge dich</p>
+        <p class="txt4">{{ this.$t("homebadge.title1") }}</p>
         <p class="txt4">
-          selbst!
+          {{ this.$t("homebadge.title2") }}
           <img
             class="arrowRight"
-            src="@/assets/header/Arrow.png"
+            src="@/assets/homebadge/Arrow.webp"
             alt="Arrow right"
           />
         </p>
       </div>
       <img
         class="trustedShopLogo"
-        src="@/assets/header/trustedshops.png"
+        src="@/assets/homebadge/trustedshops.webp"
         alt="Trusted Shop Image"
       />
     </div>

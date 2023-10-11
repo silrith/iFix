@@ -30,7 +30,7 @@
       </div>
       <img
         class="about101-pic"
-        src="@/assets/header/about4.jpg"
+        src="@/assets/header/about2.png"
         alt="Team Picture 1"
       />
     </div>

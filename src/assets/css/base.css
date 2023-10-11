@@ -10,7 +10,6 @@ footer {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  padding: 40px 50px 50px 50px;
 }
 
 .txt1 {
