@@ -4,9 +4,14 @@
       <div class="repairTypesForModel">
         <div class="serviceResultDiv">
           <p class="serviceFilterText">
-            <span style="color: #f26d25">What's</span> wrong with if ?
+            <span style="color: #f26d25">{{
+              this.$t("serviceResultPage.header1")
+            }}</span>
+            {{ this.$t("serviceResultPage.header2") }}
           </p>
-          <p class="serviceFilterText2">Things happen-we've seen it all.</p>
+          <p class="serviceFilterText2">
+            {{ this.$t("serviceResultPage.subtitle") }}
+          </p>
         </div>
         <div class="serviceFilterGradients">
           <div class="textAreaWithRepirTypes">
@@ -19,8 +24,9 @@
             </div>
             <div class="serviceFilterTextArea">
               <input
+                v-model="optionalInformation"
                 type="textarea"
-                placeholder="Anything else we should know? (Optional)"
+                :placeholder="$t('serviceResultPage.textarea')"
               />
             </div>
           </div>
@@ -34,7 +40,9 @@
                   padding: 15px 0 0 0;
                 "
               >
-                <p class="txt4" style="color: #666 !important">Summary</p>
+                <p class="txt4" style="color: #666 !important">
+                  {{ this.$t("shoppingCart.summary") }}
+                </p>
               </div>
               <div class="txt3" style="width: 90%">
                 <hr />
@@ -44,7 +52,7 @@
                   v-if="this.selectedRepairTypes.length == 0"
                   class="txt2"
                   style="font-weight: 600"
-                  >There is no selected repair type.</span
+                  >{{ this.$t("shoppingCart.noSelected") }}</span
                 >
                 <div
                   v-for="repairType in this.selectedRepairTypes"
@@ -68,7 +76,9 @@
                 <hr />
               </div>
               <div class="selectedTotalPrice">
-                <p class="txt2" style="font-weight: 600">Pricing details</p>
+                <p class="txt2" style="font-weight: 600">
+                  {{ this.$t("shoppingCart.priceDetail") }}
+                </p>
                 <p class="txt2" style="font-weight: 600">
                   {{
                     this.selectedRepairTypes.reduce(
@@ -84,7 +94,7 @@
               </div>
               <div class="repairInformation">
                 <p class="txt2" style="font-weight: 600">
-                  <u>About our repairs</u>
+                  <u>{{ this.$t("shoppingCart.aboutRepair") }}</u>
                 </p>
                 <div
                   style="
@@ -99,7 +109,7 @@
                         :icon="['fas', 'circle-check']"
                         style="color: #ff9500"
                       />
-                      6 month
+                      {{ this.$t("shoppingCart.title1") }}
                     </p>
                   </div>
                   <div style="text-align: start; width: 50%">
@@ -108,7 +118,7 @@
                         :icon="['fas', 'circle-check']"
                         style="color: #ff9500"
                       />
-                      fast turn around
+                      {{ this.$t("shoppingCart.title2") }}
                     </p>
                   </div>
                 </div>
@@ -125,7 +135,7 @@
                         :icon="['fas', 'circle-check']"
                         style="color: #ff9500"
                       />
-                      Quality
+                      {{ this.$t("shoppingCart.title3") }}
                     </p>
                   </div>
                   <div style="text-align: start; width: 50%">
@@ -134,14 +144,14 @@
                         :icon="['fas', 'circle-check']"
                         style="color: #ff9500"
                       />
-                      Memnuniyet
+                      {{ this.$t("shoppingCart.title4") }}
                     </p>
                   </div>
                 </div>
               </div>
             </div>
             <button
-              class="btn btn-block py-2 btn-loginServiceResult"
+              class="btn btn-block py-3 btn-loginServiceResult"
               @click="goCheckOutPage()"
             >
               {{ $t("serviceFilter.continue") }}
@@ -154,7 +164,8 @@
 </template>
 
 <script>
-import { mapActions, mapGetters } from 'vuex';
+import { toast } from "vue3-toastify";
+import { mapActions, mapGetters } from "vuex";
 import Card from "@/components/HelperComponents/SpairPartCard.vue";
 import PreLoader from "@/components/HelperComponents/LoadingScreen2.vue";
 export default {
@@ -164,6 +175,7 @@ export default {
       repairTypeList: [],
       selectedRepairTypes: [],
       filterModel: [{ key: "modelId", value: 0, type: "int" }],
+      optionalInformation: null,
     };
   },
   components: {
@@ -191,21 +203,40 @@ export default {
       );
     },
     goCheckOutPage() {
-      localStorage.setItem(
-        "selectedRepairTypes",
-        JSON.stringify(this.selectedRepairTypes)
-      );
-      console.log(JSON.parse(localStorage.getItem("selectedRepairTypes")));
-      this.$router.push({
-        path: "/checkOut",
-      });
+      if (this.selectedRepairTypes.length == 0)
+        toast.error(this.$t("shoppingCart.noSelectedRepairType"), {
+          position: toast.POSITION.BOTTOM_RIGHT,
+          className: "foo-bar",
+          toastStyle: {
+            fontSize: "12px",
+          },
+        });
+      else {
+        localStorage.setItem(
+          "selectedRepairTypes",
+          JSON.stringify(this.selectedRepairTypes)
+        );
+        if (
+          this.optionalInformation != null ||
+          this.optionalInformation != undefined
+        )
+          localStorage.setItem(
+            "informationAboutService",
+            this.optionalInformation
+          );
+        else localStorage.setItem("informationAboutService", "No Information");
+        // console.log(JSON.parse(localStorage.getItem("selectedRepairTypes")));
+        this.$router.push({
+          path: "/checkOut",
+        });
+      }
     },
   },
   mounted() {
     this.getRepairTypesForModel(this.$route.query.modelId);
   },
   computed: {
-    ...mapGetters(['shoppingList']),
+    ...mapGetters(["shoppingList"]),
   },
 };
 </script>
@@ -321,7 +352,7 @@ export default {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding: 14px 0 0 0;
+  padding: 17px 0 3px 0;
 }
 
 .serviceFilterTextArea {

@@ -1,38 +1,43 @@
 <template>
   <div class="aboutDiv">
     <div class="aboutHeader">
-      <h1 style="color: #333">{{ this.$t('about.header1') }}</h1>
+      <h1 style="color: #333">{{ this.$t("about.header1") }}</h1>
       <p class="txt1">
-        {{ this.$t('about.header2') }}
-        <br /> {{ this.$t('about.header3') }}
+        {{ this.$t("about.header2") }}
+        <br />
+        {{ this.$t("about.header3") }}
       </p>
     </div>
     <div class="aboutPicDiv">
-      <img
-        class="about100-pic"
-        src="@/assets/header/about1.png"
-        alt="Team Picture 1"
-      />
+      <div class="picturesDiv">
+        <div class="col-7" style="padding: 10px;">
+          <img
+            src="@/assets/header/about1.png"
+            alt="Team Picture 1"
+            style="width: 100%; max-height: 500px;"
+          />
+        </div>
+        <div class="col-4" style="padding: 10px;">
+          <img
+            src="@/assets/header/about2.png"
+            alt="Team Picture 1"
+            style="width: 100%; max-height: 425px"
+          />
+        </div>
+      </div>
       <div class="information1">
         <p class="txt1">
-          {{ this.$t('about.information1') }}
+          {{ this.$t("about.information1") }}
         </p>
       </div>
     </div>
     <div class="aboutPicDiv2">
       <div class="information2">
         <p class="txt1">
-          {{ this.$t('about.information2') }}
-          <b style="color: #f26d25"
-            >{{ this.$t('about.information3') }}</b
-          >
+          {{ this.$t("about.information2") }}
+          <b style="color: #f26d25">{{ this.$t("about.information3") }}</b>
         </p>
       </div>
-      <img
-        class="about101-pic"
-        src="@/assets/header/about2.png"
-        alt="Team Picture 1"
-      />
     </div>
   </div>
 </template>
@@ -43,7 +48,7 @@
   flex-direction: column;
   min-height: 86vh;
   font-family: Poppins-Regular;
-  padding: 50px 0 40px 0;
+  padding: 30px 0 40px 0;
   align-items: center;
 }
 
@@ -53,7 +58,7 @@
 }
 
 .aboutHeader {
-  width: 80%;
+  width: 60%;
   text-align: center;
   padding: 10px 10px 10px 10px;
 }
@@ -76,22 +81,12 @@
   align-items: center;
 }
 
-.about100-pic {
-  width: 615px;
-  padding-bottom: 15px;
-}
-
-.about100-pic img {
-  max-width: 100%;
-}
-
-.about101-pic {
-  width: 615px;
-  padding: 0 37px 10px 0;
-}
-
-.about101-pic img {
-  max-width: 34%;
+.picturesDiv {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-around;
 }
 
 .txt2 {
@@ -159,6 +154,18 @@
   .aboutPicDiv2 img {
     width: 100%;
     padding: 0;
+  }
+
+  .aboutHeader{
+    width: 90%;
+  }
+
+  .aboutPicDiv{
+    width: 90%;
+  }
+
+  .aboutPicDiv2{
+    width: 90%;
   }
 }
 </style>
