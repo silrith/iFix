@@ -2,14 +2,14 @@
   <div class="checkOutPageDiv">
     <div class="parallelogram"></div>
     <div class="checkOutHeaderDiv">
-      <p class="checkOutHeader">Choose your</p>
+      <p class="checkOutHeader">{{ this.$t("checkout.header1") }}</p>
       <p class="checkOutHeader">
-        <span style="color: #f26d25">Repair</span> Option
+        <span style="color: #f26d25">{{ this.$t("checkout.header2") }}</span> {{ this.$t("checkout.header3") }}
       </p>
     </div>
     <div class="checkOutButtons">
-      <button class="checkOutButton" @click="storeIn()">Visit Store</button>
-      <button class="checkOutButton" @click="mailIn()">Mail in</button>
+      <button class="checkOutButton" @click="storeIn()">{{ this.$t("checkout.subtitle1") }}</button>
+      <button class="checkOutButton" @click="mailIn()">{{ this.$t("checkout.subtitle2") }}</button>
     </div>
   </div>
 </template>

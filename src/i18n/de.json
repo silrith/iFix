@@ -112,10 +112,11 @@
     "priceDetail" : "Preisdetails",
     "aboutRepair" : "Über unsere Reparaturen",
     "title1" : "6 Monate Garantie",
-    "title2": "Schnell umdrehen",
+    "title2": "Schnelles Service",
     "title3" : "Qualität",
-    "title4" : "Sachverstand",
-    "noSelectedRepairType" : "Sie müssen den Reparaturtyp auswählen, um fortzufahren."
+    "title4" : "Expertise",
+    "noSelectedRepairType" : "Sie müssen den Reparaturtyp auswählen, um fortzufahren.",
+    "noRepairType" : "Für dieses Produkt gibt es keinen Reparaturtyp."
   },
   "userForm": {
     "name" : "Name",
@@ -206,6 +207,37 @@
     "subtitle" : "Dinge passieren – wir haben alles gesehen.",
     "textarea" : "Gibt es sonst noch etwas, was wir wissen sollten? (Optional)"
   },
+  "checkout" : {
+    "header1" : "Wähle dein",
+    "header2" : "Reparatur",
+    "header3" : "Möglichkeit",
+    "subtitle1" : "Besuchen Sie den Store",
+    "subtitle2" : "Einsenden"
+  },
+  "checkoutinstore" : {
+    "header1" : "Wann sollte",
+    "header2" : "WIR",
+    "header3" : "erwarten",
+    "header4" : "DU",
+    "choosedate" : "Datum auswählen",
+    "choosecheckin" : "Wählen Sie eine Check-in-Zeit am",
+    "comeanytime" : "Kommen Sie jederzeit vorbei"
+  },
+  "instoreallset" : {
+    "header1" : "Du bist",
+    "header2" : "alles bereit",
+    "header3" : "Bis bald!",
+    "subtitle1" : "Wir haben eine Bestätigungs-E-Mail gesendet. Bis bald!",
+    "button1" : "Zum Kalender hinzufügen",
+    "button2" : "Anweisungen bekommen"
+  },
+  "mailin" : {
+    "header1" : "Geben Sie Ihr",
+    "header2" : "Versand",
+    "header3" : "Adresse",
+    "subtitle1" : "Wir stellen ein kostenloses Etikett zur Verfügung",
+    "address" : "Geben Sie Ihre Adresse ein"
+  },
   "shopFilter" : {
     "brand" : "Marke",
     "category" : "Kategorie",
@@ -215,5 +247,17 @@
     "noModel" : "Modell für ausgewählte Marke noch nicht verfügbar.",
     "continue" : "Weitermachen",
     "chooseModel" : "Bitte wählen Sie ein Modell aus, um fortzufahren."
+  },
+  "dateCard" : {
+    "today" : "Heute",
+    "tomorrow" : "Morgen"
+  },
+  "customerinformation" : {
+    "header1" : "Letzter Schritt",
+    "header2" : "eingeben",
+    "header3" : "dein Kontakt",
+    "header4" : "die Info",
+    "subtitle1" : "Dies beschleunigt den Check-in bei Ihrer Ankunft.",
+    "subtitle2" : "Wenn Sie fortfahren, stimmen Sie unseren Nutzungsbedingungen und Datenschutzbestimmungen zu"
   }
 }

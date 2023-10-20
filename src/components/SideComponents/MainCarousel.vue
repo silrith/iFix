@@ -18,34 +18,44 @@
         </div>
         <div id="items">
           <div class="item">
-            <img class="imgCarousel" src="../../assets/photos/computer.jpg" />
+            <img
+              class="imgCarousel"
+              src="../../assets/photos/computer.jpg"
+              alt="Carousel Picture 1"
+            />
           </div>
           <div class="item">
             <img
               class="imgCarousel"
               src="../../assets/photos/orangeBackGround.jpg"
+              alt="Carousel Picture 2"
             />
           </div>
           <div class="item">
-            <img class="imgCarousel" src="../../assets/photos/iphone.jpg" />
+            <img
+              class="imgCarousel"
+              src="../../assets/photos/iphone.jpg"
+              alt="Carousel Picture 3"
+            />
           </div>
           <div class="item">
             <img
               class="imgCarousel"
               src="https://images.pexels.com/photos/572897/pexels-photo-572897.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+              alt="Carousel Picture 4"
             />
           </div>
           <div class="item">
             <img
               class="imgCarousel"
               src="https://images.pexels.com/photos/2775196/pexels-photo-2775196.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-            />
+              alt="Carousel Picture 5"/>
           </div>
           <div class="item">
             <img
               class="imgCarousel"
               src="https://images.pexels.com/photos/1287145/pexels-photo-1287145.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-            />
+              alt="Carousel Picture 6"/>
           </div>
         </div>
       </div>

@@ -1,7 +1,7 @@
 <template>
   <div class="wrapperTest">
     <div class="product-img">
-      <img :src="this.spairPart.repairTypePicture" height="120" width="90" />
+      <img :src="this.spairPart.repairTypePicture" height="120" width="90" alt="Repair Type Picture"/>
     </div>
     <div class="product-info">
       <p>

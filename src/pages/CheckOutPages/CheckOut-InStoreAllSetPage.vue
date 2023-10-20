@@ -2,20 +2,20 @@
   <div class="inStoreAllSetDiv">
     <div class="checkOutHeaderDivAllSet">
       <p class="checkOutHeader">
-        <span style="color: #f26d25">You're </span>all set, OZGUR.
+        <span style="color: #f26d25">{{ this.$t("instoreallset.header1")}}</span> {{ this.$t("instoreallset.header2")}}, OZGUR.
       </p>
-      <p class="checkOutHeader">See you soon!</p>
+      <p class="checkOutHeader">{{ this.$t("instoreallset.header3")}}</p>
       <p class="txt2" style="font-size: 15px; color: black; font-weight: 600">
-        We sent a confirmation email and text. See you soon!
+        {{ this.$t("instoreallset.subtitle1")}}
       </p>
     </div>
     <div class="allSetImg">
       <img src="@/assets/photos/booking.png" alt="Booking Picture" />
     </div>
     <div class="bookTimeDiv2">
-      <p class="txt2 timeDiv2">add to calendar</p>
+      <p class="txt2 timeDiv2">{{ this.$t("instoreallset.button1")}}</p>
       <p class="txt2 timeDiv2"><u>+43 1 9909777</u></p>
-      <p class="txt2 timeDiv2">get directions</p>
+      <p class="txt2 timeDiv2">{{ this.$t("instoreallset.button2")}}</p>
     </div>
   </div>
 </template>

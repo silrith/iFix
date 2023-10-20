@@ -1,19 +1,20 @@
 <template>
   <div class="mailInDiv">
     <div class="checkOutHeaderDiv">
-      <p class="checkOutHeader">Enter your</p>
+      <p class="checkOutHeader">{{ this.$t("mailin.header1") }}</p>
       <p class="checkOutHeader">
-        <span style="color: #f26d25">Shipping </span>Address
+        <span style="color: #f26d25">{{ this.$t("mailin.header2") }} </span
+        >{{ this.$t("mailin.header3") }}
       </p>
       <p class="txt2" style="font-size: 15px; color: black; font-weight: 600">
-        We provide a free label
+        {{ this.$t("mailin.subtitle1") }}
       </p>
     </div>
     <div class="mailInTextArea">
       <input
         id="address-input"
         type="text"
-        placeholder="Enter Your Address"
+        :placeholder="$t('mailin.address')"
         v-model="address"
       />
       <span class="textAreaIcon" @click="clearAddress"
@@ -57,16 +58,16 @@ export default {
       // this.$ajax.post("Cargo/CreateCargoForCustomer", JSON.parse(localStorage.getItem("address")))
       if (this.cargoResult == true) {
         this.$ajax
-        .post("Payment/CreatePayment", {
-          amount: payAmount,
-          repairTypeProducts: this.shoppingCartList,
-        })
-        .then((snapshot) => {
-          window.open(snapshot.data);
-        })
-        .catch((error) => {
-          console.log(error);
-        });
+          .post("Payment/CreatePayment", {
+            amount: payAmount,
+            repairTypeProducts: this.shoppingCartList,
+          })
+          .then((snapshot) => {
+            window.open(snapshot.data);
+          })
+          .catch((error) => {
+            console.log(error);
+          });
       } else {
         toast.error(
           "Kargo Talebiniz Oluşturulamadı, Lütfen Firmamız İle Görüşünüz",
@@ -81,18 +82,7 @@ export default {
       }
     },
   },
-  mounted() {
-    // toast.error(
-    //   "Kargo Talebiniz Oluşturulamadı, Lütfen Firmamız İle Görüşünüz",
-    //   {
-    //     position: toast.POSITION.BOTTOM_RIGHT,
-    //     className: "foo-bar",
-    //     toastStyle: {
-    //       fontSize: "12px",
-    //     },
-    //   }
-    // );
-  },
+  mounted() {},
 };
 </script>
 
@@ -162,7 +152,7 @@ export default {
 .textAreaIcon {
   position: absolute;
   right: 40px;
-  top: 20px;
+  top: 16px;
   font-size: 20px;
   display: flex;
   color: white;

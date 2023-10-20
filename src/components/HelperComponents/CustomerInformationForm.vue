@@ -2,14 +2,25 @@
   <div class="customerInformationForm">
     <div class="checkOutHeaderDiv">
       <p class="checkOutHeader">
-        <span style="color: #f26d25">Last Step</span> - enter
+        <span style="color: #f26d25">{{
+          this.$t("customerinformation.header1")
+        }}</span>
+        - {{
+          this.$t("customerinformation.header2")
+        }}
       </p>
       <p class="checkOutHeader">
-        your contact
-        <span style="color: #f26d25"> info</span>
+        {{
+          this.$t("customerinformation.header3")
+        }}
+        <span style="color: #f26d25"> {{
+          this.$t("customerinformation.header4")
+        }}</span>
       </p>
       <p class="txt2" style="font-size: 15px; color: black; font-weight: 600">
-        This will speed up check-in when you get here.
+        {{
+          this.$t("customerinformation.subtitle1")
+        }}
       </p>
     </div>
     <div class="mailInFormDiv">
@@ -17,13 +28,13 @@
         <input
           class="mailInFormInput"
           type="text"
-          placeholder="First Name"
+          :placeholder="$t('userForm.firstName')"
           v-model="this.firstName"
         />
         <input
           class="mailInFormInput"
           type="text"
-          placeholder="Last Name"
+          :placeholder="$t('userForm.lastName')"
           v-model="this.lastName"
         />
       </div>
@@ -31,19 +42,19 @@
       <input
         class="mailInFormInput"
         type="text"
-        placeholder="Email Address"
+        :placeholder="$t('userForm.email')"
         v-model="this.email"
       />
       <input
         class="mailInFormInput"
         type="text"
-        placeholder="Phone Number"
+        :placeholder="$t('userForm.phone')"
         v-model="this.phone"
       />
     </div>
     <div class="checkOutHeaderDiv">
       <p class="txt2" style="font-size: 15px; color: black; font-weight: 600">
-        By continuing, you agree our Terms of Service and Privacy Policy
+        {{ this.$t("customerinformation.subtitle2") }}
       </p>
     </div>
     <div class="mailSelectDiv">
@@ -68,7 +79,7 @@ export default {
   },
   props: {
     buttonTitle: String,
-    method: Function
+    method: Function,
   },
   methods: {
     createPayment() {
@@ -79,7 +90,7 @@ export default {
       this.$ajax
         .post("Payment/CreatePayment", {
           amount: payAmount,
-          repairTypeProducts: this.shoppingCartList
+          repairTypeProducts: this.shoppingCartList,
         })
         .then((snapshot) => {
           window.open(snapshot.data);
@@ -93,13 +104,13 @@ export default {
 </script>
 
 <style>
-.customerInformationForm{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 0 20px;
+.customerInformationForm {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
 }
 
 .checkOutHeaderDiv {

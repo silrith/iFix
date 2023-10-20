@@ -91,7 +91,7 @@
           <div>
             <img
               src="@/assets/homebanner/3.webp"
-              alt=""
+              alt="Home Banner Picture 3"
               style="width: fit-content; max-width: 100%"
             />
           </div>
@@ -99,14 +99,14 @@
             <img
               class="mb-3"
               src="@/assets/homebanner/1.webp"
-              alt=""
+              alt="Home Banner Picture 1"
               style="width: fit-content; max-width: 100%"
             />
           </div>
           <div class="">
             <img
               src="@/assets/homebanner/4.webp"
-              alt=""
+              alt="Home Banner Picture 4"
               style="width: fit-content; max-width: 100%"
             />
           </div>

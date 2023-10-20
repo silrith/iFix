@@ -115,7 +115,8 @@
     "title2": "Fast turn around",
     "title3" : "Quality",
     "title4" : "Expertise",
-    "noSelectedRepairType" : "You must select the repair type to continue."
+    "noSelectedRepairType" : "You must select the repair type to continue.",
+    "noRepairType" : "There is no repair type for this product."
   },
   "userForm": {
     "name" : "Name",
@@ -206,6 +207,37 @@
     "subtitle" : "Things happen-we've seen it all.",
     "textarea" : "Anything else we should know? (Optional)"
   },
+  "checkout" : {
+    "header1" : "Choose your",
+    "header2" : "Repair",
+    "header3" : "Option",
+    "subtitle1" : "Visit Store",
+    "subtitle2" : "Mail in"
+  },
+  "checkoutinstore" : {
+    "header1" : "When should",
+    "header2" : "WE",
+    "header3" : "expect",
+    "header4" : "YOU",
+    "choosedate" : "Choose date",
+    "choosecheckin" : "Choose a check-in time on",
+    "comeanytime" : "Come in anytime"
+  },
+  "instoreallset" : {
+    "header1" : "You're",
+    "header2" : "all set",
+    "header3" : "See you soon!",
+    "subtitle1" : "We sent a confirmation email. See you soon!",
+    "button1" : "add to calendar",
+    "button2" : "get directions"
+  },
+  "mailin" : {
+    "header1" : "Enter your",
+    "header2" : "Shipping",
+    "header3" : "Address",
+    "subtitle1" : "We provide a free label",
+    "address" : "Enter Your Address"
+  },
   "shopFilter" : {
     "brand" : "Brand",
     "category" : "Category",
@@ -215,5 +247,17 @@
     "noModel" : "Model not yet available for selected brand.",
     "continue" : "Continue",
     "chooseModel" : "Please select a model to continue."
+  },
+  "dateCard" : {
+    "today" : "Today",
+    "tomorrow" : "Tomorrow"
+  },
+  "customerinformation" : {
+    "header1" : "Last Step",
+    "header2" : "enter",
+    "header3" : "your contact",
+    "header4" : "info",
+    "subtitle1" : "This will speed up check-in when you get here.",
+    "subtitle2" : "By continuing, you agree our Terms of Service and Privacy Policy"
   }
 }

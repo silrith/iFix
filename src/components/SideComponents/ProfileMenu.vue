@@ -8,7 +8,7 @@
         aria-haspopup="true"
         aria-expanded="false"
         src="https://cdn.pixabay.com/photo/2019/08/11/18/59/icon-4399701_1280.png"
-        alt="profilePic"
+        alt="Profile Picture"
       />
       <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
         <RouterLink

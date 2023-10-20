@@ -1,32 +1,46 @@
 <template>
   <div class="inStoreDiv">
     <div class="checkOutHeaderInStoreDiv">
-      <p class="checkOutHeaderInStore">When should</p>
       <p class="checkOutHeaderInStore">
-        <span style="color: #f26d25">WE</span> expect
-        <span style="color: #f26d25">YOU</span> ?
+        {{ this.$t("checkoutinstore.header1") }}
+      </p>
+      <p class="checkOutHeaderInStore">
+        <span style="color: #f26d25">{{
+          this.$t("checkoutinstore.header2")
+        }}</span>
+        {{ this.$t("checkoutinstore.header3") }}
+        <span style="color: #f26d25">{{
+          this.$t("checkoutinstore.header4")
+        }}</span>
+        ?
       </p>
     </div>
     <div class="dateCardsDiv">
-      <p class="txt4">Choose date</p>
+      <p class="txt4">{{ this.$t("checkoutinstore.choosedate") }}</p>
       <div class="dateCards">
         <DateCard />
       </div>
     </div>
     <div class="dateCardsDiv mt-4">
-      <span class="txt4">Choose a check-in time on</span>
+      <span class="txt4">{{ this.$t("checkoutinstore.choosecheckin") }}</span>
       <span class="txtInStore"
         >{{ this.today }}, {{ this.dayNumber }} {{ this.month }}</span
       >
       <div class="bookTimeDiv">
-        <p class="txt2 timeDiv">1 pm - 2 pm</p>
-        <p class="txt2 timeDiv">2 pm - 3 pm</p>
-        <p class="txt2 timeDiv">3 pm - 4 pm</p>
+        <p class="txt2 timeDiv" @click="selectDate(this.todayDate)">
+          1 pm - 2 pm
+        </p>
+        <p class="txt2 timeDiv" @click="selectDate(this.todayDate)">
+          2 pm - 3 pm
+        </p>
+        <p class="txt2 timeDiv" @click="selectDate(this.todayDate)">
+          3 pm - 4 pm
+        </p>
       </div>
       <div class="bookTimeDiv">
         <p class="txt2 timeDiv">4 pm - 5 pm</p>
         <p class="txt2 timeDiv">5 pm - 6 pm</p>
-        <p class="txt2 timeDiv">Come in anytime</p>
+        <p class="txt2 timeDiv">{{ this.$t("checkoutinstore.comeanytime") }}</p>
       </div>
     </div>
     <CustomerInformationForm :buttonTitle="buttonTitle" :method="this.method" />
@@ -45,7 +59,7 @@ export default {
       dayNumber: null,
       month: null,
       buttonTitle: this.$t("services.bookNow"),
-      method: this.goAllSetPage
+      method: this.goAllSetPage,
     };
   },
   components: {
@@ -53,10 +67,13 @@ export default {
     CustomerInformationForm,
   },
   methods: {
-    goAllSetPage(){
-        this.$router.push({ 
-          path: '/in-store-all-set'
-        });
+    goAllSetPage() {
+      this.$router.push({
+        path: "/in-store-all-set",
+      });
+    },
+    selectTimeForBooking(){
+      
     }
   },
   mounted() {

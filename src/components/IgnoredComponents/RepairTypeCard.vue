@@ -10,7 +10,7 @@
         class="item-container text-center"
       >
         <div class="main-item">
-          <img class="main-item" :src="repairType.repairTypePicture" alt="" />
+          <img class="main-item" :src="repairType.repairTypePicture" :alt="repairType.repairTypeCategory" />
         </div>
         <h2 class="item-heading">
           {{ repairType.repairTypeCategory }}

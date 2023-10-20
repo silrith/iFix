@@ -4,10 +4,10 @@
   <PreLoader />
   <PopUp />
   <Footer />
-  <img
+  <font-awesome-icon
     class="top-button"
-    src="../src/assets/icons/scroll-bar.png"
-    alt="to the top"
+    :icon="['fas', 'circle-up']"
+    style="color: rgb(255, 103, 0); font-size: 25px; margin-right: 15px"
     onclick="window.scrollTo(0, 0)"
   />
 </template>
@@ -31,7 +31,7 @@ export default {
     return {
       language: null,
       expirationTime: null,
-      currentTimestamp: null
+      currentTimestamp: null,
     };
   },
   components: {
@@ -46,28 +46,30 @@ export default {
       if (this.currentTimestamp >= this.expirationTime) {
         console.log("token doldu");
       } else {
-
       }
     },
   },
   mounted() {
     localStorage.setItem("cursorPointer", "home");
-    if(localStorage.getItem("googleToken") != null ||localStorage.getItem("googleToken") != undefined){
+    if (
+      localStorage.getItem("googleToken") != null ||
+      localStorage.getItem("googleToken") != undefined
+    ) {
       this.currentTimestamp = Math.floor(Date.now() / 1000);
-      this.expirationTime = localStorage.getItem(localStorage.getItem("googleToken"));
-      if(this.currentTimestamp >= this.expirationTime){
-        
+      this.expirationTime = localStorage.getItem(
+        localStorage.getItem("googleToken")
+      );
+      if (this.currentTimestamp >= this.expirationTime) {
       }
     }
     setInterval(this.checkTokenExpiration, 300000);
   },
-  beforeMount(){
+  beforeMount() {
     var cookie = localStorage.getItem("cookieSettings");
     if (cookie == null || cookie == undefined)
       localStorage.setItem("cookieSettings", "false");
   },
-  computed: {
-  },
+  computed: {},
 };
 </script>
 

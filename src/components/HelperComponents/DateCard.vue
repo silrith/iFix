@@ -5,7 +5,9 @@
       style="border: 4px solid #f26d25"
       @click="selectDate(this.todayDate)"
     >
-      <p style="width: 60%">Today</p>
+      <p style="width: 60%">
+        {{ this.$t("dateCard.today") }}
+      </p>
       <p>{{ this.firstDayName }}</p>
       <p>{{ this.today }}</p>
     </div>
@@ -14,7 +16,7 @@
       style="border: 3px solid #f26d25"
       @click="selectDate(this.tomorrowDate)"
     >
-      <p style="width: 60%">Tomorrow</p>
+      <p style="width: 60%">{{ this.$t("dateCard.tomorrow") }}</p>
       <p>{{ this.secondDayName }}</p>
       <p>{{ this.tomorrow }}</p>
     </div>
@@ -62,7 +64,7 @@ export default {
   methods: {
     selectDate(date) {
       this.selectedDate = date;
-      alert(this.selectedDate);
+      localStorage.setItem("inStoreDate", this.selectedDate);
     },
     getCurrentDate() {
       this.todayDate = new Date();
@@ -95,6 +97,7 @@ export default {
       );
 
       this.today = firstResult[0];
+      console.log(firstResult[0]);
       this.firstDayName = firstResult[1];
 
       this.tomorrow = secondResult[0];
@@ -112,7 +115,7 @@ export default {
       const listed = date.toDateString().split(" ");
       const dayName = listed[0];
       return [
-        (whichDay = day.toString() + "/" + month.toString()),
+        (whichDay = day.toString()),
         (whichDayName = dayName),
       ];
     },
