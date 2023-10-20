@@ -2,23 +2,41 @@
   <div class="inStoreAllSetDiv">
     <div class="checkOutHeaderDivAllSet">
       <p class="checkOutHeader">
-        <span style="color: #f26d25">{{ this.$t("instoreallset.header1")}}</span> {{ this.$t("instoreallset.header2")}}, OZGUR.
+        <span style="color: #f26d25">{{
+          this.$t("instoreallset.header1")
+        }}</span>
+        {{ this.$t("instoreallset.header2") }}, {{ this.customerName }}.
       </p>
-      <p class="checkOutHeader">{{ this.$t("instoreallset.header3")}}</p>
+      <p class="checkOutHeader">{{ this.$t("instoreallset.header3") }}</p>
       <p class="txt2" style="font-size: 15px; color: black; font-weight: 600">
-        {{ this.$t("instoreallset.subtitle1")}}
+        {{ this.$t("instoreallset.subtitle1") }}
       </p>
     </div>
     <div class="allSetImg">
       <img src="@/assets/photos/booking.png" alt="Booking Picture" />
     </div>
     <div class="bookTimeDiv2">
-      <p class="txt2 timeDiv2">{{ this.$t("instoreallset.button1")}}</p>
+      <p class="txt2 timeDiv2">{{ this.$t("instoreallset.button1") }}</p>
       <p class="txt2 timeDiv2"><u>+43 1 9909777</u></p>
-      <p class="txt2 timeDiv2">{{ this.$t("instoreallset.button2")}}</p>
+      <p class="txt2 timeDiv2">{{ this.$t("instoreallset.button2") }}</p>
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      customerName: null,
+    };
+  },
+  methods: {},
+  mounted() {
+    this.customerName = this.$route.query.filter;
+    alert(this.customerName);
+  },
+};
+</script>
 
 <style>
 .inStoreAllSetDiv {

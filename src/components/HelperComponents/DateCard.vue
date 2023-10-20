@@ -42,6 +42,8 @@
 </template>
 
 <script>
+import { toast } from "vue3-toastify";
+
 export default {
   data() {
     return {
@@ -64,6 +66,21 @@ export default {
   methods: {
     selectDate(date) {
       this.selectedDate = date;
+      toast.warning(
+        this.$t("checkoutinstore.selectedDate") +
+          this.selectedDate.toLocaleDateString("de-AT", {
+            year: "numeric",
+            month: "long",
+            day: "numeric",
+          }),
+        {
+          position: toast.POSITION.BOTTOM_RIGHT,
+          className: "foo-bar",
+          toastStyle: {
+            fontSize: "12px",
+          },
+        }
+      );
       localStorage.setItem("inStoreDate", this.selectedDate);
     },
     getCurrentDate() {
@@ -97,7 +114,6 @@ export default {
       );
 
       this.today = firstResult[0];
-      console.log(firstResult[0]);
       this.firstDayName = firstResult[1];
 
       this.tomorrow = secondResult[0];
@@ -114,10 +130,7 @@ export default {
       const month = String(date.getDate() + 1).padStart(2, "0");
       const listed = date.toDateString().split(" ");
       const dayName = listed[0];
-      return [
-        (whichDay = day.toString()),
-        (whichDayName = dayName),
-      ];
+      return [(whichDay = day.toString()), (whichDayName = dayName)];
     },
   },
   mounted() {
@@ -148,16 +161,16 @@ export default {
   scale: 1.1;
 }
 
-.dateCardMainDiv{
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 1rem;
+.dateCardMainDiv {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1rem;
 }
 
 @media (max-width: 1576px) {
-  .dateCardMainDiv{
+  .dateCardMainDiv {
     justify-content: space-evenly;
   }
 }
@@ -168,7 +181,7 @@ export default {
     font-size: 12px;
   }
 
-  .dateCardMainDiv{
+  .dateCardMainDiv {
     justify-content: space-evenly;
   }
 }
@@ -179,7 +192,7 @@ export default {
     font-size: 11px;
   }
 
-  .dateCardMainDiv{
+  .dateCardMainDiv {
     justify-content: space-evenly;
   }
 }

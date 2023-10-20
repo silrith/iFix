@@ -46,9 +46,35 @@ export default {
       this.address = "";
     },
     timeToShip() {
-      this.$router.push({
-        path: "/mail-in-time-to-ship",
-      });
+      this.$ajax
+          .post("Order/CreateMailInOrder", {
+            customerFirstName: this.$refs.customerInformationForm.firstName,
+            customerLastName: this.$refs.customerInformationForm.lastName,
+            customerEmail: this.$refs.customerInformationForm.email,
+            customerPhone: this.$refs.customerInformationForm.phone,
+            customerInformation: localStorage.getItem(
+              "informationAboutService"
+            ),
+            modelId : localStorage.getItem("modelId"),
+            address: this.address,
+            dpdTrackingNumber : this.dpdResult,
+            paymentSuccess : false,
+            repairTypes: JSON.parse(
+              localStorage.getItem("selectedRepairTypes")
+            ),
+          })
+          .then((snapshot) => {
+            if(snapshot.data)
+              this.$router.push({
+                path: "/mail-in-time-to-ship",
+                query: { filter: this.$refs.customerInformationForm.firstName }
+              });
+            else
+              return;
+          })
+          .catch((error) => {
+            console.log(error);
+          });
     },
     createPayment() {
       var payAmount = this.shoppingCartList.reduce(

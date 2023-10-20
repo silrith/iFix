@@ -47,7 +47,8 @@
       />
       <input
         class="mailInFormInput"
-        type="text"
+        type="tel"
+        pattern="[+][0-9]{2}-[0-9]{1}-[0-9]{7}"
         :placeholder="$t('userForm.phone')"
         v-model="this.phone"
       />

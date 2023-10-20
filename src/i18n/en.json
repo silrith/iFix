@@ -221,7 +221,15 @@
     "header4" : "YOU",
     "choosedate" : "Choose date",
     "choosecheckin" : "Choose a check-in time on",
-    "comeanytime" : "Come in anytime"
+    "comeanytime" : "Come in anytime",
+    "selectedTime" : "Selected Time : ",
+    "selectedDate" : "Selected Date : ",
+    "fillName" : "Please enter your name",
+    "fillLastName" : "Please enter your surname",
+    "fillEmail" : "Please enter your email",
+    "fillPhone" : "Please enter your phone number",
+    "selectDate" : "Please select the date you want to come",
+    "selectTime" : "Please select time information"
   },
   "instoreallset" : {
     "header1" : "You're",

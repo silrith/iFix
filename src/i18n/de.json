@@ -221,7 +221,15 @@
     "header4" : "DU",
     "choosedate" : "Datum auswählen",
     "choosecheckin" : "Wählen Sie eine Check-in-Zeit am",
-    "comeanytime" : "Kommen Sie jederzeit vorbei"
+    "comeanytime" : "Kommen Sie jederzeit vorbei",
+    "selectedTime" : "Ausgewählte Zeit : ",
+    "selectedDate" : "Ausgewähltes Datum : ",
+    "fillName" : "Bitte geben Sie Ihren Namen ein",
+    "fillLastName" : "Bitte geben Sie Ihren Nachnamen ein",
+    "fillEmail" : "Bitte geben Sie ihre E-Mail-Adresse ein",
+    "fillPhone" : "Bitte geben Sie die Telefonnummer ein",
+    "selectDate" : "Bitte wählen Sie den gewünschten Termin aus",
+    "selectTime" : "Bitte wählen Sie Zeitangaben aus"
   },
   "instoreallset" : {
     "header1" : "Du bist",

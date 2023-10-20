@@ -178,6 +178,7 @@ export default {
       filterModel: [{ key: "modelId", value: 0, type: "int" }],
       optionalInformation: null,
       noRepairType : null,
+      modelId : null
     };
   },
   components: {
@@ -231,7 +232,7 @@ export default {
             this.optionalInformation
           );
         else localStorage.setItem("informationAboutService", "No Information");
-        // console.log(JSON.parse(localStorage.getItem("selectedRepairTypes")));
+        localStorage.setItem("modelId", this.modelId);
         this.$router.push({
           path: "/checkOut",
         });
@@ -240,6 +241,7 @@ export default {
   },
   mounted() {
     this.getRepairTypesForModel(this.$route.query.modelId);
+    this.modelId = this.$route.query.modelId;
   },
   computed: {
     ...mapGetters(["shoppingList"]),
