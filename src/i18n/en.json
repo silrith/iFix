@@ -133,7 +133,9 @@
     "address": "Address",
     "city": "City",
     "state": "State",
-    "zipCode": "Zip Code"
+    "zipCode": "Zip Code",
+    "houseNo" : "House No.",
+    "street" : "Street"
   },
   "buttons" : {
     "send" : "Send"

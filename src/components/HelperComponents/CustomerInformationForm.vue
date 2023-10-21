@@ -191,4 +191,11 @@ export default {
   background-color: #333333;
   color: #fff;
 }
+
+@media(max-width: 772px){
+  .mailInFormInput::placeholder {
+    font-size: 10px;
+    font-weight: bold;
+  }
+}
 </style>

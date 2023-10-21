@@ -10,32 +10,78 @@
         {{ this.$t("mailin.subtitle1") }}
       </p>
     </div>
-    <div class="mailInTextArea">
-      <input
-        id="address-input"
-        type="text"
-        :placeholder="$t('mailin.address')"
-        v-model="address"
-      />
-      <span class="textAreaIcon" @click="clearAddress"
-        ><font-awesome-icon :icon="['fas', 'xmark']"
-      /></span>
+    <div class="mailInTextAreaMainDiv">
+      <div class="mailInTextArea">
+        <input
+          id="street-input"
+          type="text"
+          :placeholder="$t('userForm.street')"
+          v-model="street"
+        />
+        <span class="textAreaIcon" @click="clearAddress"
+          ><font-awesome-icon :icon="['fas', 'xmark']"
+        /></span>
+      </div>
+      <div class="mailInTextArea">
+        <input
+          id="houseNo-input"
+          type="text"
+          :placeholder="$t('userForm.houseNo')"
+          v-model="houseNo"
+        />
+        <span class="textAreaIcon" @click="clearAddress"
+          ><font-awesome-icon :icon="['fas', 'xmark']"
+        /></span>
+      </div>
     </div>
-    <CustomerInformationForm :buttonTitle="buttonTitle" :method="this.method" />
+    <div class="mailInTextAreaMainDiv">
+      <div class="mailInTextArea">
+        <input
+          id="zipCode-input"
+          type="text"
+          :placeholder="$t('userForm.zipCode')"
+          v-model="zipCode"
+        />
+        <span class="textAreaIcon" @click="clearAddress"
+          ><font-awesome-icon :icon="['fas', 'xmark']"
+        /></span>
+      </div>
+      <div class="mailInTextArea">
+        <input
+          id="city-input"
+          type="text"
+          :placeholder="$t('userForm.city')"
+          v-model="city"
+        />
+        <span class="textAreaIcon" @click="clearAddress"
+          ><font-awesome-icon :icon="['fas', 'xmark']"
+        /></span>
+      </div>
+    </div>
+    <CustomerInformationForm
+      ref="customerInformationForm"
+      :buttonTitle="buttonTitle"
+      :method="this.method"
+    />
     <div class="parallelogram2"></div>
   </div>
 </template>
 
 <script>
-import CustomerInformationForm from "@/components/HelperComponents/CustomerInformationForm.vue";
 import { toast } from "vue3-toastify";
+import CustomerInformationForm from "@/components/HelperComponents/CustomerInformationForm.vue";
+
 export default {
   data() {
     return {
-      address: null,
+      street: null,
+      houseNo: null,
+      zipCode: null,
+      city: null,
       buttonTitle: this.$t("services.getShippingLabel"),
       method: this.timeToShip,
       cargoResult: false,
+      dpdTrackingNumber: null,
     };
   },
   components: {
@@ -47,41 +93,68 @@ export default {
     },
     timeToShip() {
       this.$ajax
-          .post("Order/CreateMailInOrder", {
-            customerFirstName: this.$refs.customerInformationForm.firstName,
-            customerLastName: this.$refs.customerInformationForm.lastName,
-            customerEmail: this.$refs.customerInformationForm.email,
-            customerPhone: this.$refs.customerInformationForm.phone,
-            customerInformation: localStorage.getItem(
-              "informationAboutService"
-            ),
-            modelId : localStorage.getItem("modelId"),
-            address: this.address,
-            dpdTrackingNumber : this.dpdResult,
-            paymentSuccess : false,
-            repairTypes: JSON.parse(
-              localStorage.getItem("selectedRepairTypes")
-            ),
-          })
-          .then((snapshot) => {
-            if(snapshot.data)
-              this.$router.push({
-                path: "/mail-in-time-to-ship",
-                query: { filter: this.$refs.customerInformationForm.firstName }
+        .post("Cargo/CreateShipment", {
+          name1: this.$refs.customerInformationForm.firstName,
+          name2: this.$refs.customerInformationForm.lastName,
+          street: this.street,
+          houseNo: this.houseNo,
+          zipCode: this.zipCode,
+          city: this.city,
+        })
+        .then((snapshot) => {
+          if (snapshot.data) {
+            this.$ajax
+              .post("Order/CreateMailInOrder", {
+                customerFirstName: this.$refs.customerInformationForm.firstName,
+                customerLastName: this.$refs.customerInformationForm.lastName,
+                customerEmail: this.$refs.customerInformationForm.email,
+                customerPhone: this.$refs.customerInformationForm.phone,
+                customerInformation: localStorage.getItem(
+                  "informationAboutService"
+                ),
+                modelId: localStorage.getItem("modelId"),
+                address: this.address,
+                dpdTrackingNumber: snapshot.data.mpsId,
+                paymentSuccess: false,
+                repairTypes: JSON.parse(
+                  localStorage.getItem("selectedRepairTypes")
+                ),
+              })
+              .then((snapshot) => {
+                if (snapshot.data)
+                  this.$router.push({
+                    path: "/mail-in-time-to-ship",
+                    query: {
+                      filter: this.$refs.customerInformationForm.firstName,
+                    },
+                  });
+                else return;
+              })
+              .catch((error) => {
+                console.log(error);
               });
-            else
-              return;
-          })
-          .catch((error) => {
-            console.log(error);
-          });
+          } else {
+            toast.error(
+              "Kargo Talebiniz Oluşturulamadı, Lütfen Firmamız İle Görüşünüz",
+              {
+                position: toast.POSITION.BOTTOM_RIGHT,
+                className: "foo-bar",
+                toastStyle: {
+                  fontSize: "12px",
+                },
+              }
+            );
+          }
+        })
+        .catch((error) => {
+          console.log(error);
+        });
     },
     createPayment() {
       var payAmount = this.shoppingCartList.reduce(
         (acc, item) => acc + item.repairTypePrice,
         0
       );
-      // this.$ajax.post("Cargo/CreateCargoForCustomer", JSON.parse(localStorage.getItem("address")))
       if (this.cargoResult == true) {
         this.$ajax
           .post("Payment/CreatePayment", {
@@ -133,13 +206,19 @@ export default {
   line-height: 1;
 }
 
+.mailInTextAreaMainDiv {
+  width: 50%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .mailInTextArea {
   width: 50%;
   display: inline-block;
   justify-content: center;
   align-items: center;
   position: relative;
-  padding: 0 0 20px 0;
+  padding: 0 5px 20px 5px;
 }
 
 .mailInTextArea input {
@@ -220,18 +299,29 @@ export default {
 
 @media (max-width: 772px) {
   .mailInTextArea input {
-    height: 100px;
-    font-size: 12px;
+    height: 40px;
+    font-size: 10px;
     text-align: justify;
+    border: 2px solid #f26d25;
+  }
+
+  .mailInTextArea input::placeholder{
+    font-size: 11px;
+    font-weight: bold;
+  }
+
+  .mailInTextAreaMainDiv {
+    width: 80%;
   }
 
   .mailInTextArea {
     width: 100%;
-    padding: 20px;
+    /* padding: 20px; */
   }
 
   .textAreaIcon {
-    top: 60px;
+    top: 10px;
+    right: 20px;
   }
 
   .checkOutHeaderDiv {
@@ -272,9 +362,9 @@ export default {
 
 @media (max-width: 992px) {
   .parallelogram2 {
-    top: 180px;
+    top: 185px !important;
     width: 100%;
-    height: 150%;
+    height: 140%;
   }
 }
 
