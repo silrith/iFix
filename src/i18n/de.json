@@ -131,11 +131,15 @@
     "password" : "Passwort",
     "repeatPassword" : "Passwort Wiederholen",
     "address": "Adresse",
-    "city": "Stadt",
     "state": "Zustand",
+    "city": "Stadt",
+    "fillCity" : "Bitte geben Sie Ihre Stadt ein",
     "zipCode": "PLZ",
+    "fillZipCode" : "Bitte geben Sie Ihre Postleitzahl ein",
     "houseNo" : "Hausnummer",
-    "street" : "Straße"
+    "fillHouseNo" : "Bitte geben Sie Ihre Hausnummer ein",
+    "street" : "Straße",
+    "fillStreet" : "Bitte geben Sie Ihre Straße ein"
   },
   "buttons": {
     "send": "Schicken"
@@ -246,7 +250,31 @@
     "header2" : "Versand",
     "header3" : "Adresse",
     "subtitle1" : "Wir stellen ein kostenloses Etikett zur Verfügung",
-    "address" : "Geben Sie Ihre Adresse ein"
+    "address" : "Geben Sie Ihre Adresse ein",
+    "shipmentFail" : "Ihre Frachtanfrage konnte nicht erstellt werden, bitte kontaktieren Sie uns.",
+    "orderFail" : "Ihre Bestellanfrage konnte nicht erstellt werden, bitte kontaktieren Sie uns.",
+    "paymentFail" : "Ihr Zahlungsvorgang wurde nicht abgeschlossen. Bitte versuchen Sie es erneut oder kontaktieren Sie uns.",
+    "mailInValidate" : "Bitte fülle die notwendigen Felder aus : "
+  },
+  "timetoship" : {
+    "header1" : "Alles bereit",
+    "header2" : "Zeit zum",
+    "header3" : "Schiff",
+    "subtitle1" : "Wir haben Ihnen eine Bestätigung mit Ihrem Versandetikett per E-Mail gesendet.",
+    "button" : "Etikett drucken",
+    "dataheader1" : "Versand-Anweisungen",
+    "datasubtitle11" : "Drucken Sie Ihr Versandetikett aus – es ist 3 Tage gültig.",
+    "datasubtitle12" : "Verpacken Sie Ihr Gerät mit Luftpolsterfolie in einem kleinen Karton.",
+    "datasubtitle13" : "Bringen Sie das Etikett außen am Karton an.",
+    "datasubtitle14" : "Bringen Sie das Etikett außen am Karton an.",
+    "dataheader2" : "Bevor Sie Ihr Gerät versenden",
+    "datasubtitle21" : "Wenn Ihr Gerät über einen Passcode verfügt, schalten Sie ihn bitte aus. Dies ist erforderlich, damit wir Tests durchführen können.",
+    "datasubtitle22" : "Wenn Sie ein Apple-Gerät haben, deaktivieren Sie die Find My™-Einstellung.",
+    "datasubtitle23" : "Wenn Sie ein Android-Gerät haben, deaktivieren Sie den Werksreset-Schutz. Dies ist erforderlich, damit wir Tests durchführen können.",
+    "datasubtitle24" : "Sichern Sie Ihre Daten – wir haften nicht für verlorene Dateien.",
+    "datasubtitle25" : "Wenn Sie eine SIM-Karte oder Zubehör haben, entfernen Sie diese bitte – wir übernehmen keine Haftung für den Verlust.",
+    "dataheader3" : "Nach deinem Schiff",
+    "datasubtitle31" : "Sobald wir Ihr Gerät erhalten haben, rufen wir Sie an und unterbreiten Ihnen ein Angebot. Anschließend senden wir es in weniger als einer Woche zurück."
   },
   "shopFilter" : {
     "brand" : "Marke",

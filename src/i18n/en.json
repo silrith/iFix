@@ -131,11 +131,15 @@
     "password" : "Password",
     "repeatPassword" : "Repeat Password",
     "address": "Address",
-    "city": "City",
     "state": "State",
+    "city": "City",
+    "fillCity" : "Please enter your city",
     "zipCode": "Zip Code",
+    "fillZipCode" : "Please enter your zip code",
     "houseNo" : "House No.",
-    "street" : "Street"
+    "fillHouseNo" : "Please enter your house no",
+    "street" : "Street",
+    "fillStreet" : "Please enter your street"
   },
   "buttons" : {
     "send" : "Send"
@@ -246,7 +250,31 @@
     "header2" : "Shipping",
     "header3" : "Address",
     "subtitle1" : "We provide a free label",
-    "address" : "Enter Your Address"
+    "address" : "Enter Your Address",
+    "shipmentFail" : "Your cargo request could not be created, please contact us.",
+    "orderFail" : "Your order request could not be created, please contact us.",
+    "paymentFail" : "Your payment transaction has not been completed. Please try again or contact us.",
+    "mailInValidate" : "Please fill in the required fields : "
+  },
+  "timetoship" : {
+    "header1" : "All Set",
+    "header2" : "Time To",
+    "header3" : "Ship",
+    "subtitle1" : "We emailed you a confirmation with your shipping label.",
+    "button" : "Print Label",
+    "dataheader1" : "Shipping instructions",
+    "datasubtitle11" : "Print your shipping label - it's valid for 3 days.",
+    "datasubtitle12" : "Pack your device with bubble wrap in a small box.",
+    "datasubtitle13" : "Place the label on the outside of the box.",
+    "datasubtitle14" : "Place the label on the outside of the box.",
+    "dataheader2" : "Before you ship your device",
+    "datasubtitle21" : "If your device has a passcode please turn it off—this is required so we can run tests.",
+    "datasubtitle22" : "If you have an Apple device, turn off the Find My™ setting.",
+    "datasubtitle23" : "If you have an Android device, turn off Factory Reset Protection. This is required so we can run tests.",
+    "datasubtitle24" : "Back up your data—we're not responsible for lost files.",
+    "datasubtitle25" : "If you have a SIM card or any accessories please remove them—we’re not responsible if they’re lost.",
+    "dataheader3" : "After your ship",
+    "datasubtitle31" : "We'll call you with a quote once we get your device, then send it back in less than a week."
   },
   "shopFilter" : {
     "brand" : "Brand",

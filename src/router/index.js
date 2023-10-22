@@ -126,13 +126,6 @@ const routes = [
       return import("../pages/CheckOutPages/CheckOut-TimeToShipPage.vue");
     },
   },
-  {
-    path: "/booking",
-    name: "Booking",
-    component: function () {
-      return import("../pages/BookingPage.vue");
-    },
-  },
 ];
 
 const router = createRouter({

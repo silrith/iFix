@@ -143,7 +143,7 @@ export default {
 .mailInFormInput {
   width: 100%;
   padding: 15px;
-  border: 2px solid #f26d25;
+  border: 1px solid #f26d25;
   border-radius: 10px;
   font-family: Poppins-Regular;
   color: #666;

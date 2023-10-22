@@ -1,75 +1,118 @@
 <template>
   <div class="timeToShipDiv">
     <div class="checkOutHeaderDiv">
-      <p class="checkOutHeader">All Set</p>
+      <p class="checkOutHeader">{{ this.$t("timetoship.header1") }}</p>
       <p class="checkOutHeader">
-        Time To
-        <span style="color: #f26d25"> Ship</span>
+        {{ this.$t("timetoship.header2") }}
+        <span style="color: #f26d25"> {{ this.$t("timetoship.header3") }}</span>
       </p>
       <p class="txt2" style="font-size: 15px; font-weight: 600">
-        We emailed you a confirmation with your shipping label.
+        {{ this.$t("timetoship.subtitle1") }}
       </p>
     </div>
     <div class="mandatoryDisclosures">
       <div class="shippingButtonDiv">
         <div class="container-login102-form-btnShip">
-          <button class="btn btn-block py-2 btn-loginShip" @click="">
-            Print Label
+          <button class="btn btn-block py-2 btn-loginShip" @click="createPdf">
+            {{ this.$t("timetoship.button") }}
           </button>
         </div>
       </div>
       <div class="orderedListDiv">
         <p class="txt2" style="color: black; font-weight: 600">
-          Shipping instructions
+          {{ this.$t("timetoship.dataheader1") }}
         </p>
         <ol>
           <li class="txt2">
-            Print your shipping label - it's valid for 3 days.
+            {{ this.$t("timetoship.datasubtitle11") }}
           </li>
           <li class="txt2">
-            Pack your device with bubble wrap in a small box.
+            {{ this.$t("timetoship.datasubtitle12") }}
           </li>
-          <li class="txt2">Place the label on the outside of the box.</li>
-          <li class="txt2">Place the label on the outside of the box.</li>
+          <li class="txt2">{{ this.$t("timetoship.datasubtitle13") }}</li>
+          <li class="txt2">{{ this.$t("timetoship.datasubtitle14") }}</li>
         </ol>
       </div>
       <div class="checkOutHeaderDivShip">
         <p class="txt2" style="color: black; font-weight: 600">
-          Before you ship your device
+          {{ this.$t("timetoship.dataheader2") }}
         </p>
         <ul>
           <li class="txt2">
-            If your device has a passcode please turn it off—this is required so
-            we can run tests.
+            {{ this.$t("timetoship.datasubtitle21") }}
           </li>
           <li class="txt2">
-            If you have an Apple device, turn off the Find My™ setting.
+            {{ this.$t("timetoship.datasubtitle22") }}
           </li>
           <li class="txt2">
-            If you have an Android device, turn off Factory Reset Protection.
-            This is required so we can run tests.
+            {{ this.$t("timetoship.datasubtitle23") }}
           </li>
           <li class="txt2">
-            Back up your data—we're not responsible for lost files.
+            {{ this.$t("timetoship.datasubtitle24") }}
           </li>
           <li class="txt2">
-            If you have a SIM card or any accessories please remove them—we’re
-            not responsible if they’re lost.
+            {{ this.$t("timetoship.datasubtitle25") }}
           </li>
         </ul>
       </div>
       <div class="shipArrive">
         <p class="txt2" style="color: black; font-weight: 600">
-          After your ship
+          {{ this.$t("timetoship.dataheader3") }}
         </p>
         <p class="txt2">
-          We'll call you with a quote once we get your device, then send it back
-          in less than a week.
+          {{ this.$t("timetoship.datasubtitle31") }}
         </p>
       </div>
     </div>
   </div>
 </template>
+
+<script>
+import { toast } from "vue3-toastify";
+
+export default {
+  data() {
+    return {
+      pdfData: null,
+    };
+  },
+  methods: {
+    createPdf() {
+      var base64String = localStorage.getItem("pdf");
+      if (base64String) {
+        const byteCharacters = atob(base64String);
+        const byteNumbers = new Array(byteCharacters.length);
+        for (let i = 0; i < byteCharacters.length; i++) {
+          byteNumbers[i] = byteCharacters.charCodeAt(i);
+        }
+        const byteArray = new Uint8Array(byteNumbers);
+        const blob = new Blob([byteArray], { type: "application/pdf" });
+        const blobUrl = URL.createObjectURL(blob);
+        window.open(blobUrl, "_blank");
+      }
+    },
+    updateOrderPaymentStatusAsSuccess() {
+      this.$ajax
+        .put("Payment/UpdateMailInOrderPaymentStatus/"+this.$route.query.mioi,)
+        .then((snapshot) => {
+          alert(snapshot.data);
+        })
+        .catch((err) => {
+          toast.error(this.$t("checkoutinstore.selectTime"), {
+            position: toast.POSITION.BOTTOM_RIGHT,
+            className: "foo-bar",
+            toastStyle: {
+              fontSize: "12px",
+            },
+          });
+        });
+    },
+  },
+  mounted() {
+    this.updateOrderPaymentStatusAsSuccess();
+  },
+};
+</script>
 
 <style>
 .timeToShipDiv {
@@ -78,7 +121,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 10px;
+  padding: 15px;
   font-family: Poppins-medium;
 }
 
@@ -151,14 +194,14 @@
   padding: 15px;
 }
 
-@media(max-width: 1378px){
-  .container-login102-form-btnShip{
+@media (max-width: 1378px) {
+  .container-login102-form-btnShip {
     width: 50%;
   }
 }
 
-@media(max-width: 992px){
-  .mandatoryDisclosures{
+@media (max-width: 992px) {
+  .mandatoryDisclosures {
     width: 80%;
   }
 }
@@ -172,7 +215,7 @@
     font-size: 30px;
   }
 
-  .container-login102-form-btnShip{
+  .container-login102-form-btnShip {
     width: 60%;
   }
 }

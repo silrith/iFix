@@ -3,8 +3,8 @@
     <div class="checkOutHeaderDiv">
       <p class="checkOutHeader">{{ this.$t("mailin.header1") }}</p>
       <p class="checkOutHeader">
-        <span style="color: #f26d25">{{ this.$t("mailin.header2") }} </span
-        >{{ this.$t("mailin.header3") }}
+        <span style="color: #f26d25">{{ this.$t("mailin.header2") }}</span>
+        {{ this.$t("mailin.header3") }}
       </p>
       <p class="txt2" style="font-size: 15px; color: black; font-weight: 600">
         {{ this.$t("mailin.subtitle1") }}
@@ -18,9 +18,9 @@
           :placeholder="$t('userForm.street')"
           v-model="street"
         />
-        <span class="textAreaIcon" @click="clearAddress"
+        <!-- <span class="textAreaIcon" @click="clearAddress"
           ><font-awesome-icon :icon="['fas', 'xmark']"
-        /></span>
+        /></span> -->
       </div>
       <div class="mailInTextArea">
         <input
@@ -29,9 +29,9 @@
           :placeholder="$t('userForm.houseNo')"
           v-model="houseNo"
         />
-        <span class="textAreaIcon" @click="clearAddress"
+        <!-- <span class="textAreaIcon" @click="clearAddress"
           ><font-awesome-icon :icon="['fas', 'xmark']"
-        /></span>
+        /></span> -->
       </div>
     </div>
     <div class="mailInTextAreaMainDiv">
@@ -42,9 +42,9 @@
           :placeholder="$t('userForm.zipCode')"
           v-model="zipCode"
         />
-        <span class="textAreaIcon" @click="clearAddress"
+        <!-- <span class="textAreaIcon" @click="clearAddress"
           ><font-awesome-icon :icon="['fas', 'xmark']"
-        /></span>
+        /></span> -->
       </div>
       <div class="mailInTextArea">
         <input
@@ -53,9 +53,9 @@
           :placeholder="$t('userForm.city')"
           v-model="city"
         />
-        <span class="textAreaIcon" @click="clearAddress"
+        <!-- <span class="textAreaIcon" @click="clearAddress"
           ><font-awesome-icon :icon="['fas', 'xmark']"
-        /></span>
+        /></span> -->
       </div>
     </div>
     <CustomerInformationForm
@@ -88,10 +88,36 @@ export default {
     CustomerInformationForm,
   },
   methods: {
-    clearAddress() {
-      this.address = "";
+    validateInputs(data, type) {
+      if (data == null || data == undefined) {
+        toast.warning(this.$t("mailin.mailInValidate") + type, {
+          position: toast.POSITION.BOTTOM_RIGHT,
+          className: "foo-bar",
+          toastStyle: {
+            fontSize: "12px",
+          },
+        });
+        return false;
+      }
     },
     timeToShip() {
+      var validate = this.validateInputs(this.street, this.$t("userForm.street"));
+      if (validate == false) return;
+      validate = this.validateInputs(this.city, this.$t("userForm.city"));
+      if (validate == false) return;
+      validate = this.validateInputs(this.houseNo, this.$t("userForm.houseNo"));
+      if (validate == false) return;
+      validate = this.validateInputs(this.zipCode, this.$t("userForm.zipCode"));
+      if (validate == false) return;
+      validate = this.validateInputs(this.$refs.customerInformationForm.firstName, this.$t("userForm.firstName"));
+      if (validate == false) return;
+      validate = this.validateInputs(this.$refs.customerInformationForm.lastName, this.$t("userForm.lastName"));
+      if (validate == false) return;
+      validate = this.validateInputs(this.$refs.customerInformationForm.email, this.$t("userForm.email"));
+      if (validate == false) return;
+      validate = this.validateInputs(this.$refs.customerInformationForm.phone, this.$t("userForm.phone"));
+      if (validate == false) return;
+
       this.$ajax
         .post("Cargo/CreateShipment", {
           name1: this.$refs.customerInformationForm.firstName,
@@ -102,7 +128,8 @@ export default {
           city: this.city,
         })
         .then((snapshot) => {
-          if (snapshot.data) {
+          if (snapshot.data.mpsId != null || snapshot.data.mpsId != undefined) {
+            localStorage.setItem("pdf", snapshot.data.content);
             this.$ajax
               .post("Order/CreateMailInOrder", {
                 customerFirstName: this.$refs.customerInformationForm.firstName,
@@ -113,7 +140,8 @@ export default {
                   "informationAboutService"
                 ),
                 modelId: localStorage.getItem("modelId"),
-                address: this.address,
+                address:
+                  this.street + + this.houseNo + + this.zipCode + + this.city,
                 dpdTrackingNumber: snapshot.data.mpsId,
                 paymentSuccess: false,
                 repairTypes: JSON.parse(
@@ -121,64 +149,52 @@ export default {
                 ),
               })
               .then((snapshot) => {
-                if (snapshot.data)
-                  this.$router.push({
-                    path: "/mail-in-time-to-ship",
-                    query: {
-                      filter: this.$refs.customerInformationForm.firstName,
+                if (snapshot.data) {
+                  var repairTypeList = JSON.parse(
+                    localStorage.getItem("selectedRepairTypes")
+                  );
+                  this.$ajax
+                    .post("Payment/CreatePayment", {
+                      amount: repairTypeList.reduce(
+                        (acc, item) => acc + item.repairTypePrice,
+                        0
+                      ),
+                      repairTypeProducts: repairTypeList,
+                      mailInOrderId: snapshot.data,
+                      shopOrderId: 0,
+                      successUrl: "mail-in-time-to-ship?mioi=",
+                      failUrl: "services?failed=true"
+                    })
+                    .then((snapshot) => {
+                      window.open(snapshot.data);
+                    })
+                    .catch((err) => {
+                      toast.error(err, {
+                        position: toast.POSITION.BOTTOM_RIGHT,
+                        className: "foo-bar",
+                        toastStyle: {
+                          fontSize: "12px",
+                        },
+                      });
+                    });
+                } else
+                  toast.error(this.$t("mailin.paymentFail"), {
+                    position: toast.POSITION.BOTTOM_RIGHT,
+                    className: "foo-bar",
+                    toastStyle: {
+                      fontSize: "12px",
                     },
                   });
-                else return;
               })
               .catch((error) => {
                 console.log(error);
               });
           } else {
-            toast.error(
-              "Kargo Talebiniz Oluşturulamadı, Lütfen Firmamız İle Görüşünüz",
-              {
-                position: toast.POSITION.BOTTOM_RIGHT,
-                className: "foo-bar",
-                toastStyle: {
-                  fontSize: "12px",
-                },
-              }
-            );
           }
         })
         .catch((error) => {
           console.log(error);
         });
-    },
-    createPayment() {
-      var payAmount = this.shoppingCartList.reduce(
-        (acc, item) => acc + item.repairTypePrice,
-        0
-      );
-      if (this.cargoResult == true) {
-        this.$ajax
-          .post("Payment/CreatePayment", {
-            amount: payAmount,
-            repairTypeProducts: this.shoppingCartList,
-          })
-          .then((snapshot) => {
-            window.open(snapshot.data);
-          })
-          .catch((error) => {
-            console.log(error);
-          });
-      } else {
-        toast.error(
-          "Kargo Talebiniz Oluşturulamadı, Lütfen Firmamız İle Görüşünüz",
-          {
-            position: toast.POSITION.BOTTOM_RIGHT,
-            className: "foo-bar",
-            toastStyle: {
-              fontSize: "12px",
-            },
-          }
-        );
-      }
     },
   },
   mounted() {},
@@ -305,7 +321,7 @@ export default {
     border: 2px solid #f26d25;
   }
 
-  .mailInTextArea input::placeholder{
+  .mailInTextArea input::placeholder {
     font-size: 11px;
     font-weight: bold;
   }

@@ -58,6 +58,7 @@
 </template>
 
 <script>
+import { toast } from "vue3-toastify";
 import CustomRange from "@/components/MainComponents/CustomRange";
 import Card from "@/components/HelperComponents/CategoryCard.vue";
 
@@ -115,10 +116,15 @@ export default {
   mounted() {
     this.loadCategories();
     this.loadModels();
-    // if (this.$route.query.filter == "brands") {
-    //   this.getBrandDatas();
-    // }
-    // localStorage.removeItem("reloaded");
+    if (this.$route.query.failed == "true") {
+      toast.error(this.$t("mailin.paymentFail"), {
+          position: toast.POSITION.BOTTOM_RIGHT,
+          className: "foo-bar",
+          toastStyle: {
+            fontSize: "12px",
+          },
+        });
+    }
   },
   computed: {
     filteredModels() {
