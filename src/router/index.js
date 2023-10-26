@@ -1,6 +1,5 @@
 import { createRouter, createWebHistory } from "vue-router";
 import HomePage from "../pages/HomePage.vue";
-var loader = document.getElementsByClassName("loadingScreen")
 const routes = [
   {
     path: "/",
@@ -54,6 +53,20 @@ const routes = [
     name: "Shop",
     component: function () {
       return import("../pages/ShopPage.vue");
+    },
+  },
+  {
+    path: "/shopPrepare",
+    name: "Shop Payment Prepare",
+    component: function () {
+      return import("../pages/CheckOutPages/CheckOut-ShopPreparePage.vue");
+    },
+  },
+  {
+    path: "/shopSuccess",
+    name: "Shop Payment Success",
+    component: function () {
+      return import("../pages/CheckOutPages/CheckOut-ShopPaymentSuccessPage.vue");
     },
   },
   {
@@ -139,14 +152,13 @@ const router = createRouter({
 router.beforeEach((to, from, next) => {
   document.title = to.name ?? 'Default Title'
   
-  if(to.path == "/shop")
-    loader[0].style.display = "flex";
+  // if(to.path == "/shop")
+  //   loader[0].style.display = "flex";
   next();
 });
 
 router.afterEach(() => {
   setTimeout(() => {
-    loader[0].style.display = "none";
   }, 1000);
 });
 

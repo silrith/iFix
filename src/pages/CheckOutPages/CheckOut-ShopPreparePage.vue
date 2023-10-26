@@ -66,10 +66,8 @@ export default {
       houseNo: null,
       zipCode: null,
       city: null,
-      buttonTitle: this.$t("services.getShippingLabel"),
-      method: this.timeToShip,
-      cargoResult: false,
-      dpdTrackingNumber: null,
+      buttonTitle: this.$t("shop.paymentButton"),
+      method: this.shopPayment,
     };
   },
   components: {
@@ -88,8 +86,11 @@ export default {
         return false;
       }
     },
-    timeToShip() {
-      var validate = this.validateInputs(this.street, this.$t("userForm.street"));
+    shopPayment() {
+      var validate = this.validateInputs(
+        this.street,
+        this.$t("userForm.street")
+      );
       if (validate == false) return;
       validate = this.validateInputs(this.city, this.$t("userForm.city"));
       if (validate == false) return;
@@ -97,88 +98,77 @@ export default {
       if (validate == false) return;
       validate = this.validateInputs(this.zipCode, this.$t("userForm.zipCode"));
       if (validate == false) return;
-      validate = this.validateInputs(this.$refs.customerInformationForm.firstName, this.$t("userForm.firstName"));
+      validate = this.validateInputs(
+        this.$refs.customerInformationForm.firstName,
+        this.$t("userForm.firstName")
+      );
       if (validate == false) return;
-      validate = this.validateInputs(this.$refs.customerInformationForm.lastName, this.$t("userForm.lastName"));
+      validate = this.validateInputs(
+        this.$refs.customerInformationForm.lastName,
+        this.$t("userForm.lastName")
+      );
       if (validate == false) return;
-      validate = this.validateInputs(this.$refs.customerInformationForm.email, this.$t("userForm.email"));
+      validate = this.validateInputs(
+        this.$refs.customerInformationForm.email,
+        this.$t("userForm.email")
+      );
       if (validate == false) return;
-      validate = this.validateInputs(this.$refs.customerInformationForm.phone, this.$t("userForm.phone"));
+      validate = this.validateInputs(
+        this.$refs.customerInformationForm.phone,
+        this.$t("userForm.phone")
+      );
       if (validate == false) return;
 
       this.$ajax
-        .post("Cargo/CreateShipment", {
-          name1: this.$refs.customerInformationForm.firstName,
-          name2: this.$refs.customerInformationForm.lastName,
-          street: this.street,
-          houseNo: this.houseNo,
-          zipCode: this.zipCode,
-          city: this.city,
+        .post("Order/CreateShopOrder", {
+          customerFirstName: this.$refs.customerInformationForm.firstName,
+          customerLastName: this.$refs.customerInformationForm.lastName,
+          customerEmail: this.$refs.customerInformationForm.email,
+          customerPhone: this.$refs.customerInformationForm.phone,
+          customerInformation: localStorage.getItem("informationShop"),
+          address: this.street + +this.houseNo + +this.zipCode + +this.city,
+          paymentSuccess: false,
+          repairTypes: JSON.parse(localStorage.getItem("selectedRepairTypes")),
         })
         .then((snapshot) => {
-          if (snapshot.data.mpsId != null || snapshot.data.mpsId != undefined) {
-            localStorage.setItem("pdf", snapshot.data.content);
+          if (snapshot.data.shopOrderNumber != null || snapshot.data.shopOrderNumber != undefined) {
+            localStorage.setItem("payerName", this.$refs.customerInformationForm.firstName);
+            localStorage.setItem("shopOrderNumber", snapshot.data.shopOrderNumber);
+            var repairTypeList = JSON.parse(
+              localStorage.getItem("selectedRepairTypes")
+            );
             this.$ajax
-              .post("Order/CreateMailInOrder", {
-                customerFirstName: this.$refs.customerInformationForm.firstName,
-                customerLastName: this.$refs.customerInformationForm.lastName,
-                customerEmail: this.$refs.customerInformationForm.email,
-                customerPhone: this.$refs.customerInformationForm.phone,
-                customerInformation: localStorage.getItem(
-                  "informationAboutService"
+              .post("Payment/CreatePayment", {
+                amount: repairTypeList.reduce(
+                  (acc, item) => acc + item.repairTypePrice,
+                  0
                 ),
-                modelId: localStorage.getItem("modelId"),
-                address:
-                  this.street + + this.houseNo + + this.zipCode + + this.city,
-                dpdTrackingNumber: snapshot.data.mpsId,
-                paymentSuccess: false,
-                repairTypes: JSON.parse(
-                  localStorage.getItem("selectedRepairTypes")
-                ),
+                repairTypeProducts: repairTypeList,
+                mailInOrderId: 0,
+                shopOrderId: snapshot.data.shopOrderId,
+                successUrl: "shopSuccess?sps=",
+                failUrl: "shop?failed=true",
               })
               .then((snapshot) => {
-                if (snapshot.data) {
-                  var repairTypeList = JSON.parse(
-                    localStorage.getItem("selectedRepairTypes")
-                  );
-                  this.$ajax
-                    .post("Payment/CreatePayment", {
-                      amount: repairTypeList.reduce(
-                        (acc, item) => acc + item.repairTypePrice,
-                        0
-                      ),
-                      repairTypeProducts: repairTypeList,
-                      mailInOrderId: snapshot.data,
-                      shopOrderId: 0,
-                      successUrl: "mail-in-time-to-ship?mioi=",
-                      failUrl: "services?failed=true"
-                    })
-                    .then((snapshot) => {
-                      window.open(snapshot.data);
-                    })
-                    .catch((err) => {
-                      toast.error(err, {
-                        position: toast.POSITION.BOTTOM_RIGHT,
-                        className: "foo-bar",
-                        toastStyle: {
-                          fontSize: "12px",
-                        },
-                      });
-                    });
-                } else
-                  toast.error(this.$t("mailin.paymentFail"), {
-                    position: toast.POSITION.BOTTOM_RIGHT,
-                    className: "foo-bar",
-                    toastStyle: {
-                      fontSize: "12px",
-                    },
-                  });
+                window.open(snapshot.data);
               })
-              .catch((error) => {
-                console.log(error);
+              .catch((err) => {
+                toast.error(err, {
+                  position: toast.POSITION.BOTTOM_RIGHT,
+                  className: "foo-bar",
+                  toastStyle: {
+                    fontSize: "12px",
+                  },
+                });
               });
-          } else {
-          }
+          } else
+            toast.error(this.$t("mailin.paymentFail"), {
+              position: toast.POSITION.BOTTOM_RIGHT,
+              className: "foo-bar",
+              toastStyle: {
+                fontSize: "12px",
+              },
+            });
         })
         .catch((error) => {
           console.log(error);

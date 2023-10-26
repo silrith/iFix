@@ -5,9 +5,9 @@
         <b>{{ $t("shopFilter.model") }}</b>
       </label>
       <hr style="width: 100%" />
-      <ul>
+      <ul class="ulElements">
         <li v-for="model in modelList" :key="model.id">
-          <label class="">
+          <label class="liLabel">
             <input
               type="checkbox"
               name="checkbox"
@@ -37,15 +37,13 @@ export default {
     };
   },
   props: {
-    categoryList: Array,
-    brandList: Array,
     modelList: Array,
   },
   methods: {
     getFilteredSpairPartsByModel(model) {
       if (this.isCheckedModel[model]) {
         if (this.originalSpairPartList.length == 0)
-          this.originalSpairPartList = this.$parent.spairPartList;
+          this.originalSpairPartList = this.$parent.repairTypeList;
         this.filteredSpairPartList = this.originalSpairPartList.filter(
           (x) => x.model.modelName === model
         );
@@ -54,14 +52,14 @@ export default {
             this.finalSpairPartList.push(element);
           }
         });
-        this.$parent.spairPartList = this.finalSpairPartList;
+        this.$parent.repairTypeList = this.finalSpairPartList;
       } else {
         this.finalSpairPartList = this.finalSpairPartList.filter(
           (x) => x.model.modelName !== model
         );
         if (this.finalSpairPartList.length == 0) {
-          this.$parent.spairPartList = this.originalSpairPartList;
-        } else this.$parent.spairPartList = this.finalSpairPartList;
+          this.$parent.repairTypeList = this.originalSpairPartList;
+        } else this.$parent.repairTypeList = this.finalSpairPartList;
       }
     },
   },
@@ -81,7 +79,7 @@ export default {
   font-family: Poppins-bold;
   font-size: 11px;
   color: #666;
-  border: 1px solid #666;
+  border: 2px solid #666;
   background-color: #ffffff;
 }
 
@@ -107,5 +105,34 @@ export default {
 .spairParts li {
   list-style-type: none;
   font-size: 12px;
+}
+
+@media(max-width:1450px){
+  .spairParts{
+    height: 167px;
+    width: 100%;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .modelFilter{
+    width: 100%;
+    overflow-x: auto;
+  }
+
+  .modelFilter ul{
+    display: flex;
+    max-width: 100%;
+    padding: 0 3px;
+  }
+
+  .liLabel{
+    display: inline-block;
+    margin-right: 10px;
+    padding: 10px;
+    width: max-content;
+    font-size: 10px;
+  }
 }
 </style>

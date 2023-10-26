@@ -38,3 +38,28 @@ filterModel: [
 
 localStorage.setItem("selectedRepairTypes" , JSON.stringify(this.selectedRepairTypes));
 JSON.parse(localStorage.getItem("selectedRepairTypes"))
+
+    getAllCategories() {
+      this.$ajax
+        .get("category/getallcategories")
+        .then((response) => {
+          if (response.data) {
+            this.categoryList = response.data;
+          }
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    },
+    getAllBrands() {
+      this.$ajax
+        .get("brand/getallbrands")
+        .then((response) => {
+          if (response.data) {
+            this.brandList = response.data;
+          }
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    },

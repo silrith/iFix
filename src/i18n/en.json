@@ -276,6 +276,13 @@
     "dataheader3" : "After your ship",
     "datasubtitle31" : "We'll call you with a quote once we get your device, then send it back in less than a week."
   },
+  "shop" : {
+    "paymentButton" : "To Payment",
+    "header1": "Our products will be",
+    "header2": "shipped within",
+    "header3" : "3 days.",
+    "subtitle1" : "Your order tracking number"
+  },
   "shopFilter" : {
     "brand" : "Brand",
     "category" : "Category",

@@ -87,7 +87,7 @@
             data-validate="Valid full name is required: George Michael"
           >
             <input
-              class="select102"
+              class="contactUs102"
               type="text"
               name="name"
               :placeholder='$t("userForm.name")'
@@ -99,7 +99,7 @@
               data-validate="Valid email is required: ex@abc.xyz"
             >
               <input
-                class="select102"
+                class="contactUs102"
                 type="text"
                 name="email"
                 :placeholder='$t("userForm.email")'
@@ -111,7 +111,7 @@
               data-validate="Valid telephone is required: +123456"
             >
               <input
-                class="select102"
+                class="contactUs102"
                 type="text"
                 name="telephone"
                 :placeholder='$t("userForm.phone")'
@@ -119,7 +119,7 @@
             </div>
           </div>
           <div class="wrap-input102 validate-input">
-            <select class="select102">
+            <select class="contactUs102">
               <option disabled selected>{{ $t("contact.select")}}</option>
               <option value="19">{{ $t("userForm.phone")}}</option>
               <option value="20">{{ $t("footer.tablet")}}</option>
@@ -142,26 +142,6 @@
           </div>
           <div class="container-login102-form-btn">
             <button class="btn btn-block py-2 btn-login">{{ $t("buttons.send") }}</button>
-          </div>
-          <div
-            style="
-              width: 100%;
-              display: flex;
-              flex-direction: column;
-              align-items: center;
-            "
-          >
-            <small class="txt1 mt-2"
-              >{{ $t("contact.or") }}
-              <router-link
-                to="/booking"
-                style="font-style: normal; color: #f26d25"
-                ><b class="txt2">
-                  {{ $t("contact.footer") }}
-                  <font-awesome-icon
-                    :icon="['fas', 'share']"
-                    class="txt2" /></b></router-link
-            ></small>
           </div>
         </form>
       </div>
@@ -460,6 +440,7 @@ export default {
   align-items: center;
   text-align-last: center;
   padding: 10px;
+  border: none;
 }
 
 .textarea102:focus{
@@ -467,7 +448,7 @@ export default {
   text-align: flex-start;
 }
 
-.select102 {
+.contactUs102 {
   font-family: Poppins-Regular;
   font-size: 13px;
   line-height: 1;
@@ -485,95 +466,29 @@ export default {
   border: none;
 }
 
-.select102:hover{
+.contactUs102:hover{
   border: none;
 }
 
-.select102 option:hover {
+.contactUs102 option:hover {
   background-color: #f26d25;
   background: blue;
 }
 
-.select102:focus {
+.contactUs102:focus {
   color: #666666;
   padding-left: 15px;
   border: none;
   outline: none;
 }
 
-.select102::placeholder{
+.contactUs102::placeholder{
   text-align: flex-start;
 }
 
 .textarea102:focus{
   border:none;
-}
-
-input {
   outline: none;
-  border: none;
-}
-
-textarea {
-  outline: none;
-  border: none;
-}
-
-textarea:focus,
-input:focus {
-  border-color: transparent !important;
-}
-
-input:focus::-webkit-input-placeholder {
-  color: transparent;
-}
-input:focus:-moz-placeholder {
-  color: transparent;
-}
-input:focus::-moz-placeholder {
-  color: transparent;
-}
-input:focus:-ms-input-placeholder {
-  color: transparent;
-}
-
-textarea:focus::-webkit-input-placeholder {
-  color: transparent;
-}
-textarea:focus:-moz-placeholder {
-  color: transparent;
-}
-textarea:focus::-moz-placeholder {
-  color: transparent;
-}
-textarea:focus:-ms-input-placeholder {
-  color: transparent;
-}
-
-input::-webkit-input-placeholder {
-  color: #999999;
-}
-input:-moz-placeholder {
-  color: #999999;
-}
-input::-moz-placeholder {
-  color: #999999;
-}
-input:-ms-input-placeholder {
-  color: #999999;
-}
-
-textarea::-webkit-input-placeholder {
-  color: #999999;
-}
-textarea:-moz-placeholder {
-  color: #999999;
-}
-textarea::-moz-placeholder {
-  color: #999999;
-}
-textarea:-ms-input-placeholder {
-  color: #999999;
 }
 
 @media (max-width: 992px) {

@@ -276,6 +276,13 @@
     "dataheader3" : "Nach deinem Schiff",
     "datasubtitle31" : "Sobald wir Ihr Gerät erhalten haben, rufen wir Sie an und unterbreiten Ihnen ein Angebot. Anschließend senden wir es in weniger als einer Woche zurück."
   },
+  "shop" : {
+    "paymentButton" : "Zur Zahlung",
+    "header1": "Unsere Produkte werden sein",
+    "header2": "innerhalb versendet",
+    "header3" : "3 Tage.",
+    "subtitle1" : ""
+  },
   "shopFilter" : {
     "brand" : "Marke",
     "category" : "Kategorie",

@@ -1,7 +1,6 @@
 <template>
   <Header />
   <RouterView />
-  <PreLoader />
   <PopUp />
   <Footer />
   <font-awesome-icon
@@ -21,7 +20,6 @@ import { fab } from "@fortawesome/free-brands-svg-icons";
 import { fas } from "@fortawesome/free-solid-svg-icons";
 import { faCartArrowDown } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
-import PreLoader from "@/components/HelperComponents/LoadingScreen.vue";
 import { toast } from "vue3-toastify";
 
 library.add(fab, fas, faCartArrowDown);
@@ -36,7 +34,6 @@ export default {
   },
   components: {
     Header,
-    PreLoader,
     Footer,
     PopUp,
     FontAwesomeIcon,

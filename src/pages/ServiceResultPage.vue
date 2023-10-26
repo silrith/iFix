@@ -446,6 +446,7 @@ export default {
   flex-direction: column;
   text-align: start;
 }
+
 @media (max-width: 1360px) {
   .serviceFilterGradients {
     width: 100%;
