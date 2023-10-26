@@ -4,19 +4,29 @@
       <div class="wrap-login102">
         <div class="informationCard">
           <div class="contactUsHeader">
-            <div style="margin-top: 30px; line-height: 25px;">
-              <p class="txtDark2" style="line-height: 70px"><b>{{ $t("contact.header1") }}</b><br /></p>
-              <p class="txtDark2">
+            <div style="margin-top: 30px; line-height: 25px">
+              <p class="txt2" style="line-height: 70px">
+                <b>{{ $t("contact.header1") }}</b
+                ><br />
+              </p>
+              <p class="txt2">
                 <b>{{ $t("contact.header2") }}</b> <br />
                 <b style="color: #f26d25">{{ $t("contact.header3") }}</b>
               </p>
             </div>
           </div>
-          <div class="txtDark2" style="text-align: flex-start; padding: 0 30px 0 30px;">
-            <p style="line-height: 60px"><b><u>{{ $t("contact.or") }}</u></b><br /></p>
+          <div
+            class="txtDark2"
+            style="text-align: flex-start; padding: 0 30px 0 30px"
+          >
+            <p style="line-height: 60px">
+              <b
+                ><u>{{ $t("contact.or") }}</u></b
+              ><br />
+            </p>
           </div>
           <div
-          class="txtDark2"
+            class="txtDark2"
             style="
               margin-top: 30px;
               display: flex;
@@ -34,7 +44,7 @@
                   margin-right: 15px;
                 "
               />
-              <p class="txt2">+43 1 9909777</p>
+              <p class="txt2"><b>+43 1 9909777</b></p>
             </div>
             <div style="display: flex; text-align: flex-start">
               <font-awesome-icon
@@ -45,7 +55,7 @@
                   margin-right: 15px;
                 "
               />
-              <p class="txt2">info@ifix.at</p>
+              <p class="txt2"><b>info@ifix.at</b></p>
             </div>
             <div style="display: flex; text-align: flex-start">
               <font-awesome-icon
@@ -53,17 +63,16 @@
                 style="
                   color: rgb(255, 103, 0);
                   font-size: 25px;
-                  margin-right: 15px;
+                  margin-right: 10px;
                 "
               />
               <p class="txt2">
-                Wien 1010 Standort, Rabensteig 1, <br />
-                1010 Wien, Austria
+                <b>Wien 1010 Standort, Rabensteig 1, 1010 Wien</b>
               </p>
             </div>
           </div>
         </div>
-        <form class="login102-form validate-form">
+        <div class="login102-form validate-form">
           <div
             style="
               width: 100%;
@@ -76,92 +85,175 @@
               <hr class="txt3" />
             </div>
             <div>
-              <p class="txtDark2" style="padding-top: 13px; padding-bottom: 10px; text-align: center;">Contact us!</p>
+              <p
+                class="txtDark2"
+                style="
+                  padding-top: 13px;
+                  padding-bottom: 10px;
+                  text-align: center;
+                "
+              >
+                Contact us!
+              </p>
             </div>
             <div style="width: 30%">
               <hr class="txt3" />
             </div>
           </div>
-          <div
-            class="wrap-input102 validate-input"
-            data-validate="Valid full name is required: George Michael"
-          >
+          <div class="wrap-input102 validate-input">
             <input
               class="contactUs102"
               type="text"
               name="name"
-              :placeholder='$t("userForm.name")'
+              :placeholder="$t('userForm.name')"
+              v-model="customerName"
             />
           </div>
           <div class="contactUsCustomInput">
-            <div
-              class="wrap-input102 validate-input mr-5"
-              data-validate="Valid email is required: ex@abc.xyz"
-            >
+            <div class="wrap-input102 validate-input mr-5">
               <input
                 class="contactUs102"
                 type="text"
                 name="email"
-                :placeholder='$t("userForm.email")'
-                required
+                :placeholder="$t('userForm.email')"
+                v-model="customerEmail"
               />
             </div>
-            <div
-              class="wrap-input102 validate-input"
-              data-validate="Valid telephone is required: +123456"
-            >
+            <div class="wrap-input102 validate-input">
               <input
                 class="contactUs102"
                 type="text"
                 name="telephone"
-                :placeholder='$t("userForm.phone")'
+                :placeholder="$t('userForm.phone')"
+                v-model="customerPhone"
               />
             </div>
           </div>
           <div class="wrap-input102 validate-input">
-            <select class="contactUs102">
-              <option disabled selected>{{ $t("contact.select")}}</option>
-              <option value="19">{{ $t("userForm.phone")}}</option>
-              <option value="20">{{ $t("footer.tablet")}}</option>
-              <option value="21">{{ $t("footer.computer")}}</option>
+            <select class="contactUs102" v-model="customerRepairType">
+              <option disabled selected value="0">
+                {{ $t("contact.select") }}
+              </option>
+              <option value="19">{{ $t("userForm.phone") }}</option>
+              <option value="20">{{ $t("footer.tablet") }}</option>
+              <option value="21">{{ $t("footer.computer") }}</option>
               <option value="22">{{ $t("footer.wearableAccessories") }}</option>
             </select>
           </div>
-          <div
-            class="wrap-input102 validate-input"
-            data-validate="Valid email is required: ex@abc.xyz"
-          >
+          <div class="wrap-input102 validate-input">
             <textarea
               class="textarea102"
               name="customeropinion"
               id="customerOpinion"
               rows="10"
               type="text"
-              :placeholder='$t("contact.textarea")'
+              :placeholder="$t('contact.textarea')"
+              v-model="customerOpinion"
             ></textarea>
           </div>
           <div class="container-login102-form-btn">
-            <button class="btn btn-block py-2 btn-login">{{ $t("buttons.send") }}</button>
+            <button class="btn btn-block py-2 btn-login" @click="contactUs">
+              {{ $t("buttons.send") }}
+            </button>
           </div>
-        </form>
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import { toast } from "vue3-toastify";
 export default {
   data() {
     return {
-      errorMessage: this.$t("userForm.firstNameRequired"),
       categoryList: [],
+      customerName: null,
+      customerEmail: null,
+      customerPhone: null,
+      customerOpinion: null,
+      customerRepairType: 0,
     };
   },
   methods: {
-    
+    validateInputs(data, type) {
+      if (data == this.customerRepairType)
+        if (data == 0)
+          toast.warning(this.$t("mailin.mailInValidate") + type, {
+            position: toast.POSITION.BOTTOM_RIGHT,
+            className: "foo-bar",
+            toastStyle: {
+              fontSize: "12px",
+            },
+          });
+      if (data == null || data == undefined) {
+        toast.warning(this.$t("mailin.mailInValidate") + type, {
+          position: toast.POSITION.BOTTOM_RIGHT,
+          className: "foo-bar",
+          toastStyle: {
+            fontSize: "12px",
+          },
+        });
+        return false;
+      }
+    },
+    contactUs() {
+      var validate = this.validateInputs(
+        this.customerName,
+        this.$t("userForm.name")
+      );
+      if (validate == false) return;
+      validate = this.validateInputs(
+        this.customerEmail,
+        this.$t("userForm.email")
+      );
+      if (validate == false) return;
+      validate = this.validateInputs(
+        this.customerPhone,
+        this.$t("userForm.phone")
+      );
+      if (validate == false) return;
+      validate = this.validateInputs(
+        this.customerOpinion,
+        this.$t("userForm.opinion")
+      );
+      if (validate == false) return;
+      validate = this.validateInputs(
+        this.customerRepairType,
+        this.$t("customRange.repairTypes")
+      );
+      if (validate == false) return;
+
+      this.$ajax
+        .post("Contact/CreateContactMessage", {
+          customerName: this.customerName,
+          customerEmail: this.customerEmail,
+          customerPhone: this.customerPhone,
+          customerRepairType: this.customerRepairType,
+          customerOpinion: this.customerOpinion,
+        })
+        .then((snapshot) => {
+          if (snapshot.data)
+            toast.success(this.$t("contact.contactSuccess") + ":" + snapshot.data.contactNumber , {
+              position: toast.POSITION.BOTTOM_RIGHT,
+              className: "foo-bar",
+              toastStyle: {
+                fontSize: "12px",
+              },
+            });
+        })
+        .catch((err) => {
+          toast.error(err, {
+            position: toast.POSITION.BOTTOM_RIGHT,
+            className: "foo-bar",
+            toastStyle: {
+              fontSize: "12px",
+            },
+          });
+        });
+    },
   },
-  mounted() {
-  },
+  mounted() {},
 };
 </script>
 
@@ -209,7 +301,7 @@ export default {
   flex-direction: column;
   justify-content: space-around;
   padding: 20px 50px 40px 50px;
-  background-color:#ced4da;
+  background-color: #ced4da;
 }
 
 .wrap-login102 {
@@ -354,16 +446,13 @@ export default {
   transform: translateY(-50%);
   right: 8px;
   pointer-events: none;
-
   font-family: Poppins-Medium;
   color: #c80000;
   font-size: 13px;
   line-height: 1.4;
   text-align: left;
-
   visibility: hidden;
   opacity: 0;
-
   -webkit-transition: opacity 0.4s;
   -o-transition: opacity 0.4s;
   -moz-transition: opacity 0.4s;
@@ -443,7 +532,11 @@ export default {
   border: none;
 }
 
-.textarea102:focus{
+.textarea102::placeholder {
+  color: #999 !important;
+}
+
+.textarea102:focus {
   color: #666666;
   text-align: flex-start;
 }
@@ -466,7 +559,11 @@ export default {
   border: none;
 }
 
-.contactUs102:hover{
+.contactUs102::placeholder {
+  color: #999;
+}
+
+.contactUs102:hover {
   border: none;
 }
 
@@ -482,12 +579,12 @@ export default {
   outline: none;
 }
 
-.contactUs102::placeholder{
+.contactUs102::placeholder {
   text-align: flex-start;
 }
 
-.textarea102:focus{
-  border:none;
+.textarea102:focus {
+  border: none;
   outline: none;
 }
 
@@ -515,7 +612,7 @@ export default {
     width: 100%;
   }
 
-  .contactUsCustomInput{
+  .contactUsCustomInput {
     display: flex;
     flex-direction: column;
   }
@@ -526,19 +623,19 @@ export default {
     padding: 0 15px 33px 15px;
   }
 
-  .informationCard{
-   width: 100%;
-   padding: 0;
-   margin-top: 30px;
+  .informationCard {
+    width: 100%;
+    padding: 0;
+    margin-top: 30px;
   }
 }
 
-@media(max-width: 1214px){
-  .login102-form{
+@media (max-width: 1214px) {
+  .login102-form {
     width: 100%;
   }
 
-  .informationCard{
+  .informationCard {
     width: 100%;
     margin-right: 0px;
     padding: 0 50px 30px 50px;
@@ -548,7 +645,7 @@ export default {
     justify-content: space-between;
   }
 
-  .wrap-login102{
+  .wrap-login102 {
     padding: 50px 10px 50px 10px;
   }
 }
@@ -556,6 +653,24 @@ export default {
 @media (max-width: 1372px) {
   .login102-pic {
     display: none;
+  }
+}
+
+@media (max-width: 662px) {
+  .informationCard {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .contactUsHeader {
+    text-align: center;
+  }
+
+  .txtDark2 {
+    text-align: center;
   }
 }
 </style>

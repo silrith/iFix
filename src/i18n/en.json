@@ -139,7 +139,8 @@
     "houseNo" : "House No.",
     "fillHouseNo" : "Please enter your house no",
     "street" : "Street",
-    "fillStreet" : "Please enter your street"
+    "fillStreet" : "Please enter your street",
+    "opinion" : "Opinion"
   },
   "buttons" : {
     "send" : "Send"
@@ -190,7 +191,8 @@
     "or" : "Or",
     "select" : "Please choose your repair type",
     "textarea" : "Share your opinion",
-    "footer" : "Check out the appointment system"
+    "footer" : "Check out the appointment system",
+    "contactSuccess" : "Your thoughts have reached us."
   },
   "about" : {
     "header1" : "About our company",

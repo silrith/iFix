@@ -139,7 +139,8 @@
     "houseNo" : "Hausnummer",
     "fillHouseNo" : "Bitte geben Sie Ihre Hausnummer ein",
     "street" : "Straße",
-    "fillStreet" : "Bitte geben Sie Ihre Straße ein"
+    "fillStreet" : "Bitte geben Sie Ihre Straße ein",
+    "opinion" : "Meinung"
   },
   "buttons": {
     "send": "Schicken"
@@ -190,7 +191,8 @@
     "or" : "Oder",
     "select" : "Bitte wählen Sie Ihren Reparaturtyp",
     "textarea" : "Teilen Sie Ihre Meinung",
-    "footer" : "Schauen Sie sich das Terminsystem an"
+    "footer" : "Schauen Sie sich das Terminsystem an",
+    "contactSuccess" : "Ihre Gedanken haben uns erreicht."
   },
   "about" : {
     "header1" : "Über unsere Firma",
