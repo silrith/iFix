@@ -20,6 +20,7 @@
 </template>
 
 <script>
+import { toast } from "vue3-toastify";
 export default {
   data() {
     return {
@@ -35,11 +36,18 @@ export default {
     activateAccount() {
       this.$ajax
         .put("Auth/ActivateAccount", {
-          userName: this.$route.query.username,
+          username: this.$route.query.username,
           email: this.$route.query.email,
         })
         .then((snapshot) => {
-          alert(snapshot.data);
+          if (snapshot.data)
+            toast.success(this.$t("mailin.mailInValidate"), {
+              position: toast.POSITION.BOTTOM_RIGHT,
+              className: "foo-bar",
+              toastStyle: {
+                fontSize: "12px",
+              },
+            });
         })
         .catch((err) => console.log(err));
     },

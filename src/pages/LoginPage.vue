@@ -50,6 +50,7 @@
               type="text"
               name="email"
               :placeholder="$t('userForm.email')"
+              v-model="email"
             />
             <span class="focus-input100"></span>
             <span class="symbol-input100">
@@ -64,8 +65,9 @@
               id="#password-input"
               class="input100"
               :type="showPassword ? 'text' : 'password'"
-              name="pass"
+              name="password"
               :placeholder="$t('userForm.password')"
+              v-model="password"
             />
             <span
               @click="togglePasswordField"
@@ -82,7 +84,7 @@
             </span>
           </div>
           <div class="container-login100-form-btn">
-            <button class="btn btn-block py-2 btn-login">
+            <button class="btn btn-block py-2 btn-login" @click="loginAsACustomer">
               {{ $t("header.login") }}
             </button>
           </div>
@@ -150,7 +152,7 @@
             </a>
           </div>
           <div class="text-center p-t-136">
-            <a class="txt2" href="#">
+            <a class="txt2" href="/signup">
               {{ $t("signin.createAccount") }}
               <i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
             </a>
@@ -167,12 +169,13 @@ import { decodeCredential } from "vue3-google-login";
 export default {
   data() {
     return {
-      selectedTab: null,
+      email: null,
+      password: null,
       showPassword: false,
       user: null,
       callback: (response) => {
         localStorage.setItem(
-          "Berk",
+          "google",
           JSON.stringify(decodeCredential(response.credential))
         );
         console.log(decodeCredential(response.credential));
@@ -212,12 +215,20 @@ export default {
     },
     loginAsACustomer(){
       this.$ajax
-          .post("Auth/Loging", {
-            userName: "asd",
-            password: "sad"
+          .post("Auth/Login", {
+            email: this.email,
+            password: this.password
           })
           .then((snapshot) => {
-
+            localStorage.setItem("profilePicture", snapshot.data.profilePicture);
+            localStorage.setItem("userName", snapshot.data.userName);
+            localStorage.setItem("profilePicture", snapshot.data.profilePicture);
+            localStorage.setItem("profilePicture", snapshot.data.profilePicture);
+            this.toggleIsLogged();
+            this.$router.push("/");
+          })
+          .catch((err) => {
+            console.log(err);
           })
     }
   },
