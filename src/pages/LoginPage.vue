@@ -210,13 +210,18 @@ export default {
         { scope: "email" }
       );
     },
+    loginAsACustomer(){
+      this.$ajax
+          .post("Auth/Loging", {
+            userName: "asd",
+            password: "sad"
+          })
+          .then((snapshot) => {
+
+          })
+    }
   },
   mounted() {
-    this.selectedTab = localStorage.getItem("cursorPointer");
-  },
-
-  beforeCreate() {
-    localStorage.setItem("cursorPointer", "sign in");
   },
 };
 </script>

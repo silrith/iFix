@@ -129,7 +129,7 @@
     "phone": "Phone",
     "phoneRequired": "Phone number is required",
     "password" : "Password",
-    "repeatPassword" : "Repeat Password",
+    "repeatPassword" : "Confirmation Password",
     "address": "Address",
     "state": "State",
     "city": "City",
@@ -173,7 +173,7 @@
     "loginFacebook" : "Login with Facebook",
     "loginGoogle" : "Login with Google",
     "forgot" : "Forgot ",
-    "userName" : "Username",
+    "userName" : "User name",
     "createAccount" : "Create your Account"
   },
   "signup" : {

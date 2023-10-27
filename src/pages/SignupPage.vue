@@ -24,7 +24,7 @@
           </div>
         </div>
         <div class="login101-pic js-tilt" data-tilt></div>
-        <form class="login101-form validate-form">
+        <div class="login101-form validate-form">
           <div
             style="
               width: 100%;
@@ -45,43 +45,13 @@
           </div>
           <div
             class="wrap-input101 validate-input"
-            data-validate="Valid full name is required: Michael Jordan"
-          >
-            <input
-              class="input101"
-              type="text"
-              name="name"
-              :placeholder='$t("userForm.name")'
-            />
-            <span class="focus-input101"></span>
-            <span class="symbol-input101">
-              <i class="fa fa-cog fa-spin" aria-hidden="true"></i>
-            </span>
-          </div>
-          <div
-            class="wrap-input101 validate-input"
-            data-validate="Valid email is required: ex@abc.xyz"
-          >
-            <input
-              class="input101"
-              type="text"
-              name="email"
-              :placeholder='$t("userForm.email")'
-            />
-            <span class="focus-input101"></span>
-            <span class="symbol-input101">
-              <i class="fa fa-envelope" aria-hidden="true"></i>
-            </span>
-          </div>
-          <div
-            class="wrap-input101 validate-input"
-            data-validate="Valid email is required: ex@abc.xyz"
           >
             <input
               class="input101"
               type="text"
               name="username"
               :placeholder='$t("signin.userName")'
+              v-model="userName"
             />
             <span class="focus-input101"></span>
             <span class="symbol-input101">
@@ -90,7 +60,66 @@
           </div>
           <div
             class="wrap-input101 validate-input"
-            data-validate="Password is required"
+          >
+            <input
+              class="input101"
+              type="text"
+              name="name"
+              :placeholder='$t("userForm.firstName")'
+              v-model="firstName"
+            />
+            <span class="focus-input101"></span>
+            <span class="symbol-input101">
+              <i class="fa fa-user" aria-hidden="true"></i>
+            </span>
+          </div>
+          <div
+            class="wrap-input101 validate-input"
+          >
+            <input
+              class="input101"
+              type="text"
+              name="name"
+              :placeholder='$t("userForm.lastName")'
+              v-model="lastName"
+            />
+            <span class="focus-input101"></span>
+            <span class="symbol-input101">
+              <i class="fa fa-user" aria-hidden="true"></i>
+            </span>
+          </div>
+          <div
+            class="wrap-input101 validate-input"
+          >
+            <input
+              class="input101"
+              type="text"
+              name="email"
+              :placeholder='$t("userForm.email")'
+              v-model="email"
+            />
+            <span class="focus-input101"></span>
+            <span class="symbol-input101">
+              <i class="fa fa-envelope" aria-hidden="true"></i>
+            </span>
+          </div>
+          <div
+            class="wrap-input101 validate-input"
+          >
+            <input
+              class="input101"
+              type="text"
+              name="phone"
+              :placeholder='$t("userForm.phone")'
+              v-model="phone"
+            />
+            <span class="focus-input101"></span>
+            <span class="symbol-input101">
+              <i class="fa fa-phone" aria-hidden="true"></i>
+            </span>
+          </div>
+          <div
+            class="wrap-input101 validate-input"
           >
             <input
               id="#password-input1"
@@ -98,6 +127,7 @@
               :type="showPassword ? 'text' : 'password'"
               name="pass"
               :placeholder='$t("userForm.password")'
+              v-model="password"
             />
             <span
               @click="togglePasswordField"
@@ -115,7 +145,6 @@
           </div>
           <div
             class="wrap-input101 validate-input"
-            data-validate="Password is required"
           >
             <input
               id="#password-input2"
@@ -123,6 +152,7 @@
               :type="showRepeatPassword ? 'text' : 'password'"
               name="pass"
               :placeholder='$t("userForm.repeatPassword")'
+              v-model="confirmationPassword"
             />
             <span
               @click="toggleRepeatPasswordField"
@@ -140,7 +170,7 @@
             </span>
           </div>
           <div class="container-login101-form-btn">
-            <button class="btn btn-block py-2 btn-login">{{ $t("signup.signup") }}</button>
+            <button class="btn btn-block py-2 btn-login" @click="registerUser">{{ $t("signup.signup") }}</button>
           </div>
           <div
             style="
@@ -150,29 +180,91 @@
               align-items: center;
             "
           ></div>
-        </form>
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import { toast } from "vue3-toastify";
 export default {
   data() {
     return {
       selectedTab: null,
       showPassword: false,
       showRepeatPassword: false,
+      firstName: null,
+      lastName: null,
+      email: null,
+      phone: null,
+      userName: null,
+      password: null,
+      confirmationPassword: null
     };
   },
   components: {},
   methods: {
+    validateInputs(data, type) {
+      if (data == null || data == undefined) {
+        toast.warning(this.$t("mailin.mailInValidate") + type, {
+          position: toast.POSITION.BOTTOM_RIGHT,
+          className: "foo-bar",
+          toastStyle: {
+            fontSize: "12px",
+          },
+        });
+        return false;
+      }
+    },
     togglePasswordField() {
       this.showPassword = !this.showPassword;
     },
     toggleRepeatPasswordField() {
       this.showRepeatPassword = !this.showRepeatPassword;
     },
+    registerUser(){
+      var validate = this.validateInputs(this.userName, this.$t("signin.userName"));
+      if (validate == false) return; 
+      validate = this.validateInputs(this.firstName, this.$t("userForm.firstName"));
+      if (validate == false) return;
+      validate = this.validateInputs(this.lastName, this.$t("userForm.lastName"));
+      if (validate == false) return;
+      validate = this.validateInputs(this.email, this.$t("userForm.email"));
+      if (validate == false) return;
+      validate = this.validateInputs(this.phone, this.$t("userForm.phone"));
+      if (validate == false) return;
+      validate = this.validateInputs(this.password, this.$t("userForm.password"));
+      if (validate == false) return;
+      validate = this.validateInputs(this.confirmationPassword, this.$t("userForm.repeatPassword"));
+      if (validate == false) return;
+      if(this.password === this.confirmationPassword){
+
+        this.$ajax
+        .post("Auth/RegisterUser", {
+          userName: this.userName,
+          firstName: this.firstName,
+          lastName: this.lastName,
+          email: this.email,
+          phone: this.phone,
+          password: this.password,
+          confirmationPassword: this.confirmationPassword,
+        })
+        .then((snapshot) => {
+          // if(snapshot.data)
+          //   this.$router.push("/login")
+        })
+        .catch((err) => {
+          toast.error(err, {
+          position: toast.POSITION.BOTTOM_RIGHT,
+          className: "foo-bar",
+          toastStyle: {
+            fontSize: "12px",
+          },
+        });
+        })
+      }
+    }
     // search() {
     //   console.log(this.searchQuery);
     // },
