@@ -3,6 +3,8 @@ HTML içerisinde i18n kullanmak için : {{ $t("homePage") }}
 Stripe hesabı oluşturduktan sonra payment methods'dan istenilenler ayarlanır.
 npm
 
+smtp - gmail = ifixcompany@gmail.com - rmxp dmbq jxyc ncuq
+
 export default{
     data(){
         return{};

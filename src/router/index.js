@@ -7,6 +7,13 @@ const routes = [
     component: HomePage,
   },
   {
+    path: "/account-activation",
+    name: "Account Activation",
+    component: function () {
+      return import("../pages/AccountActivationPage.vue");
+    },
+  },
+  {
     path: "/aboutus",
     name: "about",
     component: function () {
