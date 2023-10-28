@@ -133,7 +133,8 @@ export default {
       localStorage.setItem("googleLogged", false);
       localStorage.removeItem("loggedUserName");
       localStorage.removeItem("loggedEmail");
-      localStorage.setItem("loggedAsACustomer", false);
+      localStorage.setItem("apiLogged", false);
+      localStorage.setItem("facebookLogged", false);
       this.logout();
     },
   },

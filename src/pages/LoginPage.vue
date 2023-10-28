@@ -205,6 +205,7 @@ export default {
         function (response) {
           if (response.authResponse) {
             console.log("Facebook ile oturum açıldı:", response);
+            localStorage.setItem("facebookLogged", true);
           } else {
             console.log(
               "Facebook ile oturum açma iptal edildi veya hata oluştu."

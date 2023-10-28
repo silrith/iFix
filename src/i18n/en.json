@@ -144,7 +144,8 @@
   },
   "buttons" : {
     "send" : "Send",
-    "update" : "Update"
+    "update" : "Update",
+    "changePassword" : "Change Password"
   },
   "cookieSetting" : {
     "cookieButton" : "Accept & Close",
@@ -300,5 +301,10 @@
     "header4" : "info",
     "subtitle1" : "This will speed up check-in when you get here.",
     "subtitle2" : "By continuing, you agree our Terms of Service and Privacy Policy"
+  },
+  "profile" : {
+    "profileUpdated" : "PROFILE update process was successful.",
+    "pictureUpdated" : "PROFILE PICTURE change process was successful.",
+    "passwordUpdated" : "PASSWORD change process was successful."
   }
 }

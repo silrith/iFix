@@ -66,5 +66,6 @@ JSON.parse(localStorage.getItem("selectedRepairTypes"))
         });
     },
 
-    RESET PASSWORD YAPILACAK.
+    FORGOT PASSWORD YAPILACAK
     PROFİL SAYFASINDA VERİ GÜNCELLEMESİ YAPILACAK.
+    PROFİL RESMİ GÜNCELLEME DE EKLENECEK.

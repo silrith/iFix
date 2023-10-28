@@ -143,7 +143,9 @@
     "opinion" : "Meinung"
   },
   "buttons": {
-    "send": "Schicken"
+    "send": "Schicken",
+    "update" : "Aktualisieren",
+    "changePassword" : "Kennwort ändern"
   },
   "calendar": {
     "daysOfWeek": {
@@ -310,5 +312,10 @@
     "header4" : "die Info",
     "subtitle1" : "Dies beschleunigt den Check-in bei Ihrer Ankunft.",
     "subtitle2" : "Wenn Sie fortfahren, stimmen Sie unseren Nutzungsbedingungen und Datenschutzbestimmungen zu"
+  },
+  "profile" : {
+    "profileUpdated" : "Der PROFILE-Aktualisierungsvorgang war erfolgreich.",
+    "pictureUpdated" : "Der Änderungsprozess für das Profilbild war erfolgreich.",
+    "passwordUpdated" : "Der PASSWORT-Änderungsvorgang war erfolgreich."
   }
 }
