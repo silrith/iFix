@@ -82,13 +82,13 @@
             />
             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
               <router-link to="/profile" class="dropdown-item"
-                >Profile</router-link
+                >{{ $t("header.profile") }}</router-link
               >
-              <router-link to="/profile" class="dropdown-item"
+              <!-- <router-link to="/profile" class="dropdown-item"
                 >My Orders</router-link
-              >
+              > -->
               <router-link to="/" @click="toggleLogout" class="dropdown-item"
-                >Log Out</router-link
+                >{{ $t("header.logout") }}</router-link
               >
             </div>
           </div>

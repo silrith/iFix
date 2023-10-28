@@ -20,7 +20,9 @@
     "service" : "Service",
     "shop" : "Shop",
     "contact" : "Contact",
-    "sign" : "Sign in"
+    "sign" : "Sign in",
+    "profile": "Profile",
+    "logout" : "Logout"
   },
   "footer" : {
     "doYouWannaContactWithUs" : "Do you want to get in contact with us ?",

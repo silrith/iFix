@@ -175,7 +175,9 @@
           />
           <font-awesome-icon
             @click="toggleRepeatPasswordField"
-            :icon="!showRepeatPassword ? ['fas', 'eye-low-vision'] : ['fas', 'eye']"
+            :icon="
+              !showRepeatPassword ? ['fas', 'eye-low-vision'] : ['fas', 'eye']
+            "
             style="
               color: #f26d25;
               font-size: 20px;
@@ -291,7 +293,6 @@ export default {
         this.$t("userForm.phone")
       );
       if (validate == false) return;
-      console.log(this.api);
       if (this.api === "true")
         this.$ajax
           .put("User/UpdateProfile", {
@@ -312,7 +313,17 @@ export default {
                 },
               });
               this.getUserDatas();
-            }
+            } else
+              toast.error(
+                this.$t("profile.profileUpdateFail") + " : " + snapshot.data,
+                {
+                  position: toast.POSITION.BOTTOM_RIGHT,
+                  className: "foo-bar",
+                  toastStyle: {
+                    fontSize: "12px",
+                  },
+                }
+              );
           })
           .catch((err) => {
             toast.error(this.$t("apiErrors.axiosError"), {
