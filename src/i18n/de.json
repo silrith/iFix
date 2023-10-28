@@ -315,7 +315,17 @@
   },
   "profile" : {
     "profileUpdated" : "Der PROFILE-Aktualisierungsvorgang war erfolgreich.",
+    "profileUpdateFail" : "Der PROFILE-Aktualisierungsprozess ist fehlgeschlagen.",
     "pictureUpdated" : "Der Änderungsprozess für das Profilbild war erfolgreich.",
-    "passwordUpdated" : "Der PASSWORT-Änderungsvorgang war erfolgreich."
+    "pictureUpdateFail" : "Der Änderungsvorgang für das Profilbild ist fehlgeschlagen.",
+    "passwordUpdated" : "Der PASSWORT-Änderungsvorgang war erfolgreich.",
+    "passwordUpdateFail" : "Der PASSWORT-Änderungsvorgang ist fehlgeschlagen.",
+    "unsupportedType" : "Unterstützte Bildtypen sind die Formate JPG, JPEG, PNG und WebP.",
+    "maxSize" : "Die maximale Bildgröße sollte 1 MB betragen.",
+    "passwordNotMatch" : "Die Passwörter müssen übereinstimmen.",
+    "passwordMinValue" : "Die Mindestanzahl der Zeichen muss 6 betragen."
+  },
+  "apiErrors" : {
+    "axiosError" : "Aufgrund eines Systemfehlers können wir Ihre Transaktion nicht verarbeiten. Bitte kontaktieren Sie uns."
   }
 }

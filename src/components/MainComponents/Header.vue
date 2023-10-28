@@ -15,7 +15,7 @@
             <img
               src="@/assets/photos/ifixnobg.webp"
               alt="I Fix Main Logo"
-              style="height: 50px"
+              style="height: 50px;"
             />
           </router-link>
         </div>
@@ -73,7 +73,7 @@
             data-toggle="dropdown"
             aria-haspopup="true"
             aria-expanded="false"
-            style="display: flex; justify-content: center; align-items: center; padding-bottom: 20px;"
+            style="display: flex; justify-content: center; align-items: center; margin-bottom: 20px;"
           >
             <img
               class="profile-picture"
@@ -102,13 +102,11 @@
 <script>
 import { mapActions, mapGetters } from 'vuex';
 import LanguageSwitcher from "@/components/SideComponents/LanguageSwitcher.vue";
-import ProfileMenu from "@/components/SideComponents/ProfileMenu.vue";
 import RepairNavMenu from "@/components/SideComponents/RepairNavMenu.vue";
 export default {
   data() {
     return {
       selectedTab: null,
-      image: "@/assets/header/2.png",
       reload: false,
       searchQuery: null,
       data: {},
@@ -120,7 +118,6 @@ export default {
   },
   components: {
     LanguageSwitcher,
-    ProfileMenu,
     RepairNavMenu,
   },
   methods: {
@@ -189,6 +186,11 @@ export default {
   border-radius: 50%;
   border: 2px solid #fff;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  object-fit: cover;
+  padding: 1px;
+  width: 40px !important;
+  height: 40px !important;
+  margin-top: 5px;
 }
 
 @media (max-width: 949px) {

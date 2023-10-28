@@ -13,6 +13,7 @@
           <hr class="txt3" />
         </div>
         <div
+          class="uploadImageDiv"
           style="
             margin-bottom: 40px;
             display: flex;
@@ -21,12 +22,29 @@
             text-align: center;
           "
         >
-          <img
-            class="profilePageImageDiv"
-            :src="profilePicture"
-            alt="User Profile Picture"
-            width="100"
+          <input
+            type="file"
+            ref="fileInput"
+            style="display: none"
+            accept=".jpg, .jpeg, .png"
+            @change="updateProfilePicture"
           />
+          <div
+            style="position: relative"
+            @click="uploadImage"
+            v-if="this.profilePicture != null"
+          >
+            <img
+              class="profilePageImageDiv"
+              :src="profilePicture"
+              alt="User Profile Picture"
+            />
+            <font-awesome-icon
+              :icon="['fas', 'upload']"
+              beat-fade
+              class="uploadImageIcon"
+            />
+          </div>
         </div>
         <div style="width: 30%">
           <hr class="txt3" />
@@ -128,20 +146,43 @@
         </div>
         <div class="profileInputContentDiv">
           <input
+            id="#password-input3"
             class="profilePage102"
-            type="text"
+            :type="showPassword ? 'text' : 'password'"
             name="password"
             :placeholder="$t('userForm.password')"
             v-model="password"
+          /><font-awesome-icon
+            @click="togglePasswordField"
+            :icon="!showPassword ? ['fas', 'eye-low-vision'] : ['fas', 'eye']"
+            style="
+              color: #f26d25;
+              font-size: 20px;
+              border: 2px solid #f26d25;
+              border-radius: 50%;
+              padding: 5px;
+            "
           />
         </div>
         <div class="profileInputContentDiv">
           <input
+            id="#password-input4"
             class="profilePage102"
-            type="text"
-            name="confirmation password"
+            :type="showRepeatPassword ? 'text' : 'password'"
+            name="confirmationPassword"
             :placeholder="$t('userForm.repeatPassword')"
             v-model="confirmationPassword"
+          />
+          <font-awesome-icon
+            @click="toggleRepeatPasswordField"
+            :icon="!showRepeatPassword ? ['fas', 'eye-low-vision'] : ['fas', 'eye']"
+            style="
+              color: #f26d25;
+              font-size: 20px;
+              border: 2px solid #f26d25;
+              border-radius: 50%;
+              padding: 5px;
+            "
           />
         </div>
         <div class="container-profile102-form-btn">
@@ -169,13 +210,32 @@ export default {
       customerPhone: null,
       password: null,
       confirmationPassword: null,
+      showPassword: false,
+      showRepeatPassword: false,
       api: false,
       google: false,
       facebook: false,
-      disableInput: true,
     };
   },
   methods: {
+    togglePasswordField() {
+      this.showPassword = !this.showPassword;
+    },
+    toggleRepeatPasswordField() {
+      this.showRepeatPassword = !this.showRepeatPassword;
+    },
+    validateInputs(data, type) {
+      if (data == null || data == undefined) {
+        toast.warning(this.$t("mailin.mailInValidate") + type, {
+          position: toast.POSITION.BOTTOM_RIGHT,
+          className: "foo-bar",
+          toastStyle: {
+            fontSize: "12px",
+          },
+        });
+        return false;
+      }
+    },
     toggleInput(fieldName) {
       this.$refs[fieldName].disabled = !this.$refs[fieldName].disabled;
     },
@@ -191,7 +251,6 @@ export default {
           email: localStorage.getItem("loggedEmail"),
         })
         .then((snapshot) => {
-          console.log(snapshot);
           this.profilePicture = snapshot.data.profilePicture;
           this.customerFirstName = snapshot.data.firstName;
           this.email = snapshot.data.email;
@@ -200,77 +259,222 @@ export default {
           this.customerPhone = snapshot.data.phone;
         })
         .catch((err) => {
-          console.log(err);
+          toast.error(this.$t("apiErrors.axiosError"), {
+            position: toast.POSITION.BOTTOM_RIGHT,
+            className: "foo-bar",
+            toastStyle: {
+              fontSize: "12px",
+            },
+          });
         });
     },
     googleDatas() {},
     facebookDatas() {},
     updateProfile() {
-      this.$ajax
-        .put("User/UpdateProfile", {
-          loggedUsername: localStorage.getItem("loggedUserName"),
-          loggedEmail: localStorage.getItem("loggedEmail"),
-          firstName: this.customerFirstName,
-          lastName: this.customerLastName,
-          email: this.customerEmail,
-          phone: this.customerPhone,
-        })
-        .then((snapshot) => {
-          if (snapshot.data == "OK")
-            toast.success(this.$t("profile.profileUpdated"), {
+      var validate = this.validateInputs(
+        this.customerFirstName,
+        this.$t("userForm.firstName")
+      );
+      if (validate == false) return;
+      validate = this.validateInputs(
+        this.customerLastName,
+        this.$t("userForm.lastName")
+      );
+      if (validate == false) return;
+      validate = this.validateInputs(
+        this.customerEmail,
+        this.$t("userForm.email")
+      );
+      if (validate == false) return;
+      validate = this.validateInputs(
+        this.customerPhone,
+        this.$t("userForm.phone")
+      );
+      if (validate == false) return;
+      console.log(this.api);
+      if (this.api === "true")
+        this.$ajax
+          .put("User/UpdateProfile", {
+            loggedUsername: localStorage.getItem("loggedUserName"),
+            loggedEmail: localStorage.getItem("loggedEmail"),
+            firstName: this.customerFirstName,
+            lastName: this.customerLastName,
+            email: this.customerEmail,
+            phone: this.customerPhone,
+          })
+          .then((snapshot) => {
+            if (snapshot.data == "OK") {
+              toast.success(this.$t("profile.profileUpdated"), {
+                position: toast.POSITION.BOTTOM_RIGHT,
+                className: "foo-bar",
+                toastStyle: {
+                  fontSize: "12px",
+                },
+              });
+              this.getUserDatas();
+            }
+          })
+          .catch((err) => {
+            toast.error(this.$t("apiErrors.axiosError"), {
               position: toast.POSITION.BOTTOM_RIGHT,
               className: "foo-bar",
               toastStyle: {
                 fontSize: "12px",
               },
             });
-        })
-        .catch((err) => {
-          console.log(err);
+          });
+    },
+    uploadImage() {
+      this.$refs.fileInput.click();
+    },
+    checkFileType(file) {
+      var supportedTypes = [
+        "image/jpeg",
+        "image/jpg",
+        "image/png",
+        "image/webp",
+      ];
+      if (!supportedTypes.includes(file.type)) {
+        toast.error(this.$t("profile.unsupportedType"), {
+          position: toast.POSITION.BOTTOM_RIGHT,
+          className: "foo-bar",
+          toastStyle: {
+            fontSize: "12px",
+          },
         });
+        return false;
+      }
+      return true;
     },
     updateProfilePicture() {
-      this.$ajax
-        .put("User/UpdateProfilePicture", {
-          loggedUsername: localStorage.getItem("loggedUserName"),
-          loggedEmail: localStorage.getItem("loggedEmail"),
-          profilePicture : this.profilePicture
-        })
-        .then((snapshot) => {
-          if (snapshot.data == "OK")
-            toast.success(this.$t("profile.pictureUpdated"), {
-              position: toast.POSITION.BOTTOM_RIGHT,
-              className: "foo-bar",
-              toastStyle: {
-                fontSize: "12px",
-              },
-            });
-        })
-        .catch((err) => {
-          console.log(err);
+      if (event.target.files[0].size > 1048576) {
+        toast.error(this.$t("profile.maxSize"), {
+          position: toast.POSITION.BOTTOM_RIGHT,
+          className: "foo-bar",
+          toastStyle: {
+            fontSize: "12px",
+          },
         });
+        return;
+      }
+      var typeConfirmed = this.checkFileType(event.target.files[0]);
+      if (typeConfirmed == true) {
+        var reader = new FileReader();
+        reader.readAsDataURL(event.target.files[0]);
+        reader.onloadend = () => {
+          if (this.api == true)
+            this.$ajax
+              .put("User/UpdateProfilePicture", {
+                loggedUsername: localStorage.getItem("loggedUserName"),
+                loggedEmail: localStorage.getItem("loggedEmail"),
+                profilePicture: reader.result.replace(
+                  "data:image/png",
+                  "data:image/webp"
+                ),
+              })
+              .then((snapshot) => {
+                if (snapshot.data == "OK") {
+                  toast.success(this.$t("profile.pictureUpdated"), {
+                    position: toast.POSITION.BOTTOM_RIGHT,
+                    className: "foo-bar",
+                    toastStyle: {
+                      fontSize: "12px",
+                    },
+                  });
+                  this.getUserDatas();
+                } else
+                  toast.error(
+                    this.$t("profile.pictureUpdateFail") +
+                      " : " +
+                      snapshot.data,
+                    {
+                      position: toast.POSITION.BOTTOM_RIGHT,
+                      className: "foo-bar",
+                      toastStyle: {
+                        fontSize: "12px",
+                      },
+                    }
+                  );
+              })
+              .catch((err) => {
+                toast.error(this.$t("apiErrors.axiosError"), {
+                  position: toast.POSITION.BOTTOM_RIGHT,
+                  className: "foo-bar",
+                  toastStyle: {
+                    fontSize: "12px",
+                  },
+                });
+              });
+        };
+      }
     },
     changePassword() {
-      this.$ajax
-        .put("User/ChangePassword", {
-          loggedUsername: localStorage.getItem("loggedUserName"),
-          loggedEmail: localStorage.getItem("loggedEmail"),
-          password: this.password,
-          confirmationPassword: this.confirmationPassword,
-        })
-        .then((snapshot) => {
-          if (snapshot.data == "OK")
-            toast.success(this.$t("profile.passwordUpdated"), {
+      var validate = this.validateInputs(
+        this.password,
+        this.$t("userForm.password")
+      );
+      if (validate == false) return;
+      var validate = this.validateInputs(
+        this.confirmationPassword,
+        this.$t("userForm.repeatPassword")
+      );
+      if (validate == false) return;
+      if (this.password != this.confirmationPassword) {
+        toast.error(this.$t("profile.passwordNotMatch"), {
+          position: toast.POSITION.BOTTOM_RIGHT,
+          className: "foo-bar",
+          toastStyle: {
+            fontSize: "12px",
+          },
+        });
+        return;
+      }
+      if (this.password.length < 6 || this.confirmationPassword.length < 6)
+        toast.warning(this.$t("profile.passwordMinValue"), {
+          position: toast.POSITION.BOTTOM_RIGHT,
+          className: "foo-bar",
+          toastStyle: {
+            fontSize: "12px",
+          },
+        });
+      if (this.api == "true")
+        this.$ajax
+          .put("User/ChangePassword", {
+            loggedUsername: localStorage.getItem("loggedUserName"),
+            loggedEmail: localStorage.getItem("loggedEmail"),
+            password: this.password,
+            confirmationPassword: this.confirmationPassword,
+          })
+          .then((snapshot) => {
+            if (snapshot.data == "OK")
+              toast.success(this.$t("profile.passwordUpdated"), {
+                position: toast.POSITION.BOTTOM_RIGHT,
+                className: "foo-bar",
+                toastStyle: {
+                  fontSize: "12px",
+                },
+              });
+            else
+              toast.error(
+                this.$t("profile.passwordUpdateFail") + " : " + snapshot.data,
+                {
+                  position: toast.POSITION.BOTTOM_RIGHT,
+                  className: "foo-bar",
+                  toastStyle: {
+                    fontSize: "12px",
+                  },
+                }
+              );
+          })
+          .catch((err) => {
+            toast.error(this.$t("apiErrors.axiosError"), {
               position: toast.POSITION.BOTTOM_RIGHT,
               className: "foo-bar",
               toastStyle: {
                 fontSize: "12px",
               },
             });
-        })
-        .catch((err) => {
-          console.log(err);
-        });
+          });
     },
   },
   mounted() {
@@ -290,6 +494,7 @@ export default {
   align-items: center;
   padding: 10px;
   width: 100%;
+  margin-top: 2px;
 }
 
 .profilePageImageDiv {
@@ -299,9 +504,11 @@ export default {
   justify-content: center;
   align-items: center;
   width: 150px;
+  height: 150px;
   background-color: #f25d26;
   border: 2px solid #999;
   padding: 1px;
+  object-fit: cover;
 }
 
 .profile102-form {
@@ -310,7 +517,7 @@ export default {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  padding: 36px;
+  padding: 31px;
   width: 100%;
   background-color: #dee2e6;
 }
@@ -362,6 +569,7 @@ export default {
   background-color: #f26d25;
   color: #fff;
   width: 25%;
+  margin-bottom: 5px;
 }
 
 .btn-profile:hover {
@@ -384,6 +592,22 @@ export default {
   flex-direction: row;
   justify-content: center;
   align-items: center;
+}
+
+.uploadImageDiv:hover .uploadImageIcon {
+  display: block;
+}
+
+.uploadImageIcon {
+  font-size: 80px;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  color: #beb3b3;
+  padding: 23px;
+  border: 2px solid #beb3b3;
+  border-radius: 50%;
+  display: none;
 }
 
 @media (max-width: 1192px) {

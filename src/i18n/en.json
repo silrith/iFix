@@ -304,7 +304,17 @@
   },
   "profile" : {
     "profileUpdated" : "PROFILE update process was successful.",
+    "profileUpdateFail" : "PROFILE update process was failed.",
     "pictureUpdated" : "PROFILE PICTURE change process was successful.",
-    "passwordUpdated" : "PASSWORD change process was successful."
+    "pictureUpdateFail" : "PROFILE PICTURE change process was failed.",
+    "passwordUpdated" : "PASSWORD change process was successful.",
+    "passwordUpdateFail" : "PASSWORD change process was failed.",
+    "unsupportedType" : "Supported image types are jpg, jpeg, png, webp formats.",
+    "maxSize" : "The maximum image size should be 1 MB.",
+    "passwordNotMatch" : "Passwords must match.",
+    "passwordMinValue" : "The minimum number of characters must be 6."
+  },
+  "apiErrors" : {
+    "axiosError" : "We cannot process your transaction due to a system error. Please contact us."
   }
 }
