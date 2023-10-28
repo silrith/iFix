@@ -180,9 +180,10 @@ export default {
         );
         console.log(decodeCredential(response.credential));
         this.user = decodeCredential(response.credential);
-        localStorage.setItem("profilePictureGoogle", this.user.picture);
+        localStorage.setItem("googleProfilePicture", this.user.picture);
         localStorage.setItem("googleToken", this.user.exp);
-        localStorage.setItem("userName", this.user.given_name);
+        localStorage.setItem("googleUserName", this.user.given_name);
+        localStorage.setItem("googleLogged", true);
         if (this.user.email_verified == true)
           localStorage.setItem("isLogged", true);
         this.toggleIsLogged();
@@ -220,10 +221,10 @@ export default {
             password: this.password
           })
           .then((snapshot) => {
-            localStorage.setItem("profilePicture", snapshot.data.profilePicture);
-            localStorage.setItem("userName", snapshot.data.userName);
-            localStorage.setItem("profilePicture", snapshot.data.profilePicture);
-            localStorage.setItem("profilePicture", snapshot.data.profilePicture);
+            localStorage.setItem("loggedEmail", snapshot.data.email);
+            localStorage.setItem("loggedUserName", snapshot.data.userName);
+            localStorage.setItem("loggedProfilePicture", snapshot.data.profilePicture);
+            localStorage.setItem("apiLogged", true);
             this.toggleIsLogged();
             this.$router.push("/");
           })

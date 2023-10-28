@@ -6,14 +6,14 @@
       width="300"
       class="p-5"
     />
-    <p class="txt2"><b>Hesabınız Aktif Olmuştur.</b></p>
+    <p class="txt2"><b>{{ this.$t("signin.activationSuccess") }}</b></p>
     <p class="txt2" style="line-height: 3">
       <b
-        >Bu sayfa
+        >{{ this.$t("signin.subtitle4") }}
         <span style="color: #f26d25; font-size: 20px"
           ><b>{{ this.countDown }}</b></span
         >
-        saniye sonra sizi otomatik olarak ana sayfaya yönlendirecektir...</b
+        {{ this.$t("signin.subtitle5") }}</b
       >
     </p>
   </div>
@@ -27,6 +27,7 @@ export default {
       countDown: 10,
       email: null,
       userName: null,
+      activationSuccess: false,
     };
   },
   methods: {
@@ -40,28 +41,30 @@ export default {
           email: this.$route.query.email,
         })
         .then((snapshot) => {
-          if (snapshot.data)
-            toast.success(this.$t("mailin.mailInValidate"), {
+          if (snapshot.data) {
+            this.activationSuccess = true;
+            toast.success(this.$t("signin.toast1"), {
               position: toast.POSITION.BOTTOM_RIGHT,
               className: "foo-bar",
               toastStyle: {
                 fontSize: "12px",
               },
             });
+            const interval = setInterval(() => {
+              if (this.countDown > 0) {
+                this.countDown--;
+              } else {
+                clearInterval(interval);
+                this.redirectToHomePage();
+              }
+            }, 1000);
+          }
         })
         .catch((err) => console.log(err));
     },
   },
   mounted() {
     this.activateAccount();
-    const interval = setInterval(() => {
-      if (this.countDown > 0) {
-        this.countDown--;
-      } else {
-        clearInterval(interval);
-        this.redirectToHomePage();
-      }
-    }, 1000);
   },
 };
 </script>

@@ -174,7 +174,11 @@
     "loginGoogle" : "Melden Sie sich mit Google an",
     "forgot" : "Vergessen ",
     "userName" : "Nutzername",
-    "createAccount" : "Erstelle deinen Account"
+    "createAccount" : "Erstelle deinen Account",
+    "activationSuccess" : "Ihr Konto wurde zur Nutzung aktiviert.",
+    "subtitle4" : "Diese Seite leitet Sie anschließend automatisch zur Startseite weiter ",
+    "subtitle5" : " Sekunden...",
+    "toast1" : "Transaktion Erfolgreich"
   },
   "signup" : {
     "header1" : "Ausnutzen",

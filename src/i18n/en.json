@@ -143,18 +143,8 @@
     "opinion" : "Opinion"
   },
   "buttons" : {
-    "send" : "Send"
-  },
-  "calendar" : {
-    "daysOfWeek": {
-      "monday" : "Monday",
-      "tuesday" : "Tuesday",
-      "wednesday" : "Wednesday",
-      "thursday" : "Thursday",
-      "friday" : "Friday",
-      "saturday" : "Saturday",
-      "sunday" : "Sunday"
-    }
+    "send" : "Send",
+    "update" : "Update"
   },
   "cookieSetting" : {
     "cookieButton" : "Accept & Close",
@@ -174,7 +164,11 @@
     "loginGoogle" : "Login with Google",
     "forgot" : "Forgot ",
     "userName" : "User name",
-    "createAccount" : "Create your Account"
+    "createAccount" : "Create your Account",
+    "activationSuccess" : "Your account has been activated for use.",
+    "subtitle4" : "This page will automatically redirect you to the home page after ",
+    "subtitle5" : " seconds...",
+    "toast1" : "Transaction Successful"
   },
   "signup" : {
     "header1" : "Take advantage",

@@ -113,6 +113,9 @@ export default {
       searchQuery: null,
       data: {},
       profilePicture: null,
+      google: false,
+      api: false,
+      facebook: false
     };
   },
   components: {
@@ -123,17 +126,28 @@ export default {
   methods: {
     ...mapActions(['login', 'logout']),
     toggleLogout() {
+      localStorage.removeItem("googleProfilePicture");
+      localStorage.removeItem("googleUserName");
+      localStorage.removeItem("googleToken");
+      localStorage.removeItem("isLogged");
+      localStorage.setItem("googleLogged", false);
+      localStorage.removeItem("loggedUserName");
+      localStorage.removeItem("loggedEmail");
+      localStorage.setItem("loggedAsACustomer", false);
       this.logout();
     },
   },
   mounted() {
     this.selectedTab = localStorage.getItem("cursorPointer");
-    this.profilePicture = localStorage.getItem("profilePictureGoogle");
-    if (
-      this.profilePicture != undefined ||
-      this.profilePicture != null
-    )
+    this.google = localStorage.getItem("googleLogged");
+    this.facebook = localStorage.getItem("facebookLogged");
+    this.api = localStorage.getItem("apiLogged");
+    if(this.google == 'true')
       this.profilePicture = localStorage.getItem("profilePictureGoogle");
+    else if(this.api == 'true')
+      this.profilePicture = localStorage.getItem("loggedProfilePicture");
+    else
+      this.profilePicture = localStorage.getItem("facebookProfilePicture");
   },
   computed: {
     ...mapGetters(['isLogged']),

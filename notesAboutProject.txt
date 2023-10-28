@@ -65,3 +65,6 @@ JSON.parse(localStorage.getItem("selectedRepairTypes"))
           console.log(error);
         });
     },
+
+    RESET PASSWORD YAPILACAK.
+    PROFİL SAYFASINDA VERİ GÜNCELLEMESİ YAPILACAK.
