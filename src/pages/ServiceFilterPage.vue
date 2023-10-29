@@ -24,8 +24,15 @@
           {{ brand.brandName }}
         </option>
       </select>
-      <select v-if="showModelSelect" class="serviceSelect" v-model="selectedModel" @change="setModelName(selectedModel)">
-        <option disabled selected :value="null">{{ $t("shopFilter.model") }}</option>
+      <select
+        v-if="showModelSelect"
+        class="serviceSelect"
+        v-model="selectedModel"
+        @change="setModelName(selectedModel)"
+      >
+        <option disabled selected :value="null">
+          {{ $t("shopFilter.model") }}
+        </option>
         <option v-for="model in modelList" :value="model.id">
           {{ model.modelName }}
         </option>
@@ -33,7 +40,10 @@
     </div>
     <div class="serviceSelectDiv">
       <div class="container-login102-form-btn">
-        <button class="btn btn-block py-2 btn-login" @click="goModelRepairTypes()">
+        <button
+          class="btn btn-block py-2 btn-login"
+          @click="goModelRepairTypes()"
+        >
           {{ $t("serviceFilter.continue") }}
         </button>
       </div>
@@ -85,7 +95,13 @@ export default {
           }
         })
         .catch((error) => {
-          console.log(error);
+          toast.error(this.$t("apiErrors.axiosError"), {
+            position: toast.POSITION.BOTTOM_RIGHT,
+            className: "foo-bar",
+            toastStyle: {
+              fontSize: "12px",
+            },
+          });
         });
     },
     getFilteredBrandDatas() {
@@ -97,29 +113,34 @@ export default {
           }
         })
         .catch((error) => {
-          console.log(error);
+          toast.error(this.$t("apiErrors.axiosError"), {
+            position: toast.POSITION.BOTTOM_RIGHT,
+            className: "foo-bar",
+            toastStyle: {
+              fontSize: "12px",
+            },
+          });
         });
     },
-    setModelName(id){
+    setModelName(id) {
       this.selectedModel = id;
     },
-    goModelRepairTypes(){
-      if(this.selectedModel != null){
-
-        this.$router.push({ 
-          path: '/serviceResult', 
-          query: { modelId: this.selectedModel } 
+    goModelRepairTypes() {
+      if (this.selectedModel != null) {
+        this.$router.push({
+          path: "/serviceResult",
+          query: { modelId: this.selectedModel },
         });
-      } else{
+      } else {
         toast.error(this.$t("serviceFilter.chooseModel"), {
-                position: toast.POSITION.BOTTOM_RIGHT,
-                className: "foo-bar",
-                toastStyle: {
-                  fontSize: "12px",
-                },
-              });
+          position: toast.POSITION.BOTTOM_RIGHT,
+          className: "foo-bar",
+          toastStyle: {
+            fontSize: "12px",
+          },
+        });
       }
-    }
+    },
   },
   mounted() {
     this.getFilteredBrandDatas();

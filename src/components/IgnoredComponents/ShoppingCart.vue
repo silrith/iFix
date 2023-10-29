@@ -168,7 +168,13 @@ export default {
           window.open(snapshot.data);
         })
         .catch((error) => {
-          console.log(error);
+          toast.error(this.$t("apiErrors.axiosError"), {
+            position: toast.POSITION.BOTTOM_RIGHT,
+            className: "foo-bar",
+            toastStyle: {
+              fontSize: "12px",
+            },
+          });
         });
     },
   },

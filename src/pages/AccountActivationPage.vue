@@ -6,7 +6,9 @@
       width="300"
       class="p-5"
     />
-    <p class="txt2"><b>{{ this.$t("signin.activationSuccess") }}</b></p>
+    <p class="txt2">
+      <b>{{ this.$t("signin.activationSuccess") }}</b>
+    </p>
     <p class="txt2" style="line-height: 3">
       <b
         >{{ this.$t("signin.subtitle4") }}
@@ -60,7 +62,15 @@ export default {
             }, 1000);
           }
         })
-        .catch((err) => console.log(err));
+        .catch((err) =>
+          toast.error(this.$t("apiErrors.axiosError"), {
+            position: toast.POSITION.BOTTOM_RIGHT,
+            className: "foo-bar",
+            toastStyle: {
+              fontSize: "12px",
+            },
+          })
+        );
     },
   },
   mounted() {

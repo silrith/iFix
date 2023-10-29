@@ -31,8 +31,6 @@
 </template>
 
 <script>
-import CustomRange from "@/components/MainComponents/CustomRange";
-
 export default {
   data() {
     return {};
@@ -42,7 +40,6 @@ export default {
     customMethod: Function,
   },
   components: {
-    CustomRange,
   },
   methods: {
     addToShoppingCart(item) {

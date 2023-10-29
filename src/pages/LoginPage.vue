@@ -84,7 +84,10 @@
             </span>
           </div>
           <div class="container-login100-form-btn">
-            <button class="btn btn-block py-2 btn-login" @click="loginAsACustomer">
+            <button
+              class="btn btn-block py-2 btn-login"
+              @click="loginAsACustomer"
+            >
               {{ $t("header.login") }}
             </button>
           </div>
@@ -164,7 +167,7 @@
 </template>
 
 <script>
-import { mapActions } from 'vuex';
+import { mapActions } from "vuex";
 import { decodeCredential } from "vue3-google-login";
 export default {
   data() {
@@ -193,7 +196,7 @@ export default {
   },
   components: {},
   methods: {
-    ...mapActions(['login', 'logout']),
+    ...mapActions(["login", "logout"]),
     togglePasswordField() {
       this.showPassword = !this.showPassword;
     },
@@ -215,27 +218,35 @@ export default {
         { scope: "email" }
       );
     },
-    loginAsACustomer(){
+    loginAsACustomer() {
       this.$ajax
-          .post("Auth/Login", {
-            email: this.email,
-            password: this.password
-          })
-          .then((snapshot) => {
-            localStorage.setItem("loggedEmail", snapshot.data.email);
-            localStorage.setItem("loggedUserName", snapshot.data.userName);
-            localStorage.setItem("loggedProfilePicture", snapshot.data.profilePicture);
-            localStorage.setItem("apiLogged", true);
-            this.toggleIsLogged();
-            this.$router.push("/");
-          })
-          .catch((err) => {
-            console.log(err);
-          })
-    }
+        .post("Auth/Login", {
+          email: this.email,
+          password: this.password,
+        })
+        .then((snapshot) => {
+          localStorage.setItem("loggedEmail", snapshot.data.email);
+          localStorage.setItem("loggedUserName", snapshot.data.userName);
+          localStorage.setItem(
+            "loggedProfilePicture",
+            snapshot.data.profilePicture
+          );
+          localStorage.setItem("apiLogged", true);
+          this.toggleIsLogged();
+          this.$router.push("/");
+        })
+        .catch((err) => {
+          toast.error(this.$t("apiErrors.axiosError"), {
+            position: toast.POSITION.BOTTOM_RIGHT,
+            className: "foo-bar",
+            toastStyle: {
+              fontSize: "12px",
+            },
+          });
+        });
+    },
   },
-  mounted() {
-  },
+  mounted() {},
 };
 </script>
 

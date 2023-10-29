@@ -4,20 +4,20 @@
       <div class="wrap-login101">
         <div class="signup101">
           <div>
-            <p style="font-size: 36px; font-weight: 600;">
-              {{ $t('signup.header1') }}<br />
-              {{ $t('signup.header2') }} 
+            <p style="font-size: 36px; font-weight: 600">
+              {{ $t("signup.header1") }}<br />
+              {{ $t("signup.header2") }}
             </p>
           </div>
           <div style="margin-top: 30px; line-height: 25px">
             <p>
-              <b>{{ $t('signup.subtitle1') }}</b> <br />
-              <b>{{ $t('signup.subtitle2') }}</b>
+              <b>{{ $t("signup.subtitle1") }}</b> <br />
+              <b>{{ $t("signup.subtitle2") }}</b>
               <b style="color: #f26d25"
                 ><router-link
                   to="/login"
                   style="font-style: normal; color: #f26d25"
-                  >{{ $t('signup.subtitle3') }}</router-link
+                  >{{ $t("signup.subtitle3") }}</router-link
                 ></b
               >
             </p>
@@ -37,20 +37,20 @@
               <hr class="txt3" />
             </div>
             <div>
-              <p class="txt1" style="padding-top: 10px">{{ $t('signup.signup') }}!</p>
+              <p class="txt1" style="padding-top: 10px">
+                {{ $t("signup.signup") }}!
+              </p>
             </div>
             <div style="width: 30%">
               <hr class="txt3" />
             </div>
           </div>
-          <div
-            class="wrap-input101 validate-input"
-          >
+          <div class="wrap-input101 validate-input">
             <input
               class="input101"
               type="text"
               name="username"
-              :placeholder='$t("signin.userName")'
+              :placeholder="$t('signin.userName')"
               v-model="userName"
             />
             <span class="focus-input101"></span>
@@ -58,14 +58,12 @@
               <i class="fa fa-user" aria-hidden="true"></i>
             </span>
           </div>
-          <div
-            class="wrap-input101 validate-input"
-          >
+          <div class="wrap-input101 validate-input">
             <input
               class="input101"
               type="text"
               name="name"
-              :placeholder='$t("userForm.firstName")'
+              :placeholder="$t('userForm.firstName')"
               v-model="firstName"
             />
             <span class="focus-input101"></span>
@@ -73,14 +71,12 @@
               <i class="fa fa-user" aria-hidden="true"></i>
             </span>
           </div>
-          <div
-            class="wrap-input101 validate-input"
-          >
+          <div class="wrap-input101 validate-input">
             <input
               class="input101"
               type="text"
               name="name"
-              :placeholder='$t("userForm.lastName")'
+              :placeholder="$t('userForm.lastName')"
               v-model="lastName"
             />
             <span class="focus-input101"></span>
@@ -88,14 +84,12 @@
               <i class="fa fa-user" aria-hidden="true"></i>
             </span>
           </div>
-          <div
-            class="wrap-input101 validate-input"
-          >
+          <div class="wrap-input101 validate-input">
             <input
               class="input101"
               type="text"
               name="email"
-              :placeholder='$t("userForm.email")'
+              :placeholder="$t('userForm.email')"
               v-model="email"
             />
             <span class="focus-input101"></span>
@@ -103,14 +97,12 @@
               <i class="fa fa-envelope" aria-hidden="true"></i>
             </span>
           </div>
-          <div
-            class="wrap-input101 validate-input"
-          >
+          <div class="wrap-input101 validate-input">
             <input
               class="input101"
               type="text"
               name="phone"
-              :placeholder='$t("userForm.phone")'
+              :placeholder="$t('userForm.phone')"
               v-model="phone"
             />
             <span class="focus-input101"></span>
@@ -118,15 +110,13 @@
               <i class="fa fa-phone" aria-hidden="true"></i>
             </span>
           </div>
-          <div
-            class="wrap-input101 validate-input"
-          >
+          <div class="wrap-input101 validate-input">
             <input
               id="#password-input1"
               class="input101"
               :type="showPassword ? 'text' : 'password'"
               name="pass"
-              :placeholder='$t("userForm.password")'
+              :placeholder="$t('userForm.password')"
               v-model="password"
             />
             <span
@@ -143,15 +133,13 @@
               <i class="fa fa-lock" aria-hidden="true"></i>
             </span>
           </div>
-          <div
-            class="wrap-input101 validate-input"
-          >
+          <div class="wrap-input101 validate-input">
             <input
               id="#password-input2"
               class="input101"
               :type="showRepeatPassword ? 'text' : 'password'"
               name="pass"
-              :placeholder='$t("userForm.repeatPassword")'
+              :placeholder="$t('userForm.repeatPassword')"
               v-model="confirmationPassword"
             />
             <span
@@ -170,7 +158,9 @@
             </span>
           </div>
           <div class="container-login101-form-btn">
-            <button class="btn btn-block py-2 btn-login" @click="registerUser">{{ $t("signup.signup") }}</button>
+            <button class="btn btn-block py-2 btn-login" @click="registerUser">
+              {{ $t("signup.signup") }}
+            </button>
           </div>
           <div
             style="
@@ -200,7 +190,7 @@ export default {
       phone: null,
       userName: null,
       password: null,
-      confirmationPassword: null
+      confirmationPassword: null,
     };
   },
   components: {},
@@ -223,48 +213,62 @@ export default {
     toggleRepeatPasswordField() {
       this.showRepeatPassword = !this.showRepeatPassword;
     },
-    registerUser(){
-      var validate = this.validateInputs(this.userName, this.$t("signin.userName"));
-      if (validate == false) return; 
-      validate = this.validateInputs(this.firstName, this.$t("userForm.firstName"));
+    registerUser() {
+      var validate = this.validateInputs(
+        this.userName,
+        this.$t("signin.userName")
+      );
       if (validate == false) return;
-      validate = this.validateInputs(this.lastName, this.$t("userForm.lastName"));
+      validate = this.validateInputs(
+        this.firstName,
+        this.$t("userForm.firstName")
+      );
+      if (validate == false) return;
+      validate = this.validateInputs(
+        this.lastName,
+        this.$t("userForm.lastName")
+      );
       if (validate == false) return;
       validate = this.validateInputs(this.email, this.$t("userForm.email"));
       if (validate == false) return;
       validate = this.validateInputs(this.phone, this.$t("userForm.phone"));
       if (validate == false) return;
-      validate = this.validateInputs(this.password, this.$t("userForm.password"));
+      validate = this.validateInputs(
+        this.password,
+        this.$t("userForm.password")
+      );
       if (validate == false) return;
-      validate = this.validateInputs(this.confirmationPassword, this.$t("userForm.repeatPassword"));
+      validate = this.validateInputs(
+        this.confirmationPassword,
+        this.$t("userForm.repeatPassword")
+      );
       if (validate == false) return;
-      if(this.password === this.confirmationPassword){
-
+      if (this.password === this.confirmationPassword) {
         this.$ajax
-        .post("Auth/RegisterUser", {
-          userName: this.userName,
-          firstName: this.firstName,
-          lastName: this.lastName,
-          email: this.email,
-          phone: this.phone,
-          password: this.password,
-          confirmationPassword: this.confirmationPassword,
-        })
-        .then((snapshot) => {
-          // if(snapshot.data)
-          //   this.$router.push("/login")
-        })
-        .catch((err) => {
-          toast.error(err, {
-          position: toast.POSITION.BOTTOM_RIGHT,
-          className: "foo-bar",
-          toastStyle: {
-            fontSize: "12px",
-          },
-        });
-        })
+          .post("Auth/RegisterUser", {
+            userName: this.userName,
+            firstName: this.firstName,
+            lastName: this.lastName,
+            email: this.email,
+            phone: this.phone,
+            password: this.password,
+            confirmationPassword: this.confirmationPassword,
+          })
+          .then((snapshot) => {
+            // if(snapshot.data)
+            //   this.$router.push("/login")
+          })
+          .catch((err) => {
+            toast.error(this.$t("apiErrors.axiosError"), {
+              position: toast.POSITION.BOTTOM_RIGHT,
+              className: "foo-bar",
+              toastStyle: {
+                fontSize: "12px",
+              },
+            });
+          });
       }
-    }
+    },
     // search() {
     //   console.log(this.searchQuery);
     // },
@@ -378,7 +382,7 @@ export default {
   border: 1px solid #ff4800;
 }
 
-.input101:focus{
+.input101:focus {
   outline: none;
 }
 

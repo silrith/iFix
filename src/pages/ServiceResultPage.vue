@@ -21,7 +21,9 @@
                 :cardElement="repairType"
               />
               <PreLoader v-if="!this.isLoaded" />
-              <p v-if="this.noRepairType == false" class="txt1">{{ this.$t("shoppingCart.noRepairType") }}</p>
+              <p v-if="this.noRepairType == false" class="txt1">
+                {{ this.$t("shoppingCart.noRepairType") }}
+              </p>
             </div>
             <div class="serviceFilterTextArea">
               <input
@@ -177,8 +179,8 @@ export default {
       selectedRepairTypes: [],
       filterModel: [{ key: "modelId", value: 0, type: "int" }],
       optionalInformation: null,
-      noRepairType : null,
-      modelId : null
+      noRepairType: null,
+      modelId: null,
     };
   },
   components: {
@@ -194,14 +196,18 @@ export default {
           if (response.data) {
             this.repairTypeList = response.data;
             this.isLoaded = true;
-            if(this.repairTypeList.length > 0)
-              this.noRepairType = true;
-            else
-              this.noRepairType = false;
+            if (this.repairTypeList.length > 0) this.noRepairType = true;
+            else this.noRepairType = false;
           }
         })
         .catch((error) => {
-          console.log(error);
+          toast.error(this.$t("apiErrors.axiosError"), {
+            position: toast.POSITION.BOTTOM_RIGHT,
+            className: "foo-bar",
+            toastStyle: {
+              fontSize: "12px",
+            },
+          });
         });
     },
     removeFromList(object) {

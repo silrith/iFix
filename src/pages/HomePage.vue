@@ -1,6 +1,6 @@
 <template>
   <div class="mainBody">
-    <HomeBanner/>
+    <HomeBanner />
     <HomeBadge />
   </div>
 </template>
@@ -13,15 +13,15 @@ export default {
   name: "Home Page",
   data() {
     return {
-      searchText:"",
+      searchText: "",
       categoryList: [],
       modelList: [],
-      selectedModel: null
+      selectedModel: null,
     };
   },
   components: {
     HomeBanner,
-    HomeBadge
+    HomeBadge,
   },
   methods: {
     loadData() {
@@ -33,7 +33,13 @@ export default {
           }
         })
         .catch((error) => {
-          console.log(error);
+          toast.error(this.$t("apiErrors.axiosError"), {
+            position: toast.POSITION.BOTTOM_RIGHT,
+            className: "foo-bar",
+            toastStyle: {
+              fontSize: "12px",
+            },
+          });
         });
     },
     loadModels() {
@@ -45,7 +51,13 @@ export default {
           }
         })
         .catch((error) => {
-          console.log(error);
+          toast.error(this.$t("apiErrors.axiosError"), {
+            position: toast.POSITION.BOTTOM_RIGHT,
+            className: "foo-bar",
+            toastStyle: {
+              fontSize: "12px",
+            },
+          });
         });
     },
     filterOptions() {
@@ -83,14 +95,22 @@ export default {
             window.qwe = reader.result;
             this.loadData();
           })
-          .catch((error) => {});
+          .catch((error) => {
+            toast.error(this.$t("apiErrors.axiosError"), {
+              position: toast.POSITION.BOTTOM_RIGHT,
+              className: "foo-bar",
+              toastStyle: {
+                fontSize: "12px",
+              },
+            });
+          });
       };
     },
   },
   mounted() {
     this.loadData();
-    localStorage.setItem('cursorPointer', "home");
-    this.selectedTab = localStorage.getItem('cursorPointer');
+    localStorage.setItem("cursorPointer", "home");
+    this.selectedTab = localStorage.getItem("cursorPointer");
   },
   computed: {},
   created() {},

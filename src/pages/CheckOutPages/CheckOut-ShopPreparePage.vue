@@ -131,9 +131,18 @@ export default {
           repairTypes: JSON.parse(localStorage.getItem("selectedRepairTypes")),
         })
         .then((snapshot) => {
-          if (snapshot.data.shopOrderNumber != null || snapshot.data.shopOrderNumber != undefined) {
-            localStorage.setItem("payerName", this.$refs.customerInformationForm.firstName);
-            localStorage.setItem("shopOrderNumber", snapshot.data.shopOrderNumber);
+          if (
+            snapshot.data.shopOrderNumber != null ||
+            snapshot.data.shopOrderNumber != undefined
+          ) {
+            localStorage.setItem(
+              "payerName",
+              this.$refs.customerInformationForm.firstName
+            );
+            localStorage.setItem(
+              "shopOrderNumber",
+              snapshot.data.shopOrderNumber
+            );
             var repairTypeList = JSON.parse(
               localStorage.getItem("selectedRepairTypes")
             );
@@ -153,7 +162,7 @@ export default {
                 window.open(snapshot.data);
               })
               .catch((err) => {
-                toast.error(err, {
+                toast.error(this.$t("apiErrors.axiosError"), {
                   position: toast.POSITION.BOTTOM_RIGHT,
                   className: "foo-bar",
                   toastStyle: {
@@ -171,7 +180,13 @@ export default {
             });
         })
         .catch((error) => {
-          console.log(error);
+          toast.error(this.$t("apiErrors.axiosError"), {
+            position: toast.POSITION.BOTTOM_RIGHT,
+            className: "foo-bar",
+            toastStyle: {
+              fontSize: "12px",
+            },
+          });
         });
     },
   },

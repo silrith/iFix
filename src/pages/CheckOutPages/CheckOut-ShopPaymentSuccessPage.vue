@@ -15,11 +15,18 @@
         <span style="color: #f26d25">{{ this.$t("shop.header3") }}</span>
       </p>
       <p class="txt2" style="font-size: 15px; color: black; font-weight: 600">
-        {{ this.$t("shop.subtitle1") }} : <span style="color: #f26d25"><b>{{ this.shopOrderNumber }}</b></span>
+        {{ this.$t("shop.subtitle1") }} :
+        <span style="color: #f26d25"
+          ><b>{{ this.shopOrderNumber }}</b></span
+        >
       </p>
     </div>
     <div class="allSetImg">
-      <img src="@/assets/photos/shopping.webp" alt="Booking Picture" width="300"/>
+      <img
+        src="@/assets/photos/shopping.webp"
+        alt="Booking Picture"
+        width="300"
+      />
     </div>
     <div class="bookTimeDiv2">
       <p class="txt2 timeDiv2">{{ this.$t("instoreallset.button1") }}</p>
@@ -41,9 +48,16 @@ export default {
   methods: {
     updateShopOrderPaymentStatusAsSuccess() {
       this.$ajax
-        .put("Payment/UpdateShopOrderPaymentStatus/"+this.$route.query.sps,)
+        .put("Payment/UpdateShopOrderPaymentStatus/" + this.$route.query.sps)
         .then((snapshot) => {
-          alert(snapshot.data);
+          if (snapshot.data)
+            toast.success(this.$t("apiErrors.axiosError"), {
+              position: toast.POSITION.BOTTOM_RIGHT,
+              className: "foo-bar",
+              toastStyle: {
+                fontSize: "12px",
+              },
+            });
         })
         .catch((err) => {
           toast.error(this.$t("checkoutinstore.selectTime"), {
@@ -123,20 +137,20 @@ export default {
     font-size: 30px;
   }
 
-  .allSetImg img{
+  .allSetImg img {
     width: 200px;
   }
 }
 
-@media(max-width:886px){
-  .bookTimeDiv2{
+@media (max-width: 886px) {
+  .bookTimeDiv2 {
     width: 80%;
     flex-wrap: wrap;
     flex-direction: column;
     justify-content: center;
   }
 
-  .timeDiv2{
+  .timeDiv2 {
     width: 100%;
   }
 }

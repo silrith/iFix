@@ -199,7 +199,13 @@ export default {
           }
         })
         .catch((error) => {
-          console.log(error);
+          toast.error(this.$t("apiErrors.axiosError"), {
+            position: toast.POSITION.BOTTOM_RIGHT,
+            className: "foo-bar",
+            toastStyle: {
+              fontSize: "12px",
+            },
+          });
         });
     },
     getAllRepairTypes() {
@@ -214,11 +220,17 @@ export default {
           }
         })
         .catch((error) => {
-          console.log(error);
+          toast.error(this.$t("apiErrors.axiosError"), {
+            position: toast.POSITION.BOTTOM_RIGHT,
+            className: "foo-bar",
+            toastStyle: {
+              fontSize: "12px",
+            },
+          });
         });
     },
     goToShopPrepare() {
-      if (this.selectedRepairTypes.length > 0){
+      if (this.selectedRepairTypes.length > 0) {
         localStorage.setItem(
           "selectedRepairTypes",
           JSON.stringify(this.selectedRepairTypes)
@@ -227,16 +239,12 @@ export default {
           this.optionalInformation != null ||
           this.optionalInformation != undefined
         )
-          localStorage.setItem(
-            "informationShop",
-            this.optionalInformation
-          );
+          localStorage.setItem("informationShop", this.optionalInformation);
         else localStorage.setItem("informationShop", "No Information");
         this.$router.push({
           path: "/shopPrepare",
         });
-      }
-      else
+      } else
         toast.error(this.$t("shoppingCart.noSelectedRepairType"), {
           position: toast.POSITION.BOTTOM_RIGHT,
           className: "foo-bar",
@@ -256,12 +264,12 @@ export default {
     this.getAllRepairTypes();
     if (this.$route.query.failed == "true") {
       toast.error(this.$t("mailin.paymentFail"), {
-          position: toast.POSITION.BOTTOM_RIGHT,
-          className: "foo-bar",
-          toastStyle: {
-            fontSize: "12px",
-          },
-        });
+        position: toast.POSITION.BOTTOM_RIGHT,
+        className: "foo-bar",
+        toastStyle: {
+          fontSize: "12px",
+        },
+      });
     }
   },
 };
@@ -461,37 +469,37 @@ input:focus {
   border: 2px solid #ff4800;
 }
 
-@media(max-width:1450px){
-  .shopMainDiv{
+@media (max-width: 1450px) {
+  .shopMainDiv {
     width: 100%;
     flex-direction: column;
   }
 
-  .leftDiv{
+  .leftDiv {
     width: 100%;
     overflow-x: auto;
-    padding: 15px
+    padding: 15px;
   }
 
-  .serviceFilterGradients{
+  .serviceFilterGradients {
     width: 100%;
   }
 
-  .cartAndButtonDiv{
+  .cartAndButtonDiv {
     gap: 4rem;
   }
 }
 
-@media(max-width:992px){
-  .serviceFilterGradients{
+@media (max-width: 992px) {
+  .serviceFilterGradients {
     display: block;
   }
 
-  .shopTextAreaWithRepirTypes{
+  .shopTextAreaWithRepirTypes {
     width: 100%;
   }
 
-  .cartAndButtonDiv{
+  .cartAndButtonDiv {
     width: 100%;
     gap: 1rem;
   }

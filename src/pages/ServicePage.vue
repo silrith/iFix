@@ -40,10 +40,7 @@
         </div>
       </div>
       <div class="searchSub2">
-        <p
-          class="txt2"
-          style="color: #ff6700; font-size: 18px;"
-        >
+        <p class="txt2" style="color: #ff6700; font-size: 18px">
           <b>{{ $t("contact.or") }}</b>
         </p>
         <p class="txt2">
@@ -59,7 +56,6 @@
 
 <script>
 import { toast } from "vue3-toastify";
-import CustomRange from "@/components/MainComponents/CustomRange";
 import Card from "@/components/HelperComponents/CategoryCard.vue";
 
 export default {
@@ -73,7 +69,6 @@ export default {
     };
   },
   components: {
-    CustomRange,
     Card,
   },
   methods: {
@@ -86,7 +81,13 @@ export default {
           }
         })
         .catch((error) => {
-          console.log(error);
+          toast.error(this.$t("apiErrors.axiosError"), {
+            position: toast.POSITION.BOTTOM_RIGHT,
+            className: "foo-bar",
+            toastStyle: {
+              fontSize: "12px",
+            },
+          });
         });
     },
     loadModels() {
@@ -98,7 +99,13 @@ export default {
           }
         })
         .catch((error) => {
-          console.log(error);
+          toast.error(this.$t("apiErrors.axiosError"), {
+            position: toast.POSITION.BOTTOM_RIGHT,
+            className: "foo-bar",
+            toastStyle: {
+              fontSize: "12px",
+            },
+          });
         });
     },
     filterOptions() {
@@ -118,12 +125,12 @@ export default {
     this.loadModels();
     if (this.$route.query.failed == "true") {
       toast.error(this.$t("mailin.paymentFail"), {
-          position: toast.POSITION.BOTTOM_RIGHT,
-          className: "foo-bar",
-          toastStyle: {
-            fontSize: "12px",
-          },
-        });
+        position: toast.POSITION.BOTTOM_RIGHT,
+        className: "foo-bar",
+        toastStyle: {
+          fontSize: "12px",
+        },
+      });
     }
   },
   computed: {
@@ -152,7 +159,7 @@ export default {
   text-align: center;
 }
 
-.servicePageHeader{
+.servicePageHeader {
   padding: 30px 0 0 0;
 }
 
@@ -259,7 +266,7 @@ export default {
   background-color: #333;
 }
 
-.searchSub2{
+.searchSub2 {
   padding: 30px 0 0 0;
 }
 
@@ -300,16 +307,16 @@ export default {
   outline: none !important;
 }
 
-@media(max-width: 779px){
-  .servicePageHeader{
+@media (max-width: 779px) {
+  .servicePageHeader {
     padding: 0;
   }
-  
-  .searchSub2{
-    padding:10px 0 0 0;
+
+  .searchSub2 {
+    padding: 10px 0 0 0;
   }
 
-  .serviceCategoryDiv{
+  .serviceCategoryDiv {
     padding: 0;
   }
 }

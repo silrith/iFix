@@ -89,7 +89,10 @@ export default {
       }
     },
     timeToShip() {
-      var validate = this.validateInputs(this.street, this.$t("userForm.street"));
+      var validate = this.validateInputs(
+        this.street,
+        this.$t("userForm.street")
+      );
       if (validate == false) return;
       validate = this.validateInputs(this.city, this.$t("userForm.city"));
       if (validate == false) return;
@@ -97,13 +100,25 @@ export default {
       if (validate == false) return;
       validate = this.validateInputs(this.zipCode, this.$t("userForm.zipCode"));
       if (validate == false) return;
-      validate = this.validateInputs(this.$refs.customerInformationForm.firstName, this.$t("userForm.firstName"));
+      validate = this.validateInputs(
+        this.$refs.customerInformationForm.firstName,
+        this.$t("userForm.firstName")
+      );
       if (validate == false) return;
-      validate = this.validateInputs(this.$refs.customerInformationForm.lastName, this.$t("userForm.lastName"));
+      validate = this.validateInputs(
+        this.$refs.customerInformationForm.lastName,
+        this.$t("userForm.lastName")
+      );
       if (validate == false) return;
-      validate = this.validateInputs(this.$refs.customerInformationForm.email, this.$t("userForm.email"));
+      validate = this.validateInputs(
+        this.$refs.customerInformationForm.email,
+        this.$t("userForm.email")
+      );
       if (validate == false) return;
-      validate = this.validateInputs(this.$refs.customerInformationForm.phone, this.$t("userForm.phone"));
+      validate = this.validateInputs(
+        this.$refs.customerInformationForm.phone,
+        this.$t("userForm.phone")
+      );
       if (validate == false) return;
 
       this.$ajax
@@ -129,7 +144,7 @@ export default {
                 ),
                 modelId: localStorage.getItem("modelId"),
                 address:
-                  this.street + + this.houseNo + + this.zipCode + + this.city,
+                  this.street + +this.houseNo + +this.zipCode + +this.city,
                 dpdTrackingNumber: snapshot.data.mpsId,
                 paymentSuccess: false,
                 repairTypes: JSON.parse(
@@ -151,13 +166,13 @@ export default {
                       mailInOrderId: snapshot.data,
                       shopOrderId: 0,
                       successUrl: "mail-in-time-to-ship?mioi=",
-                      failUrl: "services?failed=true"
+                      failUrl: "services?failed=true",
                     })
                     .then((snapshot) => {
                       window.open(snapshot.data);
                     })
                     .catch((err) => {
-                      toast.error(err, {
+                      toast.error(this.$t("apiErrors.axiosError"), {
                         position: toast.POSITION.BOTTOM_RIGHT,
                         className: "foo-bar",
                         toastStyle: {
@@ -175,13 +190,25 @@ export default {
                   });
               })
               .catch((error) => {
-                console.log(error);
+                toast.error(this.$t("apiErrors.axiosError"), {
+                  position: toast.POSITION.BOTTOM_RIGHT,
+                  className: "foo-bar",
+                  toastStyle: {
+                    fontSize: "12px",
+                  },
+                });
               });
           } else {
           }
         })
         .catch((error) => {
-          console.log(error);
+          toast.error(this.$t("apiErrors.axiosError"), {
+            position: toast.POSITION.BOTTOM_RIGHT,
+            className: "foo-bar",
+            toastStyle: {
+              fontSize: "12px",
+            },
+          });
         });
     },
   },

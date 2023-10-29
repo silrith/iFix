@@ -93,12 +93,12 @@ export default {
     },
     updateOrderPaymentStatusAsSuccess() {
       this.$ajax
-        .put("Payment/UpdateMailInOrderPaymentStatus/"+this.$route.query.mioi,)
+        .put("Payment/UpdateMailInOrderPaymentStatus/" + this.$route.query.mioi)
         .then((snapshot) => {
           alert(snapshot.data);
         })
         .catch((err) => {
-          toast.error(this.$t("checkoutinstore.selectTime"), {
+          toast.error(this.$t("apiErrors.axiosError"), {
             position: toast.POSITION.BOTTOM_RIGHT,
             className: "foo-bar",
             toastStyle: {

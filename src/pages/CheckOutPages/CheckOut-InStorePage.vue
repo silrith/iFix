@@ -150,7 +150,7 @@ export default {
             customerInformation: localStorage.getItem(
               "informationAboutService"
             ),
-            modelId : localStorage.getItem("modelId"),
+            modelId: localStorage.getItem("modelId"),
             visitDate: e,
             timeInfo: this.bookingTime,
             repairTypes: JSON.parse(
@@ -158,16 +158,21 @@ export default {
             ),
           })
           .then((snapshot) => {
-            if(snapshot.data)
+            if (snapshot.data)
               this.$router.push({
                 path: "/in-store-all-set",
-                query: { filter: a }
+                query: { filter: a },
               });
-            else
-              return;
+            else return;
           })
           .catch((error) => {
-            console.log(error);
+            toast.error(this.$t("apiErrors.axiosError"), {
+              position: toast.POSITION.BOTTOM_RIGHT,
+              className: "foo-bar",
+              toastStyle: {
+                fontSize: "12px",
+              },
+            });
           });
       }
     },

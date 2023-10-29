@@ -8,14 +8,13 @@
         <RepairTypeCard class="col" :repairTypeList="repairTypeList" />
       </div>
       <div class="col-lg-4 justify-content-between">
-          <ShoppingCart :shoppingCartList="shoppingCart"/>
+        <ShoppingCart :shoppingCartList="shoppingCart" />
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import CustomRange from "@/components/MainComponents/CustomRange";
 import RepairTypeCard from "@/components/IgnoredComponents/RepairTypeCard";
 import ShoppingCart from "@/components/IgnoredComponents/ShoppingCart";
 
@@ -36,7 +35,6 @@ export default {
     };
   },
   components: {
-    CustomRange,
     RepairTypeCard,
     ShoppingCart,
   },
@@ -51,7 +49,13 @@ export default {
           }
         })
         .catch((error) => {
-          console.log(error);
+          toast.error(this.$t("apiErrors.axiosError"), {
+            position: toast.POSITION.BOTTOM_RIGHT,
+            className: "foo-bar",
+            toastStyle: {
+              fontSize: "12px",
+            },
+          });
         });
     },
     toggleList(show) {
@@ -64,5 +68,4 @@ export default {
 };
 </script>
 
-<style>
-</style>
+<style></style>

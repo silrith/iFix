@@ -1,7 +1,7 @@
 <template>
   <div class="contactUsLimiter">
     <div class="container-login102">
-      <div class="wrap-login102">
+      <div class="wrap-contactus102">
         <div class="informationCard">
           <div class="contactUsHeader">
             <div style="margin-top: 30px; line-height: 25px">
@@ -234,16 +234,21 @@ export default {
         })
         .then((snapshot) => {
           if (snapshot.data)
-            toast.success(this.$t("contact.contactSuccess") + ":" + snapshot.data.contactNumber , {
-              position: toast.POSITION.BOTTOM_RIGHT,
-              className: "foo-bar",
-              toastStyle: {
-                fontSize: "12px",
-              },
-            });
+            toast.success(
+              this.$t("contact.contactSuccess") +
+                ":" +
+                snapshot.data.contactNumber,
+              {
+                position: toast.POSITION.BOTTOM_RIGHT,
+                className: "foo-bar",
+                toastStyle: {
+                  fontSize: "12px",
+                },
+              }
+            );
         })
         .catch((err) => {
-          toast.error(err, {
+          toast.error(this.$t("apiErrors.axiosError"), {
             position: toast.POSITION.BOTTOM_RIGHT,
             className: "foo-bar",
             toastStyle: {
@@ -263,6 +268,7 @@ export default {
   margin: 0 auto;
   display: flex;
   flex-direction: column;
+  padding: 15px;
 }
 
 .contactUsHeader {
@@ -304,7 +310,7 @@ export default {
   background-color: #ced4da;
 }
 
-.wrap-login102 {
+.wrap-contactus102 {
   width: 100%;
   background: #fff;
   border-radius: 10px;
@@ -312,7 +318,7 @@ export default {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  padding: 50px 10px 50px 50px;
+  padding: 30px 10px 30px 30px;
 }
 
 .login102-pic {
@@ -589,7 +595,7 @@ export default {
 }
 
 @media (max-width: 992px) {
-  .wrap-login102 {
+  .wrap-contactus102 {
     padding: 0 90px 33px 85px;
   }
 
@@ -604,7 +610,7 @@ export default {
 }
 
 @media (max-width: 768px) {
-  .wrap-login102 {
+  .wrap-contactus102 {
     padding: 0 15px 33px 15px;
   }
 
@@ -619,7 +625,7 @@ export default {
 }
 
 @media (max-width: 576px) {
-  .wrap-login102 {
+  .wrap-contactus102 {
     padding: 0 15px 33px 15px;
   }
 
@@ -645,7 +651,7 @@ export default {
     justify-content: space-between;
   }
 
-  .wrap-login102 {
+  .wrap-contactus102 {
     padding: 50px 10px 50px 10px;
   }
 }
