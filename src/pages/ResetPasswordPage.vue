@@ -118,7 +118,7 @@ export default {
               },
             });
           else
-            toast.success(this.$t("resetPassword"))üüüüü
+            toast.success(this.$t("resetPassword"))
         })
         .catch((err) => {
           toast.error(this.$t("apiErrors.axiosError"), {
