@@ -4,21 +4,20 @@
       <div class="wrap-login100">
         <div class="signup100">
           <p style="font-size: 36px; font-weight: 600">
-            {{ $t("signin.header1") }}<br />
-            {{ $t("signin.header2") }}
+            {{ $t("resetPassword.header1") }}<br />
+            {{ $t("resetPassword.header2") }}
+            <span style="color: #f26d25">
+              {{ $t("resetPassword.header3") }}</span
+            >
           </p>
           <p>
-            <b>{{ $t("signin.subtitle1") }}</b> <br />
-            <b>{{ $t("signin.subtitle2") }}</b>
-            <b style="color: #f26d25"
-              ><router-link to="/signup" style="color: #f26d25">
-                {{ $t("signin.subtitle3") }}</router-link
-              ></b
-            >
+            <b>{{ $t("resetPassword.subtitle1") }}</b> <br />
+            <b>{{ $t("resetPassword.subtitle2") }}</b>
+            <b style="color: #f26d25"> {{ $t("resetPassword.subtitle3") }}</b>
           </p>
         </div>
         <div class="login100-pic js-tilt" data-tilt>
-          <img src="@/assets/header/login.png" alt="Login Picture" />
+          <img src="@/assets/photos/deliveryTruck.png" alt="Login Picture" />
         </div>
         <div class="login100-form validate-form">
           <div
@@ -41,10 +40,20 @@
               <hr class="txt3" />
             </div>
           </div>
-          <div
-            class="wrap-input100"
-            data-validate="Valid email is required: ex@abc.xyz"
-          >
+          <div class="wrap-input100">
+            <input
+              class="input100"
+              type="text"
+              name="email"
+              :placeholder="$t('signin.userName')"
+              v-model="username"
+            />
+            <span class="focus-input100"></span>
+            <span class="symbol-input100">
+              <i class="fa fa-user" aria-hidden="true"></i>
+            </span>
+          </div>
+          <div class="wrap-input100">
             <input
               class="input100"
               type="text"
@@ -57,84 +66,10 @@
               <i class="fa fa-envelope" aria-hidden="true"></i>
             </span>
           </div>
-          <div
-            class="wrap-input100 validate-input"
-            data-validate="Password is required"
-          >
-            <input
-              id="#password-input"
-              class="input100"
-              :type="showPassword ? 'text' : 'password'"
-              name="password"
-              :placeholder="$t('userForm.password')"
-              v-model="password"
-            />
-            <span
-              @click="togglePasswordField"
-              toggle="#password-field"
-              :class="{
-                'fa fa-fw fa-eye field-icon toggle-password': showPassword,
-                'fa fa-fw fa-eye-slash field-icon toggle-password':
-                  !showPassword,
-              }"
-            ></span>
-            <span class="focus-input100"></span>
-            <span class="symbol-input100">
-              <i class="fa fa-lock" aria-hidden="true"></i>
-            </span>
-          </div>
           <div class="container-login100-form-btn">
-            <button
-              class="btn btn-block py-2 btn-login"
-              @click="loginAsACustomer"
-            >
-              {{ $t("header.login") }}
+            <button class="btn btn-block py-2 btn-reset" @click="resetPassword">
+              {{ $t("resetPassword.resetPassword") }}
             </button>
-          </div>
-          <div
-            style="
-              width: 100%;
-              display: flex;
-              flex-direction: column;
-              align-items: center;
-            "
-          >
-            <small class="txt1 mt-2">{{ $t("signin.loginSocial") }}</small>
-            <div style="width: 60%">
-              <hr class="txt1" />
-            </div>
-          </div>
-          <div class="">
-            <div
-              style="
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                padding: 20px 0 0 0;
-              "
-            >
-              <button
-                @click="loginWithFacebook"
-                class="btn btn-block py-2 btn-facebook"
-              >
-                <span class="icon-facebook mr-3"
-                  ><font-awesome-icon
-                    :icon="['fab', 'facebook-f']"
-                    style="color: #ffffff"
-                /></span>
-                {{ $t("signin.loginFacebook") }}
-              </button>
-            </div>
-            <div
-              style="
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                padding: 20px 0 0 0;
-              "
-            >
-              <GoogleLogin :callback="callback" />
-            </div>
           </div>
           <div
             style="
@@ -148,18 +83,6 @@
               <hr class="txt1" />
             </div>
           </div>
-          <div class="text-center p-t-12">
-            <span class="txt1" style="color: #f26d25;"> <b>{{ $t("signin.forgot") }}</b> </span>
-            <router-link class="txt2 noHoverRouter" to="/reset-password"
-              >{{ $t("signin.userName") }} / {{ $t("userForm.password") }}?
-            </router-link>
-          </div>
-          <div class="text-center p-t-136">
-            <router-link class="txt2 noHoverRouter" to="/signup">
-              {{ $t("signin.createAccount") }}
-              <i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
-            </router-link>
-          </div>
         </div>
       </div>
     </div>
@@ -169,72 +92,33 @@
 <script>
 import { toast } from "vue3-toastify";
 import { mapActions } from "vuex";
-import { decodeCredential } from "vue3-google-login";
 export default {
   data() {
     return {
+      username: null,
       email: null,
-      password: null,
       showPassword: false,
-      user: null,
-      callback: (response) => {
-        localStorage.setItem(
-          "google",
-          JSON.stringify(decodeCredential(response.credential))
-        );
-        console.log(decodeCredential(response.credential));
-        this.user = decodeCredential(response.credential);
-        localStorage.setItem("googleProfilePicture", this.user.picture);
-        localStorage.setItem("googleToken", this.user.exp);
-        localStorage.setItem("googleUserName", this.user.given_name);
-        localStorage.setItem("googleLogged", true);
-        if (this.user.email_verified == true)
-          localStorage.setItem("isLogged", true);
-        this.toggleIsLogged();
-        this.$router.push("/");
-      },
     };
   },
   components: {},
   methods: {
-    ...mapActions(["login", "logout"]),
-    togglePasswordField() {
-      this.showPassword = !this.showPassword;
-    },
-    toggleIsLogged() {
-      this.login();
-    },
-    loginWithFacebook() {
-      FB.login(
-        function (response) {
-          if (response.authResponse) {
-            console.log("Facebook ile oturum açıldı:", response);
-            localStorage.setItem("facebookLogged", true);
-          } else {
-            console.log(
-              "Facebook ile oturum açma iptal edildi veya hata oluştu."
-            );
-          }
-        },
-        { scope: "email" }
-      );
-    },
-    loginAsACustomer() {
+    resetPassword() {
       this.$ajax
-        .post("Auth/Login", {
+        .post("Auth/ResetPassword", {
           email: this.email,
           password: this.password,
         })
         .then((snapshot) => {
-          localStorage.setItem("loggedEmail", snapshot.data.email);
-          localStorage.setItem("loggedUserName", snapshot.data.userName);
-          localStorage.setItem(
-            "loggedProfilePicture",
-            snapshot.data.profilePicture
-          );
-          localStorage.setItem("apiLogged", true);
-          this.toggleIsLogged();
-          this.$router.push("/");
+          if (snapshot.data)
+            toast.success(this.$t("resetPassword.emailSended"), {
+              position: toast.POSITION.BOTTOM_RIGHT,
+              className: "foo-bar",
+              toastStyle: {
+                fontSize: "12px",
+              },
+            });
+          else
+            toast.success(this.$t("resetPassword"))üüüüü
         })
         .catch((err) => {
           toast.error(this.$t("apiErrors.axiosError"), {
@@ -252,11 +136,6 @@ export default {
 </script>
 
 <style>
-.noHoverRouter:hover{
-  color: #f25d26;
-  font-weight: 600;
-}
-
 .limiter {
   width: 100%;
   margin: 0 auto;
@@ -437,14 +316,14 @@ export default {
   color: #fff;
 }
 
-.btn-login {
-  background-color: #f26d25;
-  color: #fff;
+.btn-reset {
+  background-color: #f26d25 !important;
+  color: #fff !important;
 }
 
-.btn-login:hover {
-  background-color: #333333;
-  color: #fff;
+.btn-reset:hover {
+  background-color: #333333 !important;
+  color: #fff !important;
 }
 
 .login100-form-btn {

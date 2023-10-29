@@ -316,6 +316,16 @@
     "passwordNotMatch" : "Passwords must match.",
     "passwordMinValue" : "The minimum number of characters must be 6."
   },
+  "resetPassword" : {
+    "header1": "Fill out the form",
+    "header2": "to reset your ",
+    "header3": "Password",
+    "subtitle1" : "After filling out the form, we will",
+    "subtitle2" : " send you a  ",
+    "subtitle3" : " Confirmation Email.",
+    "resetPassword" : "Reset Password",
+    "emailSended" : "Check your email address."
+  },
   "apiErrors" : {
     "axiosError" : "We cannot process your transaction due to a system error. Please contact us."
   }

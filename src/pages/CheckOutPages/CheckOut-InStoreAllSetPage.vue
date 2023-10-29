@@ -24,6 +24,7 @@
 </template>
 
 <script>
+import { toast } from "vue3-toastify";
 export default {
   data() {
     return {
@@ -33,7 +34,6 @@ export default {
   methods: {},
   mounted() {
     this.customerName = this.$route.query.filter;
-    alert(this.customerName);
   },
 };
 </script>

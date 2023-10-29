@@ -327,6 +327,16 @@
     "passwordNotMatch" : "Die Passwörter müssen übereinstimmen.",
     "passwordMinValue" : "Die Mindestanzahl der Zeichen muss 6 betragen."
   },
+  "resetPassword" : {
+    "header1": "Füllen Sie das Formular aus",
+    "header2": "um Ihr zurückzusetzen ",
+    "header3": "Passwort",
+    "subtitle1" : "Nach dem Ausfüllen des Formulars werden wir es tun",
+    "subtitle2" : " schick dir ein",
+    "subtitle3" : " Bestätigungsemail.",
+    "resetPassword" : "Passwort zurücksetzen",
+    "emailSended" : "Überprüfen Sie Ihre E-Mail-Adresse."
+  },
   "apiErrors" : {
     "axiosError" : "Aufgrund eines Systemfehlers können wir Ihre Transaktion nicht verarbeiten. Bitte kontaktieren Sie uns."
   }

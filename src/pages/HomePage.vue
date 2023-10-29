@@ -6,6 +6,7 @@
 </template>
 
 <script>
+import { toast } from "vue3-toastify";
 import HomeBanner from "@/components/MainComponents/HomeBanner.vue";
 import HomeBadge from "@/components/MainComponents/HomeBadge.vue";
 

@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from "vue-router";
 import HomePage from "../pages/HomePage.vue";
+import ResetPassword from "../pages/ResetPasswordPage.vue";
 const routes = [
   {
     path: "/",
@@ -12,6 +13,11 @@ const routes = [
     component: function () {
       return import("../pages/AccountActivationPage.vue");
     },
+  },
+  {
+    path: "/reset-password",
+    name: "Reset Password",
+    component: ResetPassword
   },
   {
     path: "/aboutus",
@@ -81,20 +87,6 @@ const routes = [
     name: "Repair Types",
     component: function () {
       return import("../pages/RepairTypesPage.vue");
-    },
-  },
-  {
-    path: "/payments",
-    name: "Payment",
-    component: function () {
-      return import("../pages/PaymentPage.vue");
-    },
-  },
-  {
-    path: "/paymentResult",
-    name: "Payment Result",
-    component: function () {
-      return import("../pages/PaymentResultPage.vue");
     },
   },
   {

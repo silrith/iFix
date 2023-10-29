@@ -15,6 +15,7 @@
 </template>
 
 <script>
+import { toast } from "vue3-toastify";
 import RepairTypeCard from "@/components/IgnoredComponents/RepairTypeCard";
 import ShoppingCart from "@/components/IgnoredComponents/ShoppingCart";
 
