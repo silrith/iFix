@@ -3,17 +3,18 @@
     <div class="container-login100">
       <div class="wrap-login100">
         <div class="signup100">
-          <p style="font-size: 36px; font-weight: 600">
-            {{ $t("resetPassword.header1") }}<br />
-            {{ $t("resetPassword.header2") }}
-            <span style="color: #f26d25">
-              {{ $t("resetPassword.header3") }}</span
-            >
+          <p class="headerTxt">
+            {{ $t("newPassword.header1") }}
+            <span style="color: #f26d25"> {{ $t("newPassword.header2") }}</span>
+          </p>
+          <p class="headerTxt">
+            {{ $t("newPassword.header3") }}
+            <span style="color: #f26d25"> {{ $t("newPassword.header4") }}</span>
           </p>
           <p>
-            <b>{{ $t("resetPassword.subtitle1") }}</b> <br />
-            <b>{{ $t("resetPassword.subtitle2") }}</b>
-            <b style="color: #f26d25"> {{ $t("resetPassword.subtitle3") }}</b>
+            <b>{{ $t("newPassword.subtitle1") }}</b> <br />
+            <b>{{ $t("newPassword.subtitle2") }}</b>
+            <b style="color: #f26d25"> {{ $t("newPassword.subtitle3") }}</b>
           </p>
         </div>
         <div class="login100-pic js-tilt" data-tilt>
@@ -40,35 +41,59 @@
               <hr class="txt3" />
             </div>
           </div>
-          <div class="wrap-input100">
+          <div class="wrap-input100 validate-input">
             <input
+              id="#password-input"
               class="input100"
-              type="text"
-              name="email"
-              :placeholder="$t('signin.userName')"
-              v-model="username"
+              :type="showPassword ? 'text' : 'password'"
+              name="password"
+              :placeholder="$t('userForm.password')"
+              v-model="password"
             />
+            <span
+              @click="togglePasswordField"
+              toggle="#password-field"
+              :class="{
+                'fa fa-fw fa-eye field-icon toggle-password': showPassword,
+                'fa fa-fw fa-eye-slash field-icon toggle-password':
+                  !showPassword,
+              }"
+            ></span>
             <span class="focus-input100"></span>
             <span class="symbol-input100">
-              <i class="fa fa-user" aria-hidden="true"></i>
+              <i class="fa fa-lock" aria-hidden="true"></i>
             </span>
           </div>
-          <div class="wrap-input100">
+          <div class="wrap-input100 validate-input">
             <input
+              id="#confirmationPassword-input"
               class="input100"
-              type="text"
-              name="email"
-              :placeholder="$t('userForm.email')"
-              v-model="email"
+              :type="showRepeatPassword ? 'text' : 'password'"
+              name="confirmationPassword"
+              :placeholder="$t('userForm.repeatPassword')"
+              v-model="confirmationPassword"
             />
+            <span
+              @click="toggleRepeatPasswordField"
+              toggle="#password-field"
+              :class="{
+                'fa fa-fw fa-eye field-icon toggle-password':
+                  showRepeatPassword,
+                'fa fa-fw fa-eye-slash field-icon toggle-password':
+                  !showRepeatPassword,
+              }"
+            ></span>
             <span class="focus-input100"></span>
             <span class="symbol-input100">
-              <i class="fa fa-envelope" aria-hidden="true"></i>
+              <i class="fa fa-lock" aria-hidden="true"></i>
             </span>
           </div>
           <div class="container-login100-form-btn">
-            <button class="btn btn-block py-2 btn-reset" @click="resetPassword">
-              {{ $t("resetPassword.resetPassword") }}
+            <button
+              class="btn btn-block py-2 btn-reset"
+              @click="changePassword"
+            >
+              {{ $t("newPassword.updatePassword") }}
             </button>
           </div>
           <div
@@ -94,28 +119,73 @@ import { toast } from "vue3-toastify";
 export default {
   data() {
     return {
-      username: null,
-      email: null,
+      password: null,
+      confirmationPassword: null,
+      showPassword: null,
+      showRepeatPassword: null,
     };
   },
   components: {},
   methods: {
-    resetPassword() {
+    togglePasswordField() {
+      this.showPassword = !this.showPassword;
+    },
+    toggleRepeatPasswordField() {
+      this.showRepeatPassword = !this.showRepeatPassword;
+    },
+    validateInputs(data, type) {
+      if (data == null || data == undefined) {
+        toast.warning(this.$t("mailin.mailInValidate") + type, {
+          position: toast.POSITION.BOTTOM_RIGHT,
+          className: "foo-bar",
+          toastStyle: {
+            fontSize: "12px",
+          },
+        });
+        return false;
+      }
+    },
+    changePassword() {
+      var validate = this.validateInputs(
+        this.password,
+        this.$t("userForm.password")
+      );
+      if (validate == false) return;
+      validate = this.validateInputs(
+        this.confirmationPassword,
+        this.$t("userForm.repeatPassword")
+      );
+      if (validate == false) return;
+      if (this.password != this.confirmationPassword) {
+        toast.warning(this.$t("profile.passwordNotMatch"), {
+          position: toast.POSITION.BOTTOM_RIGHT,
+          className: "foo-bar",
+          toastStyle: {
+            fontSize: "12px",
+          },
+        });
+        return false;
+      }
       this.$ajax
-        .post("Auth/ResetPassword", {
-          email: this.email,
-          username: this.username,
+        .post("Auth/ChangeUserPassword", {
+          email: this.$route.query.email,
+          username: this.$route.query.username,
+          password: this.password,
+          confirmationPassword: this.confirmationPassword,
         })
         .then((snapshot) => {
-          if (snapshot.data)
-            toast.success(this.$t("resetPassword.emailSended"), {
+          if (snapshot.data == true) {
+            toast.success(this.$t("profile.passwordUpdated"), {
               position: toast.POSITION.BOTTOM_RIGHT,
               className: "foo-bar",
               toastStyle: {
                 fontSize: "12px",
               },
             });
-          else
+            setTimeout(() => {
+              this.$router.push("/");
+            }, 3000);
+          } else
             toast.error(this.$t("resetPassword.noUser"), {
               position: toast.POSITION.BOTTOM_RIGHT,
               className: "foo-bar",
@@ -135,7 +205,9 @@ export default {
         });
     },
   },
-  mounted() {},
+  mounted() {
+    console.log(this.$route.query);
+  },
 };
 </script>
 
@@ -143,6 +215,11 @@ export default {
 .limiter {
   width: 100%;
   margin: 0 auto;
+}
+
+.headerTxt {
+  font-size: 36px;
+  font-weight: bold;
 }
 
 .container-login100 {
@@ -418,6 +495,14 @@ export default {
 @media (max-width: 576px) {
   .wrap-login100 {
     padding: 0 15px 33px 15px;
+  }
+
+  .headerTxt {
+    font-size: 20px;
+  }
+
+  .container-login100 {
+    min-height: 76vh;
   }
 }
 

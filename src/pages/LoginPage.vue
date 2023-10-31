@@ -18,7 +18,7 @@
           </p>
         </div>
         <div class="login100-pic js-tilt" data-tilt>
-          <img src="@/assets/header/login.png" alt="Login Picture" />
+          <img src="@/assets/header/login.webp" alt="Login Picture" />
         </div>
         <div class="login100-form validate-form">
           <div
@@ -59,7 +59,6 @@
           </div>
           <div
             class="wrap-input100 validate-input"
-            data-validate="Password is required"
           >
             <input
               id="#password-input"
@@ -184,7 +183,8 @@ export default {
         );
         console.log(decodeCredential(response.credential));
         this.user = decodeCredential(response.credential);
-        localStorage.setItem("googleProfilePicture", this.user.picture);
+        localStorage.setItem("profilePicture", this.user.picture);
+        this.$store.dispatch("updateProfilePicture",  this.user.picture);
         localStorage.setItem("googleToken", this.user.exp);
         localStorage.setItem("googleUserName", this.user.given_name);
         localStorage.setItem("googleLogged", true);
@@ -229,10 +229,11 @@ export default {
           localStorage.setItem("loggedEmail", snapshot.data.email);
           localStorage.setItem("loggedUserName", snapshot.data.userName);
           localStorage.setItem(
-            "loggedProfilePicture",
+            "profilePicture",
             snapshot.data.profilePicture
           );
           localStorage.setItem("apiLogged", true);
+          this.$store.dispatch("updateProfilePicture", snapshot.data.profilePicture);
           this.toggleIsLogged();
           this.$router.push("/");
         })
@@ -438,13 +439,13 @@ export default {
 }
 
 .btn-login {
-  background-color: #f26d25;
-  color: #fff;
+  background-color: #f26d25 !important;
+  color: #fff !important;
 }
 
 .btn-login:hover {
-  background-color: #333333;
-  color: #fff;
+  background-color: #333333 !important;
+  color: #fff !important;
 }
 
 .login100-form-btn {

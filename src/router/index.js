@@ -1,6 +1,26 @@
 import { createRouter, createWebHistory } from "vue-router";
+import Shop from "@/pages/ShopPage.vue";
+import Login from "@/pages/LoginPage.vue";
+import AboutUs from "../pages/AboutUs.vue";
+import SignUp from "@/pages/SignupPage.vue";
 import HomePage from "../pages/HomePage.vue";
+import Profile from "@/pages/ProfilePage.vue";
+import Service from "@/pages/ServicePage.vue";
+import ContactUs from "@/pages/ContactUsPage.vue";
+import RepairTypes from "@/pages/RepairTypesPage.vue";
+import ServiceResult from "@/pages/ServiceResultPage.vue";
+import ServiceFilter from "@/pages/ServiceFilterPage.vue";
 import ResetPassword from "../pages/ResetPasswordPage.vue";
+import NewPasswordField from "../pages/NewPasswordFieldPage.vue";
+import CheckOutPage from "@/pages/CheckOutPages/CheckOutPage.vue";
+import Accountactivation from "../pages/AccountActivationPage.vue";
+import MailIn from "@/pages/CheckOutPages/CheckOut-MailInPage.vue";
+import InStore from "@/pages/CheckOutPages/CheckOut-InStorePage.vue";
+import TimeToShip from "@/pages/CheckOutPages/CheckOut-TimeToShipPage.vue";
+import ShopPrepare from "@/pages/CheckOutPages/CheckOut-ShopPreparePage.vue";
+import InStoreAllSet from "@/pages/CheckOutPages/CheckOut-InStoreAllSetPage.vue";
+import ShopPaymentSuccess from "@/pages/CheckOutPages/CheckOut-ShopPaymentSuccessPage.vue";
+
 const routes = [
   {
     path: "/",
@@ -10,9 +30,7 @@ const routes = [
   {
     path: "/account-activation",
     name: "Account Activation",
-    component: function () {
-      return import("../pages/AccountActivationPage.vue");
-    },
+    component: Accountactivation
   },
   {
     path: "/reset-password",
@@ -20,123 +38,94 @@ const routes = [
     component: ResetPassword
   },
   {
+    path: "/new-password-field",
+    name: "New Password Fields",
+    component: NewPasswordField
+  },
+  {
     path: "/aboutus",
     name: "about",
-    component: function () {
-      return import("../pages/AboutUs.vue");
-    },
+    component: AboutUs
   },
   {
     path: "/profile",
     name: "profile",
-    component: function () {
-      return import("../pages/ProfilePage.vue");
-    },
+    component: Profile
   },
   {
     path: "/login",
     name: "login",
-    component: function () {
-      return import("../pages/LoginPage.vue");
-    },
+    component: Login
   },
   {
     path: "/signup",
     name: "Sign Up",
-    component: function () {
-      return import("../pages/SignupPage.vue");
-    },
+    component: SignUp
   },
   {
     path: "/contactUs",
     name: "ContactUs",
-    component: function () {
-      return import("../pages/ContactUsPage.vue");
-    },
+    component: ContactUs
   },
   {
     path: "/services",
     name: "Services",
-    component: function () {
-      return import("../pages/ServicePage.vue");
-    },
+    component: Service
   },
   {
     path: "/shop",
     name: "Shop",
-    component: function () {
-      return import("../pages/ShopPage.vue");
-    },
+    component: Shop
   },
   {
     path: "/shopPrepare",
     name: "Shop Payment Prepare",
-    component: function () {
-      return import("../pages/CheckOutPages/CheckOut-ShopPreparePage.vue");
-    },
+    component: ShopPrepare
   },
   {
     path: "/shopSuccess",
     name: "Shop Payment Success",
-    component: function () {
-      return import("../pages/CheckOutPages/CheckOut-ShopPaymentSuccessPage.vue");
-    },
+    component: ShopPaymentSuccess
   },
   {
     path: "/repairTypes",
     name: "Repair Types",
-    component: function () {
-      return import("../pages/RepairTypesPage.vue");
-    },
+    component: RepairTypes
   },
   {
     path: "/serviceResult",
     name: "Service Result",
-    component: function () {
-      return import("../pages/ServiceResultPage.vue");
-    },
+    component: ServiceResult
   },
   {
     path: "/servicefilter",
     name: "Service Filter",
-    component: function () {
-      return import("../pages/ServiceFilterPage.vue");
-    },
+    component: ServiceFilter
   },
   {
     path: "/checkOut",
     name: "Check Out",
-    component: function () {
-      return import("../pages/CheckOutPages/CheckOutPage.vue");
-    },
+    component: CheckOutPage
   },
   {
     path: "/inStore",
     name: "Check Out In Store",
-    component: function () {
-      return import("../pages/CheckOutPages/CheckOut-InStorePage.vue");
-    },
+    component: InStore
   },
   {
     path: "/in-store-all-set",
     name: "You're All Set!",
-    component: function () {
-      return import("../pages/CheckOutPages/CheckOut-InStoreAllSetPage.vue");
-    },
+    component: InStoreAllSet
   },
   {
     path: "/mailIn",
     name: "Check Out Mail In",
-    component: function () {
-      return import("../pages/CheckOutPages/CheckOut-MailInPage.vue");
-    },
+    component: MailIn
   },
   {
     path: "/mail-in-time-to-ship",
     name: "All Set - Time To Ship",
-    component: function () {
-      return import("../pages/CheckOutPages/CheckOut-TimeToShipPage.vue");
-    },
+    component: TimeToShip
   },
 ];
 

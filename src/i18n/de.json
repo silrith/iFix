@@ -335,7 +335,18 @@
     "subtitle2" : " schick dir ein",
     "subtitle3" : " Bestätigungsemail.",
     "resetPassword" : "Passwort zurücksetzen",
-    "emailSended" : "Überprüfen Sie Ihre E-Mail-Adresse."
+    "emailSended" : "Überprüfen Sie Ihre E-Mail-Adresse.",
+    "noUser" : "Es existiert kein solcher Benutzer. Überprüfen Sie die Informationen."
+  },
+  "newPassword" : {
+    "header1": "Bitte geben Sie Ihre ein ",
+    "header2": "Neues Kennwort ",
+    "header3": "Und ",
+    "header4": "Bestätigungspasswort.",
+    "subtitle1" : "Am Ende dieser Schritte ",
+    "subtitle2" : " Sie können sich mit Ihrem anmelden ",
+    "subtitle3" : "Neues Kennwort.",
+    "updatePassword" : "Ändere mein Passwort"
   },
   "apiErrors" : {
     "axiosError" : "Aufgrund eines Systemfehlers können wir Ihre Transaktion nicht verarbeiten. Bitte kontaktieren Sie uns."

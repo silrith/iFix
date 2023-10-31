@@ -577,15 +577,15 @@ export default {
 }
 
 .btn-profile {
-  background-color: #f26d25;
-  color: #fff;
+  background-color: #f26d25 !important;
+  color: #fff !important;
   width: 25%;
   margin-bottom: 5px;
 }
 
 .btn-profile:hover {
-  background-color: #333333;
-  color: #fff;
+  background-color: #333333 !important;
+  color: #fff !important;
 }
 
 .container-profile102-form-btn {

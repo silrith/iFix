@@ -139,7 +139,7 @@ export default {
   width: 50%;
   height: 550px;
   overflow-y: scroll;
-  background-image: url("@/assets/photos/cargo.png");
+  background-image: url("@/assets/photos/cargo.webp");
   background-position: center;
   background-repeat: no-repeat;
   background-color: transparent;

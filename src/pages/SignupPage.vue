@@ -337,7 +337,7 @@ export default {
 
 .login101-pic {
   width: 316px;
-  background-image: url(@/assets/header/signuppic.png);
+  background-image: url(@/assets/header/signuppic.webp);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

@@ -4,12 +4,16 @@ export default createStore({
   state: {
     isLogged: localStorage.getItem('isLogged') === 'true' || false,
     shoppingList: JSON.parse(localStorage.getItem("shoppingList")) || [],
+    profilePicture: localStorage.getItem("profilePicture")
   },
   mutations: {
     setLogged(state, status) {
       state.isLogged = status;
       localStorage.setItem('isLogged', status);
     },
+    setProfilePicture(state, profilePictureUrl){
+      state.profilePicture = profilePictureUrl;
+    }
   },
   actions: {
     login({ commit }) {
@@ -17,6 +21,9 @@ export default createStore({
     },
     logout({ commit }) {
       commit('setLogged', false);
+    },
+    updateProfilePicture({ commit }, pictureUrl) {
+      commit("setProfilePicture", pictureUrl);
     },
     //shopping cart operations
     addItem(state, item) {
@@ -35,5 +42,6 @@ export default createStore({
   getters: {
     isLogged: (state) => state.isLogged,
     shoppingList: (state) => state.shoppingList,
+    getProfilePicture: (state) => state.profilePicture,
   },
 })

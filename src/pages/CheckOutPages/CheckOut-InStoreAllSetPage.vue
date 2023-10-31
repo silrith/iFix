@@ -13,7 +13,7 @@
       </p>
     </div>
     <div class="allSetImg">
-      <img src="@/assets/photos/booking.png" alt="Booking Picture" />
+      <img src="@/assets/photos/booking.webp" alt="Booking Picture" />
     </div>
     <div class="bookTimeDiv2">
       <p class="txt2 timeDiv2">{{ this.$t("instoreallset.button1") }}</p>

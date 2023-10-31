@@ -15,6 +15,7 @@
             src="@/assets/aboutus/about1.webp"
             alt="Team Picture 1"
             style="width: 100%; max-height: 500px;"
+            loading="eager"
           />
         </div>
         <div class="col-4" style="padding: 10px;">
@@ -22,6 +23,7 @@
             src="@/assets/aboutus/about2.webp"
             alt="Team Picture 2"
             style="width: 100%; max-height: 425px"
+            loading="eager"
           />
         </div>
       </div>

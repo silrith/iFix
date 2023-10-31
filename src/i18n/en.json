@@ -324,7 +324,18 @@
     "subtitle2" : " send you a  ",
     "subtitle3" : " Confirmation Email.",
     "resetPassword" : "Reset Password",
-    "emailSended" : "Check your email address."
+    "emailSended" : "Check your email address.",
+    "noUser" : "No such user exists. Check the information."
+  },
+  "newPassword" : {
+    "header1": "Please enter your ",
+    "header2": "New password ",
+    "header3": "and ",
+    "header4": "Confirmation password.",
+    "subtitle1" : "At the end of these steps, ",
+    "subtitle2" : " you can log in with your ",
+    "subtitle3" : " New password.",
+    "updatePassword" : "Change My Password"
   },
   "apiErrors" : {
     "axiosError" : "We cannot process your transaction due to a system error. Please contact us."

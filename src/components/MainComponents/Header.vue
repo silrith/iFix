@@ -16,6 +16,7 @@
               src="@/assets/photos/ifixnobg.webp"
               alt="I Fix Main Logo"
               style="height: 50px;"
+              loading="eager"
             />
           </router-link>
         </div>
@@ -49,7 +50,7 @@
               >{{ $t("header.shop") }}</router-link
             >
           </p>
-          <p :class="{ active: this.selectedTab === 'contact' }">
+          <p>
             <router-link
               to="/contactUs"
               style="color: black; text-decoration: none"
@@ -77,7 +78,7 @@
           >
             <img
               class="profile-picture"
-              :src="profilePicture"
+              :src="$store.getters.getProfilePicture"
               alt="Profile Picture"
             />
             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
