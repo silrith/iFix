@@ -24,7 +24,7 @@
         </div>
       </div>
       <div class="cartAndButtonDiv">
-        <div class="repairTypesDiv2">
+        <div class="shopRepairTypesDiv2">
           <div
             style="
               display: flex;
@@ -279,15 +279,13 @@ export default {
 .shopMainDiv {
   width: 100%;
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   padding: 30px;
 }
 
 .leftDiv {
-  width: 10%;
-  flex-basis: 50%;
-  flex: 1;
-  padding: 10px;
+  width: 15%;
+  padding: 15px;
 }
 
 .serviceFilterGradients {
@@ -301,16 +299,15 @@ export default {
   width: 75%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  padding: 10px 15px;
+  padding: 0px 15px;
 }
 
 .repairTypesDiv {
   display: flex;
   flex-wrap: wrap;
   width: 100%;
-  height: 620px;
+  height: 618px !important;
   border-radius: 10px;
   border: 2px solid #666;
   justify-content: space-evenly;
@@ -360,19 +357,19 @@ export default {
 
 .cartAndButtonDiv {
   width: 25%;
-  height: 100%;
+  height: 750px !important;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 15px;
+  padding: 15px 15px 25px 0px !important;
 }
 
-.repairTypesDiv2 {
+.shopRepairTypesDiv2 {
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 620px;
+  height: 620px !important;
   border-radius: 10px;
   border: 2px solid #666;
   justify-content: space-evenly;
@@ -383,7 +380,7 @@ export default {
 
 .selectedRepairTypeList {
   width: 90%;
-  height: 200px;
+  height: 400px !important;
   overflow-y: scroll;
   display: flex;
   flex-direction: column;
@@ -395,13 +392,13 @@ export default {
   justify-content: space-between;
   align-items: center;
   width: 90%;
-  height: 100px;
+  height: 100px !important;
   text-align: start;
 }
 
 .repairInformation {
   width: 90%;
-  height: 200px;
+  height: 200px !important;
   display: flex;
   flex-direction: column;
   text-align: start;
@@ -409,17 +406,17 @@ export default {
 }
 
 .btn-loginServiceResult {
-  background-color: #f26d25;
-  color: #fff;
+  background-color: #f26d25 !important;
+  color: #fff !important;
 }
 
 .btn-loginServiceResult:hover {
-  background-color: #333333;
-  color: #fff;
+  background-color: #333333 !important;
+  color: #fff !important;
 }
 
 .btn-loginServiceResult:focus {
-  background-color: #333333;
+  background-color: #333333 !important;
 }
 
 .shopTextArea {
@@ -481,10 +478,6 @@ input:focus {
     padding: 15px;
   }
 
-  .serviceFilterGradients {
-    width: 100%;
-  }
-
   .cartAndButtonDiv {
     gap: 4rem;
   }
@@ -501,7 +494,6 @@ input:focus {
 
   .cartAndButtonDiv {
     width: 100%;
-    gap: 1rem;
   }
 }
 </style>

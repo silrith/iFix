@@ -15,7 +15,7 @@
         </div>
         <div class="serviceFilterGradients">
           <div class="textAreaWithRepirTypes">
-            <div class="repairTypesDiv">
+            <div class="serviceResultRepairTypesDiv">
               <Card
                 v-for="repairType in this.repairTypeList"
                 :cardElement="repairType"
@@ -33,8 +33,8 @@
               />
             </div>
           </div>
-          <div class="cartAndButtonDiv">
-            <div class="repairTypesDiv2">
+          <div class="serviceResultserviceResultCartAndButtonDiv">
+            <div class="serviceResultRepairTypesDiv2">
               <div
                 style="
                   display: flex;
@@ -261,7 +261,7 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 50px 0;
+  padding: 60px 0;
 }
 
 .serviceResultPageContent {
@@ -314,7 +314,7 @@ export default {
   padding: 16px 5px;
 }
 
-.repairTypesDiv {
+.serviceResultRepairTypesDiv {
   display: flex;
   flex-wrap: wrap;
   width: 100%;
@@ -330,7 +330,7 @@ export default {
   gap: 2rem;
 }
 
-.repairTypesDiv2 {
+.serviceResultRepairTypesDiv2 {
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -359,7 +359,7 @@ export default {
   padding: 0 20px;
 }
 
-.cartAndButtonDiv {
+.serviceResultserviceResultCartAndButtonDiv {
   width: 25%;
   height: 515px;
   display: flex;
@@ -469,13 +469,13 @@ export default {
     gap: 1rem;
   }
 
-  .cartAndButtonDiv {
+  .serviceResultserviceResultCartAndButtonDiv {
     width: 50%;
   }
 }
 
 @media (max-width: 992px) {
-  .cartAndButtonDiv {
+  .serviceResultserviceResultCartAndButtonDiv {
     width: 95%;
     padding: 10px;
   }
