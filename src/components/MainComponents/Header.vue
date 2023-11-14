@@ -161,6 +161,7 @@ export default {
   padding-bottom: 15px;
   box-shadow: rgb(38, 57, 77) 0px 10px 10px -10px;
   z-index: 9999;
+  font-size: 16px;
 }
 
 .headerContent {
