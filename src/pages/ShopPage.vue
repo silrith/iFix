@@ -300,7 +300,7 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0px 15px;
+  padding: 15px 15px;
 }
 
 .repairTypesDiv {
